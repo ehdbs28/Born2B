@@ -48,9 +48,12 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
 
         if (attackObject is UnitInstance) return false;
 
+        bool die = _health.CurrentHp <= 0;
+        EventManager.Instance.PublishEvent(EventType.OnUnitDamaged, this, die);
+
         _health.ReduceHp((int)damage);
 
-        if(_health.CurrentHp <= 0)
+        if(die)
         {
 
             Die();

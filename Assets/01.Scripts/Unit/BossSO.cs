@@ -14,7 +14,7 @@ public class BossSO : UnitDataSO
         public string objectName;
         public WeaponItemSO item;
 
-    }
+    }คล
 
     [field:SerializeField] public List<BossWeapon> weapons { get; private set; }
 
