@@ -14,7 +14,7 @@ public class CellVisual : VisualElement
 {
     private Vector2Int index;
     public Vector2Int Index => index;
-    public int textureIdx;
+    public int textureIdx = -1;
     public string current;
     Func<string, Vector2Int, string> cellChangeCallBack;
     private StageEditor stageEditor;
@@ -36,30 +36,27 @@ public class CellVisual : VisualElement
 
         RegisterCallback<PointerDownEvent>(HandleClick);
 
-        ChangeVisual(textureIdx);
+        ChangeVisual(crt);
     }
 
     private void HandleClick(PointerDownEvent evt)
     {
         if (evt.button == 0)
         {
-            Debug.Log($"{stageEditor}");
-            Debug.Log($"{stageEditor.chapterData}");
-            Debug.Log($"{stageEditor.chapterData.stageObjectSlotList}");
             if (textureIdx < maxIdx)
             {
                 textureIdx++;
-                current = stageEditor.chapterData.stageObjectSlotList[textureIdx].objectName;
+
             }
             else
             {
-                textureIdx = 0;
+                textureIdx = -1;
             }
         }
 
-        if(evt.button == 1)
+        if (evt.button == 1)
         {
-            if(textureIdx > 0)
+            if (textureIdx > -1)
             {
                 textureIdx--;
             }
@@ -69,9 +66,9 @@ public class CellVisual : VisualElement
             }
         }
 
-        if(evt.button == 2 && textureIdx == 3)
+        if (evt.button == 2 && textureIdx == 3)
         {
-            if(stageEditor.onPortalEdit)
+            if (stageEditor.onPortalEdit)
             {
                 stageEditor.EndPortalEdit(this);
             }
@@ -83,6 +80,15 @@ public class CellVisual : VisualElement
             return;
         }
 
+        if (textureIdx == -1)
+        {
+            current = string.Empty;
+        }
+        else
+        {
+            current = stageEditor.chapterData.stageObjectSlotList[textureIdx].objectName;
+        }
+
         cellChangeCallBack(current, index);
         ChangeVisual(current);
     }
@@ -90,8 +96,20 @@ public class CellVisual : VisualElement
     public void ChangeVisual(string value)
     {
         var old = style.backgroundImage;
-        old.value = 
-        Background.FromTexture2D(Resources.Load<Texture2D>($"StageEditorTexture/{value}"));
+
+        string texPath;
+        if (value == string.Empty)
+        {
+            texPath = "NormalSlot";
+        }
+        else
+        {
+            texPath = value;
+        }
+
+        old.value =
+        Background.FromTexture2D(Resources.Load<Texture2D>($"StageEditorTexture/{texPath}"));
+
         style.backgroundImage = old;
     }
 }
@@ -99,13 +117,6 @@ public class CellVisual : VisualElement
 public class StageEditor : EditorWindow
 {
     private DropdownField chapterDropdwon;
-
-    private Toggle randomToggle;
-    private Button randomButton;
-    private TextField normalGridPercent;
-    private TextField blockGridPercent;
-    private TextField spikeGridPercent;
-    private TextField portalGridPercent;
 
     private Button btnSave;
     private Button btnCreate;
@@ -172,7 +183,7 @@ public class StageEditor : EditorWindow
     {
         List<string> chapterNameList = new List<string>();
 
-        foreach(var type in Enum.GetValues(typeof(ChapterType)))
+        foreach (var type in Enum.GetValues(typeof(ChapterType)))
         {
             chapterNameList.Add(type.ToString());
         }
@@ -181,13 +192,6 @@ public class StageEditor : EditorWindow
         chapterDropdwon.RegisterValueChangedCallback(HandleChapterTypeChanged);
 
         chapterData = Resources.Load<ChapterDataSO>($"ChapterData/{ChapterType.Forest}");
-        Debug.Log($"CahapterData/{ChapterType.Forest}");
-        Debug.Log(chapterData);
-
-        normalGridPercent = new TextField("그리드 생성 확률");
-        blockGridPercent = new TextField("블록 생성 확률");
-        spikeGridPercent = new TextField("가시 생성 확률");
-        portalGridPercent = new TextField("포털 생성 확률");
 
         widthField = new TextField("스테이지 가로 길이");
         heightField = new TextField("스테이지 세로 길이");
@@ -206,7 +210,6 @@ public class StageEditor : EditorWindow
         rootVisualElement.Add(mapNameField);
         rootVisualElement.Add(widthField);
         rootVisualElement.Add(heightField);
-        rootVisualElement.Add(randomToggle);
 
         if (data != null)
         {
@@ -216,33 +219,13 @@ public class StageEditor : EditorWindow
 
     private void HandleChapterTypeChanged(ChangeEvent<string> evt)
     {
-        chapterData = Resources.Load<ChapterDataSO>($"CahapterData/{evt.newValue}");
+        chapterData = Resources.Load<ChapterDataSO>($"ChapterData/{evt.newValue}");
 
         foreach (var item in cellVisuals)
         {
             item.current = evt.newValue;
-            item.textureIdx = 0;
-            item.ChangeVisual(0);
-        }
-    }
-
-    private void HandleUseRandomMap(ChangeEvent<bool> value)
-    {
-        if(value.newValue)
-        {
-            rootVisualElement.Add(normalGridPercent);
-            rootVisualElement.Add(blockGridPercent);
-            rootVisualElement.Add(spikeGridPercent);
-            rootVisualElement.Add(portalGridPercent);
-            rootVisualElement.Add(randomButton);
-        }
-        else
-        {
-            rootVisualElement.Remove(normalGridPercent);
-            rootVisualElement.Remove(blockGridPercent);
-            rootVisualElement.Remove(spikeGridPercent);
-            rootVisualElement.Remove(portalGridPercent);
-            rootVisualElement.Remove(randomButton);
+            item.textureIdx = -1;
+            item.ChangeVisual(chapterData.stageObjectSlotList[0].objectName);
         }
     }
 
