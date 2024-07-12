@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,29 +7,28 @@ public class EquipmentItemSO : ItemSO
 {
     [Space(15f)]
     [SerializeField] List<StatModifierSlot> modifiers;
+    public override Type ItemType => typeof(EquipmentItemSO);
 
     /// <summary>
     /// Get Equipment
     /// </summary>
-    public override bool Execute(IItemHandler handler)
+    public override void Execute(IItemHandler handler)
     {
         if(TryParseHandler(handler, out IEquipmentItemHandler equipmentHandler) == false)
-            return false;
+            return;
 
         AddModifier(equipmentHandler.Stat);
-        return true;
     }
 
     /// <summary>
     /// Drop Equipment
     /// </summary>
-    public override bool Unexecute(IItemHandler handler)
+    public override void Unexecute(IItemHandler handler)
     {
         if(TryParseHandler(handler, out IEquipmentItemHandler equipmentHandler) == false)
-            return false;
+            return;
 
         RemoveModifier(equipmentHandler.Stat);
-        return true;
     }
 
     private void AddModifier(StatSO stat)

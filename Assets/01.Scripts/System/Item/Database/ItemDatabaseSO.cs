@@ -49,6 +49,7 @@ public class ItemDatabaseSO : IItemData
             if(i.itemData == this)
             {
                 Debug.LogError("Attempting to refer to its self. This may cause a stack overflow.");
+                i.itemData = null;
                 return;
             }
             

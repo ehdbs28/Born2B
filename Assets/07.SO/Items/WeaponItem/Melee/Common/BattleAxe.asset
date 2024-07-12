@@ -9,13 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf133f24bc7618040b22a12707cb21af, type: 3}
+  m_Script: {fileID: 11500000, guid: d31e4e9c506c93d4981204f572c1c98e, type: 3}
   m_Name: BattleAxe
   m_EditorClassIdentifier: 
   Rarity: 1
   ItemIcon: {fileID: 0}
   ItemName: "\uBC30\uD2C0 \uC5D1\uC2A4"
+  ItemDescription: 
   WeaponPrefab: {fileID: 0}
+  Evolutions: {fileID: 0}
   EffectedStatusType: 0
   EffectedTurnCount: 0
   KnockBackPower: 0
@@ -163,5 +165,3 @@ MonoBehaviour:
     index: 0
     size: 5
     theta: 100
-  inventory: {fileID: 11400000, guid: dc205a038f569944db9ff54d12ac1dab, type: 2}
-  evolutions: {fileID: 11400000, guid: 25d821898c333144da57e2449005c58a, type: 2}

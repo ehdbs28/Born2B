@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SO/Item/GrantStatusEffectItem")]
 public class GrantStatusEffectItemSO : ArtifactItemSO
 {
-    protected override ArtifactType ArtifactType => ArtifactType.Usable;
+    protected override ArtifactType artifactType => ArtifactType.Usable;
 
     [SerializeField] private StatusType _grantStatusType;
     private StatusType _prevWeaponStatusType;
