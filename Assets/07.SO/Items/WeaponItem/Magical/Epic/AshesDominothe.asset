@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf133f24bc7618040b22a12707cb21af, type: 3}
-  m_Name: DonclaresTopsecretary
+  m_Name: AshesDominothe
   m_EditorClassIdentifier: 
-  Rarity: 2
+  Rarity: 3
   ItemIcon: {fileID: 0}
-  ItemName: "\uB3C8\uD074\uB808\uB77C \uADF9\uBE44\uC11C"
+  ItemName: "\uC7BF\uB354\uBBF8 \uB514\uC624\uBAA8\uB370"
   WeaponPrefab: {fileID: 0}
-  EffectedStatusType: 16
-  EffectedTurnCount: 1
+  EffectedStatusType: 1
+  EffectedTurnCount: 2
   KnockBackPower: 0
-  Damage: 65
+  Damage: 110
   Range:
     rangesList:
     - Ranges:
