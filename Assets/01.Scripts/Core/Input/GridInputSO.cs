@@ -33,6 +33,6 @@ public class GridInputSO : InputSO, IGridActions
 
     public void OnScreenPosition(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        ScreenPosition = context.ReadValue<Vector3>();
+        ScreenPosition = context.ReadValue<Vector2>();
     }
 }

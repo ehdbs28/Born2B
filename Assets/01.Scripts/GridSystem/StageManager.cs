@@ -318,17 +318,13 @@ public partial class StageManager : MonoSingleton<StageManager>
             {
 
 
-                Debug.Log(array.Length);
-                var obj = _currentChapterData.GetStageDataByName(array[x, y]).Item2 as CellObjectSO;
+                string key = array[x, y];
+
+                if(key == string.Empty) continue;
+
+                var obj = _currentChapterData.GetStageDataByName(key).Item2 as CellObjectSO;
                 var ins = _instanceContainer[_grid[x, (_data.width - 1) - y].guid];
                 CreateAndAddCellObject(new int2(x, (_data.width - 1) - y), ins, obj);
-
-                //if (array[x, y] != StageCellType.Normal)
-                //{
-
-                //    
-
-                //}
 
             }
 
