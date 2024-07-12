@@ -10,6 +10,9 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
     [field: SerializeField] public List<int2> moveRole { get; set; }
     protected Collider2D _collider;
     protected UnitFSMBase _unitFSMBase;
+    protected UnitStatContainer _unitStatContainer;
+
+    public float currebtHp { get; protected set; }
 
     public Vector2Int Position => transform.position.GetVectorInt();
 
@@ -20,6 +23,8 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
 
         _collider = GetComponent<Collider2D>();
         _unitFSMBase = GetComponent<UnitFSMBase>();
+        _unitStatContainer = GetComponent<UnitStatContainer>();
+
     }
 
     protected virtual void Update()
