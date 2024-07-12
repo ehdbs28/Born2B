@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7148224689208495972}
   - component: {fileID: 3040796631253885440}
   m_Layer: 0
-  m_Name: BasicEnemyMeleeWeapon
+  m_Name: Chapter1_EnemyBasicWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

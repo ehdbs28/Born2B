@@ -16,21 +16,101 @@ MonoBehaviour:
   ItemIcon: {fileID: 0}
   ItemName: 
   ItemDescription: 
-  WeaponPrefab: {fileID: 0}
+  WeaponPrefab: {fileID: 3040796631253885440, guid: ebbde6715c6d0ec4bb1ed7eb4e6c4e73, type: 3}
   EffectedStatusType: 0
   EffectedTurnCount: 0
   KnockBackPower: 0
   Damage: 0
   Range:
     rangesList:
-    - Ranges: []
-    - Ranges: []
-    - Ranges: []
-    - Ranges: []
-    - Ranges: []
-    - Ranges: []
-    - Ranges: []
-    - Ranges: []
-    index: 0
-    size: 5
-    theta: 5
+    - Ranges:
+      - Position: {x: -1, y: 1}
+        Theta: 3
+      - Position: {x: 0, y: 1}
+        Theta: 3
+      - Position: {x: 1, y: 1}
+        Theta: 3
+      - Position: {x: -1, y: 0}
+        Theta: 3
+      - Position: {x: -1, y: -1}
+        Theta: 3
+    - Ranges:
+      - Position: {x: -1, y: 1}
+        Theta: 3
+      - Position: {x: 0, y: 1}
+        Theta: 3
+      - Position: {x: 1, y: 1}
+        Theta: 3
+      - Position: {x: -1, y: 0}
+        Theta: 3
+      - Position: {x: 1, y: 0}
+        Theta: 3
+    - Ranges:
+      - Position: {x: -1, y: 1}
+        Theta: 3
+      - Position: {x: 0, y: 1}
+        Theta: 3
+      - Position: {x: 1, y: 1}
+        Theta: 3
+      - Position: {x: 1, y: 0}
+        Theta: 3
+      - Position: {x: 1, y: -1}
+        Theta: 3
+    - Ranges:
+      - Position: {x: 0, y: 1}
+        Theta: 3
+      - Position: {x: 1, y: 1}
+        Theta: 3
+      - Position: {x: 1, y: 0}
+        Theta: 3
+      - Position: {x: 0, y: -1}
+        Theta: 3
+      - Position: {x: 1, y: -1}
+        Theta: 3
+    - Ranges:
+      - Position: {x: 1, y: 1}
+        Theta: 3
+      - Position: {x: 1, y: 0}
+        Theta: 3
+      - Position: {x: -1, y: -1}
+        Theta: 3
+      - Position: {x: 0, y: -1}
+        Theta: 3
+      - Position: {x: 1, y: -1}
+        Theta: 3
+    - Ranges:
+      - Position: {x: -1, y: 0}
+        Theta: 3
+      - Position: {x: 1, y: 0}
+        Theta: 3
+      - Position: {x: -1, y: -1}
+        Theta: 3
+      - Position: {x: 0, y: -1}
+        Theta: 3
+      - Position: {x: 1, y: -1}
+        Theta: 3
+    - Ranges:
+      - Position: {x: -1, y: 1}
+        Theta: 3
+      - Position: {x: -1, y: 0}
+        Theta: 3
+      - Position: {x: -1, y: -1}
+        Theta: 3
+      - Position: {x: 0, y: -1}
+        Theta: 3
+      - Position: {x: 1, y: -1}
+        Theta: 3
+    - Ranges:
+      - Position: {x: -1, y: 1}
+        Theta: 3
+      - Position: {x: 0, y: 1}
+        Theta: 3
+      - Position: {x: -1, y: 0}
+        Theta: 3
+      - Position: {x: -1, y: -1}
+        Theta: 3
+      - Position: {x: 0, y: -1}
+        Theta: 3
+    index: 3
+    size: 3
+    theta: 3

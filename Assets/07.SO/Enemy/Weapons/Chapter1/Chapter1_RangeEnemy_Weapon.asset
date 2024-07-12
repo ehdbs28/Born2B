@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d31e4e9c506c93d4981204f572c1c98e, type: 3}
-  m_Name: Chapter1__RangeEnemy_Weapon
+  m_Name: Chapter1_RangeEnemy_Weapon
   m_EditorClassIdentifier: 
   Rarity: 0
   ItemIcon: {fileID: 0}
   ItemName: 
-  WeaponPrefab: {fileID: 0}
+  ItemDescription: 
+  WeaponPrefab: {fileID: 8832505011964243380, guid: 730174b9ee0107a42b49350e914f7e88, type: 3}
   EffectedStatusType: 0
   EffectedTurnCount: 0
   KnockBackPower: 0

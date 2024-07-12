@@ -16,21 +16,213 @@ MonoBehaviour:
   ItemIcon: {fileID: 0}
   ItemName: 
   ItemDescription: 
-  WeaponPrefab: {fileID: 0}
+  WeaponPrefab: {fileID: 8832505011964243380, guid: a3f079fff3e905c458c2f1465a9fae29, type: 3}
   EffectedStatusType: 0
   EffectedTurnCount: 0
   KnockBackPower: 0
   Damage: 0
   Range:
     rangesList:
-    - Ranges: []
-    - Ranges: []
-    - Ranges: []
-    - Ranges: []
-    - Ranges: []
-    - Ranges: []
-    - Ranges: []
-    - Ranges: []
-    index: 0
+    - Ranges:
+      - Position: {x: 0, y: 2}
+        Theta: 5
+      - Position: {x: -1, y: 1}
+        Theta: 5
+      - Position: {x: 0, y: 1}
+        Theta: 5
+      - Position: {x: 1, y: 1}
+        Theta: 5
+      - Position: {x: -2, y: 0}
+        Theta: 5
+      - Position: {x: -1, y: 0}
+        Theta: 5
+      - Position: {x: 1, y: 0}
+        Theta: 5
+      - Position: {x: 2, y: 0}
+        Theta: 5
+      - Position: {x: -1, y: -1}
+        Theta: 5
+      - Position: {x: 0, y: -1}
+        Theta: 5
+      - Position: {x: 1, y: -1}
+        Theta: 5
+      - Position: {x: 0, y: -2}
+        Theta: 5
+    - Ranges:
+      - Position: {x: 0, y: 2}
+        Theta: 5
+      - Position: {x: -1, y: 1}
+        Theta: 5
+      - Position: {x: 0, y: 1}
+        Theta: 5
+      - Position: {x: 1, y: 1}
+        Theta: 5
+      - Position: {x: -2, y: 0}
+        Theta: 5
+      - Position: {x: -1, y: 0}
+        Theta: 5
+      - Position: {x: 1, y: 0}
+        Theta: 5
+      - Position: {x: 2, y: 0}
+        Theta: 5
+      - Position: {x: -1, y: -1}
+        Theta: 5
+      - Position: {x: 0, y: -1}
+        Theta: 5
+      - Position: {x: 1, y: -1}
+        Theta: 5
+      - Position: {x: 0, y: -2}
+        Theta: 5
+    - Ranges:
+      - Position: {x: 0, y: 2}
+        Theta: 5
+      - Position: {x: -1, y: 1}
+        Theta: 5
+      - Position: {x: 0, y: 1}
+        Theta: 5
+      - Position: {x: 1, y: 1}
+        Theta: 5
+      - Position: {x: -2, y: 0}
+        Theta: 5
+      - Position: {x: -1, y: 0}
+        Theta: 5
+      - Position: {x: 1, y: 0}
+        Theta: 5
+      - Position: {x: 2, y: 0}
+        Theta: 5
+      - Position: {x: -1, y: -1}
+        Theta: 5
+      - Position: {x: 0, y: -1}
+        Theta: 5
+      - Position: {x: 1, y: -1}
+        Theta: 5
+      - Position: {x: 0, y: -2}
+        Theta: 5
+    - Ranges:
+      - Position: {x: 0, y: 2}
+        Theta: 5
+      - Position: {x: -1, y: 1}
+        Theta: 5
+      - Position: {x: 0, y: 1}
+        Theta: 5
+      - Position: {x: 1, y: 1}
+        Theta: 5
+      - Position: {x: -2, y: 0}
+        Theta: 5
+      - Position: {x: -1, y: 0}
+        Theta: 5
+      - Position: {x: 1, y: 0}
+        Theta: 5
+      - Position: {x: 2, y: 0}
+        Theta: 5
+      - Position: {x: -1, y: -1}
+        Theta: 5
+      - Position: {x: 0, y: -1}
+        Theta: 5
+      - Position: {x: 1, y: -1}
+        Theta: 5
+      - Position: {x: 0, y: -2}
+        Theta: 5
+    - Ranges:
+      - Position: {x: 0, y: 2}
+        Theta: 5
+      - Position: {x: -1, y: 1}
+        Theta: 5
+      - Position: {x: 0, y: 1}
+        Theta: 5
+      - Position: {x: 1, y: 1}
+        Theta: 5
+      - Position: {x: -2, y: 0}
+        Theta: 5
+      - Position: {x: -1, y: 0}
+        Theta: 5
+      - Position: {x: 1, y: 0}
+        Theta: 5
+      - Position: {x: 2, y: 0}
+        Theta: 5
+      - Position: {x: -1, y: -1}
+        Theta: 5
+      - Position: {x: 0, y: -1}
+        Theta: 5
+      - Position: {x: 1, y: -1}
+        Theta: 5
+      - Position: {x: 0, y: -2}
+        Theta: 5
+    - Ranges:
+      - Position: {x: 0, y: 2}
+        Theta: 5
+      - Position: {x: -1, y: 1}
+        Theta: 5
+      - Position: {x: 0, y: 1}
+        Theta: 5
+      - Position: {x: 1, y: 1}
+        Theta: 5
+      - Position: {x: -2, y: 0}
+        Theta: 5
+      - Position: {x: -1, y: 0}
+        Theta: 5
+      - Position: {x: 1, y: 0}
+        Theta: 5
+      - Position: {x: 2, y: 0}
+        Theta: 5
+      - Position: {x: -1, y: -1}
+        Theta: 5
+      - Position: {x: 0, y: -1}
+        Theta: 5
+      - Position: {x: 1, y: -1}
+        Theta: 5
+      - Position: {x: 0, y: -2}
+        Theta: 5
+    - Ranges:
+      - Position: {x: 0, y: 2}
+        Theta: 5
+      - Position: {x: -1, y: 1}
+        Theta: 5
+      - Position: {x: 0, y: 1}
+        Theta: 5
+      - Position: {x: 1, y: 1}
+        Theta: 5
+      - Position: {x: -2, y: 0}
+        Theta: 5
+      - Position: {x: -1, y: 0}
+        Theta: 5
+      - Position: {x: 1, y: 0}
+        Theta: 5
+      - Position: {x: 2, y: 0}
+        Theta: 5
+      - Position: {x: -1, y: -1}
+        Theta: 5
+      - Position: {x: 0, y: -1}
+        Theta: 5
+      - Position: {x: 1, y: -1}
+        Theta: 5
+      - Position: {x: 0, y: -2}
+        Theta: 5
+    - Ranges:
+      - Position: {x: 0, y: 2}
+        Theta: 5
+      - Position: {x: -1, y: 1}
+        Theta: 5
+      - Position: {x: 0, y: 1}
+        Theta: 5
+      - Position: {x: 1, y: 1}
+        Theta: 5
+      - Position: {x: -2, y: 0}
+        Theta: 5
+      - Position: {x: -1, y: 0}
+        Theta: 5
+      - Position: {x: 1, y: 0}
+        Theta: 5
+      - Position: {x: 2, y: 0}
+        Theta: 5
+      - Position: {x: -1, y: -1}
+        Theta: 5
+      - Position: {x: 0, y: -1}
+        Theta: 5
+      - Position: {x: 1, y: -1}
+        Theta: 5
+      - Position: {x: 0, y: -2}
+        Theta: 5
+    index: 1
     size: 5
     theta: 5
