@@ -66,7 +66,7 @@ public class CellVisual : VisualElement
             }
         }
 
-        if (evt.button == 2 && textureIdx == 3)
+        if (evt.button == 2 && current == "PT")
         {
             if (stageEditor.onPortalEdit)
             {
@@ -181,15 +181,25 @@ public class StageEditor : EditorWindow
 
     private void OnEnable()
     {
-        List<string> chapterNameList = new List<string>();
+        List<string> typeList = new List<string>();
 
-        foreach (var type in Enum.GetValues(typeof(ChapterType)))
+        foreach(var type in Enum.GetValues(typeof(ChapterType)))
         {
-            chapterNameList.Add(type.ToString());
+            typeList.Add(type.ToString());
         }
 
-        chapterDropdwon = new DropdownField("챕터 선택", chapterNameList, 0);
-        chapterDropdwon.RegisterValueChangedCallback(HandleChapterTypeChanged);
+        chapterDropdwon = new DropdownField("챕터 선택", typeList, 0);
+        chapterDropdwon.RegisterCallback<ChangeEvent<string>>((evt)=>
+        {
+            chapterData = Resources.Load<ChapterDataSO>($"ChapterData/{evt.newValue}");
+
+            foreach (var cell in cellVisuals)
+            {
+                cell.textureIdx = -1;
+                cell.current = string.Empty;
+                cell.ChangeVisual(string.Empty);
+            }
+        });
 
         chapterData = Resources.Load<ChapterDataSO>($"ChapterData/{ChapterType.Forest}");
 
@@ -203,6 +213,10 @@ public class StageEditor : EditorWindow
         btnCreate = new Button(HandleCreate);
         btnCreate.text = "스테이지 데이터 생성";
 
+        VisualElement ve = new VisualElement();
+        ve.style.height = EditorGUIUtility.singleLineHeight;
+        rootVisualElement.Add(ve);
+
         rootVisualElement.Add(chapterDropdwon);
         rootVisualElement.Add(btnSave);
         rootVisualElement.Add(btnCreate);
@@ -214,18 +228,6 @@ public class StageEditor : EditorWindow
         if (data != null)
         {
             Open();
-        }
-    }
-
-    private void HandleChapterTypeChanged(ChangeEvent<string> evt)
-    {
-        chapterData = Resources.Load<ChapterDataSO>($"ChapterData/{evt.newValue}");
-
-        foreach (var item in cellVisuals)
-        {
-            item.current = evt.newValue;
-            item.textureIdx = -1;
-            item.ChangeVisual(chapterData.stageObjectSlotList[0].objectName);
         }
     }
 

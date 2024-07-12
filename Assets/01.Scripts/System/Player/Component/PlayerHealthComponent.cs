@@ -14,6 +14,7 @@ public class PlayerHealthComponent : PlayerComponent, IHealth
         base.Init(player);
 
         stat = player.GetPlayerComponent<PlayerStatComponent>();
+        ResetHp();
     }
 
     public void ResetHp()

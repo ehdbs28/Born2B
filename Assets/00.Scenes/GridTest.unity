@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -254,12 +253,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &873850843
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,13 +365,15 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
+  m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
+  m_UseCustomTrailVertexStreams: 0
+  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -9977,13 +9978,15 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
+  m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
+  m_UseCustomTrailVertexStreams: 0
+  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -10105,8 +10108,9 @@ GameObject:
   - component: {fileID: 1924145203}
   - component: {fileID: 1924145204}
   - component: {fileID: 1924145205}
-  - component: {fileID: 1924145206}
   - component: {fileID: 1924145207}
+  - component: {fileID: 1924145206}
+  - component: {fileID: 1924145208}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -10141,14 +10145,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89ee40f53698f3c4e9a74718ad21723a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _data:
-    width: 4
-    height: 4
-  _cellSize: 1
-  _movementPivot: {fileID: 873850844}
-  _mask: {fileID: 1810748511}
-  _gridInput: {fileID: 11400000, guid: 5cfbf8fc11dce5747aa4ec20c8f7bc25, type: 2}
-  _currentChapterData: {fileID: 11400000, guid: dadc0c33890c6fa4fbe26cf4afa4e2e0, type: 2}
+  _gridSettingData:
+    data:
+      width: 0
+      height: 0
+    cellSize: 1
+    movementPivot: {fileID: 873850844}
+    mask: {fileID: 1810748511}
+    gridInput: {fileID: 11400000, guid: 5cfbf8fc11dce5747aa4ec20c8f7bc25, type: 2}
+  _chapters:
+  - {fileID: 11400000, guid: dadc0c33890c6fa4fbe26cf4afa4e2e0, type: 2}
 --- !u!114 &1924145202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10161,6 +10167,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774edc3b38f6a404da8f7f5e948c5494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _prefabs:
+  - objType: 3
+    obj: {fileID: 527191157767557158, guid: 2220639a51dfefb419c2b6f30254d608, type: 3}
+  - objType: 5
+    obj: {fileID: 7262097254093175993, guid: d39d910883b44654988258dd47d19f5a, type: 3}
+  - objType: 1
+    obj: {fileID: 7778936618008636799, guid: bec3d57a966ba644f8c575d39af7c5b8, type: 3}
+  - objType: 2
+    obj: {fileID: 3109082648061541915, guid: e1cc4b6f8a74a2541a5e89a8ffc46823, type: 3}
+  - objType: 0
+    obj: {fileID: 7250453006380910636, guid: c7113351669dacc4eb7ec65607ee28dc, type: 3}
 --- !u!114 &1924145203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10193,7 +10210,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1c9b5a06dcc3664c9c214bf0b52b468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flowCycle: 060000000700000008000000090000000a000000
+  _flowCycle:
+  - eventType: 6
+    onFlowEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventType: 7
+    onFlowEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventType: 8
+    onFlowEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventType: 9
+    onFlowEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventType: 10
+    onFlowEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1924145208}
+          m_TargetAssemblyTypeName: ItemManager, Assembly-CSharp
+          m_MethodName: PickItems
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   _targetLoopIdx: 2
 --- !u!114 &1924145205
 MonoBehaviour:
@@ -10236,6 +10285,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cb942b67a8a63dc45860a22dbd665211, type: 2}
   - {fileID: 11400000, guid: 4338c12129f71f74586f2d767b1aed15, type: 2}
   - {fileID: 11400000, guid: 3a65d7475a48b8c4992781b6c029ca13, type: 2}
+--- !u!114 &1924145208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924145199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07eb5aa3ec49c184691388250db84227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: dc205a038f569944db9ff54d12ac1dab, type: 2}
+  weaponDatabase: {fileID: 11400000, guid: d1a4072d63eb4114b8ff6a2f01855960, type: 2}
+  equipmentItemDatabase: {fileID: 11400000, guid: 2a415354f290a2a4c922fbd6dd095f1d, type: 2}
+  artifactItemDatabase: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

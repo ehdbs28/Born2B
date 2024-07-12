@@ -12,10 +12,36 @@ using UnityEngine;
 public class CellObjectManager : MonoSingleton<CellObjectManager>
 {
 
+    [SerializeField] private List<CellObjectByChapter> _prefabs;
+
+    private Dictionary<StageObjectType, GameObject> _prefabContainer = new();
     private Dictionary<Guid, CellObjectSO> _objectContainer = new();
     private Dictionary<Guid, CellObjectInstance> _instanceContainer = new();
     private Dictionary<int2, CellObjectSO> _notMoveObjectContainer = new();
+    private Collider2D _collider;
 
+    private void Awake()
+    {
+        
+        foreach(var item in _prefabs)
+        {
+
+            _prefabContainer.Add(item.objType, item.obj);
+
+        }
+
+        _collider = GetComponent<Collider2D>();
+
+    }
+
+    protected virtual void Update()
+    {
+
+        if(_collider != null)
+            _collider.enabled 
+                = !TurnManager.Instance.GetTurnData<bool>(TurnDataType.IsPreview);
+
+    }
     public void InitContainer()
     {
 
@@ -119,13 +145,12 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
 
         }
 
-        var obj = Instantiate(data.cellObjectInstancePrefab);
+        var obj = Instantiate(_prefabContainer[data.ObjectType]);
 
         if(obj.TryGetComponent<CellObjectInstance>(out var compo))
         {
 
-            compo.dataKey = data.key;
-            compo.key = Guid.NewGuid();
+            compo.Init(data);
             _instanceContainer.Add(compo.key, compo);
 
             return compo;
@@ -144,7 +169,6 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
         if (!_instanceContainer.ContainsKey(id))
         {
 
-            Debug.LogWarning("������ �ƴ��� Ȯ��");
             return null;
 
         }
@@ -176,10 +200,14 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
         foreach(var item in _instanceContainer.Values)
         {
 
-            if(match(item as T))
+            var obj = item as T;
+
+            if (obj == null) continue;
+
+            if(match(obj))
             {
 
-                v.Add(item as T);
+                v.Add(obj);
 
             }
 
@@ -232,9 +260,9 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
                     });
 
                     (var oldPos, var targetPos) = container[vec];
-                    StageManager.Instance.SetUnitKey(oldPos, Guid.Empty);
-                    StageManager.Instance.SetUnitKey(targetPos, item.key);
-                    StageManager.Instance.ApplyCellParent(targetPos, item);
+                    StageManager.Instance.Grid.SetUnitKey(oldPos, Guid.Empty);
+                    StageManager.Instance.Grid.SetUnitKey(targetPos, item.key);
+                    StageManager.Instance.Grid.ApplyCellParent(targetPos, item);
                     _objectContainer[item.dataKey].position = targetPos;
 
                 }
@@ -294,7 +322,7 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
     private List<CellObjectInstance> GetHitInstance(List<int2> attackRole, int2 position)
     {
 
-        var grid = StageManager.Instance.GetGrid();
+        var grid = StageManager.Instance.Grid.GetGrid();
         List<CellObjectInstance> hits = new();
 
         foreach(var item in attackRole)
@@ -320,7 +348,7 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
         if(_instanceContainer.TryGetValue(id, out var obj))
         {
 
-            StageManager.Instance.SetUnitKey(obj.GetData().position, Guid.Empty);
+            StageManager.Instance.Grid.SetUnitKey(obj.GetData().position, Guid.Empty);
             _objectContainer.Remove(obj.dataKey);
             _instanceContainer.Remove(id);
 
@@ -333,7 +361,7 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
     private Vector2? TryGetMovementPos(int2 targetIdx)
     {
 
-        var grid = StageManager.Instance.GetGrid();
+        var grid = StageManager.Instance.Grid.GetGrid();
 
         if (!grid.CheckOutBounce(targetIdx) && !_notMoveObjectContainer.ContainsKey(targetIdx))
         {
@@ -341,7 +369,7 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
             if (grid[targetIdx].unitKey == Guid.Empty)
             {
 
-                return StageManager.Instance.ConvertGridPoint(new Vector2(targetIdx.x, targetIdx.y));
+                return StageManager.Instance.Grid.ConvertGridPoint(new Vector2(targetIdx.x, targetIdx.y));
 
             }
 
@@ -360,19 +388,19 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
         {
 
             var oldPos = ins.GetData().position;
-            StageManager.Instance.SetUnitKey(oldPos, Guid.Empty);
+            StageManager.Instance.Grid.SetUnitKey(oldPos, Guid.Empty);
 
         }
         else
         {
 
-            var idx = StageManager.Instance.FindCellIdxByUnit(objectKey);
-            StageManager.Instance.SetCellUnitKey(idx, Guid.Empty);
+            var idx = StageManager.Instance.Grid.FindCellIdxByUnit(objectKey);
+            StageManager.Instance.Grid.SetCellUnitKey(idx, Guid.Empty);
 
         }
 
-        StageManager.Instance.SetUnitKey(targetPos, ins.key);
-        StageManager.Instance.ApplyCellParent(targetPos, ins);
+        StageManager.Instance.Grid.SetUnitKey(targetPos, ins.key);
+        StageManager.Instance.Grid.ApplyCellParent(targetPos, ins);
         ins.GetData().position = targetPos;
 
     }
@@ -384,8 +412,8 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
 
         foreach(var item in datas)
         {
-            int idx = StageManager.Instance.FindCellIdxByUnit(item.key);
-            StageManager.Instance.SetCellUnitKey(idx, Guid.Empty);
+            int idx = StageManager.Instance.Grid.FindCellIdxByUnit(item.key);
+            StageManager.Instance.Grid.SetCellUnitKey(idx, Guid.Empty);
             Destroy(item.gameObject);
             RemoveCellObjectInstance(item.key);
 
@@ -420,6 +448,15 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
         var ls = _instanceContainer.Values.Where(x => x is T).Cast<T>().ToList();
 
         return ls;
+
+    }
+
+    [Serializable]
+    public class CellObjectByChapter
+    {
+
+        public StageObjectType objType;
+        public GameObject obj;
 
     }
 

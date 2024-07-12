@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SO/Item/HealingItem")]
 public class HealingItemSO : ArtifactItemSO
 {
-    protected override ArtifactType ArtifactType => ArtifactType.UseImmediately;
+    protected override ArtifactType artifactType => ArtifactType.UseImmediately;
 
     [Space(15)] 
     [SerializeField] private int _healCnt;

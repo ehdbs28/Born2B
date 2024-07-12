@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dba6e18f9cebba479a0ac5e9a16e587, type: 3}
   m_Name: Portal_Stage
   m_EditorClassIdentifier: 
-  <cellObjectInstancePrefab>k__BackingField: {fileID: 6525430851219888061, guid: c1978eb7feeb41c4a831a2718745c87d, type: 3}
+  ObjectType: 2
   <cellObjectType>k__BackingField: 1
+  <animator>k__BackingField: {fileID: 0}
+  <sprite>k__BackingField: {fileID: 0}

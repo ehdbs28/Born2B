@@ -6,28 +6,17 @@ using UnityEngine;
 public class CellInstance : MonoBehaviour
 {
     
-    private bool _isColorInit;
     public Cell CellData { get; set; }
+    public void Init()
+    {
+
+
+
+    }
     private void InitCellData()
     {
 
-        CellData = StageManager.Instance.GetCell(CellData.position).Value;
-
-    }
-
-    private void Start()
-    {
-
-        if (_isColorInit) return;
-        GetComponent<SpriteRenderer>().color = CellData.color;
-
-    }
-
-    public void TileInit(Sprite tile)
-    {
-
-        _isColorInit = true;
-        GetComponent<SpriteRenderer>().sprite = tile;
+        CellData = StageManager.Instance.Grid.GetCell(CellData.position).Value;
 
     }
 
@@ -42,7 +31,7 @@ public class CellInstance : MonoBehaviour
             if (CellObjectManager.Instance.GetCellObjectInstance(CellData.unitKey) is PlayerInstance)
             {
 
-                StageManager.Instance.PickGrid(CellData);
+                StageManager.Instance.Grid.PickGrid(CellData);
 
             }
 

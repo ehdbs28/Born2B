@@ -5,7 +5,7 @@ using UnityEngine;
 
 public partial class StageManager
 {
-    private class GridMovement : IDisposable
+    public class GridMovement : IDisposable
     {
 
         private Vector2 _moveDir;
@@ -183,9 +183,9 @@ public partial class StageManager
                 _startMovement = true;
                 _moveDir = GetMovementDir(_mousePositon - startMousePos);
 
-                var source = Instance.GetCellInstnaces(_startCell, GetLineType());
-                var copySourceP = Instance.CopyAndCollocateCellInstances(_startCell, GetLineType(), _data.width);
-                var copySourceM = Instance.CopyAndCollocateCellInstances(_startCell, GetLineType(), -_data.width);
+                var source = Instance.Grid.GetCellInstnaces(_startCell, GetLineType());
+                var copySourceP = Instance.Grid.CopyAndCollocateCellInstances(_startCell, GetLineType(), _data.width);
+                var copySourceM = Instance.Grid.CopyAndCollocateCellInstances(_startCell, GetLineType(), -_data.width);
                 _instances = new CellInstance[source.Length * 3];
                 _copyObject = new CellInstance[source.Length * 3];
                 Array.Copy(source, 0, _instances, 0, source.Length);

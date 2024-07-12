@@ -15,10 +15,13 @@ MonoBehaviour:
   stats:
   - StatType: 1
     Stat:
-      baseValue: 100
+      baseValue: 3
   - StatType: 2
     Stat:
       baseValue: 10
   - StatType: 4
+    Stat:
+      baseValue: 10
+  - StatType: 3
     Stat:
       baseValue: 10

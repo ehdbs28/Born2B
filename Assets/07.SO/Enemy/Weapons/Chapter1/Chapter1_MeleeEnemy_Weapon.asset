@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d31e4e9c506c93d4981204f572c1c98e, type: 3}
+  m_Name: Chapter1_MeleeEnemy_Weapon
+  m_EditorClassIdentifier: 
+  Rarity: 0
+  ItemIcon: {fileID: 0}
+  ItemName: 
+  ItemDescription: 
+  WeaponPrefab: {fileID: 3040796631253885440, guid: 3ba84301811fcaf4bb05c17d45426dee, type: 3}
+  EffectedStatusType: 0
+  EffectedTurnCount: 0
+  KnockBackPower: 0
+  Damage: 0
+  Range:
+    rangesList:
+    - Ranges:
+      - Position: {x: -1, y: 1}
+        Theta: 3
+      - Position: {x: 0, y: 1}
+        Theta: 3
+      - Position: {x: -1, y: 0}
+        Theta: 3
+    - Ranges:
+      - Position: {x: -1, y: 1}
+        Theta: 3
+      - Position: {x: 0, y: 1}
+        Theta: 3
+      - Position: {x: 1, y: 1}
+        Theta: 3
+    - Ranges:
+      - Position: {x: 0, y: 1}
+        Theta: 3
+      - Position: {x: 1, y: 1}
+        Theta: 3
+      - Position: {x: 1, y: 0}
+        Theta: 3
+    - Ranges:
+      - Position: {x: 1, y: 1}
+        Theta: 3
+      - Position: {x: 1, y: 0}
+        Theta: 3
+      - Position: {x: 1, y: -1}
+        Theta: 3
+    - Ranges:
+      - Position: {x: 1, y: 0}
+        Theta: 3
+      - Position: {x: 0, y: -1}
+        Theta: 3
+      - Position: {x: 1, y: -1}
+        Theta: 3
+    - Ranges:
+      - Position: {x: -1, y: -1}
+        Theta: 3
+      - Position: {x: 0, y: -1}
+        Theta: 3
+      - Position: {x: 1, y: -1}
+        Theta: 3
+    - Ranges:
+      - Position: {x: -1, y: 0}
+        Theta: 3
+      - Position: {x: -1, y: -1}
+        Theta: 3
+      - Position: {x: 0, y: -1}
+        Theta: 3
+    - Ranges:
+      - Position: {x: -1, y: 1}
+        Theta: 3
+      - Position: {x: -1, y: 0}
+        Theta: 3
+      - Position: {x: -1, y: -1}
+        Theta: 3
+    index: 0
+    size: 3
+    theta: 3

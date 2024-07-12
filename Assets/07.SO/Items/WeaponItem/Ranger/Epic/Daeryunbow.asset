@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d31e4e9c506c93d4981204f572c1c98e, type: 3}
+  m_Name: Daeryunbow
+  m_EditorClassIdentifier: 
+  Rarity: 3
+  ItemIcon: {fileID: 0}
+  ItemName: "\uAC80\uC740 \uBC24"
+  ItemDescription: 
+  WeaponPrefab: {fileID: 0}
+  Evolutions: {fileID: 0}
+  EffectedStatusType: 0
+  EffectedTurnCount: 0
+  KnockBackPower: 0
+  Damage: 150
+  Range:
+    rangesList:
+    - Ranges:
+      - Position: {x: 0, y: 0}
+        Theta: 30
+    - Ranges:
+      - Position: {x: 0, y: 0}
+        Theta: 30
+    - Ranges:
+      - Position: {x: 0, y: 0}
+        Theta: 30
+    - Ranges:
+      - Position: {x: 0, y: 0}
+        Theta: 30
+    - Ranges:
+      - Position: {x: 0, y: 0}
+        Theta: 30
+    - Ranges:
+      - Position: {x: 0, y: 0}
+        Theta: 30
+    - Ranges:
+      - Position: {x: 0, y: 0}
+        Theta: 30
+    - Ranges:
+      - Position: {x: 0, y: 0}
+        Theta: 30
+    index: 0
+    size: 1
+    theta: 30

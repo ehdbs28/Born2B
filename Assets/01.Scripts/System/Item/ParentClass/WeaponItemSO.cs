@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "SO/Item/Weapon/WeaponItem")]
@@ -5,10 +7,10 @@ public class WeaponItemSO : ItemSO
 {
     [Space(15f)]
     public Weapon WeaponPrefab;
+    public ItemDatabaseSO Evolutions = null;
 
     [Space(15f)]
-    public StatusType EffectedStatusType;
-    public int EffectedTurnCount;
+    public List<StatusEffectSlot> StatusEffects = new List<StatusEffectSlot>();
 
     [Space(15f)]
     public int KnockBackPower;
@@ -16,28 +18,27 @@ public class WeaponItemSO : ItemSO
 
     public WeaponRange Range;
 
+    public override Type ItemType => typeof(WeaponItemSO);
+
     /// <summary>
     /// Equip Weapon
     /// </summary>
-    public override bool Execute(IItemHandler handler)
+    public override void Execute(IItemHandler handler)
     {
         if(TryParseHandler(handler, out IWeaponItemHandler weaponHandler) == false)
-            return false;
+            return;
 
-        bool result = weaponHandler.EquipWeapon(this);
-        return result;
+        weaponHandler.EquipWeapon(this);
     }
 
     /// <summary>
     /// Unequip Weapon
     /// </summary>
-    public override bool Unexecute(IItemHandler handler)
+    public override void Unexecute(IItemHandler handler)
     {
         if(TryParseHandler(handler, out IWeaponItemHandler weaponHandler) == false)
-            return false;
 
-        bool result = weaponHandler.UnequipWeapon();
-        return result;
+        weaponHandler.UnequipWeapon();
     }
 }
 

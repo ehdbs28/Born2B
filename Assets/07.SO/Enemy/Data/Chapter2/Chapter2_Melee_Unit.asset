@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee891aa59794beb41b8afc82b7efd516, type: 3}
+  m_Name: Chapter2_Melee_Unit
+  m_EditorClassIdentifier: 
+  ObjectType: 3
+  <cellObjectType>k__BackingField: 0
+  <animator>k__BackingField: {fileID: 0}
+  <sprite>k__BackingField: {fileID: 0}
+  <weaponItem>k__BackingField: {fileID: 11400000, guid: acf1c3709d521e94fa52a14e53c5d84b, type: 2}
+  <movementRole>k__BackingField:
+  - x: 1
+    y: 0
+  - x: 0
+    y: 1
+  - x: -1
+    y: 0
+  - x: 0
+    y: -1
+  - x: 1
+    y: 1
+  - x: -1
+    y: -1
+  - x: 1
+    y: -1
+  - x: -1
+    y: 1
+  <stat>k__BackingField: {fileID: 11400000, guid: 3482ea01666fdd145b93bb0296f8996a, type: 2}

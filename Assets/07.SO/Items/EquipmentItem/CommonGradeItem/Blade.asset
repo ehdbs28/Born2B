@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Blade
   m_EditorClassIdentifier: 
   Rarity: 1
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: -2102172944, guid: 18eb8eac2bf48f346bf800ae92f9c0fd, type: 3}
   ItemName: "\uB0A0\uBD99\uC774"
+  ItemDescription: 
   modifiers:
   - StatType: 2
     ModifierType: 2

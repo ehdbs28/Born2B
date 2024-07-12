@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: MinePickaxe
   m_EditorClassIdentifier: 
   Rarity: 1
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: 448481229, guid: 18eb8eac2bf48f346bf800ae92f9c0fd, type: 3}
   ItemName: "\uAD11\uC0B0 \uACE1\uAD2D\uC774"
+  ItemDescription: 
   modifiers:
   - StatType: 3
     ModifierType: 1

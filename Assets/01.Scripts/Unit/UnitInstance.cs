@@ -3,13 +3,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHitable
 {
     [field: SerializeField] public List<int2> moveRole { get; set; }
-    protected Collider2D _collider;
     protected UnitFSMBase _unitFSMBase;
+    protected UnitStatContainer _unitStatContainer;
+    protected UnitWeaponController _weaponController;
+    protected UnitHealth _health;
 
     public Vector2Int Position => transform.position.GetVectorInt();
 
@@ -19,27 +22,44 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
         base.Awake();
 
         _collider = GetComponent<Collider2D>();
+        _unitStatContainer = GetComponent<UnitStatContainer>();
         _unitFSMBase = GetComponent<UnitFSMBase>();
-       GetComponent<Weapon>()?.Init(this);
+        _weaponController = GetComponent<UnitWeaponController>();
+        _health = GetComponent<UnitHealth>();
 
     }
 
-    protected virtual void Update()
+
+
+    public override void Init(CellObjectSO so)
     {
+        
+        base.Init(so);
+        var casted = so as UnitDataSO;
+        _unitStatContainer.Init(casted.stat);
+        _weaponController.Init(casted.weaponItem, this);
 
-        _collider.enabled = TurnManager.Instance.GetTurnData<bool>(TurnDataType.IsMovementCell);
+        moveRole = casted.movementRole;
 
     }
-
 
     public bool Hit(CellObjectInstance attackObject, float damage, bool critical)
     {
 
-        if (attackObject is UnitInstance) return true;
+        if (attackObject is UnitInstance) return false;
 
-        Die();
+        _health.ReduceHp((int)damage);
+
+        if(_health.CurrentHp <= 0)
+        {
+
+            Die();
+
+        }
+
         return true;
     }
+
     public void Attack()
     {
 
@@ -52,15 +72,15 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
         if (!isClone)
         {
 
-            var idx = StageManager.Instance.FindGridIdxByUnit(key);
-            StageManager.Instance.SetUnitKey(idx, Guid.Empty);
+            var idx = StageManager.Instance.Grid.FindGridIdxByUnit(key);
+            StageManager.Instance.Grid.SetUnitKey(idx, Guid.Empty);
 
         }
         else
         {
 
-            var idx = StageManager.Instance.FindCellIdxByUnit(key);
-            StageManager.Instance.SetCellUnitKey(idx, Guid.Empty);
+            var idx = StageManager.Instance.Grid.FindCellIdxByUnit(key);
+            StageManager.Instance.Grid.SetCellUnitKey(idx, Guid.Empty);
 
         }
 

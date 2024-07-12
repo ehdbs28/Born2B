@@ -22,6 +22,7 @@ public class UnitSelectManager : MonoSingleton<UnitSelectManager>
         if (!_isSelectable) return;
 
         selectedIdx = idx;
+        StageManager.Instance.NextChapter();
         FlowManager.Instance.NextCycle();
 
     }

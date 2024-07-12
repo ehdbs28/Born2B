@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dba6e18f9cebba479a0ac5e9a16e587, type: 3}
+  m_Name: Chapter3_Spike
+  m_EditorClassIdentifier: 
+  ObjectType: 1
+  <cellObjectType>k__BackingField: 1
+  <animator>k__BackingField: {fileID: 0}
+  <sprite>k__BackingField: {fileID: 21300000, guid: 8fca9ba9b15140d4493f838af37e3d3a, type: 3}

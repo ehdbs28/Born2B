@@ -12,14 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dcd914bb17bc87448ce6df83487a722, type: 3}
   m_Name: Forest
   m_EditorClassIdentifier: 
-  <chapterCellPrefab>k__BackingField: {fileID: 0}
+  <chapterCellPrefab>k__BackingField: {fileID: 7650415247363615662, guid: 9cd4f720b90a1304a91450bb0902ec5f, type: 3}
   stageObjectSlotList:
   - objectType: 0
     objectName: 1
-    objectData: {fileID: 11400000, guid: a5a73fc4bbb8c0c4e9a49e0e5b9425e6, type: 2}
+    objectData: {fileID: 11400000, guid: 71f3c6c68f34f1a4bb4599ca78ecb8af, type: 2}
     objectIcon: {fileID: 21300000, guid: 54fc5482946d83f458617ab270303db9, type: 3}
   - objectType: 1
     objectName: 2
-    objectData: {fileID: 11400000, guid: a5a73fc4bbb8c0c4e9a49e0e5b9425e6, type: 2}
+    objectData: {fileID: 11400000, guid: 4aa2294d7409a1e4ea348489a8e54caf, type: 2}
     objectIcon: {fileID: 21300000, guid: 14a18bb4448a31e4496feb3d04829fd9, type: 3}
-  stages: []
+  - objectType: 3
+    objectName: 4
+    objectData: {fileID: 11400000, guid: 1a89fad7e9db778479c7ecff5c322d34, type: 2}
+    objectIcon: {fileID: 21300000, guid: ae15455fc8ed04d46bbf0f79307fb883, type: 3}
+  - objectType: 3
+    objectName: 6
+    objectData: {fileID: 11400000, guid: 24b12dd6f0d33bc49bde59c611289172, type: 2}
+    objectIcon: {fileID: 21300000, guid: eab16113e5542ac41b941cc41f1b0572, type: 3}
+  - objectType: 3
+    objectName: 7
+    objectData: {fileID: 11400000, guid: 24b12dd6f0d33bc49bde59c611289172, type: 2}
+    objectIcon: {fileID: 21300000, guid: f5474cdece5167342ab019e1af05123e, type: 3}
+  - objectType: 2
+    objectName: 3
+    objectData: {fileID: 11400000, guid: 735b5bffe3a816e4fb2b1e6aa2a20002, type: 2}
+    objectIcon: {fileID: 21300000, guid: ec8c973c5d250924a96ab7b9264de991, type: 3}
+  - objectType: 5
+    objectName: 9
+    objectData: {fileID: 11400000, guid: 4cebd27681d28854b9b80e2120130b35, type: 2}
+    objectIcon: {fileID: 21300000, guid: ffe1474e2a8787f458e75a3ed473826e, type: 3}
+  stages:
+  - {fileID: 11400000, guid: 704174de07e07f641b259eee4bee1e1a, type: 2}
+  chapterName:
+  - 

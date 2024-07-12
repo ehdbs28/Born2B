@@ -12,6 +12,8 @@ public abstract class Weapon : MonoBehaviour
     protected CellObjectInstance owner = null;
     private int directionIndex = 0;
 
+    private Queue<StatusEffectSlot> disposableStatusEffects = new Queue<StatusEffectSlot>();
+
     public virtual void Init(CellObjectInstance owner)
     {
         this.owner = owner;
@@ -41,13 +43,7 @@ public abstract class Weapon : MonoBehaviour
             if(critical)
                 slotDamage += slotDamage * attackParams.criticalDamage;
 
-            // StatusLine
-            if (WeaponData.EffectedStatusType == StatusType.None)
-            {
-                // Status 적용
-            }
-
-            Cell? cell = StageManager.Instance.FindCellByPosition(rangeSlot.Position);
+            Cell? cell = StageManager.Instance.Grid.FindCellByPosition(rangeSlot.Position);
             cell?.FindAndGrow();
             if(cell == null)
                 continue;
@@ -55,14 +51,26 @@ public abstract class Weapon : MonoBehaviour
             CellObjectInstance cellObject = CellObjectManager.Instance.GetCellObjectInstance(cell.Value.unitKey);
             if(cellObject == null)
                 continue;
+
+            int enemyLayer = 1 << cellObject.gameObject.layer;
+            int compare = attackParams.targetLayer & enemyLayer;
+            if(compare < 1)
+                continue;
             
             if(cellObject.TryGetComponent<StatusController>(out StatusController sc))
-                sc.AddStatus(WeaponData.EffectedStatusType, WeaponData.EffectedTurnCount);
+            {
+                WeaponData.StatusEffects.ForEach(i => sc.AddStatus(i.statusType, i.effectedTurn));
+                while(disposableStatusEffects.Count > 0)
+                {
+                    StatusEffectSlot data = disposableStatusEffects.Dequeue();
+                    sc.AddStatus(data.statusType, data.effectedTurn);
+                }
+            }
 
             if(cellObject.TryGetComponent<IHitable>(out IHitable ih))
             {
-                if (ih.Hit(owner, slotDamage, critical))
-                    KnockBackUnit(cellObject);
+                if (ih.Hit(owner, slotDamage, critical)) { }
+                    //KnockBackUnit(cellObject);
             }
         }
     }
@@ -102,15 +110,20 @@ public abstract class Weapon : MonoBehaviour
             var attackDir = (curPos - owner.transform.position).normalized;
             var knockBackPosition = curPos + attackDir * weaponData.KnockBackPower;
 
-            var closestCell = StageManager.Instance.FindCellByPosition(knockBackPosition);
+            var closestCell = StageManager.Instance.Grid.FindCellByPosition(knockBackPosition);
             if (closestCell != null)
             {
                 var closestCellObject = CellObjectManager.Instance.GetCellObjectInstance(closestCell.Value.unitKey);
                 if(closestCellObject != null)
                     move.Move(new List<Vector2> { closestCellObject.transform.position }, null);
+                    CellObjectManager.Instance.ChangePosition(owner.key, closestCellObject.GetData().position);
+
+
             }
         }
     }
+
+    public void AddDisposableStatusEffect(StatusEffectSlot data) => disposableStatusEffects.Enqueue(data);
 
     protected abstract List<WeaponRangeSlot> GetAttackRange(Vector2Int position, Vector2Int point);
     public abstract Vector2Int GetAttackPoint(Vector2Int position, Vector2Int point);

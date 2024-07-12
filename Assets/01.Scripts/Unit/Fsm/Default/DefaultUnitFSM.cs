@@ -8,20 +8,22 @@ using UnityEngine;
 
 public class DefaultUnitAttackState : UnitFSMStateBase
 {
+
+    protected UnitWeaponController _unitWeapon;
+
     public DefaultUnitAttackState(FSM_Controller<UnitStateType> controller) : base(controller)
     {
+
+        _unitWeapon = controller.GetComponent<UnitWeaponController>();
+
     }
 
     protected override void EnterState()
     {
 
         var vec = transform.position.GetVectorInt();
-        var player = CellObjectManager.Instance.GetCellObjectInstance<PlayerInstance>();
-        var dir = player.transform.position - transform.position;
-        var ang = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        _unitWeapon.RotateAttackRange(ang);
-        AttackParams attackParams = new AttackParams(0, 0, 0);
-        _unitWeapon.Attack(attackParams, vec, transform.position.GetVectorInt());
+        _unitWeapon.Attack(vec);
+
     }
 
 }
@@ -35,9 +37,10 @@ public class DefaultUnitMoveState : UnitFSMStateBase
     protected override void EnterState()
     {
 
-        var targetPos = controller.GetData<Vector2>("Move");
+
         //transform.DOMove(targetPos, 0.3f)
         //    .OnComplete(HandleEnd);
+        StartCoroutine(MovementTween(HandleEnd));
 
     }
 
@@ -46,6 +49,28 @@ public class DefaultUnitMoveState : UnitFSMStateBase
 
         controller.InvokeEvent("Move");
         controller.RemoveData("Move");
+
+    }
+
+    private IEnumerator MovementTween(Action endCallback)
+    {
+
+        var targetPos = controller.GetData<Vector2>("Move");
+        var originPos = controller.transform.position;
+
+        float per = 0;
+
+        while(per < 1)
+        {
+
+            per += Time.deltaTime * 3;
+            per = Mathf.Clamp01(per);
+            transform.position = Vector3.Lerp(originPos, targetPos, Easing.Get(Ease.OutQuad, per));
+            yield return null;
+
+        }
+
+        endCallback?.Invoke();
 
     }
 

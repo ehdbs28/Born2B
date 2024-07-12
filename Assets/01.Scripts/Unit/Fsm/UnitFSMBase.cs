@@ -15,13 +15,13 @@ public enum UnitStateType
 public abstract class UnitFSMStateBase : FSM_State<UnitStateType>
 {
 
-    protected Weapon _unitWeapon;
     protected new UnitFSMBase controller;
+    protected UnitStatContainer _stats;
 
     protected UnitFSMStateBase(FSM_Controller<UnitStateType> controller) : base(controller)
     {
 
-        _unitWeapon = controller.GetComponent<Weapon>();
+        _stats = controller.GetComponent<UnitStatContainer>();
         this.controller = controller as UnitFSMBase;
 
     }
@@ -76,6 +76,10 @@ public abstract class UnitFSMBase : FSM_Controller<UnitStateType>
 
         }
 
+    }
+
+    internal void Init()
+    {
     }
 
 }

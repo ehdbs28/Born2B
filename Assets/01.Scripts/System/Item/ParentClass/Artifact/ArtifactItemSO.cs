@@ -1,34 +1,37 @@
+using System;
+
 public abstract class ArtifactItemSO : ItemSO
 {
-    protected abstract ArtifactType ArtifactType { get; }
+    protected abstract ArtifactType artifactType { get; }
+    public ArtifactType ArtifactType => artifactType;
+
     protected virtual EventType CallingEventType => 0;
+    public override Type ItemType => typeof(ArtifactItemSO);
 
     protected IItemHandler OwnerHandler;
 
-    public override bool Execute(IItemHandler handler)
+    public override void Execute(IItemHandler handler)
     {
         OwnerHandler = handler;
         
         // 체력 회복 같이 먹자마자 바로 적용되는거
-        if (ArtifactType == ArtifactType.UseImmediately)
+        if (artifactType == ArtifactType.UseImmediately)
         {
             UseArtifact();
         }
-        else if (ArtifactType == ArtifactType.CallByEvent)
+        else if (artifactType == ArtifactType.CallByEvent)
         {
             RegisterEvent();
         }
-        return true;
     }
 
-    public override bool Unexecute(IItemHandler handler)
+    public override void Unexecute(IItemHandler handler)
     {
-        if (ArtifactType == ArtifactType.CallByEvent)
+        if (artifactType == ArtifactType.CallByEvent)
         {
             UnRegisterEvent();
         }
         OwnerHandler = null;
-        return true;
     }
 
     public abstract void UseArtifact(params object[] args);

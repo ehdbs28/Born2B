@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class StatusController : MonoBehaviour
@@ -20,6 +21,10 @@ public class StatusController : MonoBehaviour
         if(type == StatusType.None)
             return;
 
-        _statusEffect.AddStatus(type, remainTurn);
+        foreach(StatusType status in Enum.GetValues(typeof(StatusType)))
+        {
+            if(type.HasFlag(status))
+                _statusEffect.AddStatus(status, remainTurn);
+        }
     }
 }
