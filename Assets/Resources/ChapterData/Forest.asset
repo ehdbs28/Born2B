@@ -42,6 +42,10 @@ MonoBehaviour:
     objectName: 9
     objectData: {fileID: 11400000, guid: 4cebd27681d28854b9b80e2120130b35, type: 2}
     objectIcon: {fileID: 21300000, guid: ffe1474e2a8787f458e75a3ed473826e, type: 3}
+  - objectType: 4
+    objectName: 8
+    objectData: {fileID: 11400000, guid: c2c010b0986c7a64d80747e5db12c6bc, type: 2}
+    objectIcon: {fileID: 21300000, guid: fd5eecbe19b9df34c8381dc0297f6a3d, type: 3}
   stages:
   - {fileID: 11400000, guid: 704174de07e07f641b259eee4bee1e1a, type: 2}
   chapterName:

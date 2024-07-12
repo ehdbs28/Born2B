@@ -19,14 +19,15 @@ public class DefaultBossFSM : DefaultUnitFSM
         {
 
             var container = transform.Find("WeaponContainer");
-            _meleeWeapon = container.Find("Melee").GetComponent<UnitWeaponController>();
-            _hitscanWeapon = container.Find("Range").GetComponent<UnitWeaponController>();
+
 
         }
 
         protected override void EnterState()
         {
 
+            _meleeWeapon = transform.Find("Melee").GetComponent<UnitWeaponController>();
+            _hitscanWeapon = transform.Find("Range").GetComponent<UnitWeaponController>();
             var vec = transform.position.GetVectorInt();
             var player = CellObjectManager.Instance.GetCellObjectInstance<PlayerInstance>();
             var dist = Vector2.Distance(vec, player.transform.position);
@@ -47,12 +48,13 @@ public class DefaultBossFSM : DefaultUnitFSM
         {
 
             var container = transform.Find("WeaponContainer");
-            _melee = container.Find("Melee").GetComponent<UnitWeaponController>();
-
+            
         }
 
         protected override void HandleEnd()
         {
+
+            _melee = transform.Find("Melee").GetComponent<UnitWeaponController>();
 
             StartCoroutine(WaitEnd());
 

@@ -10112,7 +10112,7 @@ GameObject:
   - component: {fileID: 1924145206}
   - component: {fileID: 1924145208}
   m_Layer: 0
-  m_Name: Managers
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10178,6 +10178,8 @@ MonoBehaviour:
     obj: {fileID: 3109082648061541915, guid: e1cc4b6f8a74a2541a5e89a8ffc46823, type: 3}
   - objType: 0
     obj: {fileID: 7250453006380910636, guid: c7113351669dacc4eb7ec65607ee28dc, type: 3}
+  - objType: 4
+    obj: {fileID: 7173756796732061332, guid: f17489c18e60f064abcfe944ff1f1252, type: 3}
 --- !u!114 &1924145203
 MonoBehaviour:
   m_ObjectHideFlags: 0
