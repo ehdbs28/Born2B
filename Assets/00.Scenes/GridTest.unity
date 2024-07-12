@@ -10108,8 +10108,9 @@ GameObject:
   - component: {fileID: 1924145203}
   - component: {fileID: 1924145204}
   - component: {fileID: 1924145205}
-  - component: {fileID: 1924145206}
   - component: {fileID: 1924145207}
+  - component: {fileID: 1924145206}
+  - component: {fileID: 1924145208}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -10229,7 +10230,19 @@ MonoBehaviour:
   - eventType: 10
     onFlowEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1924145208}
+          m_TargetAssemblyTypeName: ItemManager, Assembly-CSharp
+          m_MethodName: PickItems
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   _targetLoopIdx: 2
 --- !u!114 &1924145205
 MonoBehaviour:
@@ -10272,6 +10285,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cb942b67a8a63dc45860a22dbd665211, type: 2}
   - {fileID: 11400000, guid: 4338c12129f71f74586f2d767b1aed15, type: 2}
   - {fileID: 11400000, guid: 3a65d7475a48b8c4992781b6c029ca13, type: 2}
+--- !u!114 &1924145208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924145199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07eb5aa3ec49c184691388250db84227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: dc205a038f569944db9ff54d12ac1dab, type: 2}
+  weaponDatabase: {fileID: 0}
+  equipmentItemDatabase: {fileID: 0}
+  artifactItemDatabase: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -18,8 +18,7 @@ MonoBehaviour:
   ItemDescription: 
   WeaponPrefab: {fileID: 0}
   Evolutions: {fileID: 0}
-  EffectedStatusType: 0
-  EffectedTurnCount: 0
+  StatusEffects: []
   KnockBackPower: 0
   Damage: 20
   Range:

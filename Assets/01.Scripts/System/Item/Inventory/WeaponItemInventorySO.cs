@@ -23,7 +23,7 @@ public class WeaponItemInventorySO : ItemInventorySlotSO
         {
             if(weaponHandler.CurrentWeaponData == this)
             {
-                WeaponItemSO evolution = item.Evolutions.PickRandom(weaponHandler.CurrentWeaponData.Rarity) as WeaponItemSO;
+                WeaponItemSO evolution = item.Evolutions?.PickRandom(weaponHandler.CurrentWeaponData.Rarity) as WeaponItemSO;
                 if(evolution == null)
                     return false;
 

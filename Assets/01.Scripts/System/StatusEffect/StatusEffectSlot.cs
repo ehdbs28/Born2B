@@ -1,5 +1,6 @@
-using UnityEngine;
+using System;
 
+[Serializable]
 public struct StatusEffectSlot
 {
     public StatusType statusType;
