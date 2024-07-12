@@ -8,8 +8,14 @@ using UnityEngine;
 
 public class DefaultUnitAttackState : UnitFSMStateBase
 {
+
+    protected Weapon _unitWeapon;
+
     public DefaultUnitAttackState(FSM_Controller<UnitStateType> controller) : base(controller)
     {
+
+        _unitWeapon = controller.GetComponent<Weapon>();
+
     }
 
     protected override void EnterState()
@@ -35,7 +41,7 @@ public class DefaultUnitMoveState : UnitFSMStateBase
     protected override void EnterState()
     {
 
-        var targetPos = controller.GetData<Vector2>("Move");
+        
         //transform.DOMove(targetPos, 0.3f)
         //    .OnComplete(HandleEnd);
 
@@ -46,6 +52,25 @@ public class DefaultUnitMoveState : UnitFSMStateBase
 
         controller.InvokeEvent("Move");
         controller.RemoveData("Move");
+
+    }
+
+    private IEnumerator MovementTween(Action endCallback)
+    {
+
+        var targetPos = controller.GetData<Vector2>("Move");
+        var originPos = controller.transform.position;
+
+        float per = 0;
+
+        while(per < 1)
+        {
+
+            per += Time.deltaTime * 3;
+            transform.position = Vector3.Lerp(targetPos, originPos, Easing.Get(Ease.OutQuad, per));
+            yield return null;
+
+        }
 
     }
 

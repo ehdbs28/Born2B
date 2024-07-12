@@ -44,7 +44,7 @@ public struct Cell : IEquatable<Cell>, ICloneable
     public void FindAndGrow()
     {
 
-        var ins = StageManager.Instance.GetCellInstance(guid);
+        var ins = StageManager.Instance.Grid.GetCellInstance(guid);
         ins.Grow();
 
     }

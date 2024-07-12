@@ -57,15 +57,15 @@ public partial class PlayerInstance : CellObjectInstance, IHitable
             if (!isClone)
             {
 
-                var idx = StageManager.Instance.FindGridIdxByUnit(key);
-                StageManager.Instance.SetUnitKey(idx, Guid.Empty);
+                var idx = StageManager.Instance.Grid.FindGridIdxByUnit(key);
+                StageManager.Instance.Grid.SetUnitKey(idx, Guid.Empty);
 
             }
             else
             {
 
-                var idx = StageManager.Instance.FindCellIdxByUnit(key);
-                StageManager.Instance.SetCellUnitKey(idx, Guid.Empty);
+                var idx = StageManager.Instance.Grid.FindCellIdxByUnit(key);
+                StageManager.Instance.Grid.SetCellUnitKey(idx, Guid.Empty);
 
             }
 

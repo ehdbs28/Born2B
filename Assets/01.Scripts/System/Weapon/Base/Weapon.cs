@@ -47,7 +47,7 @@ public abstract class Weapon : MonoBehaviour
                 // Status 적용
             }
 
-            Cell? cell = StageManager.Instance.FindCellByPosition(rangeSlot.Position);
+            Cell? cell = StageManager.Instance.Grid.FindCellByPosition(rangeSlot.Position);
             cell?.FindAndGrow();
             if(cell == null)
                 continue;
@@ -102,7 +102,7 @@ public abstract class Weapon : MonoBehaviour
             var attackDir = (curPos - owner.transform.position).normalized;
             var knockBackPosition = curPos + attackDir * weaponData.KnockBackPower;
 
-            var closestCell = StageManager.Instance.FindCellByPosition(knockBackPosition);
+            var closestCell = StageManager.Instance.Grid.FindCellByPosition(knockBackPosition);
             if (closestCell != null)
             {
                 var closestCellObject = CellObjectManager.Instance.GetCellObjectInstance(closestCell.Value.unitKey);

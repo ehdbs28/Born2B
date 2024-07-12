@@ -11,7 +11,7 @@ public class CellInstance : MonoBehaviour
     private void InitCellData()
     {
 
-        CellData = StageManager.Instance.GetCell(CellData.position).Value;
+        CellData = StageManager.Instance.Grid.GetCell(CellData.position).Value;
 
     }
 
@@ -42,7 +42,7 @@ public class CellInstance : MonoBehaviour
             if (CellObjectManager.Instance.GetCellObjectInstance(CellData.unitKey) is PlayerInstance)
             {
 
-                StageManager.Instance.PickGrid(CellData);
+                StageManager.Instance.Grid.PickGrid(CellData);
 
             }
 

@@ -21,7 +21,7 @@ public class StagingManager : MonoSingleton<StagingManager>
         }
 
         CellObjectManager.Instance.InitContainer();
-        StageManager.Instance.SetUpGrid();
+        StageManager.Instance.Grid.SetUpGrid(0);
         _currentStage++;
 
     }

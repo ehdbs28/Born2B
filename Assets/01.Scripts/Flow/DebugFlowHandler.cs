@@ -81,11 +81,11 @@ public class DebugFlowHandler : MonoBehaviour
     {
 
         Debug.Log("πË∆≤ ≥°");
-        var cells = StageManager.Instance.GetEmptyCells();
+        var cells = StageManager.Instance.Grid.GetEmptyCells();
         var target = cells[Random.Range(0, cells.Count)];
-        var ins = StageManager.Instance.GetCellInstance(target.guid);
+        var ins = StageManager.Instance.Grid.GetCellInstance(target.guid);
 
-        StageManager.Instance.CreateAndAddCellObject(target.position, ins, _nextPortalIns);
+        StageManager.Instance.Grid.CreateAndAddCellObject(target.position, ins, _nextPortalIns);
 
     }
 
