@@ -12,19 +12,15 @@ public class DefaultBossFSM : DefaultUnitFSM
     public class BossAttackState : UnitFSMStateBase
     {
 
-        private MeleeWeapon _meleeWeapon;
-        private HitscanWeapon _hitscanWeapon;
+        private UnitWeaponController _meleeWeapon;
+        private UnitWeaponController _hitscanWeapon;
 
         public BossAttackState(FSM_Controller<UnitStateType> controller) : base(controller)
         {
 
-            var ins = GetComponent<CellObjectInstance>();
             var container = transform.Find("WeaponContainer");
-            _meleeWeapon = container.GetComponent<MeleeWeapon>();
-            _hitscanWeapon = container.GetComponent<HitscanWeapon>();
-
-            _meleeWeapon.Init(ins);
-            _hitscanWeapon.Init(ins);
+            _meleeWeapon = container.Find("Melee").GetComponent<UnitWeaponController>();
+            _hitscanWeapon = container.Find("Range").GetComponent<UnitWeaponController>();
 
         }
 
@@ -33,15 +29,10 @@ public class DefaultBossFSM : DefaultUnitFSM
 
             var vec = transform.position.GetVectorInt();
             var player = CellObjectManager.Instance.GetCellObjectInstance<PlayerInstance>();
-            var dir = player.transform.position - transform.position;
-            var ang = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            Weapon wep = Random.value > 0.5f ? _meleeWeapon : _hitscanWeapon;
+            var dist = Vector2.Distance(vec, player.transform.position);
+            var wep = dist < 3f ? _meleeWeapon : _hitscanWeapon;
 
-            wep.RotateAttackRange(ang);
-
-            var param = new AttackParams(_stats[StatType.Attack], _stats[StatType.CriticalChance], _stats[StatType.CriticalDamage], 0);
-
-            wep.Attack(param, vec, transform.position.GetVectorInt());
+            wep.Attack(vec);
 
         }
 
@@ -50,16 +41,13 @@ public class DefaultBossFSM : DefaultUnitFSM
     public class BossMoveState : DefaultUnitMoveState
     {
 
-        private MeleeWeapon _melee;
+        private UnitWeaponController _melee;
 
         public BossMoveState(FSM_Controller<UnitStateType> controller) : base(controller)
         {
 
-            var ins = GetComponent<CellObjectInstance>();
             var container = transform.Find("WeaponContainer");
-            _melee = container.GetComponent<MeleeWeapon>();
-
-            _melee.Init(ins);
+            _melee = container.Find("Melee").GetComponent<UnitWeaponController>();
 
         }
 
@@ -69,13 +57,7 @@ public class DefaultBossFSM : DefaultUnitFSM
             StartCoroutine(WaitEnd());
 
             var vec = transform.position.GetVectorInt();
-            var player = CellObjectManager.Instance.GetCellObjectInstance<PlayerInstance>();
-            var dir = player.transform.position - transform.position;
-            var ang = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-
-            _melee.RotateAttackRange(ang);
-            var param = new AttackParams(_stats[StatType.Attack], _stats[StatType.CriticalChance], _stats[StatType.CriticalDamage], 0);
-            _melee.Attack(param, vec, transform.position.GetVectorInt());
+            _melee.Attack(vec);
 
         }
 
