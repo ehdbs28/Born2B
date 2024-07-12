@@ -42,4 +42,4 @@ MonoBehaviour:
     y: -2
   - x: -2
     y: 0
-  <stat>k__BackingField: {fileID: 0}
+  <stat>k__BackingField: {fileID: 11400000, guid: 3482ea01666fdd145b93bb0296f8996a, type: 2}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectType: 3
   <cellObjectType>k__BackingField: 0
-  <animator>k__BackingField: {fileID: 0}
+  <animator>k__BackingField: {fileID: 9100000, guid: 9ee4f635c71c78749bc562eed935859e, type: 2}
   <sprite>k__BackingField: {fileID: 0}
   <weaponItem>k__BackingField: {fileID: 11400000, guid: 2c9eef13e8f04ed409e8b031ec16b575, type: 2}
   <movementRole>k__BackingField:
@@ -34,4 +34,4 @@ MonoBehaviour:
     y: -1
   - x: -1
     y: 1
-  <stat>k__BackingField: {fileID: 0}
+  <stat>k__BackingField: {fileID: 11400000, guid: 17e6547c646636f42a5c45bff97d2891, type: 2}
