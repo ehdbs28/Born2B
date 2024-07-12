@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: Coldbow
   m_EditorClassIdentifier: 
   Rarity: 2
-  ItemIcon: {fileID: 0}
-  ItemName: "\uBE59\uACB0\uD0C4"
+  ItemIcon: {fileID: 21300000, guid: 36da1395171838d4ab0845053da227bd, type: 3}
+  ItemName: "\uCF5C\uB4DC\uBCF4\uC6B0"
   ItemDescription: 
   WeaponPrefab: {fileID: 0}
-  Evolutions: {fileID: 0}
-  EffectedStatusType: 2
-  EffectedTurnCount: 1
+  Evolutions: {fileID: 11400000, guid: 83c5d442ed7c3f04080e79b273371aa7, type: 2}
+  StatusEffects: []
   KnockBackPower: 0
   Damage: 0
   Range:

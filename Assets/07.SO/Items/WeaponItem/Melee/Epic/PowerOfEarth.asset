@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: PowerOfEarth
   m_EditorClassIdentifier: 
   Rarity: 3
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: 21300000, guid: d310402b218a19f42af0a58cc4111c39, type: 3}
   ItemName: "\uB300\uC9C0\uC758 \uD798"
   ItemDescription: 
   WeaponPrefab: {fileID: 0}
-  Evolutions: {fileID: 0}
-  EffectedStatusType: 4
-  EffectedTurnCount: 1
+  Evolutions: {fileID: 11400000, guid: abb0d1873c7dc31448e7ddfdd1c4188c, type: 2}
+  StatusEffects: []
   KnockBackPower: 0
   Damage: 80
   Range:

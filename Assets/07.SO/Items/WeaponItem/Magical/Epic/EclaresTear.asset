@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: EclaresTear
   m_EditorClassIdentifier: 
   Rarity: 3
-  ItemIcon: {fileID: 21300000, guid: bf511902f7dd2a64aab57a8393fe09b6, type: 3}
+  ItemIcon: {fileID: 21300000, guid: 74534ede0a281554bad146153d9d0d18, type: 3}
   ItemName: "\uC5D0\uD074\uB808\uC758 \uB208\uBB3C"
   ItemDescription: 
   WeaponPrefab: {fileID: 0}
-  Evolutions: {fileID: 0}
-  EffectedStatusType: 0
-  EffectedTurnCount: 0
+  Evolutions: {fileID: 11400000, guid: 03daaf2d4cf50a14e88f72095c5de0ff, type: 2}
+  StatusEffects: []
   KnockBackPower: 0
   Damage: 120
   Range:

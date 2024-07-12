@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "SO/Item/ReviveItem")]
+[CreateAssetMenu(menuName = "SO/Item/Artifact/ReviveItem")]
 public class ReviveItemSO : ArtifactItemSO
 {
     protected override ArtifactType artifactType => ArtifactType.CallByEvent;

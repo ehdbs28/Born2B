@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: Daeryunbow
   m_EditorClassIdentifier: 
   Rarity: 3
-  ItemIcon: {fileID: 0}
-  ItemName: "\uAC80\uC740 \uBC24"
+  ItemIcon: {fileID: 21300000, guid: d564a661deddb7a43839232b40e4fa6c, type: 3}
+  ItemName: "\uB300\uB95C\uAD81"
   ItemDescription: 
   WeaponPrefab: {fileID: 0}
-  Evolutions: {fileID: 0}
-  EffectedStatusType: 0
-  EffectedTurnCount: 0
+  Evolutions: {fileID: 11400000, guid: 83c5d442ed7c3f04080e79b273371aa7, type: 2}
+  StatusEffects: []
   KnockBackPower: 0
   Damage: 150
   Range:

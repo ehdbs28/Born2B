@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: Woodbow
   m_EditorClassIdentifier: 
   Rarity: 1
-  ItemIcon: {fileID: 0}
-  ItemName: "\uB9AC\uBCFC\uBC84"
+  ItemIcon: {fileID: 21300000, guid: 584e337a6b968bc4597498d4aa3d0dd7, type: 3}
+  ItemName: "\uC6B0\uB4DC\uBCF4\uC6B0"
   ItemDescription: 
   WeaponPrefab: {fileID: 0}
-  Evolutions: {fileID: 0}
-  EffectedStatusType: 0
-  EffectedTurnCount: 0
+  Evolutions: {fileID: 11400000, guid: 83c5d442ed7c3f04080e79b273371aa7, type: 2}
+  StatusEffects: []
   KnockBackPower: 0
   Damage: 40
   Range:

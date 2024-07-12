@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: Crossbow
   m_EditorClassIdentifier: 
   Rarity: 1
-  ItemIcon: {fileID: 0}
-  ItemName: "\uC800\uACA9\uCD1D"
+  ItemIcon: {fileID: 21300000, guid: 9cb0b7357f3a05a40b184ae1f4c466db, type: 3}
+  ItemName: "\uC11D\uAD81"
   ItemDescription: 
   WeaponPrefab: {fileID: 0}
-  Evolutions: {fileID: 0}
-  EffectedStatusType: 0
-  EffectedTurnCount: 0
+  Evolutions: {fileID: 11400000, guid: 83c5d442ed7c3f04080e79b273371aa7, type: 2}
+  StatusEffects: []
   KnockBackPower: 0
   Damage: 60
   Range:

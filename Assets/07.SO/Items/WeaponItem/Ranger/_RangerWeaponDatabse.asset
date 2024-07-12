@@ -22,18 +22,18 @@ MonoBehaviour:
   - itemData: {fileID: 11400000, guid: e7d13e04811399d4a9373521760aea84, type: 2}
     weight: 6
   - itemData: {fileID: 11400000, guid: 9fc6b5ef1f1847042b06090393e41ae1, type: 2}
-    weight: 3.5
+    weight: 0.5
   - itemData: {fileID: 11400000, guid: e9ef08cdedc2af643a390ab2cfa6ce42, type: 2}
-    weight: 3.5
+    weight: 0.5
   - itemData: {fileID: 11400000, guid: 0f2dc67853ec9604c82d663071df9d0e, type: 2}
-    weight: 3.5
+    weight: 0.5
   - itemData: {fileID: 11400000, guid: fa9a6cba83a98044f86b43cfa1dea002, type: 2}
-    weight: 3.5
+    weight: 0.5
   - itemData: {fileID: 11400000, guid: c94fe092b756d484da6f105856ce4988, type: 2}
-    weight: 0.5
+    weight: 3.5
   - itemData: {fileID: 11400000, guid: f7bcbdbf5bf1f7b459d007448bb6b61a, type: 2}
-    weight: 0.5
+    weight: 3.5
   - itemData: {fileID: 11400000, guid: 1e62d4d0a82746644afa99967ed6755b, type: 2}
-    weight: 0.5
+    weight: 3.5
   - itemData: {fileID: 11400000, guid: d9f39a71ed65f684b804a75f59ba2215, type: 2}
-    weight: 0.5
+    weight: 3.5
