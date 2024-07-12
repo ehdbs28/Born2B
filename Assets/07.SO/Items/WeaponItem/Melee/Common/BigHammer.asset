@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: BigHammer
   m_EditorClassIdentifier: 
   Rarity: 1
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: 21300000, guid: 3b1efa4c93c6feb4c92d226df6350efa, type: 3}
   ItemName: "\uBE45 \uD574\uBA38"
   ItemDescription: 
   WeaponPrefab: {fileID: -6942030965757976987, guid: 4b68be0ca0f89f4458248af78bedd218, type: 3}
-  Evolutions: {fileID: 0}
+  Evolutions: {fileID: 11400000, guid: abb0d1873c7dc31448e7ddfdd1c4188c, type: 2}
   StatusEffects: []
   KnockBackPower: 0
   Damage: 30

@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: JinKalKyum
   m_EditorClassIdentifier: 
   Rarity: 3
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: 21300000, guid: d0a5a11aa3a40c941961b7298d9b6abb, type: 3}
   ItemName: "\uC9C4\uCE7C\uD060"
   ItemDescription: 
   WeaponPrefab: {fileID: 0}
-  Evolutions: {fileID: 0}
-  EffectedStatusType: 0
-  EffectedTurnCount: 0
+  Evolutions: {fileID: 11400000, guid: abb0d1873c7dc31448e7ddfdd1c4188c, type: 2}
+  StatusEffects: []
   KnockBackPower: 0
   Damage: 50
   Range:

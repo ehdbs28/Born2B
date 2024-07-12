@@ -17,9 +17,8 @@ MonoBehaviour:
   ItemName: "\uACE8\uACE4\uB2E4 \uC2DC\uC57D"
   ItemDescription: 
   WeaponPrefab: {fileID: 0}
-  Evolutions: {fileID: 0}
-  EffectedStatusType: 1
-  EffectedTurnCount: 2
+  Evolutions: {fileID: 11400000, guid: 03daaf2d4cf50a14e88f72095c5de0ff, type: 2}
+  StatusEffects: []
   KnockBackPower: 0
   Damage: 50
   Range:

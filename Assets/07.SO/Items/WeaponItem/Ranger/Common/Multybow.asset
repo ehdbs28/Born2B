@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: Multybow
   m_EditorClassIdentifier: 
   Rarity: 1
-  ItemIcon: {fileID: 0}
-  ItemName: "\uC0B0\uD0C4\uCD1D"
+  ItemIcon: {fileID: 21300000, guid: 0bf7f76b2fd9e7a4ea8634dcbfd291cc, type: 3}
+  ItemName: "\uBA40\uD2F0\uBCF4\uC6B0"
   ItemDescription: 
   WeaponPrefab: {fileID: 0}
-  Evolutions: {fileID: 0}
-  EffectedStatusType: 0
-  EffectedTurnCount: 0
+  Evolutions: {fileID: 11400000, guid: 83c5d442ed7c3f04080e79b273371aa7, type: 2}
+  StatusEffects: []
   KnockBackPower: 0
   Damage: 25
   Range:

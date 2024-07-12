@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: SpearOfDisappointment
   m_EditorClassIdentifier: 
   Rarity: 3
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: 21300000, guid: 48049917d7f345a4892addc6f3e4d4a6, type: 3}
   ItemName: "\uC2E4\uB099\uC758 \uCC3D"
   ItemDescription: 
   WeaponPrefab: {fileID: 0}
-  Evolutions: {fileID: 0}
-  EffectedStatusType: 16
-  EffectedTurnCount: 1
+  Evolutions: {fileID: 11400000, guid: abb0d1873c7dc31448e7ddfdd1c4188c, type: 2}
+  StatusEffects: []
   KnockBackPower: 0
   Damage: 120
   Range:
