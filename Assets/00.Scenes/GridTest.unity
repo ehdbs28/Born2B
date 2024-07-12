@@ -10171,6 +10171,12 @@ MonoBehaviour:
     obj: {fileID: 527191157767557158, guid: 2220639a51dfefb419c2b6f30254d608, type: 3}
   - objType: 5
     obj: {fileID: 7262097254093175993, guid: d39d910883b44654988258dd47d19f5a, type: 3}
+  - objType: 1
+    obj: {fileID: 7778936618008636799, guid: bec3d57a966ba644f8c575d39af7c5b8, type: 3}
+  - objType: 2
+    obj: {fileID: 3109082648061541915, guid: e1cc4b6f8a74a2541a5e89a8ffc46823, type: 3}
+  - objType: 0
+    obj: {fileID: 7250453006380910636, guid: c7113351669dacc4eb7ec65607ee28dc, type: 3}
 --- !u!114 &1924145203
 MonoBehaviour:
   m_ObjectHideFlags: 0
