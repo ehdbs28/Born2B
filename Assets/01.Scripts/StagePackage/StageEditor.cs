@@ -179,13 +179,30 @@ public class StageEditor : EditorWindow
         AssetDatabase.SaveAssets();
     }
 
-    private void OnGUI()
-    {
-        EditorGUILayout.ObjectField("ChapterData", chapterData, typeof(ChapterDataSO), false);
-    }
-
     private void OnEnable()
     {
+        List<string> typeList = new List<string>();
+
+        foreach(var type in Enum.GetValues(typeof(ChapterType)))
+        {
+            typeList.Add(type.ToString());
+        }
+
+        chapterDropdwon = new DropdownField("챕터 선택", typeList, 0);
+        chapterDropdwon.RegisterCallback<ChangeEvent<string>>((evt)=>
+        {
+            chapterData = Resources.Load<ChapterDataSO>($"ChapterData/{evt.newValue}");
+
+            foreach (var cell in cellVisuals)
+            {
+                cell.textureIdx = -1;
+                cell.current = string.Empty;
+                cell.ChangeVisual(string.Empty);
+            }
+        });
+
+        chapterData = Resources.Load<ChapterDataSO>($"ChapterData/{ChapterType.Forest}");
+
         widthField = new TextField("스테이지 가로 길이");
         heightField = new TextField("스테이지 세로 길이");
         mapNameField = new TextField("스테이지SO 파일 이름");

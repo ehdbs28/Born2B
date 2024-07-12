@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f344d6b24980a24c9119977066a442a, type: 3}
-  m_Name: w23323
+  m_Name: ggg
   m_EditorClassIdentifier: 
   stageType: 0
   stageName: 
   stageInfoText: 
+  data: []
+  column: 0
+  portalData: {fileID: 0}

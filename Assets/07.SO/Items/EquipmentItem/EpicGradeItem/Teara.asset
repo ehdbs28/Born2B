@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29c063e44274641458d1ea74d2dfa532, type: 3}
-  m_Name: StarPowder
+  m_Name: Teara
   m_EditorClassIdentifier: 
   Rarity: 2
-  ItemIcon: {fileID: 0}
-  ItemName: "\uBCC4\uAC00\uB8E8"
+  ItemIcon: {fileID: 788261664, guid: 18eb8eac2bf48f346bf800ae92f9c0fd, type: 3}
+  ItemName: "\uD2F0\uC544\uB77C"
+  ItemDescription: 
   modifiers:
   - StatType: 5
     ModifierType: 2

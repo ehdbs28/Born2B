@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: LegendaryShield
   m_EditorClassIdentifier: 
   Rarity: 3
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: 1208130652, guid: 18eb8eac2bf48f346bf800ae92f9c0fd, type: 3}
   ItemName: "\uC804\uC124\uC758 \uBC29\uD328"
+  ItemDescription: 
   modifiers:
   - StatType: 1
     ModifierType: 1

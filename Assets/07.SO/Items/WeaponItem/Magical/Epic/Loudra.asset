@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31e4e9c506c93d4981204f572c1c98e, type: 3}
   m_Name: Loudra
   m_EditorClassIdentifier: 
-  Rarity: 2
+  Rarity: 3
   ItemIcon: {fileID: 0}
-  ItemName: "\uB3C8\uD074\uB808\uB77C \uADF9\uBE44\uC11C"
+  ItemName: "\uB8E8\uB4DC\uB77C"
   ItemDescription: 
   WeaponPrefab: {fileID: 0}
   Evolutions: {fileID: 0}
