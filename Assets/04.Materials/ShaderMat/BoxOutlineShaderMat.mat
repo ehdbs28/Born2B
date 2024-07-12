@@ -58,5 +58,5 @@ Material:
     - _BoxWidth: 0.1
     - _RotateSpeed: 3
     m_Colors:
-    - _Color: {r: 1.2331399, g: 1.4142135, b: 0.59370285, a: 1}
+    - _Color: {r: 1.8472921, g: 2.1185474, b: 0.8893903, a: 1}
   m_BuildTextureStacks: []
