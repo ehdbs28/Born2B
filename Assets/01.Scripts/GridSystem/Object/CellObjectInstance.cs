@@ -66,6 +66,7 @@ public class CellObjectInstance : MonoBehaviour, ICloneable
         obj.key = Guid.NewGuid();
         obj.dataKey = dataKey;
         obj.isClone = true;
+        obj.Init(GetData());
 
         return obj;
 

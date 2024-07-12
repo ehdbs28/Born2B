@@ -15,7 +15,8 @@ MonoBehaviour:
   Rarity: 0
   ItemIcon: {fileID: 0}
   ItemName: 
-  WeaponPrefab: {fileID: 0}
+  ItemDescription: 
+  WeaponPrefab: {fileID: 3040796631253885440, guid: f3b4bfca4ec530f4fb93800dddb15fa5, type: 3}
   EffectedStatusType: 0
   EffectedTurnCount: 0
   KnockBackPower: 0

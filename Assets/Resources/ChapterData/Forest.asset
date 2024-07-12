@@ -16,27 +16,34 @@ MonoBehaviour:
   stageObjectSlotList:
   - objectType: 0
     objectName: 1
-    objectData: {fileID: 11400000, guid: a5a73fc4bbb8c0c4e9a49e0e5b9425e6, type: 2}
+    objectData: {fileID: 11400000, guid: 71f3c6c68f34f1a4bb4599ca78ecb8af, type: 2}
     objectIcon: {fileID: 21300000, guid: 54fc5482946d83f458617ab270303db9, type: 3}
   - objectType: 1
     objectName: 2
-    objectData: {fileID: 11400000, guid: d9175657a45e2534ea85e252a7803668, type: 2}
+    objectData: {fileID: 11400000, guid: 4aa2294d7409a1e4ea348489a8e54caf, type: 2}
     objectIcon: {fileID: -1711608217, guid: 5d72f7425ed52f547b687755abdd6293, type: 3}
   - objectType: 3
-    objectName: 4
-    objectData: {fileID: 11400000, guid: e298496a8ce53f84ba51c229c04c4e92, type: 2}
-    objectIcon: {fileID: 21300000, guid: ccb947ff62092bb4c834dd1d5ed2661e, type: 3}
-  - objectType: 2
-    objectName: 3
-    objectData: {fileID: 11400000, guid: e45f0880c20be8b45864f6e57ec8c87c, type: 2}
-    objectIcon: {fileID: 21300000, guid: 54695d4c834fb7849a336a1752a32c7a, type: 3}
-  - objectType: 4
-    objectName: 8
-    objectData: {fileID: 11400000, guid: b6c1b2a0a39c9e243897d91b0a4b29fd, type: 2}
-    objectIcon: {fileID: 21300000, guid: 85304ac1048acbc47898477e16a80d0c, type: 3}
-  - objectType: 5
-    objectName: 9
-    objectData: {fileID: 11400000, guid: 4cebd27681d28854b9b80e2120130b35, type: 2}
+    objectName: E1
+    objectData: {fileID: 11400000, guid: 1a89fad7e9db778479c7ecff5c322d34, type: 2}
     objectIcon: {fileID: 21300000, guid: ae15455fc8ed04d46bbf0f79307fb883, type: 3}
+  - objectType: 3
+    objectName: E2
+    objectData: {fileID: 11400000, guid: 24b12dd6f0d33bc49bde59c611289172, type: 2}
+    objectIcon: {fileID: 21300000, guid: eab16113e5542ac41b941cc41f1b0572, type: 3}
+  - objectType: 3
+    objectName: E3
+    objectData: {fileID: 11400000, guid: 24b12dd6f0d33bc49bde59c611289172, type: 2}
+    objectIcon: {fileID: 21300000, guid: f5474cdece5167342ab019e1af05123e, type: 3}
+  - objectType: 2
+    objectName: E3
+    objectData: {fileID: 11400000, guid: 735b5bffe3a816e4fb2b1e6aa2a20002, type: 2}
+    objectIcon: {fileID: 21300000, guid: ec8c973c5d250924a96ab7b9264de991, type: 3}
+  - objectType: 5
+    objectName: E3
+    objectData: {fileID: 11400000, guid: 4cebd27681d28854b9b80e2120130b35, type: 2}
+    objectIcon: {fileID: 21300000, guid: ec8c973c5d250924a96ab7b9264de991, type: 3}
   stages:
   - {fileID: 11400000, guid: 51df92bb025507f48853913f351012f0, type: 2}
+  chapterName:
+  - 
+  - 

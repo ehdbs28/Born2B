@@ -64,6 +64,10 @@ public class PlayerAttackComponent : PlayerComponent
 
     private void HandleTurnChanged(params object[] args)
     {
+
+        if (FlowManager.Instance.CurrentCycle == EventType.OnBattleFinish)
+            return;
+
         // TurnObjectSO prevTurn = args[0] as TurnObjectSO;
         TurnType nextTurn = (TurnType)args[1];
 
