@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SO/Item/ReviveItem")]
 public class ReviveItemSO : ArtifactItemSO
 {
-    protected override ArtifactType ArtifactType => ArtifactType.CallByEvent;
+    protected override ArtifactType artifactType => ArtifactType.CallByEvent;
     protected override EventType CallingEventType => EventType.OnPlayerDead;
 
     public override void UseArtifact(params object[] args)

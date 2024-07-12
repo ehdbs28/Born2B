@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SO/Item/ConfirmCriticalItem")]
 public class ConfirmCriticalItemSO : ArtifactItemSO
 {
-    protected override ArtifactType ArtifactType => ArtifactType.Usable;
+    protected override ArtifactType artifactType => ArtifactType.Usable;
     
     public override void UseArtifact(params object[] args)
     {

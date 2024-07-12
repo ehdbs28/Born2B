@@ -9,13 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf133f24bc7618040b22a12707cb21af, type: 3}
+  m_Script: {fileID: 11500000, guid: d31e4e9c506c93d4981204f572c1c98e, type: 3}
   m_Name: Ruvy_Wand
   m_EditorClassIdentifier: 
   Rarity: 2
   ItemIcon: {fileID: 0}
   ItemName: "\uB8E8\uBE44\uC218\uC815 \uC644\uB4DC"
+  ItemDescription: 
   WeaponPrefab: {fileID: 0}
+  Evolutions: {fileID: 0}
   EffectedStatusType: 1
   EffectedTurnCount: 0
   KnockBackPower: 0
@@ -113,5 +115,3 @@ MonoBehaviour:
     index: 2
     size: 3
     theta: 100
-  inventory: {fileID: 11400000, guid: dc205a038f569944db9ff54d12ac1dab, type: 2}
-  evolutions: {fileID: 11400000, guid: 03daaf2d4cf50a14e88f72095c5de0ff, type: 2}

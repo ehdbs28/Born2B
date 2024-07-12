@@ -1,16 +1,18 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class ItemSO : IItemData
 {
+    public abstract Type ItemType { get; }
     public ItemRarity Rarity;
     public Sprite ItemIcon;
     public string ItemName;
     [TextArea] public string ItemDescription;
 
-	public abstract bool Execute(IItemHandler handler);
+	public abstract void Execute(IItemHandler handler);
 
-    public abstract bool Unexecute(IItemHandler handler);
+    public abstract void Unexecute(IItemHandler handler);
     protected bool TryParseHandler<T>(IItemHandler inHandler, out T outHandler) where T : class, IItemHandler
     {
         outHandler = inHandler as T;
