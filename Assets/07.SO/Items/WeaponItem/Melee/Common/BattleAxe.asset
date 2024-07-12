@@ -16,7 +16,7 @@ MonoBehaviour:
   ItemIcon: {fileID: 0}
   ItemName: "\uBC30\uD2C0 \uC5D1\uC2A4"
   ItemDescription: 
-  WeaponPrefab: {fileID: 0}
+  WeaponPrefab: {fileID: -6942030965757976987, guid: 85e32179d26470c47a2ae5808daad8e2, type: 3}
   Evolutions: {fileID: 0}
   StatusEffects: []
   KnockBackPower: 0

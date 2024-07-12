@@ -10298,8 +10298,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: dc205a038f569944db9ff54d12ac1dab, type: 2}
-  weaponDatabase: {fileID: 0}
-  equipmentItemDatabase: {fileID: 0}
+  weaponDatabase: {fileID: 11400000, guid: d1a4072d63eb4114b8ff6a2f01855960, type: 2}
+  equipmentItemDatabase: {fileID: 11400000, guid: 2a415354f290a2a4c922fbd6dd095f1d, type: 2}
   artifactItemDatabase: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

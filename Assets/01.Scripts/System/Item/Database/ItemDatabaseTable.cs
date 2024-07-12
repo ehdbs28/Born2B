@@ -14,6 +14,12 @@ public class ItemDatabaseTable
 
     public ItemSO PickRandom()
     {
+        if(table.Count <= 0)
+        {
+            Debug.Log("table not created. add item");
+            return null;
+        }
+
         int index = GetIndexByWeight();
         return table[index].itemData.PickRandom();
     }

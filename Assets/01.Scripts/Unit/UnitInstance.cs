@@ -12,8 +12,7 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
     protected UnitFSMBase _unitFSMBase;
     protected UnitStatContainer _unitStatContainer;
     protected UnitWeaponController _weaponController;
-
-    public float currebtHp { get; protected set; }
+    protected UnitHealth _health;
 
     public Vector2Int Position => transform.position.GetVectorInt();
 
@@ -26,6 +25,7 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
         _unitStatContainer = GetComponent<UnitStatContainer>();
         _unitFSMBase = GetComponent<UnitFSMBase>();
         _weaponController = GetComponent<UnitWeaponController>();
+        _health = GetComponent<UnitHealth>();
 
     }
 
@@ -46,12 +46,11 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
     public bool Hit(CellObjectInstance attackObject, float damage, bool critical)
     {
 
-        Debug.Log(currebtHp);
         if (attackObject is UnitInstance) return false;
 
-        currebtHp -= critical ? 1 : 1;
+        _health.ReduceHp((int)damage);
 
-        if(currebtHp <= 0)
+        if(_health.CurrentHp <= 0)
         {
 
             Die();

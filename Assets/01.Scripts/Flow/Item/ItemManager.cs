@@ -26,7 +26,11 @@ public class ItemManager : MonoBehaviour
     {
         ItemSO[] items = new ItemSO[3];
         for(int i = 0; i < items.Length; ++i)
-            items[i] = itemDatabase.PickRandom();
+        {
+            do
+                items[i] = itemDatabase.PickRandom();
+            while (items[i] == null);
+        }
 
         inventory.AddItem(items[0]);
     }

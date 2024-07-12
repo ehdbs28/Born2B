@@ -69,8 +69,8 @@ public abstract class Weapon : MonoBehaviour
 
             if(cellObject.TryGetComponent<IHitable>(out IHitable ih))
             {
-                if (ih.Hit(owner, slotDamage, critical))
-                    KnockBackUnit(cellObject);
+                if (ih.Hit(owner, slotDamage, critical)) { }
+                    //KnockBackUnit(cellObject);
             }
         }
     }
@@ -116,8 +116,8 @@ public abstract class Weapon : MonoBehaviour
                 var closestCellObject = CellObjectManager.Instance.GetCellObjectInstance(closestCell.Value.unitKey);
                 if(closestCellObject != null)
                     move.Move(new List<Vector2> { closestCellObject.transform.position }, null);
+                    CellObjectManager.Instance.ChangePosition(owner.key, closestCellObject.GetData().position);
 
-                CellObjectManager.Instance.ChangePosition(owner.key, closestCellObject.GetData().position);
 
             }
         }

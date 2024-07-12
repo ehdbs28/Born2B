@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dba6e18f9cebba479a0ac5e9a16e587, type: 3}
-  m_Name: Portal_Stage
+  m_Script: {fileID: 11500000, guid: 9e023de13763e294c91b7bc31c4e1efc, type: 3}
+  m_Name: TestWeaponDB
   m_EditorClassIdentifier: 
-  ObjectType: 2
-  <cellObjectType>k__BackingField: 1
-  <animator>k__BackingField: {fileID: 0}
-  <sprite>k__BackingField: {fileID: 0}
+  items:
+  - itemData: {fileID: 11400000, guid: 306bba831957aaa47832c64640b519c5, type: 2}
+    weight: 1
