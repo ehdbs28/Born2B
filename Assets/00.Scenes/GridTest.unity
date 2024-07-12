@@ -10145,7 +10145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gridSettingData:
-    chapterData: {fileID: 11400000, guid: dadc0c33890c6fa4fbe26cf4afa4e2e0, type: 2}
     data:
       width: 0
       height: 0
@@ -10153,6 +10152,8 @@ MonoBehaviour:
     movementPivot: {fileID: 873850844}
     mask: {fileID: 1810748511}
     gridInput: {fileID: 11400000, guid: 5cfbf8fc11dce5747aa4ec20c8f7bc25, type: 2}
+  _chapters:
+  - {fileID: 11400000, guid: dadc0c33890c6fa4fbe26cf4afa4e2e0, type: 2}
 --- !u!114 &1924145202
 MonoBehaviour:
   m_ObjectHideFlags: 0
