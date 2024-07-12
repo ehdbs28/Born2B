@@ -9,5 +9,6 @@ public enum StatusType
     Poison = 1 << 3,
     Silence = 1 << 4,
     Drained = 1 << 5,
-    Berserk = 1 << 6
+    Berserk = 1 << 6,
+    HighschoolJeongmin = 1 << 7
 }

@@ -11,12 +11,19 @@ public class ItemDatabaseSO : IItemData
 
     private void OnEnable()
     {
+        Init();
+    }
+
+    public void Init(params ItemDatabaseSO[] databases)
+    {
+        for(int i = 0; i < databases.Length; ++i)
+            items.Add(new ItemDatabaseSlot() { itemData = databases[i] });
+
         database = new Dictionary<ItemRarity, ItemDatabaseTable>() {
             [ItemRarity.Common] = new ItemDatabaseTable(),
             [ItemRarity.Rare] = new ItemDatabaseTable(),
             [ItemRarity.Epic] = new ItemDatabaseTable()
         };
-
 
         RegisterItemData(database, 0);
 
@@ -38,10 +45,6 @@ public class ItemDatabaseSO : IItemData
 
     public override void RegisterItemData(Dictionary<ItemRarity, ItemDatabaseTable> database, float weight)
     {
-        for(int i = 0; i < items.Count; ++i)
-        {
-            
-        }
         items.ForEach(i => {            
             if (i == null || i.itemData == null)
                 return;
