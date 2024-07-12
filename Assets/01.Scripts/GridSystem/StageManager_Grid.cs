@@ -13,7 +13,6 @@ public partial class StageManager
     public class GridSettingData
     {
 
-        public ChapterDataSO chapterData;
         public GridData data;
         public float cellSize = 0.5f;
         public Transform movementPivot;
@@ -46,10 +45,10 @@ public partial class StageManager
         private JobHandle _handle;
         public NativeArray2D<Cell> GetGrid() => _grid;
 
-        public StageGrid(GridSettingData data) 
+        public StageGrid(GridSettingData data, ChapterDataSO chapterDataSO) 
         {
 
-            _currentChapterData = data.chapterData;
+            _currentChapterData = chapterDataSO;
             _data = data.data;
             _cellSize = data.cellSize;
             _movementPivot = data.movementPivot;

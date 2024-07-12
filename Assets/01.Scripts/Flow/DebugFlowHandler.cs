@@ -20,18 +20,6 @@ public class DebugFlowHandler : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-
-            FlowManager.Instance.InitCycle();
-
-        }
-
-    }
-
     private void GameStartHandler(object[] args)
     {
 
@@ -64,7 +52,7 @@ public class DebugFlowHandler : MonoBehaviour
         TurnManager.Instance.SetTurnData(TurnDataType.IsMovementCell, false);
         TurnManager.Instance.InitTurn();
         TurnManager.Instance.StartTurn();
-        StagingManager.Instance.LoadStage();
+        StageManager.Instance.NextStage();
         CellObjectManager.Instance.GetCellObjectInstance<PlayerInstance>().GetComponent<PlayerWeaponComponent>().Equip();
         FlowManager.Instance.NextCycle();
 

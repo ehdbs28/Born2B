@@ -14,30 +14,72 @@ public partial class StageManager : MonoSingleton<StageManager>
 
     [SerializeField] private GridSettingData _gridSettingData;
 
+    [SerializeField] private ChapterDataSO[] _chapters;
+
+    private int _currentChapterIdx = -1;
+    private int _currentStageIdx = -1;
+
     public StageGrid Grid { get; private set; }
 
-    private void Awake()
-    {
-
-        Grid = new(_gridSettingData);
-
-    }
 
     private void Update()
     {
 
-        Grid.Update();
+        Grid?.Update();
 
     }
+
     private void LateUpdate()
     {
 
-        Grid.LateUpdate();
+        Grid?.LateUpdate();
 
     }
 
+    public void NextStage()
+    {
+
+        _currentStageIdx++;
+        if(_currentStageIdx >= _chapters[_currentChapterIdx].stages.Count)
+        {
+
+            _currentStageIdx = -1;
+            if (NextChapter())
+                return;
+
+        }
+
+        Grid.SetUpGrid(_currentStageIdx);
+
+    }
+
+    // 끝나면 true
+    public bool NextChapter()
+    {
+
+        _currentChapterIdx++;
+
+        if(_currentChapterIdx >= _chapters.Length)
+        {
+
+            Debug.Log("끝나다");
+            return true;
+
+        }
 
 
+        if(Grid != null)
+        {
+
+            Grid.Dispose();
+
+        }
+
+        Grid = new(_gridSettingData, _chapters[_currentChapterIdx]);
+
+        return false;
+
+    }
   
     private void OnDestroy()
     {

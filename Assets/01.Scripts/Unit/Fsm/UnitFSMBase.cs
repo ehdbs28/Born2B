@@ -78,4 +78,8 @@ public abstract class UnitFSMBase : FSM_Controller<UnitStateType>
 
     }
 
+    internal void Init()
+    {
+    }
+
 }
