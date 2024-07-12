@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHitable
@@ -49,6 +50,7 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
         if (attackObject is UnitInstance) return false;
 
         currebtHp -= critical ? damage * 1.5f : damage;
+        Debug.Log(currebtHp);
 
         if(currebtHp <= 0)
         {
@@ -59,6 +61,7 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
 
         return true;
     }
+
     public void Attack()
     {
 
