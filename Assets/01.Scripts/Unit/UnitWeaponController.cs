@@ -6,6 +6,7 @@ public class UnitWeaponController : MonoBehaviour
 {
     
     protected virtual Weapon _controlWeapon { get; set; }
+    [field:SerializeField] public LayerMask mask { get; set; }
 
     public void Init(WeaponItemSO so, CellObjectInstance owner)
     {
@@ -18,7 +19,7 @@ public class UnitWeaponController : MonoBehaviour
     public void Attack(Vector2Int position, Vector2Int point)
     {
 
-        var param = default(AttackParams);
+        var param = new AttackParams(0, 0, 0, mask);
         _controlWeapon.Attack(param, position, point);
 
     }
