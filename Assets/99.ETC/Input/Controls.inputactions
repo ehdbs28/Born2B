@@ -1,0 +1,156 @@
+{
+    "name": "Controls",
+    "maps": [
+        {
+            "name": "Grid",
+            "id": "a6d2e1ce-5fd9-4778-8a40-0223183ccc76",
+            "actions": [
+                {
+                    "name": "ScreenPosition",
+                    "type": "Value",
+                    "id": "e6c5e02c-cc21-4d42-9399-522f7ca18806",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "GridStart",
+                    "type": "Button",
+                    "id": "337884c6-65d0-48b7-ad6d-fa4f1b71948c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GridEnd",
+                    "type": "Button",
+                    "id": "da5f23b0-8396-4f1f-b0b8-1b0c26b3cf06",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ad1075b9-9a87-459e-a401-6bbbe73080f6",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "ScreenPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1abebf00-0319-4f8f-bbd1-69bc1cb9dcde",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "GridStart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3a8d5b24-e48e-46f4-b46e-31debfe27db2",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "GridEnd",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Attack",
+            "id": "7a9f5211-f75e-4fad-9057-b30398897dd8",
+            "actions": [
+                {
+                    "name": "ScreenPosition",
+                    "type": "Value",
+                    "id": "6b819baf-eaca-46cb-83ac-cc7726d74ea8",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "d22df9cc-2b55-4887-80e4-85added79927",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "12113edd-3fc0-438d-a008-5f117d171a3d",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "ScreenPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5bdbfdc8-a89b-4728-bd1e-f20299227025",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "75b9b581-9b32-4bbe-bd4f-094a5dc3684c",
+            "actions": [
+                {
+                    "name": "ScreenPosition",
+                    "type": "Value",
+                    "id": "8bf4a65d-7881-4823-b805-313d3e10e38a",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "19495595-da65-4256-9ac5-3b1efae3de52",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "ScreenPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "PC",
+            "bindingGroup": "PC",
+            "devices": []
+        }
+    ]
+}
