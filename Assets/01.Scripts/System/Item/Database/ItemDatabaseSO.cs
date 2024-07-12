@@ -36,7 +36,7 @@ public class ItemDatabaseSO : IItemData
         return item;
     }
 
-    public override void RegisterItemData(Dictionary<ItemRarity, ItemDatabaseTable> database, int weight)
+    public override void RegisterItemData(Dictionary<ItemRarity, ItemDatabaseTable> database, float weight)
     {
         for(int i = 0; i < items.Count; ++i)
         {
