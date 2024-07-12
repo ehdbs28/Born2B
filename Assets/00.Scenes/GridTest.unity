@@ -10247,7 +10247,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1c9b5a06dcc3664c9c214bf0b52b468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flowCycle: 060000000700000008000000090000000a000000
+  _flowCycle:
+  - eventType: 6
+    onFlowEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventType: 7
+    onFlowEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventType: 8
+    onFlowEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventType: 9
+    onFlowEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventType: 10
+    onFlowEvent:
+      m_PersistentCalls:
+        m_Calls: []
   _targetLoopIdx: 2
 --- !u!114 &1924145205
 MonoBehaviour:
