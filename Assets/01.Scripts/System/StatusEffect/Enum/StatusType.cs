@@ -8,4 +8,6 @@ public enum StatusType
     Sturned = 4,
     Poison = 8,
     Silence = 16,
+    Drained = 32,
+    Berserk = 64
 }
