@@ -28,7 +28,7 @@ public partial class PlayerInstance : CellObjectInstance, IHitable
         if(health.CurrentHp <= 0)
             return false;
 
-        health.ReduceHp(-1);
+        health.ReduceHp(1);
         EventManager.Instance.PublishEvent(EventType.OnPlayerDamaged);
 
         if(health.CurrentHp <= 0)

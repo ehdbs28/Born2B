@@ -15,4 +15,4 @@ MonoBehaviour:
   stats:
   - StatType: 1
     Stat:
-      baseValue: 10
+      baseValue: 1

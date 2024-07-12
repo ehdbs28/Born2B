@@ -5,21 +5,6 @@ using UnityEngine;
 public abstract class InteractionableCellObject : CellObjectInstance
 {
 
-    protected Collider2D _collider;
-
-    protected virtual void Awake()
-    {
-
-        _collider = GetComponent<Collider2D>();
-
-    }
-
-    protected virtual void Update()
-    {
-
-        _collider.enabled = TurnManager.Instance.GetTurnData<bool>(TurnDataType.IsMovementCell);
-
-    }
 
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {

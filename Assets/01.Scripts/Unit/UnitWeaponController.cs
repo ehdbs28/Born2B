@@ -31,7 +31,6 @@ public class UnitWeaponController : MonoBehaviour
     {
 
         var objs = Physics2D.OverlapCircleAll(position, 100, mask);
-        Debug.Log(objs.Length);
         Vector2 target = position;
         var min = float.MaxValue;
 

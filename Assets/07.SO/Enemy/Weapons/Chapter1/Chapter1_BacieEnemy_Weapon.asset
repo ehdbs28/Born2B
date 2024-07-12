@@ -17,6 +17,7 @@ MonoBehaviour:
   ItemName: 
   ItemDescription: 
   WeaponPrefab: {fileID: 3040796631253885440, guid: 8b0730675de1f2b46b77c346091af798, type: 3}
+  Evolutions: {fileID: 0}
   EffectedStatusType: 0
   EffectedTurnCount: 0
   KnockBackPower: 0

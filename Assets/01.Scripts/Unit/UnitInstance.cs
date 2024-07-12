@@ -9,7 +9,6 @@ using UnityEngine;
 public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHitable
 {
     [field: SerializeField] public List<int2> moveRole { get; set; }
-    protected Collider2D _collider;
     protected UnitFSMBase _unitFSMBase;
     protected UnitStatContainer _unitStatContainer;
     protected UnitWeaponController _weaponController;
@@ -47,10 +46,10 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
     public bool Hit(CellObjectInstance attackObject, float damage, bool critical)
     {
 
+        Debug.Log(currebtHp);
         if (attackObject is UnitInstance) return false;
 
-        currebtHp -= critical ? damage * 1.5f : damage;
-        Debug.Log(currebtHp);
+        currebtHp -= critical ? 1 : 1;
 
         if(currebtHp <= 0)
         {
