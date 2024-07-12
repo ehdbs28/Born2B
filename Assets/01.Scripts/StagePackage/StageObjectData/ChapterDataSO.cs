@@ -13,6 +13,7 @@ public class ChapterDataSO : ScriptableObject
     public List<StageObjectSlot> stageObjectSlotList = new();
     public List<StageDataSO> stages;
     private Dictionary<string, (StageObjectType, StageObjectSO)> _nameToObjectDataDic = new();
+    public string[] chapterName = new string[2];
 
     private void OnEnable()
     {
