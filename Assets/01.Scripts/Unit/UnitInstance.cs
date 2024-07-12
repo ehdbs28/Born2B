@@ -38,9 +38,17 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
     public bool Hit(CellObjectInstance attackObject, float damage, bool critical)
     {
 
-        if (attackObject is UnitInstance) return true;
+        if (attackObject is UnitInstance) return false;
 
-        Die();
+        currebtHp -= critical ? damage * 1.5f : damage;
+
+        if(currebtHp <= 0)
+        {
+
+            Die();
+
+        }
+
         return true;
     }
     public void Attack()
