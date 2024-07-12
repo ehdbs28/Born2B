@@ -9,13 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf133f24bc7618040b22a12707cb21af, type: 3}
+  m_Script: {fileID: 11500000, guid: d31e4e9c506c93d4981204f572c1c98e, type: 3}
   m_Name: Crossbow
   m_EditorClassIdentifier: 
   Rarity: 1
   ItemIcon: {fileID: 0}
   ItemName: "\uC800\uACA9\uCD1D"
+  ItemDescription: 
   WeaponPrefab: {fileID: 0}
+  Evolutions: {fileID: 0}
   EffectedStatusType: 0
   EffectedTurnCount: 0
   KnockBackPower: 0
@@ -49,5 +51,3 @@ MonoBehaviour:
     index: 3
     size: 1
     theta: 100
-  inventory: {fileID: 11400000, guid: dc205a038f569944db9ff54d12ac1dab, type: 2}
-  evolutions: {fileID: 11400000, guid: 83c5d442ed7c3f04080e79b273371aa7, type: 2}
