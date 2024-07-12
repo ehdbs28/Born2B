@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "SO/Item/HealingItem")]
+[CreateAssetMenu(menuName = "SO/Item/Artifact/HealingItem")]
 public class HealingItemSO : ArtifactItemSO
 {
     protected override ArtifactType artifactType => ArtifactType.UseImmediately;

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "SO/Item/GrantStatusEffectItem")]
+[CreateAssetMenu(menuName = "SO/Item/Artifact/GrantStatusEffectItem")]
 public class GrantStatusEffectItemSO : ArtifactItemSO
 {
     protected override ArtifactType artifactType => ArtifactType.Usable;
@@ -10,16 +10,9 @@ public class GrantStatusEffectItemSO : ArtifactItemSO
     
     public override void UseArtifact(params object[] args)
     {
-        if (!TryParseHandler(OwnerHandler, out IGrantStatusEffectItemHandler grantStatusEffectItemHandler))
-        {
+        if (!TryParseHandler(OwnerHandler, out IWeaponArtifactItemHandler weaponItemHandler))
             return;
-        }
         
-        statusEffects.ForEach(grantStatusEffectItemHandler.WeaponComponent.AddDisposableStatusEffect);
+        statusEffects.ForEach(weaponItemHandler.Weapon.AddDisposableStatusEffect);
     }
-}
-
-public interface IGrantStatusEffectItemHandler : IItemHandler
-{
-    public Weapon WeaponComponent { get; }
 }
