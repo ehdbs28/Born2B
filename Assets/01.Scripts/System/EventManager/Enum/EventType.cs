@@ -15,4 +15,5 @@ public enum EventType
     OnBattleStart,
     OnBattleFinish,
 
+    OnUnitDamaged,
 }

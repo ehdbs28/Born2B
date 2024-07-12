@@ -14,10 +14,10 @@ public class EquipmentItemSO : ItemSO
     /// </summary>
     public override void Execute(IItemHandler handler)
     {
-        if(TryParseHandler(handler, out IEquipmentItemHandler equipmentHandler) == false)
+        if(TryParseHandler(handler, out IStatModifierItemHandler statModifierHandler) == false)
             return;
 
-        AddModifier(equipmentHandler.Stat);
+        AddModifier(statModifierHandler.Stat);
     }
 
     /// <summary>
@@ -25,28 +25,19 @@ public class EquipmentItemSO : ItemSO
     /// </summary>
     public override void Unexecute(IItemHandler handler)
     {
-        if(TryParseHandler(handler, out IEquipmentItemHandler equipmentHandler) == false)
+        if(TryParseHandler(handler, out IStatModifierItemHandler statModifierHandler) == false)
             return;
 
-        RemoveModifier(equipmentHandler.Stat);
+        RemoveModifier(statModifierHandler.Stat);
     }
 
     private void AddModifier(StatSO stat)
     {
-        modifiers.ForEach(i => {
-            stat.AddModifier(i);
-        });
+        modifiers.ForEach(stat.AddModifier);
     }
 
     private void RemoveModifier(StatSO stat)
     {
-        modifiers.ForEach(i => {
-            stat.RemoveModifier(i);
-        });
+        modifiers.ForEach(stat.RemoveModifier);
     }
-}
-
-public interface IEquipmentItemHandler : IItemHandler
-{
-    public StatSO Stat { get; }
 }
