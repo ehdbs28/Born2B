@@ -54,10 +54,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DelayTime: 0.5
-    - _HighlightOpacity: 0.5
-    - _HighlightSpeed: 0.5
-    - _HighlightWidth: 0.2
+    - _DelayTime: 7
+    - _HighlightOpacity: 1
+    - _HighlightSpeed: 3
+    - _HighlightWidth: 0.3
     m_Colors:
-    - _HighlightColor: {r: 0, g: 0.15004346, b: 1, a: 1}
+    - _HighlightColor: {r: 0.99850166, g: 1, b: 0.8726415, a: 1}
   m_BuildTextureStacks: []
