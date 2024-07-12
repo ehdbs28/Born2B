@@ -52,7 +52,7 @@ public class PlayerAttackComponent : PlayerComponent
     private void HandleAttack()
     {
         Vector2Int inputPosition = mainCamera.ScreenToWorldPoint(input.ScreenPosition).GetVectorInt();
-        AttackParams attackParams = new AttackParams(attackStat, criticalChanceStat, criticalDamageStat);
+        AttackParams attackParams = new AttackParams(attackStat, criticalChanceStat, criticalDamageStat, 0);
         weapon.Attack(inputPosition, attackParams);
         
         // 아티팩트 등으로 공격 회수가 늘어나게 되면 이 부분 수정해야됨

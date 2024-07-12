@@ -26,7 +26,7 @@ public class DefaultUnitAttackState : UnitFSMStateBase
         var dir = player.transform.position - transform.position;
         var ang = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         _unitWeapon.RotateAttackRange(ang);
-        AttackParams attackParams = new AttackParams(_stats[StatType.Attack], _stats[StatType.CriticalChance], _stats[StatType.CriticalDamage]);
+        AttackParams attackParams = new AttackParams(_stats[StatType.Attack], _stats[StatType.CriticalChance], _stats[StatType.CriticalDamage], 0);
         _unitWeapon.Attack(attackParams, vec, transform.position.GetVectorInt());
     }
 
