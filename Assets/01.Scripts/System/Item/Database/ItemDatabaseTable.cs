@@ -5,7 +5,7 @@ using UnityEngine;
 public class ItemDatabaseTable
 {
     public List<ItemDatabaseSlot> table = new List<ItemDatabaseSlot>();
-    private int[] itemWeights;
+    private float[] itemWeights;
 
     public void Init()
     {

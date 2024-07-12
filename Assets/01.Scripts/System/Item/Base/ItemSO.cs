@@ -21,7 +21,7 @@ public abstract class ItemSO : IItemData
 
     public override ItemSO PickRandom() => this;
 
-    public override void RegisterItemData(Dictionary<ItemRarity, ItemDatabaseTable> database, int weight)
+    public override void RegisterItemData(Dictionary<ItemRarity, ItemDatabaseTable> database, float weight)
     {
         ItemDatabaseSlot slot = new ItemDatabaseSlot() { itemData = this, weight = weight };
         if(database[Rarity].table.Contains(slot))

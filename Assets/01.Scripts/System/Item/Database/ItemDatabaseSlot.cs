@@ -5,7 +5,7 @@ using UnityEngine;
 public class ItemDatabaseSlot : IEquatable<ItemDatabaseSlot>
 {
     public IItemData itemData;
-    [Range(1, 10)] public int weight;
+    [Range(0, 10)] public float weight;
 
     public bool Equals(ItemDatabaseSlot other)
     {
