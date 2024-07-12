@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d31e4e9c506c93d4981204f572c1c98e, type: 3}
+  m_Name: TestHitscanWeapon
+  m_EditorClassIdentifier: 
+  Rarity: 1
+  ItemIcon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  ItemName: "\uD53C\uC2A4\uD1A8"
+  WeaponPrefab: {fileID: 6342019859783992654, guid: 87dd80e698a199245b028934a7f2c0c5, type: 3}
+  EffectedStatusType: 0
+  EffectedTurnCount: 0
+  Damage: 1
+  Range:
+    rangesList:
+    - Ranges:
+      - Position: {x: 0, y: 2}
+        Theta: 100
+      - Position: {x: -1, y: 1}
+        Theta: 100
+      - Position: {x: -2, y: 0}
+        Theta: 100
+      - Position: {x: 0, y: 0}
+        Theta: 100
+    - Ranges:
+      - Position: {x: -1, y: 1}
+        Theta: 100
+      - Position: {x: 0, y: 1}
+        Theta: 100
+      - Position: {x: 1, y: 1}
+        Theta: 100
+      - Position: {x: 0, y: 0}
+        Theta: 100
+    - Ranges:
+      - Position: {x: 0, y: 2}
+        Theta: 100
+      - Position: {x: 1, y: 1}
+        Theta: 100
+      - Position: {x: 0, y: 0}
+        Theta: 100
+      - Position: {x: 2, y: 0}
+        Theta: 100
+    - Ranges:
+      - Position: {x: 1, y: 1}
+        Theta: 100
+      - Position: {x: 0, y: 0}
+        Theta: 100
+      - Position: {x: 1, y: 0}
+        Theta: 100
+      - Position: {x: 1, y: -1}
+        Theta: 100
+    - Ranges:
+      - Position: {x: 0, y: 0}
+        Theta: 100
+      - Position: {x: 2, y: 0}
+        Theta: 100
+      - Position: {x: 1, y: -1}
+        Theta: 100
+      - Position: {x: 0, y: -2}
+        Theta: 100
+    - Ranges:
+      - Position: {x: 0, y: 0}
+        Theta: 100
+      - Position: {x: -1, y: -1}
+        Theta: 100
+      - Position: {x: 0, y: -1}
+        Theta: 100
+      - Position: {x: 1, y: -1}
+        Theta: 100
+    - Ranges:
+      - Position: {x: -2, y: 0}
+        Theta: 100
+      - Position: {x: 0, y: 0}
+        Theta: 100
+      - Position: {x: -1, y: -1}
+        Theta: 100
+      - Position: {x: 0, y: -2}
+        Theta: 100
+    - Ranges:
+      - Position: {x: -1, y: 1}
+        Theta: 100
+      - Position: {x: -1, y: 0}
+        Theta: 100
+      - Position: {x: 0, y: 0}
+        Theta: 100
+      - Position: {x: -1, y: -1}
+        Theta: 100
+    index: 6
+    size: 5
+    theta: 100

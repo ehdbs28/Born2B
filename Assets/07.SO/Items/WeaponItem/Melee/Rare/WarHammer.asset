@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf133f24bc7618040b22a12707cb21af, type: 3}
+  m_Name: WarHammer
+  m_EditorClassIdentifier: 
+  Rarity: 2
+  ItemIcon: {fileID: 0}
+  ItemName: "\uC6CC \uD574\uBA38"
+  WeaponPrefab: {fileID: 0}
+  EffectedStatusType: 4
+  EffectedTurnCount: 1
+  KnockBackPower: 0
+  Damage: 45
+  Range:
+    rangesList:
+    - Ranges:
+      - Position: {x: -2, y: 2}
+        Theta: 100
+      - Position: {x: -1, y: 2}
+        Theta: 100
+      - Position: {x: 0, y: 2}
+        Theta: 100
+      - Position: {x: -2, y: 1}
+        Theta: 100
+      - Position: {x: -2, y: 0}
+        Theta: 100
+    - Ranges:
+      - Position: {x: -2, y: 2}
+        Theta: 100
+      - Position: {x: -1, y: 2}
+        Theta: 100
+      - Position: {x: 0, y: 2}
+        Theta: 100
+      - Position: {x: 1, y: 2}
+        Theta: 100
+      - Position: {x: 2, y: 2}
+        Theta: 100
+    - Ranges:
+      - Position: {x: 0, y: 2}
+        Theta: 100
+      - Position: {x: 1, y: 2}
+        Theta: 100
+      - Position: {x: 2, y: 2}
+        Theta: 100
+      - Position: {x: 2, y: 1}
+        Theta: 100
+      - Position: {x: 2, y: 0}
+        Theta: 100
+    - Ranges:
+      - Position: {x: 2, y: 2}
+        Theta: 100
+      - Position: {x: 2, y: 1}
+        Theta: 100
+      - Position: {x: 2, y: 0}
+        Theta: 100
+      - Position: {x: 2, y: -1}
+        Theta: 100
+      - Position: {x: 2, y: -2}
+        Theta: 100
+    - Ranges:
+      - Position: {x: 2, y: 0}
+        Theta: 100
+      - Position: {x: 2, y: -1}
+        Theta: 100
+      - Position: {x: 0, y: -2}
+        Theta: 100
+      - Position: {x: 1, y: -2}
+        Theta: 100
+      - Position: {x: 2, y: -2}
+        Theta: 100
+    - Ranges:
+      - Position: {x: 0, y: -1}
+        Theta: 100
+      - Position: {x: 0, y: -2}
+        Theta: 100
+      - Position: {x: 0, y: -3}
+        Theta: 100
+    - Ranges:
+      - Position: {x: -2, y: 0}
+        Theta: 100
+      - Position: {x: -2, y: -1}
+        Theta: 100
+      - Position: {x: -2, y: -2}
+        Theta: 100
+      - Position: {x: -1, y: -2}
+        Theta: 100
+      - Position: {x: 0, y: -2}
+        Theta: 100
+    - Ranges:
+      - Position: {x: -2, y: 2}
+        Theta: 100
+      - Position: {x: -2, y: 1}
+        Theta: 100
+      - Position: {x: -2, y: 0}
+        Theta: 100
+      - Position: {x: -2, y: -1}
+        Theta: 100
+      - Position: {x: -2, y: -2}
+        Theta: 100
+    index: 1
+    size: 5
+    theta: 100
+  inventory: {fileID: 11400000, guid: dc205a038f569944db9ff54d12ac1dab, type: 2}
+  evolutions: {fileID: 11400000, guid: 25d821898c333144da57e2449005c58a, type: 2}
