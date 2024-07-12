@@ -9,16 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bbf648fae7d23243af8182db0acb2f3, type: 3}
-  m_Name: Wanted
+  m_Script: {fileID: 11500000, guid: 74e90a5a7dee86b4e9790410142eee9b, type: 3}
+  m_Name: BoneNecklace
   m_EditorClassIdentifier: 
-  Rarity: 1
+  Rarity: 2
   ItemIcon: {fileID: 0}
-  ItemName: "\uD604\uC0C1\uC218\uBC30"
+  ItemName: "\uBF08 \uBAA9\uAC78\uC774"
   ItemDescription: 
-  condition: 1
-  compareValue: 0.79
+  activeChance: 1
+  turnCount: 4
   modifiers:
   - StatType: 3
     ModifierType: 1
-    Value: 0.1
+    Value: 0.25
+  - StatType: 2
+    ModifierType: 1
+    Value: 0.25
+  - StatType: 5
+    ModifierType: 1
+    Value: 0.25
