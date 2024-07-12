@@ -11,6 +11,7 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
     protected Collider2D _collider;
     protected UnitFSMBase _unitFSMBase;
     protected UnitStatContainer _unitStatContainer;
+    protected UnitWeaponController _weaponController;
 
     public float currebtHp { get; protected set; }
 
@@ -22,17 +23,13 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
         base.Awake();
 
         _collider = GetComponent<Collider2D>();
-        _unitFSMBase = GetComponent<UnitFSMBase>();
         _unitStatContainer = GetComponent<UnitStatContainer>();
+        _unitFSMBase = GetComponent<UnitFSMBase>();
+        _weaponController = GetComponent<UnitWeaponController>();
 
     }
 
-    protected virtual void Update()
-    {
 
-        _collider.enabled = TurnManager.Instance.GetTurnData<bool>(TurnDataType.IsMovementCell);
-
-    }
 
     public override void Init(CellObjectSO so)
     {
@@ -40,6 +37,8 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
         base.Init(so);
         var casted = so as UnitDataSO;
         _unitStatContainer.Init(casted.stat);
+        _weaponController.Init(casted.weaponItem, this);
+
         moveRole = casted.movementRole;
 
     }

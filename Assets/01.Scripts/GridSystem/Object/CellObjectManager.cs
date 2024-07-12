@@ -18,6 +18,7 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
     private Dictionary<Guid, CellObjectSO> _objectContainer = new();
     private Dictionary<Guid, CellObjectInstance> _instanceContainer = new();
     private Dictionary<int2, CellObjectSO> _notMoveObjectContainer = new();
+    private Collider2D _collider;
 
     private void Awake()
     {
@@ -29,8 +30,18 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
 
         }
 
+        _collider = GetComponent<Collider2D>();
+
     }
 
+    protected virtual void Update()
+    {
+
+        if(_collider != null)
+            _collider.enabled 
+                = !TurnManager.Instance.GetTurnData<bool>(TurnDataType.IsPreview);
+
+    }
     public void InitContainer()
     {
 
@@ -440,6 +451,7 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
 
     }
 
+    [Serializable]
     public class CellObjectByChapter
     {
 

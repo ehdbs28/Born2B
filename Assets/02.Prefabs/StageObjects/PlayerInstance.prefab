@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 3525451366787352817}
   - component: {fileID: 9106779308442671473}
   - component: {fileID: 5657000114299019678}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerInstance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponContainer: {fileID: 7803638571080050817}
-  weaponData: {fileID: 11400000, guid: 1bfc60a9f6dbc544cbd1c6bda195c87b, type: 2}
+  weaponData: {fileID: 11400000, guid: dd3050857362d954c805c802a593181f, type: 2}
   tilePrefab: {fileID: 4804773342564850490, guid: 67ff94cd7fbba0d4a9fc09a962c3852e, type: 3}
 --- !u!114 &6460470384840962881
 MonoBehaviour:

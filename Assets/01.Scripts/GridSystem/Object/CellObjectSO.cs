@@ -17,6 +17,7 @@ public class CellObjectSO : StageObjectSO, ICloneable
 
     [field:SerializeField] public CellObjectType cellObjectType { get; set; }
     [field:SerializeField] public RuntimeAnimatorController animator { get; set; }
+    [field:SerializeField] public Sprite sprite { get; set; }
 
     public Guid key { get; set; }
     public int2 position { get; set; }

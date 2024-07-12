@@ -5,7 +5,6 @@ public partial class PlayerInstance : CellObjectInstance, IHitable
 {
 
     private bool _areadyDestroyed;
-    protected Collider2D _collider;
 
     public Vector2Int Position => transform.position.GetVectorInt();
 
@@ -17,12 +16,6 @@ public partial class PlayerInstance : CellObjectInstance, IHitable
         InitPlayerComponents();
     }
 
-    protected virtual void Update()
-    {
-
-        _collider.enabled = TurnManager.Instance.GetTurnData<bool>(TurnDataType.IsMovementCell);
-
-    }
 
     protected virtual void OnDestroy()
     {
