@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31e4e9c506c93d4981204f572c1c98e, type: 3}
   m_Name: FrozenSpear
   m_EditorClassIdentifier: 
-  Rarity: 0
+  Rarity: 2
   ItemIcon: {fileID: 0}
   ItemName: "\uD639\uD55C\uC758 \uCC3D"
   ItemDescription: 

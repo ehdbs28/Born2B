@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31e4e9c506c93d4981204f572c1c98e, type: 3}
   m_Name: Halberd
   m_EditorClassIdentifier: 
-  Rarity: 0
+  Rarity: 1
   ItemIcon: {fileID: 0}
-  ItemName: 
+  ItemName: "\uD560\uBC84\uB4DC"
   ItemDescription: 
   WeaponPrefab: {fileID: 0}
   Evolutions: {fileID: 0}

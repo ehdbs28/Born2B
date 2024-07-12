@@ -66,7 +66,7 @@ public class CellVisual : VisualElement
             }
         }
 
-        if (evt.button == 2 && textureIdx == 3)
+        if (evt.button == 2 && current == "PT")
         {
             if (stageEditor.onPortalEdit)
             {

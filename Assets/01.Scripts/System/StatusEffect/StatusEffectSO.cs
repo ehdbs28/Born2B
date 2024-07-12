@@ -65,6 +65,7 @@ public class StatusEffectSO : ScriptableObject
             }
 
             _effecteHandlers[statusType].HandleUpdate();
+            Debug.Log($"{statusType} Status Effect Handled");
             --_remainTurnDictionary[statusType];
         }
     }

@@ -21,6 +21,7 @@ public class ChapterDataSO : ScriptableObject
 
         foreach(var slot in stageObjectSlotList)
         {
+
             _nameToObjectDataDic.Add(slot.objectName, (slot.objectType, slot.objectData));
         }
     }
