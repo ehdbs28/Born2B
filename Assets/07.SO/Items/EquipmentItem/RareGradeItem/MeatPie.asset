@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29c063e44274641458d1ea74d2dfa532, type: 3}
-  m_Name: RedCrystal
+  m_Name: MeatPie
   m_EditorClassIdentifier: 
   Rarity: 2
-  ItemIcon: {fileID: 0}
-  ItemName: "\uBD89\uC740 \uD06C\uB9AC\uC2A4\uD0C8"
+  ItemIcon: {fileID: 761079030, guid: c75e6b1fd155a52418fbc10bffd218e7, type: 3}
+  ItemName: "\uBBF8\uD2B8\uD30C\uC774"
+  ItemDescription: 
   modifiers:
-  - StatType: 1
-    ModifierType: 1
-    Value: 2
   - StatType: 3
     ModifierType: 2
+    Value: 30
+  - StatType: 2
+    ModifierType: 1
     Value: 5

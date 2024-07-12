@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29c063e44274641458d1ea74d2dfa532, type: 3}
-  m_Name: GemOfPower
+  m_Name: Brightlantern
   m_EditorClassIdentifier: 
-  Rarity: 2
-  ItemIcon: {fileID: 0}
-  ItemName: "\uD798\uC758 \uBCF4\uC625"
+  Rarity: 3
+  ItemIcon: {fileID: -424658375, guid: c75e6b1fd155a52418fbc10bffd218e7, type: 3}
+  ItemName: "\uBC1D\uC740 \uB4F1\uBD88"
+  ItemDescription: 
   modifiers:
+  - StatType: 3
+    ModifierType: 3
+    Value: 60
   - StatType: 2
     ModifierType: 2
-    Value: 10
-  - StatType: 3
-    ModifierType: 2
-    Value: 10
+    Value: 5

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Feather
   m_EditorClassIdentifier: 
   Rarity: 2
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: 1211255725, guid: 18eb8eac2bf48f346bf800ae92f9c0fd, type: 3}
   ItemName: "\uAE43\uD138"
+  ItemDescription: 
   modifiers:
   - StatType: 4
     ModifierType: 1

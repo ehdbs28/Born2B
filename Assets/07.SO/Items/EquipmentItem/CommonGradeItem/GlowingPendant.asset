@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: GlowingPendant
   m_EditorClassIdentifier: 
   Rarity: 1
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: -1199489069, guid: c75e6b1fd155a52418fbc10bffd218e7, type: 3}
   ItemName: "\uBE5B\uB098\uB294 \uD39C\uB358\uD2B8"
+  ItemDescription: 
   modifiers:
   - StatType: 1
     ModifierType: 1
