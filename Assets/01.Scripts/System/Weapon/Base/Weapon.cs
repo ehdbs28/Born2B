@@ -55,6 +55,11 @@ public abstract class Weapon : MonoBehaviour
             CellObjectInstance cellObject = CellObjectManager.Instance.GetCellObjectInstance(cell.Value.unitKey);
             if(cellObject == null)
                 continue;
+
+            int enemyLayer = 1 << cellObject.gameObject.layer;
+            int compare = attackParams.targetLayer & enemyLayer;
+            if(compare < 1)
+                continue;
             
             if(cellObject.TryGetComponent<StatusController>(out StatusController sc))
                 sc.AddStatus(WeaponData.EffectedStatusType, WeaponData.EffectedTurnCount);

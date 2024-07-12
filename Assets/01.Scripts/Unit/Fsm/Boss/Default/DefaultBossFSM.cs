@@ -39,7 +39,7 @@ public class DefaultBossFSM : DefaultUnitFSM
 
             wep.RotateAttackRange(ang);
 
-            var param = new AttackParams(_stats[StatType.Attack], _stats[StatType.CriticalChance], _stats[StatType.CriticalDamage]);
+            var param = new AttackParams(_stats[StatType.Attack], _stats[StatType.CriticalChance], _stats[StatType.CriticalDamage], 0);
 
             wep.Attack(param, vec, transform.position.GetVectorInt());
 
@@ -74,7 +74,7 @@ public class DefaultBossFSM : DefaultUnitFSM
             var ang = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
             _melee.RotateAttackRange(ang);
-            var param = new AttackParams(_stats[StatType.Attack], _stats[StatType.CriticalChance], _stats[StatType.CriticalDamage]);
+            var param = new AttackParams(_stats[StatType.Attack], _stats[StatType.CriticalChance], _stats[StatType.CriticalDamage], 0);
             _melee.Attack(param, vec, transform.position.GetVectorInt());
 
         }
