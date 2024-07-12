@@ -20,5 +20,5 @@ MonoBehaviour:
   compareValue: 0.79
   modifiers:
   - StatType: 3
-    ModifierType: 1
+    ModifierType: 2
     Value: 0.1

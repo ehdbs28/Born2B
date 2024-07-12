@@ -15,6 +15,8 @@ public class HealthConditionalStatModifierItemSO : AttributedCallByEventItemSO
     [SerializeField, Range(0f, 1f)] float compareValue;
     [SerializeField] List<StatModifierSlot> modifiers = new List<StatModifierSlot>();
 
+    protected override EventType CallingEventType => EventType.OnTurnEnded;
+
     private bool actived = false;
 
     public override void Execute(IItemHandler handler)
