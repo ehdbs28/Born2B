@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "SO/Item/ItemDatabase", order = -1)]
-public class ItemDatabaseSO : ScriptableObject
+public class ItemDatabaseSO : IItemData
 {
     [SerializeField] List<ItemDatabaseSlot> items = new List<ItemDatabaseSlot>();
 
@@ -17,17 +17,14 @@ public class ItemDatabaseSO : ScriptableObject
             [ItemRarity.Epic] = new ItemDatabaseTable()
         };
 
-        items.ForEach(i => {
-            if (i == null || i.itemData == null)
-                return;
-            database[i.itemData.Rarity].table.Add(i);
-        });
+
+        RegisterItemData(database, 0);
 
         foreach(ItemDatabaseTable table in database.Values)
             table.Init();
     }
 
-    public ItemSO PickRandom()
+    public override ItemSO PickRandom()
     {
         ItemRarity rarity = (ItemRarity)Random.Range(((int)ItemRarity.None) + 1, (int)ItemRarity.END);
         return PickRandom(rarity);
@@ -37,5 +34,25 @@ public class ItemDatabaseSO : ScriptableObject
     {
         ItemSO item = this[rarity].PickRandom();
         return item;
+    }
+
+    public override void RegisterItemData(Dictionary<ItemRarity, ItemDatabaseTable> database, int weight)
+    {
+        for(int i = 0; i < items.Count; ++i)
+        {
+            
+        }
+        items.ForEach(i => {            
+            if (i == null || i.itemData == null)
+                return;
+
+            if(i.itemData == this)
+            {
+                Debug.LogError("Attempting to refer to its self. This may cause a stack overflow.");
+                return;
+            }
+            
+            i.itemData.RegisterItemData(database, i.weight);
+        });
     }
 }

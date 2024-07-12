@@ -15,7 +15,7 @@ public class ItemDatabaseTable
     public ItemSO PickRandom()
     {
         int index = GetIndexByWeight();
-        return table[index].itemData;
+        return table[index].itemData.PickRandom();
     }
 
     private int GetIndexByWeight()
