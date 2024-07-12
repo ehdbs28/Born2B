@@ -7,6 +7,12 @@ public class CellInstance : MonoBehaviour
 {
     
     public Cell CellData { get; set; }
+    public void Init()
+    {
+
+
+
+    }
     private void InitCellData()
     {
 

@@ -34,6 +34,15 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
 
     }
 
+    public override void Init(CellObjectSO so)
+    {
+        
+        base.Init(so);
+        var casted = so as UnitDataSO;
+        _unitStatContainer.Init(casted.stat);
+        moveRole = casted.movementRole;
+
+    }
 
     public bool Hit(CellObjectInstance attackObject, float damage, bool critical)
     {

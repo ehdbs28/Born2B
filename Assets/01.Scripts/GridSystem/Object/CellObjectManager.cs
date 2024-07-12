@@ -12,9 +12,24 @@ using UnityEngine;
 public class CellObjectManager : MonoSingleton<CellObjectManager>
 {
 
+    [SerializeField] private List<CellObjectByChapter> _prefabs;
+
+    private Dictionary<StageObjectType, GameObject> _prefabContainer = new();
     private Dictionary<Guid, CellObjectSO> _objectContainer = new();
     private Dictionary<Guid, CellObjectInstance> _instanceContainer = new();
     private Dictionary<int2, CellObjectSO> _notMoveObjectContainer = new();
+
+    private void Awake()
+    {
+        
+        foreach(var item in _prefabs)
+        {
+
+            _prefabContainer.Add(item.objType, item.obj);
+
+        }
+
+    }
 
     public void InitContainer()
     {
@@ -119,13 +134,12 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
 
         }
 
-        var obj = Instantiate(data.cellObjectInstancePrefab);
+        var obj = Instantiate(_prefabContainer[data.ObjectType]);
 
         if(obj.TryGetComponent<CellObjectInstance>(out var compo))
         {
 
-            compo.dataKey = data.key;
-            compo.key = Guid.NewGuid();
+            compo.Init(data);
             _instanceContainer.Add(compo.key, compo);
 
             return compo;
@@ -423,6 +437,14 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
         var ls = _instanceContainer.Values.Where(x => x is T).Cast<T>().ToList();
 
         return ls;
+
+    }
+
+    public class CellObjectByChapter
+    {
+
+        public StageObjectType objType;
+        public GameObject obj;
 
     }
 

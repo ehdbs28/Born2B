@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class CellObjectInstance : MonoBehaviour, ICloneable
 {
-    
+
+    protected Animator _animator;
+
     public Guid key { get; set; }
     public Guid dataKey { get; set; }
     public bool isClone { get; set; }
@@ -13,6 +15,16 @@ public class CellObjectInstance : MonoBehaviour, ICloneable
     {
         EventManager.Instance.RegisterEvent(EventType.OnTurnEnded, HandleTurnEnded);
         EventManager.Instance.RegisterEvent(EventType.OnTurnChanged, HandleTurnChanged);
+    }
+
+    public virtual void Init(CellObjectSO so)
+    {
+
+        key = Guid.NewGuid();
+        dataKey = so.key;
+        if(_animator != null)
+            _animator.runtimeAnimatorController = so.animator;
+
     }
 
     public CellObjectSO GetData()
@@ -37,7 +49,7 @@ public class CellObjectInstance : MonoBehaviour, ICloneable
 
         var obj = Instantiate(this);
         obj.key = Guid.NewGuid();
-        obj.dataKey =dataKey;
+        obj.dataKey = dataKey;
         obj.isClone = true;
 
         return obj;

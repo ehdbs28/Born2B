@@ -13,6 +13,7 @@ public partial class StageManager : MonoSingleton<StageManager>
 {
 
     [SerializeField] private GridSettingData _gridSettingData;
+
     [SerializeField] private ChapterDataSO[] _chapters;
 
     private int _currentChapterIdx = -1;

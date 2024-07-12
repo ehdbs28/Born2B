@@ -5,11 +5,12 @@ using UnityEngine;
 public class UnitStatContainer : MonoBehaviour
 {
 
-    [SerializeField] private StatSO _stat;
+    private StatSO _stat;
 
-    private void Awake()
+    public void Init(StatSO so)
     {
         
+        _stat = so;
         _stat = Instantiate(_stat);
 
     }
