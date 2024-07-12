@@ -176,10 +176,14 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
         foreach(var item in _instanceContainer.Values)
         {
 
-            if(match(item as T))
+            var obj = item as T;
+
+            if (obj == null) continue;
+
+            if(match(obj))
             {
 
-                v.Add(item as T);
+                v.Add(obj);
 
             }
 
