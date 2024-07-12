@@ -11,11 +11,9 @@ public struct Cell : IEquatable<Cell>, ICloneable
         this.position = position;
         guid = Guid.NewGuid();
         unitKey = Guid.Empty;
-        color = UnityEngine.Random.ColorHSV();
 
     }
 
-    public Color color;
     public int2 position;
     public Guid guid;
     public Guid unitKey;
@@ -32,7 +30,6 @@ public struct Cell : IEquatable<Cell>, ICloneable
 
         var obj = new Cell();
         obj.guid = Guid.NewGuid();
-        obj.color = color;
 
         obj.unitKey = unitKey;
 
