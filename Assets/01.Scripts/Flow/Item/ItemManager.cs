@@ -2,9 +2,19 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
+    #region TEST
+    [SerializeField] ItemInventorySO inventory;
+    [SerializeField] ItemDatabaseSO weaponDatabase;
+    #endregion
+
     [SerializeField] ItemDatabaseSO equipmentItemDatabase = null;
     [SerializeField] ItemDatabaseSO artifactItemDatabase = null;
     private ItemDatabaseSO itemDatabase = null;
+
+    private void Awake()
+    {
+        Init(weaponDatabase);
+    }
 
     public void Init(ItemDatabaseSO weaponDatabase)
     {
@@ -18,6 +28,6 @@ public class ItemManager : MonoBehaviour
         for(int i = 0; i < items.Length; ++i)
             items[i] = itemDatabase.PickRandom();
 
-        // 
+        inventory.AddItem(items[0]);
     }
 }

@@ -12,6 +12,8 @@ public abstract class Weapon : MonoBehaviour
     protected CellObjectInstance owner = null;
     private int directionIndex = 0;
 
+    private Queue<StatusEffectSlot> disposableStatusEffects = new Queue<StatusEffectSlot>();
+
     public virtual void Init(CellObjectInstance owner)
     {
         this.owner = owner;
@@ -41,12 +43,6 @@ public abstract class Weapon : MonoBehaviour
             if(critical)
                 slotDamage += slotDamage * attackParams.criticalDamage;
 
-            // StatusLine
-            if (WeaponData.EffectedStatusType == StatusType.None)
-            {
-                // Status 적용
-            }
-
             Cell? cell = StageManager.Instance.Grid.FindCellByPosition(rangeSlot.Position);
             cell?.FindAndGrow();
             if(cell == null)
@@ -62,7 +58,14 @@ public abstract class Weapon : MonoBehaviour
                 continue;
             
             if(cellObject.TryGetComponent<StatusController>(out StatusController sc))
-                sc.AddStatus(WeaponData.EffectedStatusType, WeaponData.EffectedTurnCount);
+            {
+                WeaponData.StatusEffects.ForEach(i => sc.AddStatus(i.statusType, i.effectedTurn));
+                while(disposableStatusEffects.Count > 0)
+                {
+                    StatusEffectSlot data = disposableStatusEffects.Dequeue();
+                    sc.AddStatus(data.statusType, data.effectedTurn);
+                }
+            }
 
             if(cellObject.TryGetComponent<IHitable>(out IHitable ih))
             {
@@ -119,6 +122,8 @@ public abstract class Weapon : MonoBehaviour
             }
         }
     }
+
+    public void AddDisposableStatusEffect(StatusEffectSlot data) => disposableStatusEffects.Enqueue(data);
 
     protected abstract List<WeaponRangeSlot> GetAttackRange(Vector2Int position, Vector2Int point);
     public abstract Vector2Int GetAttackPoint(Vector2Int position, Vector2Int point);

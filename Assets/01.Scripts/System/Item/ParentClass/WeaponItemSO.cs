@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "SO/Item/Weapon/WeaponItem")]
@@ -9,8 +10,7 @@ public class WeaponItemSO : ItemSO
     public ItemDatabaseSO Evolutions = null;
 
     [Space(15f)]
-    public StatusType EffectedStatusType;
-    public int EffectedTurnCount;
+    public List<StatusEffectSlot> StatusEffects = new List<StatusEffectSlot>();
 
     [Space(15f)]
     public int KnockBackPower;

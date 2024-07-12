@@ -26,6 +26,9 @@ public abstract class ItemSO : IItemData
     public override void RegisterItemData(Dictionary<ItemRarity, ItemDatabaseTable> database, float weight)
     {
         ItemDatabaseSlot slot = new ItemDatabaseSlot() { itemData = this, weight = weight };
+        if(database.ContainsKey(Rarity) == false)
+            return;
+
         if(database[Rarity].table.Contains(slot))
             return;
 
