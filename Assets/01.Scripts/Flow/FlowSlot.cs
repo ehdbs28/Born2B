@@ -6,5 +6,5 @@ using UnityEngine.Events;
 public class FlowSlot
 {
     public EventType eventType;
-    [Space(5f)] public UnityEvent<object[]> onFlowEvent;
+    [Space(5f)] public UnityEvent onFlowEvent;
 }

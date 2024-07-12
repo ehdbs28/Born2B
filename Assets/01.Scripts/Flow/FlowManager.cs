@@ -22,7 +22,7 @@ public class FlowManager : MonoSingleton<FlowManager>
     {
 
         EventManager.Instance.PublishEvent(_flowCycle[_currentCycle].eventType);
-        _flowCycle[_currentCycle].onFlowEvent?.Invoke(null);
+        _flowCycle[_currentCycle].onFlowEvent?.Invoke();
 
     }
 
