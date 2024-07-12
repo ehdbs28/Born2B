@@ -242,7 +242,7 @@ public partial class StageManager
 
             _handle = job.Schedule();
             _isJobStarted = true;
-            _movement.Dispose();
+            _movement?.Dispose();
             _movement = null;
 
         }

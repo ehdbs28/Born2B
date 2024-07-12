@@ -13,6 +13,15 @@ public class PortalObject : InteractionableCellObject
     private List<CellObjectInstance> _areadyInteractionObjects = new();
     private PortalObject _connectedPotal;
 
+    public override void Init(CellObjectSO so)
+    {
+
+        base.Init(so);
+        var casted = so as PortalSO;
+        _potalType = casted.potalType;
+
+    }
+
     public void Connect(PortalObject connectPortal)
     {
 
