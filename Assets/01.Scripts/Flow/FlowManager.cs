@@ -6,10 +6,10 @@ using UnityEngine;
 public class FlowManager : MonoSingleton<FlowManager>
 {
 
-    [SerializeField] private List<EventType> _flowCycle;
+    [SerializeField] private List<FlowSlot> _flowCycle;
     [SerializeField] private int _targetLoopIdx;
     private int _currentCycle;
-    public EventType CurrentCycle => _flowCycle[_currentCycle];
+    public EventType CurrentCycle => _flowCycle[_currentCycle].eventType;
 
     private void Start()
     {
@@ -21,7 +21,8 @@ public class FlowManager : MonoSingleton<FlowManager>
     private void ExecuteCycle()
     {
 
-        EventManager.Instance.PublishEvent(_flowCycle[_currentCycle]);
+        EventManager.Instance.PublishEvent(_flowCycle[_currentCycle].eventType);
+        _flowCycle[_currentCycle].onFlowEvent?.Invoke(null);
 
     }
 
