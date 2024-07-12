@@ -20,8 +20,6 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
 
         _collider = GetComponent<Collider2D>();
         _unitFSMBase = GetComponent<UnitFSMBase>();
-       GetComponent<Weapon>()?.Init(this);
-
     }
 
     protected virtual void Update()
