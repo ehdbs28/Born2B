@@ -1,4 +1,4 @@
 public interface IWeaponArtifactItemHandler : IItemHandler
 {
-    public Weapon Weapon { get; }
+    public Weapon CurrentWeapon { get; }
 }

@@ -13,6 +13,6 @@ public class GrantStatusEffectItemSO : ArtifactItemSO
         if (!TryParseHandler(OwnerHandler, out IWeaponArtifactItemHandler weaponItemHandler))
             return;
         
-        statusEffects.ForEach(weaponItemHandler.Weapon.AddDisposableStatusEffect);
+        statusEffects.ForEach(weaponItemHandler.CurrentWeapon.AddDisposableStatusEffect);
     }
 }
