@@ -53,7 +53,6 @@ public partial class StageManager : MonoSingleton<StageManager>
     {
         _currentChapterData = chapterData;
     }
-
     private void CheckEndJob()
     {
 
