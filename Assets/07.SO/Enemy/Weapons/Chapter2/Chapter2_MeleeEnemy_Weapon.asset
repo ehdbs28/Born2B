@@ -15,6 +15,7 @@ MonoBehaviour:
   Rarity: 0
   ItemIcon: {fileID: 0}
   ItemName: 
+  ItemDescription: 
   WeaponPrefab: {fileID: 0}
   EffectedStatusType: 0
   EffectedTurnCount: 0
