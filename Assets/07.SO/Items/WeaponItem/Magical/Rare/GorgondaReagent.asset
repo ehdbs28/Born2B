@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf133f24bc7618040b22a12707cb21af, type: 3}
   m_Name: GorgondaReagent
   m_EditorClassIdentifier: 
-  Rarity: 3
-  ItemIcon: {fileID: 0}
+  Rarity: 2
+  ItemIcon: {fileID: 21300000, guid: bd08f0b5403027245b5f839129b8cef5, type: 3}
   ItemName: "\uACE8\uACE4\uB2E4 \uC2DC\uC57D"
   WeaponPrefab: {fileID: 0}
   EffectedStatusType: 1

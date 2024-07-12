@@ -179,20 +179,13 @@ public class StageEditor : EditorWindow
         AssetDatabase.SaveAssets();
     }
 
+    private void OnGUI()
+    {
+        EditorGUILayout.ObjectField("ChapterData", chapterData, typeof(ChapterDataSO), false);
+    }
+
     private void OnEnable()
     {
-        List<string> chapterNameList = new List<string>();
-
-        foreach (var type in Enum.GetValues(typeof(ChapterType)))
-        {
-            chapterNameList.Add(type.ToString());
-        }
-
-        chapterDropdwon = new DropdownField("챕터 선택", chapterNameList, 0);
-        chapterDropdwon.RegisterValueChangedCallback(HandleChapterTypeChanged);
-
-        chapterData = Resources.Load<ChapterDataSO>($"ChapterData/{ChapterType.Forest}");
-
         widthField = new TextField("스테이지 가로 길이");
         heightField = new TextField("스테이지 세로 길이");
         mapNameField = new TextField("스테이지SO 파일 이름");
@@ -202,6 +195,10 @@ public class StageEditor : EditorWindow
 
         btnCreate = new Button(HandleCreate);
         btnCreate.text = "스테이지 데이터 생성";
+
+        VisualElement ve = new VisualElement();
+        ve.style.height = EditorGUIUtility.singleLineHeight;
+        rootVisualElement.Add(ve);
 
         rootVisualElement.Add(chapterDropdwon);
         rootVisualElement.Add(btnSave);
@@ -214,18 +211,6 @@ public class StageEditor : EditorWindow
         if (data != null)
         {
             Open();
-        }
-    }
-
-    private void HandleChapterTypeChanged(ChangeEvent<string> evt)
-    {
-        chapterData = Resources.Load<ChapterDataSO>($"ChapterData/{evt.newValue}");
-
-        foreach (var item in cellVisuals)
-        {
-            item.current = evt.newValue;
-            item.textureIdx = -1;
-            item.ChangeVisual(chapterData.stageObjectSlotList[0].objectName);
         }
     }
 
