@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2948572298303813692}
   - component: {fileID: -3700927824360050148}
   m_Layer: 5
-  m_Name: StatusIconUnit-Fixed
+  m_Name: StatusIconUnitDrained
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f81f096d43bdc4b72a61b2e2df966e07, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a8e2d009e45804117b6b20f09b996e60, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

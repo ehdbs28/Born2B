@@ -22,13 +22,13 @@ public class PlayerWeaponComponent : PlayerComponent
 
     private void Start()
     {
-        startValue = weaponContainer.position.y;
+        startValue = weaponContainer.localPosition.y;
     }
 
     private void Update()
     {
         float value = Mathf.Sin(Time.time * durationValue) * updownValue;
-        weaponContainer.position = new Vector3(0, startValue + value);
+        weaponContainer.localPosition = new Vector3(0, startValue + value);
     }
 
     public void DrawRange()
@@ -38,7 +38,7 @@ public class PlayerWeaponComponent : PlayerComponent
             Vector2Int positionInt = range.Position + lastAttackPoint;
             Cell? cell = StageManager.Instance.Grid.FindCellByPosition(positionInt);
             if(cell == null)
-                return;
+                continue;
             
             CellInstance cellInstance = StageManager.Instance.Grid.GetCellInstance(cell.Value.guid);
             WeaponRangeTile tile = cellInstance.GetComponent<WeaponRangeTile>();
@@ -66,6 +66,7 @@ public class PlayerWeaponComponent : PlayerComponent
 
         PlayerWeaponComponent component = clone.GetPlayerComponent<PlayerWeaponComponent>();
         component.currentWeapon = component.weaponContainer.GetComponentInChildren<Weapon>();
+        component.currentWeapon.transform.SetParent(component.weaponContainer);
         component.currentWeapon.Init(clone);
     }
 
@@ -95,8 +96,10 @@ public class PlayerWeaponComponent : PlayerComponent
 
         currentWeapon.Attack(attackParams, position, attackPoint);
     }
-
-	public bool EquipWeapon(WeaponItemSO weaponData)
+    
+     
+        
+    public bool EquipWeapon(WeaponItemSO weaponData)
     {
         if(currentWeapon != null)
             return false;

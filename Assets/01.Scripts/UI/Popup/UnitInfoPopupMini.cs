@@ -84,7 +84,7 @@ public class UnitInfoPopupMini : UIComponent
         var effectedStatus = _unitData.statusController.StatusEffect.EffectedStatus;
         foreach (var effected in effectedStatus)
         {
-            var statusIcon = UIManager.Instance.AppearUI(Enum.Parse<PoolingItemType>($"StatusIconMiniUnit-{effected}"), _statusParent);
+            var statusIcon = UIManager.Instance.AppearUI(Enum.Parse<PoolingItemType>($"StatusIconMiniUnit{effected}"), _statusParent);
             _statusIcons.Add(statusIcon);
         }
     }

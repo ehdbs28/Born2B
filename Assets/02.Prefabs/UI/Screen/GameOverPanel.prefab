@@ -344,7 +344,7 @@ MonoBehaviour:
   _disappearAttribute: 0
   _selfDisappear: 0
   _selfDisappearTime: 0
-  _inventory: {fileID: 0}
+  _inventory: {fileID: 11400000, guid: dc205a038f569944db9ff54d12ac1dab, type: 2}
   itemSlots:
   - {fileID: 4444444243816475687}
   - {fileID: 3476759243820020618}

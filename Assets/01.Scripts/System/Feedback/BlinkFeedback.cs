@@ -11,11 +11,14 @@ public class BlinkFeedback : Feedback
     private int counter = 0;
     private Material originMaterial = null;
 
+    private void Awake()
+    {
+        originMaterial = targetRenderer.material;
+    }
+
     public override void Play(Vector3 playPos)
     {
         counter = 0;
-        originMaterial = targetRenderer.material;
-
         BlinkLoop();
     }
 
@@ -38,6 +41,9 @@ public class BlinkFeedback : Feedback
     {
         base.Stop();
         StopSafeCoroutine("Blink");
-        targetRenderer.material = originMaterial;
+        if (originMaterial != null)
+        {
+            targetRenderer.material = originMaterial;
+        }
     }
 }
