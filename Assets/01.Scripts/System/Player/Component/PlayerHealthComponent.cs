@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerHealthComponent : PlayerComponent, IHealth
 {
@@ -9,7 +10,6 @@ public class PlayerHealthComponent : PlayerComponent, IHealth
     
     public Action<int, int> OnChangedHpEvent { get; set;  }
 
-     
     private int currentHp = 0;
     public int CurrentHp => currentHp;
 
