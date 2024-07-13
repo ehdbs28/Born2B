@@ -80,6 +80,8 @@ public class PlayerWeaponComponent : PlayerComponent
         currentWeapon.transform.localPosition = Vector3.zero;
         currentWeapon.Init(player);
 
+        EventManager.Instance.PublishEvent(EventType.OnPlayerWeaponChanged);
+
         return true;
     }
 
@@ -87,6 +89,8 @@ public class PlayerWeaponComponent : PlayerComponent
     {
         currentWeapon.Release();
         currentWeapon = null;
+
+        EventManager.Instance.PublishEvent(EventType.OnPlayerWeaponChanged);
 
         return true;
     }

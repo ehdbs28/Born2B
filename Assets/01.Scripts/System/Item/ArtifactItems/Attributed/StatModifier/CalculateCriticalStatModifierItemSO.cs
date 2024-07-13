@@ -16,12 +16,15 @@ public class CalculateCriticalStatModifierItemSO : AttributedCallByEventItemSO
     public override void Execute(IItemHandler handler)
     {
         base.Execute(handler);
-        RemoveModifier(basicModifiers);
+        AddModifier(basicModifiers);
         EventManager.Instance.RegisterEvent(EventType.OnPlayerWeaponChanged, HandlePlayerWeaponChanged);
     }
 
     public override void UseArtifact(params object[] args)
     {
+        if(weapon == null)
+            return;
+
         RemoveModifier(critical ? criticalModifiers : uncriticalModifiers);
     }
 
