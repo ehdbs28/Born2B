@@ -13,6 +13,8 @@ public enum TurnType
     CheckAllEnemyDie,
     MovementEnemy,
     AttackEnemy,
+    SetTurnCount,
+    CheckTurnCount
 
 }
 
@@ -20,7 +22,8 @@ public enum TurnDataType
 {
 
     IsPreview,
-    IsMovementCell
+    IsMovementCell,
+    TurnCount,
 
 }
 
@@ -135,6 +138,7 @@ public class TurnManager : MonoSingleton<TurnManager>
                 var endLogic = _turnEndLogicContainer[item];
 
                 yield return null;
+
                 StartCoroutine(endLogic());
                 CheckPlayerTurnEnd(item);
 

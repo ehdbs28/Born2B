@@ -14,9 +14,14 @@ public partial class PlayerInstance : CellObjectInstance, IHitable
         base.Awake();
         _collider = GetComponent<Collider2D>();
 
-        InitPlayerComponents();
+        //InitPlayerComponents();
     }
 
+    public override void Init(CellObjectSO so)
+    {
+        base.Init(so);
+        InitPlayerComponents();
+    }
 
     protected virtual void OnDestroy()
     {
@@ -34,6 +39,7 @@ public partial class PlayerInstance : CellObjectInstance, IHitable
 
     public bool Hit(CellObjectInstance attackObject, float damage, bool critical)
     {
+
         PlayerHealthComponent health = GetPlayerComponent<PlayerHealthComponent>();
         if(health.CurrentHp <= 0)
             return false;
