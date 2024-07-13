@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Angel'sHood
   m_EditorClassIdentifier: 
   Rarity: 3
-  ItemIcon: {fileID: 0}
-  ItemName: "\uCC9C\uC0AC\uC758 \uAC01\uC624"
+  ItemIcon: {fileID: -1858180294, guid: c75e6b1fd155a52418fbc10bffd218e7, type: 3}
+  ItemName: "\uCC9C\uC0AC\uC758 \uB450\uAC74"
   ItemDescription: 

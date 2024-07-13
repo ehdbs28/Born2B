@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RedBandana
   m_EditorClassIdentifier: 
   Rarity: 1
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: 1074999917, guid: 18eb8eac2bf48f346bf800ae92f9c0fd, type: 3}
   ItemName: "\uBD89\uC740 \uB450\uAC74"
   ItemDescription: 
   statusEffects:

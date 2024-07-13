@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RingOfAbsorption
   m_EditorClassIdentifier: 
   Rarity: 1
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: 2114040097, guid: 18eb8eac2bf48f346bf800ae92f9c0fd, type: 3}
   ItemName: "\uD761\uC218\uC758 \uBC18\uC9C0"
   ItemDescription: 
   activeChance: 0.02

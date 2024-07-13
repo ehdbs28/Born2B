@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HealingScroll
   m_EditorClassIdentifier: 
   Rarity: 3
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: -45784162, guid: c75e6b1fd155a52418fbc10bffd218e7, type: 3}
   ItemName: "\uD68C\uBCF5 \uC2A4\uD06C\uB864"
   ItemDescription: 
   _healCnt: 999

@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipmentItemDatabase: {fileID: 11400000, guid: 0d5652f8f735db4458f42a5f52d44c98, type: 2}
-  artifactItemDatabase: {fileID: 0}
+  artifactItemDatabase: {fileID: 11400000, guid: 1b338ec45ab8edc449bed2a88e12f8fc, type: 2}
 --- !u!114 &1118534800
 MonoBehaviour:
   m_ObjectHideFlags: 0

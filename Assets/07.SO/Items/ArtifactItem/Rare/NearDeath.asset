@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NearDeath
   m_EditorClassIdentifier: 
   Rarity: 2
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: -1394014609, guid: 18eb8eac2bf48f346bf800ae92f9c0fd, type: 3}
   ItemName: "\uAC00\uAE4C\uC6B4 \uC8FD\uC74C"
   ItemDescription: 
   multiplierLimit: 5

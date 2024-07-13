@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: VikingHelmet
   m_EditorClassIdentifier: 
   Rarity: 2
-  ItemIcon: {fileID: 0}
-  ItemName: "\uBC14\uC774\uD0B9 \uD5EC\uBA67"
+  ItemIcon: {fileID: -294670331, guid: c75e6b1fd155a52418fbc10bffd218e7, type: 3}
+  ItemName: "\uBC14\uC774\uD0B9 \uD22C\uAD6C"
   ItemDescription: 
   _toChangeStatGroup:
   - StatType: 1

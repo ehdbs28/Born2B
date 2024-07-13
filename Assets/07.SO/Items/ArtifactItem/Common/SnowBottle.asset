@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SnowBottle
   m_EditorClassIdentifier: 
   Rarity: 1
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: -1359185212, guid: 18eb8eac2bf48f346bf800ae92f9c0fd, type: 3}
   ItemName: "\uB208\uAC00\uB8E8 \uBCD1"
   ItemDescription: 
   statusEffects:

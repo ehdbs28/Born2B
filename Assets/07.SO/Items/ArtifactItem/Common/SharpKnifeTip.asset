@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SharpKnifeTip
   m_EditorClassIdentifier: 
   Rarity: 1
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: -2092457285, guid: c75e6b1fd155a52418fbc10bffd218e7, type: 3}
   ItemName: "\uB0A0\uCE74\uB85C\uC6B4 \uCE7C \uB05D"
   ItemDescription: 
   _remveCondition: 3

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cesspit
   m_EditorClassIdentifier: 
   Rarity: 1
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: 1300599740, guid: 18eb8eac2bf48f346bf800ae92f9c0fd, type: 3}
   ItemName: "\uC624\uBB3C\uD1B5"
   ItemDescription: 
   statusEffects:
