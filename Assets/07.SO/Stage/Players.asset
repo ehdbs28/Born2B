@@ -19,5 +19,5 @@ MonoBehaviour:
   weaponItemDatabase: {fileID: 11400000, guid: d1a4072d63eb4114b8ff6a2f01855960, type: 2}
   playerDatas:
   - {fileID: 11400000, guid: 4cebd27681d28854b9b80e2120130b35, type: 2}
-  - {fileID: 11400000, guid: 4cebd27681d28854b9b80e2120130b35, type: 2}
-  - {fileID: 11400000, guid: 4cebd27681d28854b9b80e2120130b35, type: 2}
+  - {fileID: 11400000, guid: 89719b362dde93444992e0c2c7b4677f, type: 2}
+  - {fileID: 11400000, guid: f2aa6e38d19fc5f48afad222205bcd1e, type: 2}

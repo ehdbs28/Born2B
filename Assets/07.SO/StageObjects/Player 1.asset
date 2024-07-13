@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee891aa59794beb41b8afc82b7efd516, type: 3}
+  m_Name: Player 1
+  m_EditorClassIdentifier: 
+  ObjectType: 5
+  <cellObjectType>k__BackingField: 0
+  <animator>k__BackingField: {fileID: 9100000, guid: a775ebffee0f179429a46300fce64f32, type: 2}
+  <sprite>k__BackingField: {fileID: 21300000, guid: ae04141b9f06e474d9c882d682cc2d18, type: 3}
+  unitName: 
+  unitDesc: 
+  <weaponItem>k__BackingField: {fileID: 11400000, guid: 2e16118b352a076488464909bf796435, type: 2}
+  <movementRole>k__BackingField: []
+  <stat>k__BackingField: {fileID: 11400000, guid: 5dcf2be2d1ce081458e936c8915024fd, type: 2}
