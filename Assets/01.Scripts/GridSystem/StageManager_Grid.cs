@@ -519,6 +519,14 @@ public partial class StageManager
             foreach (var item in _instanceContainer.Values)
             {
 
+                if(item.GetComponentInChildren<PlayerInstance>()!= null)
+                {
+
+                    var obj = item.GetComponentInChildren<PlayerInstance>();
+                    obj.transform.SetParent(null);
+
+                } 
+
                 Destroy(item.gameObject);
 
             }

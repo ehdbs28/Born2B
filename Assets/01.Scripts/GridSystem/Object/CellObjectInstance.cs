@@ -25,7 +25,7 @@ public class CellObjectInstance : MonoBehaviour, ICloneable
     protected virtual void Update()
     {
 
-        _collider.enabled = !TurnManager.Instance.GetTurnData<bool>(TurnDataType.IsPreview);
+        _collider.enabled = TurnManager.Instance.GetCurrentTurn() != TurnType.PreviewCell;
 
     }
 

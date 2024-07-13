@@ -95,7 +95,7 @@ public class TurnManager : MonoSingleton<TurnManager>
     public void StartTurn()
     {
 
-        StartSafeCoroutine("Turn", TurnLogic());
+        StartCoroutine(TurnLogic());
 
     }
 
@@ -110,7 +110,7 @@ public class TurnManager : MonoSingleton<TurnManager>
     {
 
         _currentTurn = TurnType.PreviewCell;
-        StopSafeCoroutine("Turn");
+        StopAllCoroutines();
 
     }
 
@@ -191,6 +191,7 @@ public class TurnManager : MonoSingleton<TurnManager>
     public void EndCurrentTurn()
     {
 
+        Debug.Log(_currentTurn);
         _currentTurnEnded = true;
 
     }

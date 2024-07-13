@@ -46,12 +46,12 @@ public class ItemSelectUnit : UIButton
         
         if (_inventory.AddItem(_holdingItemSo))
         {
-            TurnManager.Instance.EndCurrentTurn();
+            //TurnManager.Instance.EndCurrentTurn();
             return;
         }
         
         // 아이템이 모종의 이유로 들어가지 못하였을 때
-        TurnManager.Instance.EndCurrentTurn();
+        //TurnManager.Instance.EndCurrentTurn();
     }
     
     public void ShowInfoUI(PointerEventData eventData)
