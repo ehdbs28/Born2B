@@ -4,6 +4,7 @@ using UnityEngine;
 public class StatusController : MonoBehaviour
 {
     [SerializeField] private StatusEffectSO _statusEffect;
+    public StatusEffectSO StatusEffect => _statusEffect;
 
     public void Init(CellObjectInstance objectInstance)
     {

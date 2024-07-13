@@ -1,6 +1,8 @@
+using System;
+using Singleton;
 using UnityEngine;
 
-public class ItemManager : MonoBehaviour
+public class ItemManager : MonoSingleton<ItemManager>
 {
     #region TEST
     [SerializeField] ItemInventorySO inventory;
@@ -24,6 +26,8 @@ public class ItemManager : MonoBehaviour
 
     public void PickItems()
     {
+        var itemSelectPanel = UIManager.Instance.AppearUI(PoolingItemType.ItemSelectPanel) as ItemSelectPanel;
+        
         ItemSO[] items = new ItemSO[3];
         for(int i = 0; i < items.Length; ++i)
         {
@@ -31,7 +35,7 @@ public class ItemManager : MonoBehaviour
                 items[i] = itemDatabase.PickRandom();
             while (items[i] == null);
         }
-
-        inventory.AddItem(items[0]);
+        
+        itemSelectPanel.ItemSet(items);
     }
 }

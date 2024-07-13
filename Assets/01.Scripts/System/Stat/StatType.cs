@@ -9,5 +9,6 @@ public enum StatType
     CriticalChance,
     MagicPower,
     TurnCount,
-    ReviveCount
+    ReviveCount,
+    Cnt
 }

@@ -27,9 +27,12 @@ public class UIComponent : PoolableMono
 
     protected virtual void Awake()
     {
-        rectTransform = (RectTransform)transform;
-        _originAnchoredPos = rectTransform.anchoredPosition3D;
-        _originLocalRot = rectTransform.localRotation;
+        if (transform is RectTransform rectTrm)
+        {
+            rectTransform = rectTrm;
+            _originAnchoredPos = rectTransform.anchoredPosition3D;
+            _originLocalRot = rectTransform.localRotation;
+        }
     }
 
     public virtual void Appear(Transform parent)

@@ -20,6 +20,11 @@ public partial class PlayerInstance : CellObjectInstance, IHitable
     public override void Init(CellObjectSO so)
     {
         base.Init(so);
+
+        var castSo = so as UnitDataSO;
+        castSo.health = Health;
+        castSo.statusController = GetComponent<StatusController>();
+        
         InitPlayerComponents();
     }
 
