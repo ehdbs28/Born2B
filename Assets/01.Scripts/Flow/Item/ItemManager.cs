@@ -4,19 +4,9 @@ using UnityEngine;
 
 public class ItemManager : MonoSingleton<ItemManager>
 {
-    #region TEST
-    [SerializeField] ItemInventorySO inventory;
-    [SerializeField] ItemDatabaseSO weaponDatabase;
-    #endregion
-
     [SerializeField] ItemDatabaseSO equipmentItemDatabase = null;
     [SerializeField] ItemDatabaseSO artifactItemDatabase = null;
     private ItemDatabaseSO itemDatabase = null;
-
-    private void Awake()
-    {
-        Init(weaponDatabase);
-    }
 
     public void Init(ItemDatabaseSO weaponDatabase)
     {

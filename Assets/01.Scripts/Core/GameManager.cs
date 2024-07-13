@@ -5,6 +5,19 @@ public class GameManager : MonoSingleton<GameManager>
 {
     public bool InPause { get; private set; }
 
+    private void Awake()
+    {
+        PoolManager.Instance.Init();
+        AudioManager.Instance.Init();
+        
+        StageManager.Instance.Init();
+        CellObjectManager.Instance.Init();
+        TurnManager.Instance.Init();
+        GetComponent<DebugFlowHandler>().Init(); // 이건 수정할 거임     
+        
+        SceneControlManager.Instance.Init();
+    }
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))

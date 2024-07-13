@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df04236d9c964294bb943aa86fc48775, type: 3}
+  m_Name: SharpKnifeTip
+  m_EditorClassIdentifier: 
+  Rarity: 1
+  ItemIcon: {fileID: -2092457285, guid: c75e6b1fd155a52418fbc10bffd218e7, type: 3}
+  ItemName: "\uB0A0\uCE74\uB85C\uC6B4 \uCE7C \uB05D"
+  ItemDescription: 
+  _remveCondition: 3

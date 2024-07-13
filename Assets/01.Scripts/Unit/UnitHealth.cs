@@ -14,7 +14,17 @@ public class UnitHealth : MonoBehaviour, IHealth
 
     public int MaxHp => _container[StatType.MaxHP];
 
-    public bool CanChangedHP { get; set; }
+    private bool canChangedHP = true;
+
+    private int _canChangedHPCount = 0;
+    int IHealth.CanChangedHPCount { get => _canChangedHPCount;
+        set 
+        {
+            _canChangedHPCount = Mathf.Clamp(value, 0, int.MaxValue);
+
+            canChangedHP = _canChangedHPCount == 0;
+        }
+    }
 
     private void Awake()
     {
@@ -23,17 +33,23 @@ public class UnitHealth : MonoBehaviour, IHealth
 
     public void AddHp(int healHp)
     {
-        
+        if (!canChangedHP) return;
+
+        _currentHp = Mathf.Clamp(_currentHp + healHp, 0, MaxHp);
     }
 
     public void ReduceHp(int reduceHp)
     {
+        if (!canChangedHP) return;
+
         _currentHp = Mathf.Clamp(_currentHp - reduceHp, 0, MaxHp);
         OnChangedHpEvent?.Invoke(_currentHp, MaxHp);
     }
     
     public void ResetHp()
     {
+        if (!canChangedHP) return;
+
         _currentHp = MaxHp;
         OnChangedHpEvent?.Invoke(_currentHp, MaxHp);
     }

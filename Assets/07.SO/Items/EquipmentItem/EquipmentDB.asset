@@ -13,13 +13,9 @@ MonoBehaviour:
   m_Name: EquipmentDB
   m_EditorClassIdentifier: 
   items:
-  - itemData: {fileID: 11400000, guid: 7e5b691daa61dac44a394fddd893c669, type: 2}
-    weight: 1
-  - itemData: {fileID: 11400000, guid: 8c7534983509d3a4fbf5287419c16712, type: 2}
-    weight: 1
-  - itemData: {fileID: 11400000, guid: b0bb0eb7b651c0749b9c49bfd451fb6e, type: 2}
-    weight: 1
-  - itemData: {fileID: 11400000, guid: b309fc3ba46164840bf9741c4277510f, type: 2}
-    weight: 1
-  - itemData: {fileID: 11400000, guid: 8c01e9e83244dd44892074d7c90354df, type: 2}
-    weight: 1
+  - itemData: {fileID: 11400000, guid: 8a889fac4732bde42ae7d39d46b1afcd, type: 2}
+    weight: 0
+  - itemData: {fileID: 11400000, guid: 2a415354f290a2a4c922fbd6dd095f1d, type: 2}
+    weight: 0
+  - itemData: {fileID: 11400000, guid: 3d1baf3534805ca46a5ba43de91cef31, type: 2}
+    weight: 0

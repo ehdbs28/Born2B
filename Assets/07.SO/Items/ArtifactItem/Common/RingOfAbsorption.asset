@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32098d5e0691f1c4083edcb1b1c227f3, type: 3}
+  m_Name: RingOfAbsorption
+  m_EditorClassIdentifier: 
+  Rarity: 1
+  ItemIcon: {fileID: 2114040097, guid: 18eb8eac2bf48f346bf800ae92f9c0fd, type: 3}
+  ItemName: "\uD761\uC218\uC758 \uBC18\uC9C0"
+  ItemDescription: 
+  activeChance: 0.02
+  amount: 1

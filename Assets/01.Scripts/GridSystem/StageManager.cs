@@ -19,6 +19,11 @@ public partial class StageManager : MonoSingleton<StageManager>
 
     public StageGrid Grid { get; private set; }
 
+    public void Init()
+    {
+        
+    }
+
 
     private void Update()
     {
@@ -53,7 +58,7 @@ public partial class StageManager : MonoSingleton<StageManager>
 
     }
 
-    // ³¡³ª¸é true
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ true
     public bool NextChapter()
     {
 
@@ -62,7 +67,7 @@ public partial class StageManager : MonoSingleton<StageManager>
         if (_currentChapterIdx >= _chapters.Length)
         {
 
-            Debug.Log("³¡³ª´Ù");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
             return true;
 
         }
@@ -85,7 +90,7 @@ public partial class StageManager : MonoSingleton<StageManager>
     private void OnDestroy()
     {
 
-        Grid.Dispose();
+        Grid?.Dispose();
 
     }
 

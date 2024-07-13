@@ -80,7 +80,7 @@ public class TurnManager : MonoSingleton<TurnManager>
 
     }
 
-    private void Awake()
+    public void Init()
     {
         
         foreach(var item in _turnLogics)

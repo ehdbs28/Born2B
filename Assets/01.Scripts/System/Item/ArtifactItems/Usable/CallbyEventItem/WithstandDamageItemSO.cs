@@ -12,7 +12,7 @@ public class WithstandDamageItemSO : ReviveItemSO
             return;
         }
 
-        healthHandler.Health.CanChangedHP = false;
+        healthHandler.Health.CanChangedHPCount++;
     }
 
     public override void Unexecute(IItemHandler handler)
@@ -24,6 +24,6 @@ public class WithstandDamageItemSO : ReviveItemSO
             return;
         }
 
-        healthHandler.Health.CanChangedHP = true;
+        healthHandler.Health.CanChangedHPCount--;
     }
 }

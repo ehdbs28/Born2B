@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e023de13763e294c91b7bc31c4e1efc, type: 3}
+  m_Name: _EpicEquipmentDB
+  m_EditorClassIdentifier: 
+  items:
+  - itemData: {fileID: 11400000, guid: 14889e54c50c614449dab7af7d4870b8, type: 2}
+    weight: 0.5
+  - itemData: {fileID: 11400000, guid: 3a971618de677574bb85051142dcd0cf, type: 2}
+    weight: 0.5
+  - itemData: {fileID: 11400000, guid: 63eee6f206a439b43bde12e7e36137bf, type: 2}
+    weight: 0.5
+  - itemData: {fileID: 11400000, guid: 2853905422d580c4b9b6014a5a8dc8e1, type: 2}
+    weight: 0.5
+  - itemData: {fileID: 11400000, guid: e694df6027d24d74dad53d4bfc7d3f3b, type: 2}
+    weight: 0.5
