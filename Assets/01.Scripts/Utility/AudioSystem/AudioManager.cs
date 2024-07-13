@@ -35,7 +35,7 @@ public class AudioManager : MonoSingleton<AudioManager>
 
     public void SetVolume(AudioGroupType groupType, float volume)
     {
-        audioMixer.SetFloat(groupType.ToString(), volume * 100f - 80f);
+        audioMixer.SetFloat(groupType.ToString(), volume);
     }
 
     private void SetBGM(AudioClip clip)
