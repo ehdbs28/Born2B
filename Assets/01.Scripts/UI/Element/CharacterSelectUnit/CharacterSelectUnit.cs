@@ -10,11 +10,6 @@ public class CharacterSelectUnit : UIButton
     {
         base.Awake();
         _cursorText = transform.Find("CursorText").GetComponent<TextMeshProUGUI>();
-    }
-
-    public override void Appear(Transform parent)
-    {
-        base.Appear(parent);
         HoverEnd(null);
     }
 

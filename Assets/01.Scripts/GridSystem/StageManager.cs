@@ -90,7 +90,7 @@ public partial class StageManager : MonoSingleton<StageManager>
     private void OnDestroy()
     {
 
-        Grid.Dispose();
+        Grid?.Dispose();
 
     }
 

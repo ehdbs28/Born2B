@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2047955851251467108}
   - component: {fileID: 5520760042716317788}
   - component: {fileID: 8505318510462142041}
-  - component: {fileID: 4610549267737319820}
+  - component: {fileID: 4065547962489816171}
   m_Layer: 5
   m_Name: SceneTransitionPanel
   m_TagString: Untagged
@@ -98,7 +98,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4610549267737319820
+--- !u!114 &4065547962489816171
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4622758893036210414}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 626c55da42694feabeddd14fefe3ee97, type: 3}
+  m_Script: {fileID: 11500000, guid: e751fd77576a4c39a76589adb2129cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
@@ -115,5 +115,5 @@ MonoBehaviour:
   rectTransform: {fileID: 0}
   _appearAttribute: 0
   _disappearAttribute: 0
-  _selfDisappear: 0
-  _selfDisappearTime: 0
+  _selfDisappear: 1
+  _selfDisappearTime: 2

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37b710f5480f4cfbbe14ae8a6df99d27, type: 3}
+  m_Name: StagePoolingLIst
+  m_EditorClassIdentifier: 
+  poolableItems:
+  - prefab: {fileID: 395665303615721263, guid: 83c61343f9d864309bb92be386388c1c, type: 3}
+    cnt: 1
+  - prefab: {fileID: -7790902846750124556, guid: 63aa74e4b21f948e9be8ab4256b70368, type: 3}
+    cnt: 1
+  - prefab: {fileID: -3973077165150820906, guid: fb8d3965e0dbd4043b305af44d8ea4c6, type: 3}
+    cnt: 1

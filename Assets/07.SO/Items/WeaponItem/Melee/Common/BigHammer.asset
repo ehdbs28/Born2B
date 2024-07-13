@@ -35,9 +35,15 @@ MonoBehaviour:
       - Position: {x: -2, y: 0}
         Theta: 100
     - Ranges:
+      - Position: {x: -2, y: 2}
+        Theta: 100
+      - Position: {x: -1, y: 2}
+        Theta: 100
       - Position: {x: 0, y: 2}
         Theta: 100
-      - Position: {x: 0, y: 1}
+      - Position: {x: 1, y: 2}
+        Theta: 100
+      - Position: {x: 2, y: 2}
         Theta: 100
     - Ranges:
       - Position: {x: 0, y: 2}
@@ -105,6 +111,6 @@ MonoBehaviour:
         Theta: 100
       - Position: {x: -2, y: -2}
         Theta: 100
-    index: 0
+    index: 1
     size: 5
     theta: 100

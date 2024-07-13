@@ -10,7 +10,7 @@ public class PoolManager : MonoSingleton<PoolManager>
     [SerializeField] private List<PoolingList> _poolingLists;
     public List<PoolingList> PoolingLists => _poolingLists;
 
-    public void Awake()
+    public void Init()
     {
         foreach (var pair in _poolingLists.SelectMany(poolingList => poolingList.poolableItems))
         {
@@ -37,7 +37,12 @@ public class PoolManager : MonoSingleton<PoolManager>
     {
         if (_pools.TryGetValue(key, out var pool))
         {
-            return pool.Pop();
+            var obj = pool.Pop();
+            if (SceneControlManager.Instance.CurrentScene != null)
+            {
+                SceneControlManager.Instance.CurrentScene.AddObject(obj);
+            }
+            return obj;
         }
         
         Debug.LogError($"[PoolManager] Doesn't exist key on pools : [{key}]");
