@@ -3,18 +3,21 @@ using UnityEngine;
 
 public class StatusController : MonoBehaviour
 {
-    [SerializeField] private StatusEffectSO _statusEffect;
+    private StatusEffectSO _statusEffect;
     public StatusEffectSO StatusEffect => _statusEffect;
 
     public void Init(CellObjectInstance objectInstance)
     {
-        _statusEffect = Instantiate(_statusEffect);
+        _statusEffect = ScriptableObject.CreateInstance<StatusEffectSO>();
         _statusEffect.Init(objectInstance);
     }
 
     public void Release()
     {
-        _statusEffect.Release();
+        if (_statusEffect)
+        {
+            _statusEffect.Release();
+        }
     }
 
     public void AddStatus(StatusType type, int remainTurn)

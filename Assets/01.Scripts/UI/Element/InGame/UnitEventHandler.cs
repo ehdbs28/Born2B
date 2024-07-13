@@ -3,23 +3,23 @@ using UnityEngine.EventSystems;
 
 public class UnitEventHandler : UIButton
 {
-    [SerializeField] private UnitDataSO _unitData;
+    public UnitDataSO unitData;
     private UnitInfoPopup _infoPopup;
     
     public void ShowInfoUI(PointerEventData eventData)
     {
-        if (_infoPopup != null || _unitData == null)
+        if (_infoPopup != null || unitData == null)
         {
             return;
         }
         
         _infoPopup = UIManager.Instance.AppearUI(PoolingItemType.UnitInfoPopup) as UnitInfoPopup;
-        _infoPopup.Init(_unitData);
+        _infoPopup.Init(unitData);
     }
 
     public void UnShowInfoUI(PointerEventData eventData)
     {
-        if (_infoPopup == null)
+        if (_infoPopup == null || unitData == null)
         {
             return;
         }
@@ -30,7 +30,7 @@ public class UnitEventHandler : UIButton
 
     public void UpdateInfoUI(PointerEventData eventData)
     {
-        if (_infoPopup == null)
+        if (_infoPopup == null || unitData == null)
         {
             return;
         }

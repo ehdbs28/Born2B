@@ -24,6 +24,8 @@ public class UnitInfoPopup : UIComponent
     {
         base.Awake();
 
+        _statusIcons = new List<UIComponent>();
+
         _statusParent = transform.Find("StatusInfo");
         _nameText = transform.Find("Data/InfoText/NameText").GetComponent<TextMeshProUGUI>();
         _descText = transform.Find("Data/InfoText/DescText").GetComponent<TextMeshProUGUI>();
@@ -38,6 +40,7 @@ public class UnitInfoPopup : UIComponent
         _nameText.text = newData.unitName;
         _descText.text = newData.unitDesc;
 
+        _unitData = newData;
 
         newData.statusController.StatusEffect.OnStatusChanged += StatusHandle;
         newData.health.OnChangedHpEvent += DamagedHandle;
@@ -46,8 +49,6 @@ public class UnitInfoPopup : UIComponent
         StatusHandle();
         DamagedHandle(newData.health.CurrentHp, newData.health.MaxHp);
         StatChangedHandle();
-        
-        _unitData = newData;
     }
 
     public override void Disappear(bool poolIn = true)
@@ -71,9 +72,16 @@ public class UnitInfoPopup : UIComponent
 
     private void StatChangedHandle()
     {
-        for (var i = 1; i < (int)StatType.Cnt; i++)
+        for (var i = 0; i < _unitData.stat.stats.Count; i++)
         {
-            _statValueTexts[i].text = ((int)_unitData.stat[(StatType)i].CurrentValue).ToString();
+            var stat = _unitData.stat[(StatType)i];
+
+            if (stat == null)
+            {
+                continue;
+            }
+            
+            _statValueTexts[i].text = ((int)stat.CurrentValue).ToString();
         }
     }
 
