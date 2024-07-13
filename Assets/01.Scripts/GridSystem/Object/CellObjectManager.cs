@@ -140,16 +140,24 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
             if(_playerData == null)
             {
 
-                data = (data as PlayerSelectSO).playerDatas[UnitSelectManager.Instance.selectedIdx];
+                data = (data as PlayerSelectSO).playerDatas[UnitSelectManager.Instance.selectedIdx].Clone() as CellObjectSO;
                 _playerData = data as UnitDataSO;
 
             }
             else
             {
 
-                data = data.Clone() as CellObjectSO;
+                data = _playerData;
 
             }
+
+            Debug.Log(data.GetHashCode());
+
+        }
+        else
+        {
+
+            data = data.Clone() as CellObjectSO;
 
         }
 

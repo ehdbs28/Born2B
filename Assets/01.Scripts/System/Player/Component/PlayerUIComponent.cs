@@ -8,6 +8,8 @@ public class PlayerUIComponent : PlayerComponent
     private PlayerAttackComponent attackComponent = null;
     private PlayerWeaponComponent weaponComponent = null;
 
+    private StatSO stat = null;
+
     public override void Init(PlayerInstance player)
     {
         base.Init(player);
@@ -25,7 +27,8 @@ public class PlayerUIComponent : PlayerComponent
         weaponComponent = player.GetPlayerComponent<PlayerWeaponComponent>();
         weaponComponent.OnWeaponEquipEvent += HandleWeaponEquip;
 
-        player.GetPlayerComponent<PlayerStatComponent>().Stat.OnStatChangedEvent += HandleStatChanged;
+        stat = player.GetPlayerComponent<PlayerStatComponent>().Stat;
+        stat.OnStatChangedEvent += HandleStatChanged;
 
         if(player.isClone)
             return;
@@ -35,6 +38,16 @@ public class PlayerUIComponent : PlayerComponent
         infoPanel.DisplayWeapon(weaponComponent.CurrentWeapon.WeaponData.ItemIcon);
     }
 
+    public override void Release()
+    {
+        base.Release();
+
+        if (stat == null)
+            Debug.Log("ASD");
+        else
+            stat.OnStatChangedEvent -= HandleStatChanged;
+    }
+
     private void HandleHPChanged(int current, int max)
     {
         infoPanel.DisplayHealthInfo(healthComponent.CurrentHp, healthComponent.MaxHp);
@@ -42,6 +55,7 @@ public class PlayerUIComponent : PlayerComponent
 
     private void HandleStatChanged()
     {
+        Debug.Log($"{healthComponent.CurrentHp},{healthComponent.MaxHp}");
         infoPanel.DisplayHealthInfo(healthComponent.CurrentHp, healthComponent.MaxHp);
     }
 
