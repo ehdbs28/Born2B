@@ -775,6 +775,7 @@ MonoBehaviour:
     gridInput: {fileID: 11400000, guid: 5cfbf8fc11dce5747aa4ec20c8f7bc25, type: 2}
   _chapters:
   - {fileID: 11400000, guid: 6123391c8df00c2439f3f72a140fd93b, type: 2}
+  - {fileID: 11400000, guid: 30c05d74ad9f1b3418c8f0b47e4e540b, type: 2}
 --- !u!4 &1118534807
 Transform:
   m_ObjectHideFlags: 0
@@ -832,7 +833,6 @@ MonoBehaviour:
   _poolingLists:
   - {fileID: 11400000, guid: f572c597f9fc64b489611fd584045cbd, type: 2}
   - {fileID: 11400000, guid: 6ac22c4c7f9b445d9a4ad6005a95f995, type: 2}
-  - {fileID: 11400000, guid: 3e46f4e718f6f4c608c46206b25bb7ed, type: 2}
 --- !u!114 &1118534811
 MonoBehaviour:
   m_ObjectHideFlags: 0
