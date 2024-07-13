@@ -15,7 +15,7 @@ public class AudioSettingSlot : MonoBehaviour, IPointerMoveHandler, IPointerDown
     private bool isDrag = false;
     private List<Image> valueUnits = null;
 
-    private const float MAX_VOLUME = 0f;
+    private const float MAX_VOLUME = 20f;
     private const float MIN_VOLUME = -40f;
     private const float MUTE_VOLUME = -80f;
 
