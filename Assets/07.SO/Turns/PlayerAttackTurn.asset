@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f353f396fd0f6c545aa1c4043c2dd30a, type: 3}
   m_Name: PlayerAttackTurn
   m_EditorClassIdentifier: 
-  _type: 2
+  _type: 3

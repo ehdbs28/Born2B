@@ -7,6 +7,7 @@ using UnityEngine;
 public enum TurnType
 {
 
+    None,
     PreviewCell,
     MovementCell,
     PlayerAttack,
@@ -38,6 +39,7 @@ public class TurnManager : MonoSingleton<TurnManager>
     private Dictionary<TurnDataType, object> _turnDataContainer = new();
     private bool _currentTurnEnded;
     private TurnType _currentTurn;
+    private TurnType _targetSkipTurn = TurnType.None;
 
     public void CommitTurnLogic(TurnType type, Func<IEnumerator> enumerator, Func<IEnumerator> turnEndLogic)
     {
@@ -114,6 +116,19 @@ public class TurnManager : MonoSingleton<TurnManager>
 
     }
 
+    private void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+
+            _targetSkipTurn = TurnType.MovementEnemy;
+            Debug.Log(_targetSkipTurn);
+
+        }
+
+    }
+
     private IEnumerator TurnLogic()
     {
 
@@ -125,6 +140,18 @@ public class TurnManager : MonoSingleton<TurnManager>
             foreach(var item in _turnOrder)
             {
 
+
+                if (_targetSkipTurn != TurnType.None && item != _targetSkipTurn)
+                    continue;
+
+                if(_targetSkipTurn != TurnType.None && item == _targetSkipTurn)
+                {
+
+                    _targetSkipTurn = TurnType.None;
+                    Debug.Log("ÅÏÀ» ½ºÅµÇÏ¿´´Ù¶÷Áã½ã´õ¸Å±â");
+
+                }
+
                 EventManager.Instance.PublishEvent(EventType.OnTurnChanged, _currentTurn, item);
 
                 yield return null;
@@ -134,7 +161,14 @@ public class TurnManager : MonoSingleton<TurnManager>
 
                 StartCoroutine(logic());
 
-                yield return new WaitUntil(() => _currentTurnEnded);
+                yield return new WaitUntil(() => _currentTurnEnded || _targetSkipTurn != TurnType.None);
+
+                if(_targetSkipTurn != TurnType.None)
+                {
+
+                    break;
+
+                }
 
                 _currentTurnEnded = false;
                 var endLogic = _turnEndLogicContainer[item];

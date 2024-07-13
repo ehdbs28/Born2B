@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec85c1d5336d5894a8b387b5118a9115, type: 3}
   m_Name: AttackEnemyTurn
   m_EditorClassIdentifier: 
-  _type: 5
+  _type: 6

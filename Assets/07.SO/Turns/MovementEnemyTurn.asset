@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 337ef65d7ebff5b47936e7d72ce18153, type: 3}
   m_Name: MovementEnemyTurn
   m_EditorClassIdentifier: 
-  _type: 4
+  _type: 5

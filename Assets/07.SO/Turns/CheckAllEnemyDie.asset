@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81679026d97e2e499df79f090d85af0, type: 3}
   m_Name: CheckAllEnemyDie
   m_EditorClassIdentifier: 
-  _type: 3
+  _type: 4
