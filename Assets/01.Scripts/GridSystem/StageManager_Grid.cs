@@ -188,6 +188,7 @@ public partial class StageManager
         private void HandleMoveCancel()
         {
 
+            DestroyNotSelectCell();
             _movement.Dispose();
             _movement = null;
 
