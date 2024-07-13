@@ -4,6 +4,7 @@ using UnityEngine;
 public class GameManager : MonoSingleton<GameManager>
 {
     public bool InPause { get; private set; }
+    private InputMapType prevInputType;
 
     private void Awake()
     {
@@ -39,6 +40,9 @@ public class GameManager : MonoSingleton<GameManager>
         InPause = true;
         Time.timeScale = 0f;
         UIManager.Instance.AppearUI(PoolingItemType.PausePanel);
+
+        prevInputType = InputManager.CurrentInputMapType;
+        InputManager.ChangeInputMap(InputMapType.UI);
     }
 
     public void StopPause()
@@ -50,5 +54,6 @@ public class GameManager : MonoSingleton<GameManager>
 
         InPause = false;
         Time.timeScale = 1f;
+        InputManager.ChangeInputMap(prevInputType);
     }
 }

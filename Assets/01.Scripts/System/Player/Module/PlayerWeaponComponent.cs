@@ -11,45 +11,35 @@ public class PlayerWeaponComponent : PlayerComponent
     public Weapon CurrentWeapon => currentWeapon;
 
     private Vector2Int lastAttackPoint = Vector2Int.zero;
-
-    #if UNITY_EDITOR
-    [Tooltip("EDITOR CODE")]
-    [SerializeField] WeaponItemSO weaponData = null;
-    [SerializeField] SpriteRenderer tilePrefab = null;
-    private List<GameObject> tiles = new List<GameObject>();
+    private Queue<WeaponRangeTile> tiles = new Queue<WeaponRangeTile>();
     
     public void DrawRange()
     {
         foreach (WeaponRangeSlot range in currentWeapon.Ranges)
         {
+
             Vector2Int positionInt = range.Position + lastAttackPoint;
-            Vector3 position = new Vector3(positionInt.x, positionInt.y);
-            SpriteRenderer tile = Instantiate(tilePrefab, position, Quaternion.identity);
-            tile.color = new Color(tile.color.r, tile.color.g, tile.color.b, 0.5f * range.Theta * 0.01f);
-            tiles.Add(tile.gameObject);
+            Cell? cell = StageManager.Instance.Grid.FindCellByPosition(positionInt);
+            if(cell == null)
+                return;
+            
+            CellInstance cellInstance = StageManager.Instance.Grid.GetCellInstance(cell.Value.guid);
+            WeaponRangeTile tile = cellInstance.GetComponent<WeaponRangeTile>();
+            tile.SetTileColor(range.Theta * 0.25f * 0.01f);
+            tiles.Enqueue(tile);
         }
     }
 
     public void ClearDraw()
     {
-        tiles.ForEach(i => Destroy(i));
-        tiles.Clear();
+        while(tiles.Count > 0)
+            tiles.Dequeue().SetTileColor(0f);
     }
-
-    [ContextMenu("Equip Weapon")]
-    public void Equip()
-    {
-        EquipWeapon(weaponData);
-    }
-
-#endif
 
     public override void Init(PlayerInstance player)
     {
-
         base.Init(player);
-        weaponData = (player.GetData() as UnitDataSO).weaponItem;
-        EquipWeapon(weaponData);
+        EquipWeapon((player.GetData() as UnitDataSO).weaponItem);
 
     }
 
