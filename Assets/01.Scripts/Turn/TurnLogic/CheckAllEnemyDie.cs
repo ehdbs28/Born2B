@@ -9,6 +9,7 @@ public class CheckAllEnemyDie : TurnObjectSO
     {
 
         var objs = CellObjectManager.Instance.GetCellObjectInstances<UnitInstance>();
+
         yield return null;
 
         if(objs.Count == 0)

@@ -7,7 +7,13 @@ using UnityEngine;
 public class StatModifiers
 {
     private Dictionary<StatModifierType, List<float>> modifiers = new Dictionary<StatModifierType, List<float>>();
-    public List<float> this[StatModifierType indexer] => modifiers[indexer];
+    public List<float> this[StatModifierType indexer]
+    {
+        get
+        {
+            return modifiers[indexer];
+        }
+    }
 	
     [Tooltip("가수")]
     [SerializeField] List<float> Addends = new List<float>();
@@ -18,14 +24,14 @@ public class StatModifiers
     [Tooltip("곱연산 승수")]
     [SerializeField] List<float> MultiplicationMultipliers = new List<float>();
 
-    public StatModifiers()
+    public void Init()
     {
         Type classType = typeof(StatModifiers);
         foreach(StatModifierType modifierType in Enum.GetValues(typeof(StatModifierType)))
         {
-            FieldInfo field = classType.GetField($"{modifierType}s");
+            FieldInfo field = classType.GetField($"{modifierType}s", BindingFlags.NonPublic | BindingFlags.Instance);
             if(field == null)
-                return;
+                continue;
             modifiers.Add(modifierType, field.GetValue(this) as List<float>);
         }
     }
