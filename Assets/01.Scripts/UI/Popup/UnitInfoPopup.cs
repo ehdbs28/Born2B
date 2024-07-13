@@ -88,7 +88,7 @@ public class UnitInfoPopup : UIComponent
         var effectedStatus = _unitData.statusController.StatusEffect.EffectedStatus;
         foreach (var effected in effectedStatus)
         {
-            var statusIcon = UIManager.Instance.AppearUI(Enum.Parse<PoolingItemType>($"StatusIconUnit-{effected}"));
+            var statusIcon = UIManager.Instance.AppearUI(Enum.Parse<PoolingItemType>($"StatusIconUnit-{effected}"), _statusParent);
             _statusIcons.Add(statusIcon);
         }
     }
