@@ -1,6 +1,8 @@
+using System;
+using Singleton;
 using UnityEngine;
 
-public class ItemManager : MonoBehaviour
+public class ItemManager : MonoSingleton<ItemManager>
 {
     #region TEST
     [SerializeField] ItemInventorySO inventory;
@@ -10,6 +12,8 @@ public class ItemManager : MonoBehaviour
     [SerializeField] ItemDatabaseSO equipmentItemDatabase = null;
     [SerializeField] ItemDatabaseSO artifactItemDatabase = null;
     private ItemDatabaseSO itemDatabase = null;
+
+    public event Action<ItemSO[]> OnPickItemEvent;
 
     private void Awake()
     {
@@ -32,6 +36,7 @@ public class ItemManager : MonoBehaviour
             while (items[i] == null);
         }
 
-        inventory.AddItem(items[0]);
+        OnPickItemEvent?.Invoke(items);
+        // inventory.AddItem(items[0]);
     }
 }
