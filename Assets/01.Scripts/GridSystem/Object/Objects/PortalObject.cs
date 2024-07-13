@@ -10,6 +10,7 @@ public class PortalObject : InteractionableCellObject
 {
 
     [SerializeField] private PotalType _potalType;
+    [SerializeField] private AudioData _data;
     private List<CellObjectInstance> _areadyInteractionObjects = new();
     private PortalObject _connectedPotal;
 
@@ -57,6 +58,8 @@ public class PortalObject : InteractionableCellObject
     {
 
         if (_areadyInteractionObjects.Contains(interactionInstance)) return;
+
+        AudioManager.Instance.PlayAudio(_data);
 
         if (_potalType == PotalType.TP) 
         {

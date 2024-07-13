@@ -22,4 +22,6 @@ public enum EventType
     OnGridMoveStart,
     OnGridMoveFinish,
 
+    OnPlayerAttackAndGetWeapon, //[0] Weapon
+
 }

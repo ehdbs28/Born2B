@@ -6,6 +6,9 @@ using UnityEngine;
 public class GridSoundPlayHandler : AudioPlayer
 {
 
+    [SerializeField] private AudioData _moveStartData;
+    [SerializeField] private AudioData _movieFinish;
+
     private void Awake()
     {
 
@@ -16,10 +19,17 @@ public class GridSoundPlayHandler : AudioPlayer
 
     private void HandleGridMoveFinish(object[] args)
     {
+
+        PlayAudio(_movieFinish);
+
     }
 
     private void HandleGridMoveStart(object[] args)
     {
+
+        PlayAudio(_moveStartData);
+
     }
+
 
 }

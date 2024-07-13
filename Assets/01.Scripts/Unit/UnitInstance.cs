@@ -9,6 +9,7 @@ using UnityEngine;
 public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHitable
 {
     [field: SerializeField] public List<int2> moveRole { get; set; }
+    [SerializeField] private AudioData _data;
     protected UnitFSMBase _unitFSMBase;
     protected UnitStatContainer _unitStatContainer;
     protected UnitWeaponController _weaponController;
@@ -116,6 +117,7 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
     public Vector2 Move(List<Vector2> targetPositions, Action endCallback)
     {
 
+        AudioManager.Instance.PlayAudio(_data);
         return _unitFSMBase.DoMove(targetPositions, endCallback);
 
     }
