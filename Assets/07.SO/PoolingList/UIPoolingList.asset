@@ -37,10 +37,6 @@ MonoBehaviour:
     cnt: 0
   - prefab: {fileID: -8997352907854686161, guid: e0760e88c154a4e95b25c9b5acdb0597, type: 3}
     cnt: 0
-  - prefab: {fileID: -8929718248248144044, guid: 6f96b7382792942bf9ad2ea58100185a, type: 3}
-    cnt: 0
-  - prefab: {fileID: -3449582676711883924, guid: f481bb0cab5134f41826a235ade76a91, type: 3}
-    cnt: 0
   - prefab: {fileID: -3700927824360050148, guid: 2af51b79988144b38b2d6b5c6e1d8517, type: 3}
     cnt: 0
   - prefab: {fileID: -3700927824360050148, guid: 4da9c878c90364220b92d298b50a6ebf, type: 3}
@@ -56,4 +52,6 @@ MonoBehaviour:
   - prefab: {fileID: -3700927824360050148, guid: 1253528e70007483f9784e095c7e41ad, type: 3}
     cnt: 0
   - prefab: {fileID: 4065547962489816171, guid: 2b02ebed4a25448528121545c817015f, type: 3}
+    cnt: 1
+  - prefab: {fileID: 1980457927202923545, guid: f481bb0cab5134f41826a235ade76a91, type: 3}
     cnt: 1

@@ -15,7 +15,7 @@ public class TitlePanel : UIComponent
     // events
     public void PlayHandle()
     {
-        // 플레이
+        SceneControlManager.Instance.ChangeScene(SceneType.SelectCharacter);
     }
 
     public void SettingHandle()
