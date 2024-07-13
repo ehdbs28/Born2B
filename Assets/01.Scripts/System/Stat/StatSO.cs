@@ -11,7 +11,7 @@ public class StatSO : ScriptableObject
         public StatType StatType;
         public Stat Stat;
     }
-
+    
 	[SerializeField] List<StatSlot> stats = new List<StatSlot>();
     private Dictionary<StatType, Stat> statDictionary;
     public Stat this[StatType indexer] {

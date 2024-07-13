@@ -7,5 +7,7 @@ public enum StatType
     //AttackRange,
     CriticalDamage,
     CriticalChance,
-    MagicPower
+    MagicPower,
+    TurnCount,
+    ReviveCount
 }

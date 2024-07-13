@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "SO/Item/Artifact/ConfirmCriticalItem")]
-public class ComfirmCriticalItemSO : ArtifactItemSO
+public class ComfirmCriticalItemSO : AffectNextTurnArtifactItemSO
 {
     protected override ArtifactType artifactType => ArtifactType.Usable;
     private IStatModifierItemHandler _weaponItemHandler;
@@ -16,22 +16,17 @@ public class ComfirmCriticalItemSO : ArtifactItemSO
 
         // 여기서 세팅 해주기
         _weaponItemHandler = weaponItemHandler;
-
-        EventManager.Instance.RegisterEvent(EventType.OnTurnEnded, HandleAddCriticalChance);
-        Debug.Log("다음 턴에 치명타 적용");
-        EventManager.Instance.RegisterEvent(EventType.OnPlayerAttacked, HandleRemoveCriticalChance);
-
     }
 
-    private void HandleAddCriticalChance(params object[] arr)
+    protected override void HandleAddNextTurnAffect(params object[] arr)
     {
+        base.HandleAddNextTurnAffect(arr);
         _weaponItemHandler.Stat.AddModifier(StatType.CriticalChance, StatModifierType.Addend, 100);
-        EventManager.Instance.UnRegisterEvent(EventType.OnTurnEnded, HandleAddCriticalChance);
     }
 
-    private void HandleRemoveCriticalChance(params object[] arr)
+    protected override void HandleRemoveNextTurnAffect(params object[] arr)
     {
+        base.HandleRemoveNextTurnAffect(arr);
         _weaponItemHandler.Stat.RemoveModifier(StatType.CriticalChance, StatModifierType.Addend, 100);
-        EventManager.Instance.UnRegisterEvent(EventType.OnPlayerAttacked, HandleRemoveCriticalChance);
     }
 }
