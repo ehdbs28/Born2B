@@ -42,7 +42,16 @@ public class PlayerWeaponComponent : PlayerComponent
         EquipWeapon(weaponData);
     }
 
-    #endif
+#endif
+
+    public override void OnClone(PlayerInstance clone)
+    {
+        base.OnClone(clone);
+
+        PlayerWeaponComponent component = clone.GetPlayerComponent<PlayerWeaponComponent>();
+        component.currentWeapon = component.weaponContainer.GetComponentInChildren<Weapon>();
+        component.currentWeapon.Init(clone);
+    }
 
     public Vector2Int RotateWeapon(Vector2Int position, Vector2Int point)
     {
