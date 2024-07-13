@@ -188,6 +188,7 @@ public partial class StageManager
         private void HandleMoveCancel()
         {
 
+            _movement.Dispose();
             _movement = null;
 
         }

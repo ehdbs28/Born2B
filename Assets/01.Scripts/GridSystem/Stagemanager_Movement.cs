@@ -49,9 +49,10 @@ public partial class StageManager
 
             if (_endMovement) return;
 
-            if (_moveDir == Vector2.zero)
+            if (_moveDir == Vector2.zero || Vector3.Distance(pivot.transform.position, _originPoint) < 0.5f)
             {
 
+                pivot.Clear();
                 moveCancelCallback?.Invoke();
                 return;
 
