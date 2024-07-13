@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 9106779308442671473}
   - component: {fileID: 5657000114299019678}
   - component: {fileID: 4900180477468616274}
+  - component: {fileID: 6482834449760033099}
   m_Layer: 3
   m_Name: PlayerInstance
   m_TagString: Untagged
@@ -230,6 +231,7 @@ MonoBehaviour:
   playerComponentList:
   - {fileID: 4346465658549922907}
   - {fileID: 2059863465390811998}
+  - {fileID: 6482834449760033099}
 --- !u!114 &3211721509405190847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,8 +245,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponContainer: {fileID: 7803638571080050817}
-  weaponData: {fileID: 11400000, guid: 2e16118b352a076488464909bf796435, type: 2}
-  tilePrefab: {fileID: 4100468086583494097, guid: edd40b3f6fcf73e4b91c74b5c287147f, type: 3}
 --- !u!114 &6460470384840962881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,3 +408,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2ed59843892502d46917f5463b6bf383, type: 2}
   - {fileID: 11400000, guid: 62603809dfb44cb408ab33351045f64b, type: 2}
   _getItem: {fileID: 11400000, guid: c68d4829318b2084da7435dfed15a7a2, type: 2}
+--- !u!114 &6482834449760033099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7262097254093175993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11bc36fe9daedc340b81454de72d8f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
