@@ -25,7 +25,6 @@ public class PlayerWeaponComponent : PlayerComponent
             if(cell == null)
                 return;
             
-            Debug.Log(positionInt);
             CellInstance cellInstance = StageManager.Instance.Grid.GetCellInstance(cell.Value.guid);
             WeaponRangeTile tile = cellInstance.GetComponent<WeaponRangeTile>();
             tile.SetTileColor(range.Theta * 0.25f * 0.01f);

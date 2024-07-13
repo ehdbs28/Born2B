@@ -27,8 +27,11 @@ public class StatusController : MonoBehaviour
 
         foreach(StatusType status in Enum.GetValues(typeof(StatusType)))
         {
+            if(status == StatusType.None)
+                continue;
+
             if(type.HasFlag(status))
-                _statusEffect.AddStatus(status, remainTurn);
+                _statusEffect.AddStatus(new StatusEffectParams(status, remainTurn));
         }
     }
 }
