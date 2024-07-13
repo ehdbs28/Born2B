@@ -105,7 +105,7 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
         if(player != null)
         {
 
-            var c = Vector3.Cross(transform.position, player.transform.position);
+            var c = Vector3.Cross(Vector3.up, player.transform.position - transform.position);
 
             _renderer.flipX = c.z > 0;
 
