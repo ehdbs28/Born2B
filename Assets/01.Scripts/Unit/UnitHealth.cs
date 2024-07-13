@@ -15,6 +15,7 @@ public class UnitHealth : MonoBehaviour, IHealth
     {
         
         _container = GetComponent<UnitStatContainer>();
+        ResetHp();
 
     }
 
