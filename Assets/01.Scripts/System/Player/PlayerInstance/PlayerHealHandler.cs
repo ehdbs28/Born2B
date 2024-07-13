@@ -1,4 +1,4 @@
-public partial class PlayerInstance : IHealingItemHandler
+public partial class PlayerInstance : IHealthItemHandler
 {
     public IHealth Health => GetPlayerComponent<PlayerHealthComponent>();
 }

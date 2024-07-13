@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: LongSpear
   m_EditorClassIdentifier: 
   Rarity: 1
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: 21300000, guid: 981447b84ef851743a231be7d3b59557, type: 3}
   ItemName: "\uB871 \uC2A4\uD53C\uC5B4"
   ItemDescription: 
   WeaponPrefab: {fileID: 0}
-  Evolutions: {fileID: 0}
-  EffectedStatusType: 0
-  EffectedTurnCount: 0
+  Evolutions: {fileID: 11400000, guid: abb0d1873c7dc31448e7ddfdd1c4188c, type: 2}
+  StatusEffects: []
   KnockBackPower: 0
   Damage: 50
   Range:

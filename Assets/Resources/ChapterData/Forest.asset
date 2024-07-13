@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dcd914bb17bc87448ce6df83487a722, type: 3}
   m_Name: Forest
   m_EditorClassIdentifier: 
-  <chapterCellPrefab>k__BackingField: {fileID: 7650415247363615662, guid: 9cd4f720b90a1304a91450bb0902ec5f, type: 3}
+  <chapterCellPrefab_T1>k__BackingField: {fileID: 7650415247363615662, guid: d308fc5dc26b1af4b97b9b35712c03fe, type: 3}
+  <chapterCellPrefab_T2>k__BackingField: {fileID: 7650415247363615662, guid: d89d1e21b0aec984d9e8d2b53bb6e8df, type: 3}
   stageObjectSlotList:
   - objectType: 0
     objectName: 1
@@ -35,13 +36,17 @@ MonoBehaviour:
     objectData: {fileID: 11400000, guid: 24b12dd6f0d33bc49bde59c611289172, type: 2}
     objectIcon: {fileID: 21300000, guid: f5474cdece5167342ab019e1af05123e, type: 3}
   - objectType: 2
-    objectName: 3
+    objectName: PT
     objectData: {fileID: 11400000, guid: 735b5bffe3a816e4fb2b1e6aa2a20002, type: 2}
     objectIcon: {fileID: 21300000, guid: ec8c973c5d250924a96ab7b9264de991, type: 3}
   - objectType: 5
     objectName: 9
     objectData: {fileID: 11400000, guid: 4cebd27681d28854b9b80e2120130b35, type: 2}
     objectIcon: {fileID: 21300000, guid: ffe1474e2a8787f458e75a3ed473826e, type: 3}
+  - objectType: 4
+    objectName: 8
+    objectData: {fileID: 11400000, guid: c2c010b0986c7a64d80747e5db12c6bc, type: 2}
+    objectIcon: {fileID: 21300000, guid: fd5eecbe19b9df34c8381dc0297f6a3d, type: 3}
   stages:
   - {fileID: 11400000, guid: 704174de07e07f641b259eee4bee1e1a, type: 2}
   chapterName:

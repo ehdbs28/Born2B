@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: BattleAxe
   m_EditorClassIdentifier: 
   Rarity: 1
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: 21300000, guid: 45c62dc9165af554698bde40d06b19cd, type: 3}
   ItemName: "\uBC30\uD2C0 \uC5D1\uC2A4"
   ItemDescription: 
   WeaponPrefab: {fileID: -6942030965757976987, guid: 85e32179d26470c47a2ae5808daad8e2, type: 3}
-  Evolutions: {fileID: 0}
+  Evolutions: {fileID: 11400000, guid: abb0d1873c7dc31448e7ddfdd1c4188c, type: 2}
   StatusEffects: []
   KnockBackPower: 0
   Damage: 20

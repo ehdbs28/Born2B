@@ -38,6 +38,7 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
         var casted = so as UnitDataSO;
         _unitStatContainer.Init(casted.stat);
         _weaponController.Init(casted.weaponItem, this);
+        _health.ResetHp();
 
         moveRole = casted.movementRole;
 
@@ -48,9 +49,12 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
 
         if (attackObject is UnitInstance) return false;
 
+        bool die = _health.CurrentHp <= 0;
+        EventManager.Instance.PublishEvent(EventType.OnUnitDamaged, this, die);
+
         _health.ReduceHp((int)damage);
 
-        if(_health.CurrentHp <= 0)
+        if(die)
         {
 
             Die();

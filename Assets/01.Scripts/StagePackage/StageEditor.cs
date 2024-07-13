@@ -46,7 +46,6 @@ public class CellVisual : VisualElement
             if (textureIdx < maxIdx)
             {
                 textureIdx++;
-
             }
             else
             {

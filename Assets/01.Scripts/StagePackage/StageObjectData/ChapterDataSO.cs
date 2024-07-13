@@ -9,7 +9,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SO/Chapter/Data")]
 public class ChapterDataSO : ScriptableObject
 {
-    [field:SerializeField]  public CellInstance chapterCellPrefab { get; private set; }
+    [field:SerializeField]  public CellInstance chapterCellPrefab_T1 { get; private set; }
+    [field: SerializeField] public CellInstance chapterCellPrefab_T2 { get; private set; }
     public List<StageObjectSlot> stageObjectSlotList = new();
     public List<StageDataSO> stages;
     private Dictionary<string, (StageObjectType, StageObjectSO)> _nameToObjectDataDic = new();

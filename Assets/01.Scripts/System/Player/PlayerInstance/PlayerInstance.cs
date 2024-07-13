@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public partial class PlayerInstance : CellObjectInstance, IHitable
@@ -13,17 +14,32 @@ public partial class PlayerInstance : CellObjectInstance, IHitable
         base.Awake();
         _collider = GetComponent<Collider2D>();
 
+        //InitPlayerComponents();
+    }
+
+    public override void Init(CellObjectSO so)
+    {
+        base.Init(so);
         InitPlayerComponents();
     }
 
-
     protected virtual void OnDestroy()
     {
-        ReleasePlayerComponents();   
+        ReleasePlayerComponents();
+    }
+
+    public override object Clone()
+    {
+        PlayerInstance clone = base.Clone() as PlayerInstance;
+        playerModuleList.ForEach(i => i.OnClone(clone));
+        playerComponentList.ForEach(i => i.OnClone(clone));
+
+        return clone;
     }
 
     public bool Hit(CellObjectInstance attackObject, float damage, bool critical)
     {
+
         PlayerHealthComponent health = GetPlayerComponent<PlayerHealthComponent>();
         if(health.CurrentHp <= 0)
             return false;

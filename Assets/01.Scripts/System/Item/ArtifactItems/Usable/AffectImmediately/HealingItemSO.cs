@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "SO/Item/HealingItem")]
+[CreateAssetMenu(menuName = "SO/Item/Artifact/HealingItem")]
 public class HealingItemSO : ArtifactItemSO
 {
     protected override ArtifactType artifactType => ArtifactType.UseImmediately;
@@ -10,17 +10,12 @@ public class HealingItemSO : ArtifactItemSO
 
     public override void UseArtifact(params object[] args)
     {
-        if (!TryParseHandler(OwnerHandler, out IHealingItemHandler healingItemHandler))
+        if (!TryParseHandler(OwnerHandler, out IHealthItemHandler healthItemHandler))
         {
             return;
         }
         
-        healingItemHandler.Health.AddHp(_healCnt);
+        healthItemHandler.Health.AddHp(_healCnt);
         Debug.Log($"{_healCnt} 회복");
     }
-}
-
-public interface IHealingItemHandler : IItemHandler
-{
-    public IHealth Health { get; } 
 }

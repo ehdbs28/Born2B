@@ -42,7 +42,16 @@ public class PlayerWeaponComponent : PlayerComponent
         EquipWeapon(weaponData);
     }
 
-    #endif
+#endif
+
+    public override void OnClone(PlayerInstance clone)
+    {
+        base.OnClone(clone);
+
+        PlayerWeaponComponent component = clone.GetPlayerComponent<PlayerWeaponComponent>();
+        component.currentWeapon = component.weaponContainer.GetComponentInChildren<Weapon>();
+        component.currentWeapon.Init(clone);
+    }
 
     public Vector2Int RotateWeapon(Vector2Int position, Vector2Int point)
     {
@@ -80,6 +89,8 @@ public class PlayerWeaponComponent : PlayerComponent
         currentWeapon.transform.localPosition = Vector3.zero;
         currentWeapon.Init(player);
 
+        EventManager.Instance.PublishEvent(EventType.OnPlayerWeaponChanged);
+
         return true;
     }
 
@@ -87,6 +98,8 @@ public class PlayerWeaponComponent : PlayerComponent
     {
         currentWeapon.Release();
         currentWeapon = null;
+
+        EventManager.Instance.PublishEvent(EventType.OnPlayerWeaponChanged);
 
         return true;
     }

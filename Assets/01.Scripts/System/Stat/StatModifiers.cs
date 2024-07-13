@@ -52,12 +52,12 @@ public class StatModifiers
 
     private void CalculateSumMultipliers(ref float inValue)
     {
-        float multiplier = 0f;
+        float multiplier = 1f;
         for(int i = 0; i < SumMultipliers.Count; ++i)
             multiplier += SumMultipliers[i];
         inValue *= multiplier;
     }
-
+    
     private void CalculateMultiplicationMultipliers(ref float inValue)
     {
         float multiplier = 1f;

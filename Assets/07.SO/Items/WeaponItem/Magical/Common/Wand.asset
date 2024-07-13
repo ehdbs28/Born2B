@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: Wand
   m_EditorClassIdentifier: 
   Rarity: 1
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: 21300000, guid: bb7ee674b3fc5314d8ed786658cbb409, type: 3}
   ItemName: "\uAC12\uC2FC \uC644\uB4DC"
   ItemDescription: 
   WeaponPrefab: {fileID: 0}
-  Evolutions: {fileID: 0}
-  EffectedStatusType: 0
-  EffectedTurnCount: 0
+  Evolutions: {fileID: 11400000, guid: 03daaf2d4cf50a14e88f72095c5de0ff, type: 2}
+  StatusEffects: []
   KnockBackPower: 0
   Damage: 50
   Range:

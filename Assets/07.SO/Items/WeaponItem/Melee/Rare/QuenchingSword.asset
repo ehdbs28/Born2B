@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: QuenchingSword
   m_EditorClassIdentifier: 
   Rarity: 2
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: 21300000, guid: bc2c70559ee47d94c9f89adb75d025db, type: 3}
   ItemName: "\uB2F4\uAE08\uC9C8 \uAC80"
   ItemDescription: 
   WeaponPrefab: {fileID: 0}
-  Evolutions: {fileID: 0}
-  EffectedStatusType: 1
-  EffectedTurnCount: 2
+  Evolutions: {fileID: 11400000, guid: abb0d1873c7dc31448e7ddfdd1c4188c, type: 2}
+  StatusEffects: []
   KnockBackPower: 0
   Damage: 60
   Range:

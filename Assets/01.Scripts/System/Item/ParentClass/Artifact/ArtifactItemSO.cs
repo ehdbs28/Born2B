@@ -36,12 +36,12 @@ public abstract class ArtifactItemSO : ItemSO
 
     public abstract void UseArtifact(params object[] args);
 
-    private void RegisterEvent()
+    protected void RegisterEvent()
     {
         EventManager.Instance.RegisterEvent(CallingEventType, UseArtifact);
     }
 
-    private void UnRegisterEvent()
+    protected void UnRegisterEvent()
     {
         EventManager.Instance.UnRegisterEvent(CallingEventType, UseArtifact);
     }

@@ -1,8 +1,10 @@
 using UnityEngine;
 
-public partial class PlayerInstance : IWeaponItemHandler
+public partial class PlayerInstance : IWeaponItemHandler, IWeaponArtifactItemHandler
 {
     public WeaponItemSO CurrentWeaponData => GetPlayerComponent<PlayerWeaponComponent>().CurrentWeapon?.WeaponData;
+
+    public Weapon CurrentWeapon => GetPlayerComponent<PlayerWeaponComponent>().CurrentWeapon;
 
     public bool EquipWeapon(WeaponItemSO weaponData)
     {
