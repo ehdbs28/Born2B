@@ -12,6 +12,23 @@ public class StatusEffectSO : ScriptableObject
     private Dictionary<StatusType, int> _remainTurnDictionary;
     private Dictionary<StatusType, StatusEffectHandler> _effecteHandlers;
 
+    public List<StatusType> EffectedStatus {
+        get
+        {
+            var list = new List<StatusType>();
+            foreach (var pair in _remainTurnDictionary)
+            {
+                if (pair.Value > 0)
+                {
+                    list.Add(pair.Key);
+                }
+            }
+            return list;
+        }
+    }
+
+    public event Action OnStatusChanged = null;
+
     public void Init(CellObjectInstance owner)
     {
         this.owner = owner;

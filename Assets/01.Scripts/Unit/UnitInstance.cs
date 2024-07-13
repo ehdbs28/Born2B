@@ -26,7 +26,6 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
         _unitFSMBase = GetComponent<UnitFSMBase>();
         _weaponController = GetComponent<UnitWeaponController>();
         _health = GetComponent<UnitHealth>();
-
     }
 
 
@@ -36,6 +35,8 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
         
         base.Init(so);
         var casted = so as UnitDataSO;
+        casted.health = _health;
+        casted.statusController = GetComponent<StatusController>();
         _unitStatContainer.Init(casted.stat);
         _weaponController.Init(casted.weaponItem, this);
         _health.ResetHp();

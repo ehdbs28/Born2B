@@ -16,6 +16,8 @@ MonoBehaviour:
   <cellObjectType>k__BackingField: 0
   <animator>k__BackingField: {fileID: 9100000, guid: f46556fb87ff8654a80fc6d893640cc1, type: 2}
   <sprite>k__BackingField: {fileID: 0}
+  unitName: "\uACF0"
+  unitDesc: "\uACF0\uACF0"
   <weaponItem>k__BackingField: {fileID: 11400000, guid: dd3050857362d954c805c802a593181f, type: 2}
   <movementRole>k__BackingField:
   - x: 1

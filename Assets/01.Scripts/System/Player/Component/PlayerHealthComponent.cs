@@ -1,10 +1,14 @@
 using System;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 
 public class PlayerHealthComponent : PlayerComponent, IHealth
 {
     private PlayerStatComponent stat = null;
+    
+    public Action<int, int> OnChangedHpEvent { get; set;  }
+
     
     private int currentHp = 0;
     public int CurrentHp => currentHp;
@@ -20,12 +24,13 @@ public class PlayerHealthComponent : PlayerComponent, IHealth
         stat = player.GetPlayerComponent<PlayerStatComponent>();
         ResetHp();
     }
-
+    
     public void ResetHp()
     {
         if (!CanChangedHP) return;
 
-        currentHp = (int)stat.GetStat(StatType.MaxHP).CurrentValue;
+        currentHp = MaxHp;
+        OnChangedHpEvent?.Invoke(currentHp, MaxHp);
     }
 
     public void AddHp(int healHp)
@@ -33,6 +38,7 @@ public class PlayerHealthComponent : PlayerComponent, IHealth
         if (!CanChangedHP) return;
 
         currentHp = Mathf.Clamp(currentHp + healHp, 0, MaxHp);
+        OnChangedHpEvent?.Invoke(currentHp, MaxHp);
     }
 
     public void ReduceHp(int reduceHp)
@@ -40,5 +46,6 @@ public class PlayerHealthComponent : PlayerComponent, IHealth
         if (!CanChangedHP) return;
 
         currentHp = Mathf.Clamp(currentHp - reduceHp, 0, MaxHp);
+        OnChangedHpEvent?.Invoke(currentHp, MaxHp);
     }
 }
