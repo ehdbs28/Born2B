@@ -4,6 +4,7 @@ public class TitleScene : Scene
 
     public override void OnPop()
     {
+        UIManager.Instance.AppearUI(PoolingItemType.TitlePanel);
     }
 
     public override void OnPush()

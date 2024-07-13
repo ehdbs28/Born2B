@@ -4,6 +4,7 @@ public class StageScene : Scene
 
     public override void OnPop()
     {
+        UIManager.Instance.AppearUI(PoolingItemType.InGamePanel);
     }
 
     public override void OnPush()
