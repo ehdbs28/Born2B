@@ -5,6 +5,7 @@ public class InGameScreen : UIComponent
     public InventoryUI Inventory { get; private set; }
     public PlayerInfoUI PlayerInfo { get; private set; }
     public ArtifactInventoryUI ArtifactInventory { get; private set; }
+    public TurnSkipUI SkipPanel { get; private set; }
 
     protected override void Awake()
     {
@@ -13,6 +14,7 @@ public class InGameScreen : UIComponent
         Inventory = transform.Find("Inventory").GetComponent<InventoryUI>();
         PlayerInfo = transform.Find("PlayerInfo").GetComponent<PlayerInfoUI>();
         ArtifactInventory = transform.Find("Artifacts").GetComponent<ArtifactInventoryUI>();
+        SkipPanel = transform.Find("SkipButton").GetComponent<TurnSkipUI>();
     }
 
     public override void Appear(Transform parent)
@@ -21,6 +23,7 @@ public class InGameScreen : UIComponent
         
         Inventory.Init();
         ArtifactInventory.Init();
+        SkipPanel.Init();
     }
 
     public override void Disappear(bool poolIn = true)
@@ -29,5 +32,6 @@ public class InGameScreen : UIComponent
         
         Inventory.Release();
         ArtifactInventory.Release();
+        SkipPanel.Release();
     }
 }
