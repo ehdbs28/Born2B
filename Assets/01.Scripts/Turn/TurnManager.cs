@@ -210,6 +210,13 @@ public class TurnManager : MonoSingleton<TurnManager>
 
     }
 
+    public void SkipTurn(TurnType targetSkipTurn)
+    {
+
+        _targetSkipTurn = targetSkipTurn;
+
+    }
+
     private void CheckPlayerTurnEnd(TurnType item)
     {
 
