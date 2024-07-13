@@ -20,11 +20,13 @@ public partial class PlayerInstance : CellObjectInstance, IHitable
     {
         base.Init(so);
 
+        UnitDataSO unitData = so as UnitDataSO;
+        unitData.Init();
+
         InitPlayerComponents();
 
-        var castSo = so as UnitDataSO;
-        castSo.health = Health;
-        castSo.statusController = GetComponent<StatusController>();   
+        unitData.health = Health;
+        unitData.statusController = GetComponent<StatusController>();   
     }
 
     protected virtual void OnDestroy()

@@ -8,7 +8,8 @@ public class PlayerStatComponent : PlayerComponent
     public override void Init(PlayerInstance player)
     {
         base.Init(player);
-        statData = Instantiate((player.GetData() as UnitDataSO).stat);
+    
+        statData = (player.GetData() as UnitDataSO).Stat;
     }
 
     public Stat GetStat(StatType statType) => statData[statType];

@@ -6,6 +6,7 @@ public class PlayerUIComponent : PlayerComponent
 
     private PlayerHealthComponent healthComponent = null;
     private PlayerAttackComponent attackComponent = null;
+    private PlayerWeaponComponent weaponComponent = null;
 
     public override void Init(PlayerInstance player)
     {
@@ -19,10 +20,19 @@ public class PlayerUIComponent : PlayerComponent
         healthComponent.OnChangedHpEvent += HandleHPChanged;
 
         attackComponent = player.GetPlayerComponent<PlayerAttackComponent>();
-        attackComponent.OnAttackEvent += HandleAttack;
+        attackComponent.OnAmmoChangedEvent += HandleAmmoChanged;
+
+        weaponComponent = player.GetPlayerComponent<PlayerWeaponComponent>();
+        weaponComponent.OnWeaponEquipEvent += HandleWeaponEquip;
 
         player.GetPlayerComponent<PlayerStatComponent>().Stat.OnStatChangedEvent += HandleStatChanged;
-        player.GetPlayerComponent<PlayerWeaponComponent>().OnWeaponEquipEvent += HandleWeaponEquip;
+
+        if(player.isClone)
+            return;
+
+        infoPanel.DisplayHealthInfo(healthComponent.CurrentHp, healthComponent.MaxHp);
+        infoPanel.DisplayAttackCount(attackComponent.CurrentAmmoCount, attackComponent.MaxAmmoCount);
+        infoPanel.DisplayWeapon(weaponComponent.CurrentWeapon.WeaponData.ItemIcon);
     }
 
     private void HandleHPChanged(int current, int max)
@@ -35,8 +45,9 @@ public class PlayerUIComponent : PlayerComponent
         infoPanel.DisplayHealthInfo(healthComponent.CurrentHp, healthComponent.MaxHp);
     }
 
-    private void HandleAttack()
+    private void HandleAmmoChanged()
     {
+        Debug.Log($"Current : {attackComponent.CurrentAmmoCount} / MAX : {attackComponent.MaxAmmoCount}");
         infoPanel.DisplayAttackCount(attackComponent.CurrentAmmoCount, attackComponent.MaxAmmoCount);
     }
 

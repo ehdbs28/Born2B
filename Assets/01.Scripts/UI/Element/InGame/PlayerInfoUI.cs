@@ -40,7 +40,7 @@ public class PlayerInfoUI : UIComponent
         for(; i < max; ++i)
         {
             list[i].gameObject.SetActive(true);
-            list[i].color = new Color(1, 1, 1, 0.5f);
+            list[i].color = new Color(1, 1, 1, 0.25f);
         }
 
         for(; i < list.Count; ++i)
