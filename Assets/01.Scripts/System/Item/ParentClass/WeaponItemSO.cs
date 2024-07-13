@@ -14,7 +14,7 @@ public class WeaponItemSO : ItemSO
 
     [Space(15f)]
     public int KnockBackPower;
-    public int AmmoCount;
+    public int AmmoCount = 3;
     public float Damage;
 
     public WeaponRange Range;

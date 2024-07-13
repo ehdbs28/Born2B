@@ -16,6 +16,8 @@ MonoBehaviour:
   <cellObjectType>k__BackingField: 0
   <animator>k__BackingField: {fileID: 9100000, guid: ed54525888446d04a8dbf40e13638c4a, type: 2}
   <sprite>k__BackingField: {fileID: 0}
+  unitName: 
+  unitDesc: 
   <weaponItem>k__BackingField: {fileID: 11400000, guid: dd3050857362d954c805c802a593181f, type: 2}
   <movementRole>k__BackingField:
   - x: 2
@@ -34,7 +36,7 @@ MonoBehaviour:
     y: 2
   - x: 0
     y: -2
-  <stat>k__BackingField: {fileID: 0}
+  stat: {fileID: 11400000, guid: e437d055a5341e24fa1a1eac0ac41e2c, type: 2}
   <weapons>k__BackingField:
   - objectName: 
     item: {fileID: 0}

@@ -12,10 +12,10 @@ public class PlayerAttackComponent : PlayerComponent
     private Camera mainCamera = null;
 
     public int MaxAmmoCount => weapon.CurrentWeapon.WeaponData.AmmoCount;
-    public int CurrentAmmoCount => curerntAmmo;
+    public int CurrentAmmoCount => currentAmmo;
     
-    private int curerntAmmo = 0;
-    public event Action OnAttackEvent = null;
+    private int currentAmmo = 0;
+    public event Action OnAmmoChangedEvent = null;
 
     private bool active = false;
 
@@ -31,6 +31,9 @@ public class PlayerAttackComponent : PlayerComponent
         weapon = player.GetPlayerComponent<PlayerWeaponComponent>();
         mainCamera = Camera.main;
 
+        weapon.OnWeaponEquipEvent += HandleEquipWeapon;
+        currentAmmo = MaxAmmoCount;
+        
         input.OnAttackEvent += HandleAttack;
         EventManager.Instance.RegisterEvent(EventType.OnTurnChanged, HandleTurnChanged);
     }
@@ -58,17 +61,24 @@ public class PlayerAttackComponent : PlayerComponent
 
     private void HandleAttack()
     {
+        // if(curerntAmmo <= 0)
+        //     return;
+
         Vector2Int inputPosition = mainCamera.ScreenToWorldPoint(input.ScreenPosition).GetVectorInt();
         AttackParams attackParams = new AttackParams(attackStat, criticalChanceStat, criticalDamageStat, targetLayer);
-        weapon.Attack(inputPosition, attackParams);
-        OnAttackEvent?.Invoke();
         
-        // 아티팩트 등으로 공격 회수가 늘어나게 되면 이 부분 수정해야됨
-        // 혹은 여기는 놔두고 PlayerAttackTurn 자체를 여러번 하는 것도 괜찮음.
-        active = false;
-        weapon.ClearDraw();
+        weapon.Attack(inputPosition, attackParams);
+        currentAmmo--;
+        
+        OnAmmoChangedEvent?.Invoke();
         EventManager.Instance.PublishEvent(EventType.OnPlayerAttackAndGetWeapon, weapon);
-        TurnManager.Instance.EndCurrentTurn();
+
+        if (currentAmmo <= 0) // 공격 스킵 조건 넣어야 됨
+        {
+            active = false;
+            weapon.ClearDraw();
+            TurnManager.Instance.EndCurrentTurn();
+        }
     }
 
     private void HandleTurnChanged(params object[] args)
@@ -84,5 +94,13 @@ public class PlayerAttackComponent : PlayerComponent
             return;
 
         active = true;
+        currentAmmo = Mathf.Min(currentAmmo + 1, MaxAmmoCount);
+        OnAmmoChangedEvent?.Invoke();
+    }
+
+    private void HandleEquipWeapon(WeaponItemSO weaponData)
+    {
+        currentAmmo = weaponData.AmmoCount;
+        OnAmmoChangedEvent?.Invoke();
     }
 }

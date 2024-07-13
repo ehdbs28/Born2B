@@ -48,7 +48,7 @@ public class UnitInfoPopup : UIComponent
 
         newData.statusController.StatusEffect.OnStatusChanged += StatusHandle;
         newData.health.OnChangedHpEvent += DamagedHandle;
-        newData.stat.OnStatChangedEvent += StatChangedHandle;
+        newData.Stat.OnStatChangedEvent += StatChangedHandle;
         
         StatusHandle();
         DamagedHandle(newData.health.CurrentHp, newData.health.MaxHp);
@@ -65,7 +65,7 @@ public class UnitInfoPopup : UIComponent
         
         _unitData.statusController.StatusEffect.OnStatusChanged += StatusHandle;
         _unitData.health.OnChangedHpEvent -= DamagedHandle;
-        _unitData.stat.OnStatChangedEvent -= StatChangedHandle;
+        _unitData.Stat.OnStatChangedEvent -= StatChangedHandle;
         base.Disappear(poolIn);
     }
 
@@ -76,9 +76,9 @@ public class UnitInfoPopup : UIComponent
 
     private void StatChangedHandle()
     {
-        for (var i = 0; i < _unitData.stat.stats.Count; i++)
+        for (var i = 0; i < _unitData.Stat.stats.Count; i++)
         {
-            var stat = _unitData.stat[(StatType)(i + 1)];
+            var stat = _unitData.Stat[(StatType)(i + 1)];
 
             if (stat == null)
             {

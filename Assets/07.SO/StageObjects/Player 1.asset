@@ -20,4 +20,4 @@ MonoBehaviour:
   unitDesc: 
   <weaponItem>k__BackingField: {fileID: 11400000, guid: 30e70927459af1849b0e56b2ecbf5ae8, type: 2}
   <movementRole>k__BackingField: []
-  <stat>k__BackingField: {fileID: 11400000, guid: 5dcf2be2d1ce081458e936c8915024fd, type: 2}
+  stat: {fileID: 11400000, guid: 5dcf2be2d1ce081458e936c8915024fd, type: 2}
