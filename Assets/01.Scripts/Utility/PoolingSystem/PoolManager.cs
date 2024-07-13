@@ -28,6 +28,11 @@ public class PoolManager : MonoSingleton<PoolManager>
         _pools.Add(prefab.name, new Pool(prefab, parent, cnt));
     }
 
+    public PoolableMono Pop(PoolingItemType key)
+    {
+        return Pop(key.ToString());
+    }
+
     public PoolableMono Pop(string key)
     {
         if (_pools.TryGetValue(key, out var pool))
