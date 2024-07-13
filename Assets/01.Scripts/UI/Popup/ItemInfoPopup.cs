@@ -1,4 +1,3 @@
-
 using TMPro;
 using UnityEngine;
 
@@ -14,10 +13,15 @@ public class ItemInfoPopup : UIComponent
 
         _nameText = transform.Find("Data/InfoText/NameText").GetComponent<TextMeshProUGUI>();
         _rarityText = transform.Find("Data/InfoText/RarityText").GetComponent<TextMeshProUGUI>();
+        _descText = transform.Find("Data/DescText").GetComponent<TextMeshProUGUI>();
     }
 
     public void Init(ItemSO data)
     {
+        _nameText.text = data.ItemName;
+        _rarityText.color = UIDefine.GetColorByRarity(data.Rarity);
+        _rarityText.text = UIDefine.GetRarityKoreanText(data.Rarity);
+        _descText.text = data.ItemDescription;
     }
 
     public void SetPosition(Vector2 newPos)

@@ -10,5 +10,5 @@ public enum StatusType
     Silence = 1 << 4,
     Drained = 1 << 5,
     Berserk = 1 << 6,
-    HighschoolJeongmin = 1 << 7
+    Fixed = 1 << 7
 }

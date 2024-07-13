@@ -21,7 +21,10 @@ public class UIButton : UIComponent, IPointerClickHandler, IPointerEnterHandler,
     protected override void Awake()
     {
         base.Awake();
-        _originScale = transform.localScale;
+        if (_targetImageTrm != null)
+        {
+            _originScale = _targetImageTrm.localScale;
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -68,13 +71,11 @@ public class UIButton : UIComponent, IPointerClickHandler, IPointerEnterHandler,
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("Up");
         onPointerUpEvent?.Invoke(eventData);
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("Down");
         onPointerDownEvent?.Invoke(eventData);
     }
 
