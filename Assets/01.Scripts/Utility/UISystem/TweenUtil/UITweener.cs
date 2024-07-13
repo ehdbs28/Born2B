@@ -48,16 +48,16 @@ public class UITweener : IUITweener
     {
         IsPlay = true;
 
-        foreach (var tween in tweens)
+        for (var i = 0; i < tweens.Count; i++)
         {
-            if (tween.joinPrevAnimation)
+            if (i < tweens.Count - 1 && tweens[i + 1].joinPrevAnimation)
             {
-                tween.PlayTween();
+                tweens[i].PlayTween();
                 yield return null;
             }
             else
             {
-                yield return tween.PlayTween();
+                yield return tweens[i].PlayTween();
             }
         }
 

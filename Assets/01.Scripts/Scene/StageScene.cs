@@ -5,10 +5,7 @@ public class StageScene : Scene
     public override void EnterScene()
     {
         UIManager.Instance.AppearUI(PoolingItemType.InGamePanel);
+        UIManager.Instance.AppearUI(PoolingItemType.StageEnterPopup);
         FlowManager.Instance.StartFlow();
-    }
-
-    public override void OnPop()
-    {
     }
 }

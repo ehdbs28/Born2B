@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public abstract class Scene : PoolableMono
 {
@@ -7,7 +8,10 @@ public abstract class Scene : PoolableMono
 
     public virtual void EnterScene()
     {
-        _poolingObjects.Clear();
+    }
+
+    public virtual void LoadedScene()
+    {
     }
 
     public virtual void ExitScene()
@@ -23,6 +27,11 @@ public abstract class Scene : PoolableMono
         }
         
         _poolingObjects.Add(obj);
+    }
+
+    public override void OnPop()
+    {
+        _poolingObjects.Clear();
     }
 
     public override void OnPush()
