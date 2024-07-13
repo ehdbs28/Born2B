@@ -13,8 +13,6 @@ public class ItemManager : MonoSingleton<ItemManager>
     [SerializeField] ItemDatabaseSO artifactItemDatabase = null;
     private ItemDatabaseSO itemDatabase = null;
 
-    public event Action<ItemSO[]> OnPickItemEvent;
-
     private void Awake()
     {
         Init(weaponDatabase);
@@ -28,6 +26,8 @@ public class ItemManager : MonoSingleton<ItemManager>
 
     public void PickItems()
     {
+        var itemSelectPanel = UIManager.Instance.AppearUI(PoolingItemType.ItemSelectPanel) as ItemSelectPanel;
+        
         ItemSO[] items = new ItemSO[3];
         for(int i = 0; i < items.Length; ++i)
         {
@@ -35,8 +35,7 @@ public class ItemManager : MonoSingleton<ItemManager>
                 items[i] = itemDatabase.PickRandom();
             while (items[i] == null);
         }
-
-        OnPickItemEvent?.Invoke(items);
-        // inventory.AddItem(items[0]);
+        
+        itemSelectPanel.ItemSet(items);
     }
 }

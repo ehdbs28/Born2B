@@ -38,10 +38,12 @@ public class ItemSelectUnit : UIButton
 
         if (_inventory.AddItem(_holdingItemSo))
         {
+            FlowManager.Instance.NextCycle();
             return;
         }
         
         // 아이템이 모종의 이유로 들어가지 못하였을 때
+        FlowManager.Instance.NextCycle();
     }
     
     public void ShowInfoUI(PointerEventData eventData)
