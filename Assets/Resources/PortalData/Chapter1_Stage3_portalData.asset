@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Chapter1_Stage3_portalData
   m_EditorClassIdentifier: 
   portalLinkList:
-  - linkPortalIndex_1: {x: 3, y: 1}
-    linkPortalIndex_2: {x: 1, y: 3}
+  - linkPortalIndex_1: {x: 4, y: 5}
+    linkPortalIndex_2: {x: 0, y: 0}
