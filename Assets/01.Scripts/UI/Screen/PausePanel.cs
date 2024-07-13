@@ -8,9 +8,10 @@ public class PausePanel : UIComponent
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(settingPanel != null)
-                return;
-            Disappear();
+            if(settingPanel.state == PoolingState.PoolOut)
+                settingPanel.Disappear();
+            else
+                Disappear();
         }
     }
 
@@ -21,6 +22,7 @@ public class PausePanel : UIComponent
 
     public override void Disappear(bool poolIn = true)
     {
+        GameManager.Instance.StopPause();
         base.Disappear(poolIn);
     }
     
