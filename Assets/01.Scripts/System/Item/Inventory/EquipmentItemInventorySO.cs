@@ -7,6 +7,19 @@ public class EquipmentItemInventorySO : ItemInventorySlotSO
 {
     public override Type ItemType => typeof(EquipmentItemSO);
 
+    public override List<ItemSO> AllItems
+    {
+        get
+        {
+            var list = new List<ItemSO>();
+            foreach (var pair in inventory)
+            {
+                list.Add(pair.Key);
+            }
+            return list;
+        }
+    }
+
     private Dictionary<EquipmentItemSO, int> inventory = new Dictionary<EquipmentItemSO, int>();
 
     public override bool AddItem(ItemSO itemData)
