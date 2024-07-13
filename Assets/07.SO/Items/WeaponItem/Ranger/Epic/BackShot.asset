@@ -15,7 +15,9 @@ MonoBehaviour:
   Rarity: 3
   ItemIcon: {fileID: 21300000, guid: 399c67b56e41b6c4e98f675c270050ca, type: 3}
   ItemName: "\uBC31 \uC0F7"
-  ItemDescription: 
+  ItemDescription: "\uAC00\uC7A5 \uBE60\uB978 \uD654\uC0B4\uC744 \uBC1C\uC0AC\uD558\uB294
+    \uD65C. \uD53C\uACA9 \uB2F9\uD55C \uC801\uC740 \uD654\uC0B4\uC758 \uD798\uC744
+    \uC774\uAE30\uC9C0 \uBABB\uD558\uACE0 \uBC00\uB824\uB09C\uB2E4. "
   WeaponPrefab: {fileID: 0}
   Evolutions: {fileID: 11400000, guid: 83c5d442ed7c3f04080e79b273371aa7, type: 2}
   StatusEffects: []
@@ -24,14 +26,8 @@ MonoBehaviour:
   Range:
     rangesList:
     - Ranges:
-      - Position: {x: -1, y: 1}
-        Theta: 100
-      - Position: {x: 0, y: 1}
-        Theta: 100
-      - Position: {x: -1, y: 0}
-        Theta: 100
       - Position: {x: 0, y: 0}
-        Theta: 100
+        Theta: 30
     - Ranges:
       - Position: {x: -1, y: 1}
         Theta: 100

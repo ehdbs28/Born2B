@@ -624,7 +624,7 @@ MonoBehaviour:
     mask: {fileID: 1810748511}
     gridInput: {fileID: 11400000, guid: 5cfbf8fc11dce5747aa4ec20c8f7bc25, type: 2}
   _chapters:
-  - {fileID: 11400000, guid: dadc0c33890c6fa4fbe26cf4afa4e2e0, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: 30c05d74ad9f1b3418c8f0b47e4e540b, type: 2}
 --- !u!114 &1924145202
 MonoBehaviour:
@@ -770,8 +770,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07eb5aa3ec49c184691388250db84227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: dc205a038f569944db9ff54d12ac1dab, type: 2}
-  weaponDatabase: {fileID: 11400000, guid: d1a4072d63eb4114b8ff6a2f01855960, type: 2}
   equipmentItemDatabase: {fileID: 11400000, guid: 2a415354f290a2a4c922fbd6dd095f1d, type: 2}
   artifactItemDatabase: {fileID: 0}
 --- !u!1660057539 &9223372036854775807

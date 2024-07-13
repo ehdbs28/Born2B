@@ -15,7 +15,9 @@ MonoBehaviour:
   Rarity: 2
   ItemIcon: {fileID: 21300000, guid: 10e82efa381d05048acdc31970aff772, type: 3}
   ItemName: "\uC2A4\uD504\uB808\uB529"
-  ItemDescription: 
+  ItemDescription: "\uCC28\uAC00\uC6B4 \uCCA0\uC81C \uD65C\uC744 \uAC00\uC5F4\uD574
+    \uB9CC\uB4E0 \uBA40\uD2F0 \uBCF4\uC6B0. \uD53C\uACA9\uD55C \uC801\uC5D0\uAC8C
+    \uD654\uC0C1 \uB610\uB294 \uBE59\uACB0\uC744 \uBD80\uC5EC\uD55C\uB2E4. "
   WeaponPrefab: {fileID: 0}
   Evolutions: {fileID: 11400000, guid: 83c5d442ed7c3f04080e79b273371aa7, type: 2}
   StatusEffects: []
@@ -24,38 +26,8 @@ MonoBehaviour:
   Range:
     rangesList:
     - Ranges:
-      - Position: {x: -3, y: 3}
-        Theta: 25
-      - Position: {x: -2, y: 3}
-        Theta: 25
-      - Position: {x: -1, y: 3}
-        Theta: 25
-      - Position: {x: 0, y: 3}
-        Theta: 50
-      - Position: {x: -3, y: 2}
-        Theta: 25
-      - Position: {x: -2, y: 2}
-        Theta: 25
-      - Position: {x: -1, y: 2}
-        Theta: 50
-      - Position: {x: 0, y: 2}
-        Theta: 50
-      - Position: {x: -3, y: 1}
-        Theta: 25
-      - Position: {x: -2, y: 1}
-        Theta: 50
-      - Position: {x: -1, y: 1}
-        Theta: 50
       - Position: {x: 0, y: 1}
-        Theta: 100
-      - Position: {x: -3, y: 0}
-        Theta: 50
-      - Position: {x: -2, y: 0}
-        Theta: 50
-      - Position: {x: -1, y: 0}
-        Theta: 100
-      - Position: {x: 0, y: 0}
-        Theta: 100
+        Theta: 30
     - Ranges:
       - Position: {x: -3, y: 3}
         Theta: 25
