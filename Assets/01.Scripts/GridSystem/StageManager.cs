@@ -43,7 +43,7 @@ public partial class StageManager : MonoSingleton<StageManager>
         if(_currentStageIdx >= _chapters[_currentChapterIdx].stages.Count)
         {
 
-            _currentStageIdx = -1;
+            _currentStageIdx = 0;
             if (NextChapter())
                 return;
 
@@ -77,6 +77,7 @@ public partial class StageManager : MonoSingleton<StageManager>
 
         }
 
+        Debug.Log(1);
         Grid = new(_gridSettingData, _chapters[_currentChapterIdx]);
 
         return false;
