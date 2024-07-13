@@ -3,7 +3,8 @@ using UnityEngine;
 public class PlayAudioFeedback : Feedback
 {
     [SerializeField] AudioSource player;
-    [SerializeField] AudioClip clip;
+    [SerializeField] AudioLibrarySO library;
+    [SerializeField] string key;
 
     private void Awake()
     {
@@ -12,6 +13,6 @@ public class PlayAudioFeedback : Feedback
 
     public override void Play(Vector3 playPos)
     {
-        player?.PlayOneShot(clip);
+        player?.PlayOneShot(library[key]);
     }
 }
