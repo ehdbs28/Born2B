@@ -37,7 +37,7 @@ public class StatSO : ScriptableObject
                 Debug.LogWarning("Stat of Current Type is Already Existed");
                 return;
             }
-
+            i.Stat.Init();
             statDictionary.Add(i.StatType, i.Stat);
         });
         OnStatChangedEvent?.Invoke();

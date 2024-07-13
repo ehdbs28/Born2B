@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68bceb09be036aa4b94c5308b9518344, type: 3}
-  m_Name: CheckTurnCount
+  m_Script: {fileID: 11500000, guid: d2fdbe5389ce8fb499af8afaeb2bd379, type: 3}
+  m_Name: Chapter1_Stage3_portalData
   m_EditorClassIdentifier: 
-  _type: 0
+  portalLinkList:
+  - linkPortalIndex_1: {x: 3, y: 1}
+    linkPortalIndex_2: {x: 1, y: 3}

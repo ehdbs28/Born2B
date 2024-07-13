@@ -117,6 +117,8 @@ public class TurnManager : MonoSingleton<TurnManager>
     private IEnumerator TurnLogic()
     {
 
+        yield return null;
+        int currentTurnCount = CellObjectManager.Instance.GetCellObjectInstance<PlayerInstance>().GetComponent<PlayerStatComponent>().GetStat(StatType.TurnCount);
         while (true)
         {
 
@@ -140,6 +142,30 @@ public class TurnManager : MonoSingleton<TurnManager>
                 yield return null;
 
                 StartCoroutine(endLogic());
+
+                if (currentTurnCount > 0 && _currentTurn == TurnType.PlayerAttack)
+                {
+
+                    currentTurnCount--;
+                    break;
+
+                }
+                else if(currentTurnCount == 0 && 
+                    _currentTurn == TurnType.AttackEnemy)
+                {
+
+                    var obj = CellObjectManager.Instance.GetCellObjectInstance<PlayerInstance>();
+
+                    if(obj != null)
+                    {
+
+                        currentTurnCount = obj.GetComponent<PlayerStatComponent>().GetStat(StatType.TurnCount);
+
+                    }
+
+
+                }
+
                 CheckPlayerTurnEnd(item);
 
             }

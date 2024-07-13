@@ -13,9 +13,9 @@ public class Stat
 
     public event Action<float> OnValueChangedEvent = null;
 
-    public void Clear()
+    public void Init()
     {
-        modifiers.Clear();
+        modifiers.Init();
         currentValue = baseValue;
     }
 

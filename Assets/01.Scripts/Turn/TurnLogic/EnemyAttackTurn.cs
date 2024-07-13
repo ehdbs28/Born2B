@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "SO/Turn/AttackEmenyTurn")]
-
 public class EnemyAttackTurn : TurnObjectSO
 {
     public override IEnumerator TurnLogic()

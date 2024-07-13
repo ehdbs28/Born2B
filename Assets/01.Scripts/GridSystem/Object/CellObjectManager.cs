@@ -133,7 +133,9 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
     public CellObjectInstance CreateCellObject(int2 pos, CellObjectSO data)
     {
 
-        data = data.Clone() as CellObjectSO;
+        data = data is PlayerSelectSO ?
+            (data as PlayerSelectSO).playerDatas[UnitSelectManager.Instance.selectedIdx] 
+            : data.Clone() as CellObjectSO;
         data.position = pos;
 
         _objectContainer.Add(data.key, data);

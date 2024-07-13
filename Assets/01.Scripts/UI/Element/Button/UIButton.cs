@@ -3,12 +3,14 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class UIButton : UIComponent, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler, IPointerMoveHandler
+public class UIButton : UIComponent, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler, IPointerMoveHandler, IPointerDownHandler, IPointerUpHandler
 {
     public UnityEvent<PointerEventData> onClickEvent;
     public UnityEvent<PointerEventData> onPointerEnterEvent;
     public UnityEvent<PointerEventData> onPointerExitEvent;
     public UnityEvent<PointerEventData> onPointerMoveEvent;
+    public UnityEvent<PointerEventData> onPointerUpEvent;
+    public UnityEvent<PointerEventData> onPointerDownEvent;
 
     private Vector3 _originScale;
 
@@ -62,6 +64,18 @@ public class UIButton : UIComponent, IPointerClickHandler, IPointerEnterHandler,
     public void OnPointerMove(PointerEventData eventData)
     {
         onPointerMoveEvent?.Invoke(eventData);
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        Debug.Log("Up");
+        onPointerUpEvent?.Invoke(eventData);
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        Debug.Log("Down");
+        onPointerDownEvent?.Invoke(eventData);
     }
 
     private IEnumerator ScaleChangeRoutine(Vector3 targetScale, float time)
