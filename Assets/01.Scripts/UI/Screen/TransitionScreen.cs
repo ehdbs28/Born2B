@@ -9,6 +9,9 @@ public class TransitionScreen : UIComponent
     private readonly int _inTransitionHash = Animator.StringToHash("InTransition");
     private readonly int _outTransitionHash = Animator.StringToHash("OutTransition");
 
+    public event Action OnTransitionCompleteEvent = null;
+    public event Action OnLoadCompleteEvent = null;
+
     protected override void Awake()
     {
         base.Awake();
@@ -18,14 +21,21 @@ public class TransitionScreen : UIComponent
     public override void Appear(Transform parent)
     {
         base.Appear(parent);
-        StartSafeCoroutine("InTransition", AnimationWaitRoutine(_inTransitionHash));
+        StartSafeCoroutine("InTransition", AnimationWaitRoutine(_inTransitionHash, () =>
+        {
+            OnTransitionCompleteEvent?.Invoke();
+        }));
     }
 
     public override void Disappear(bool poolIn = true)
     {
         StartSafeCoroutine("OutTransition", AnimationWaitRoutine(_outTransitionHash, () =>
         {
+            OnLoadCompleteEvent?.Invoke();
             base.Disappear(poolIn);
+
+            OnTransitionCompleteEvent = null;
+            OnLoadCompleteEvent = null;
         }));
     }
 

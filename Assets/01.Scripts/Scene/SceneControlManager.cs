@@ -14,16 +14,20 @@ public class SceneControlManager : MonoSingleton<SceneControlManager>
         ChangeScene(_startSceneType);
     }
 
-    public void ChangeScene(SceneType nextScene)
+    public void ChangeScene(SceneType nextScene, Action transitionCompleteEvent = null, Action loadCompleteEvent = null)
     {
-        UIManager.Instance.AppearUI(PoolingItemType.SceneTransitionPanel, UIManager.Instance.TopCanvas.transform);
-        
-        if (CurrentScene != null)
+        var transitionPanel = UIManager.Instance.AppearUI(PoolingItemType.SceneTransitionPanel, UIManager.Instance.TopCanvas.transform) as TransitionScreen;
+        transitionPanel.OnTransitionCompleteEvent += () =>
         {
-            CurrentScene.ExitScene();
-        }
-
-        CurrentScene = PoolManager.Instance.Pop($"{nextScene}Scene") as Scene;
-        CurrentScene?.EnterScene();
+            if (CurrentScene != null)
+            {
+                CurrentScene.ExitScene();
+            }
+            CurrentScene = PoolManager.Instance.Pop($"{nextScene}Scene") as Scene;
+            CurrentScene.EnterScene();
+            
+            transitionCompleteEvent?.Invoke();
+        };
+        transitionPanel.OnLoadCompleteEvent += loadCompleteEvent;
     }
 }
