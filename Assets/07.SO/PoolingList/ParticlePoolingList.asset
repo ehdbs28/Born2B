@@ -15,3 +15,5 @@ MonoBehaviour:
   poolableItems:
   - prefab: {fileID: 494739388570491847, guid: 3bd87599f8b904340aea5e8abd5de674, type: 3}
     cnt: 10
+  - prefab: {fileID: 359863968738201040, guid: 43dd4c281a2b14cb9b273d7cbf8dbb7d, type: 3}
+    cnt: 10
