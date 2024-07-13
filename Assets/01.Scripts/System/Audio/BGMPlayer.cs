@@ -27,6 +27,7 @@ public class BGMPlayer : AudioPlayer
         while (true)
         {
             AudioData bgmName = bgmList.PickRandom();
+            currentBgm = bgmName.clip;
             PlayAudio(bgmName);
 
             yield return new WaitForSeconds(currentBgm.length + replayDelay);
