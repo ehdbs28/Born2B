@@ -36,7 +36,8 @@ public class WeaponItemSO : ItemSO
     /// </summary>
     public override void Unexecute(IItemHandler handler)
     {
-        if(TryParseHandler(handler, out IWeaponItemHandler weaponHandler) == false)
+        if (TryParseHandler(handler, out IWeaponItemHandler weaponHandler) == false)
+            return;
 
         weaponHandler.UnequipWeapon();
     }

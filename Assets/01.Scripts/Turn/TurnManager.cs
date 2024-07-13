@@ -154,7 +154,15 @@ public class TurnManager : MonoSingleton<TurnManager>
                     _currentTurn == TurnType.AttackEnemy)
                 {
 
-                    currentTurnCount = CellObjectManager.Instance.GetCellObjectInstance<PlayerInstance>().GetComponent<PlayerStatComponent>().GetStat(StatType.TurnCount);
+                    var obj = CellObjectManager.Instance.GetCellObjectInstance<PlayerInstance>();
+
+                    if(obj != null)
+                    {
+
+                        currentTurnCount = obj.GetComponent<PlayerStatComponent>().GetStat(StatType.TurnCount);
+
+                    }
+
 
                 }
 

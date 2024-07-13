@@ -1,12 +1,10 @@
 using Singleton;
 using StageDefine;
 using System;
-using System.Collections.Generic;
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Jobs;
 using Object = UnityEngine.Object;
 
 public partial class StageManager : MonoSingleton<StageManager>
@@ -40,10 +38,10 @@ public partial class StageManager : MonoSingleton<StageManager>
     {
 
         _currentStageIdx++;
-        if(_currentStageIdx >= _chapters[_currentChapterIdx].stages.Count)
+        if (_currentStageIdx >= _chapters[_currentChapterIdx].stages.Count)
         {
 
-            _currentStageIdx = -1;
+            _currentStageIdx = 0;
             if (NextChapter())
                 return;
 
@@ -61,7 +59,7 @@ public partial class StageManager : MonoSingleton<StageManager>
 
         _currentChapterIdx++;
 
-        if(_currentChapterIdx >= _chapters.Length)
+        if (_currentChapterIdx >= _chapters.Length)
         {
 
             Debug.Log("³¡³ª´Ù");
@@ -70,19 +68,20 @@ public partial class StageManager : MonoSingleton<StageManager>
         }
 
 
-        if(Grid != null)
+        if (Grid != null)
         {
 
             Grid.Dispose();
 
         }
 
+        Debug.Log(1);
         Grid = new(_gridSettingData, _chapters[_currentChapterIdx]);
 
         return false;
 
     }
-  
+
     private void OnDestroy()
     {
 

@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections;
 using Unity.Jobs;
@@ -45,7 +44,7 @@ public partial class StageManager
         private JobHandle _handle;
         public NativeArray2D<Cell> GetGrid() => _grid;
 
-        public StageGrid(GridSettingData data, ChapterDataSO chapterDataSO) 
+        public StageGrid(GridSettingData data, ChapterDataSO chapterDataSO)
         {
 
             _currentChapterData = chapterDataSO;
@@ -54,7 +53,7 @@ public partial class StageManager
             _movementPivot = data.movementPivot;
             _mask = data.mask;
             _gridInput = data.gridInput;
-        
+
         }
 
         public void Update()
@@ -396,7 +395,7 @@ public partial class StageManager
         public void SetUpGrid(int currentStageIdx)
         {
 
-            var data = _currentChapterData.GetStageByIndex(currentStageIdx); 
+            var data = _currentChapterData.GetStageByIndex(currentStageIdx);
             _data.width = _data.height = data.column;
 
             InitContainer();
