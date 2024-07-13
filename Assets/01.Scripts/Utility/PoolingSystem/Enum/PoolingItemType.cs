@@ -35,4 +35,5 @@ public enum PoolingItemType
 	ItemInfoPopup,
 	HitParticle,
 	LandingParticle,
+	GameOverPanel,
 }

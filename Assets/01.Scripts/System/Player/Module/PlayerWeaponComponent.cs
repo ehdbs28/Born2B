@@ -22,13 +22,13 @@ public class PlayerWeaponComponent : PlayerComponent
 
     private void Start()
     {
-        startValue = weaponContainer.position.y;
+        startValue = weaponContainer.localPosition.y;
     }
 
     private void Update()
     {
         float value = Mathf.Sin(Time.time * durationValue) * updownValue;
-        weaponContainer.position = new Vector3(0, startValue + value);
+        weaponContainer.localPosition = new Vector3(0, startValue + value);
     }
 
     public void DrawRange()
