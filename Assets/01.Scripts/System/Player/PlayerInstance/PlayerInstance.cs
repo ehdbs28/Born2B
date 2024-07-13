@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public partial class PlayerInstance : CellObjectInstance, IHitable
@@ -24,8 +25,10 @@ public partial class PlayerInstance : CellObjectInstance, IHitable
 
     public override object Clone()
     {
-        ReleasePlayerComponents();
         PlayerInstance clone = base.Clone() as PlayerInstance;
+        playerModuleList.ForEach(i => i.OnClone(clone));
+        playerComponentList.ForEach(i => i.OnClone(clone));
+
         return clone;
     }
 

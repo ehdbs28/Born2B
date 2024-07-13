@@ -33,7 +33,7 @@ public class PlayerAttackComponent : PlayerComponent
     {
         base.Release();
         input.OnAttackEvent -= HandleAttack;
-        // EventManager.Instance.UnRegisterEvent(EventType.OnTurnChanged, HandleTurnChanged);
+        EventManager.Instance.UnRegisterEvent(EventType.OnTurnChanged, HandleTurnChanged);
     }
 
     private void Update()

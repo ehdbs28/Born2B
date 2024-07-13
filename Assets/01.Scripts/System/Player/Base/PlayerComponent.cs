@@ -16,4 +16,9 @@ public abstract class PlayerComponent : MonoBehaviour
     {
         
     }
+
+    public virtual void OnClone(PlayerInstance clone)
+    {
+
+    }
 }
