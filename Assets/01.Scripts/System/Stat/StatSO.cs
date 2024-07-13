@@ -39,7 +39,7 @@ public class StatSO : ScriptableObject
             statDictionary.Add(i.StatType, i.Stat);
         });
     }
-
+    
     public void AddModifier(StatModifierSlot modifierSlot) 
         => AddModifier(modifierSlot.StatType, modifierSlot.ModifierType, modifierSlot.Value);
 

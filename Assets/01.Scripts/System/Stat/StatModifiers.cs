@@ -57,7 +57,7 @@ public class StatModifiers
             multiplier += SumMultipliers[i];
         inValue *= multiplier;
     }
-
+    
     private void CalculateMultiplicationMultipliers(ref float inValue)
     {
         float multiplier = 1f;
