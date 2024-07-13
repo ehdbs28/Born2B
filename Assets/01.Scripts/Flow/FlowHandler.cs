@@ -22,6 +22,8 @@ public class FlowHandler : MonoBehaviour
     private void GameStartHandler(object[] args)
     {
 
+        StageManager.Instance.ResetManager();
+        CellObjectManager.Instance.TrueInit();
         FlowManager.Instance.NextCycle();
 
     }

@@ -21,9 +21,20 @@ public partial class StageManager : MonoSingleton<StageManager>
 
     public void Init()
     {
-        
+
+
+
+
     }
 
+    public void ResetManager()
+    {
+
+        _currentChapterIdx = -1;
+        _currentStageIdx = -1;
+        Grid?.InitContainer();
+
+    }
 
     private void Update()
     {
