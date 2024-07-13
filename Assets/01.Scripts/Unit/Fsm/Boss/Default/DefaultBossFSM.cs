@@ -14,20 +14,20 @@ public class DefaultBossFSM : DefaultUnitFSM
 
         private UnitWeaponController _meleeWeapon;
         private UnitWeaponController _hitscanWeapon;
+        private Transform _container;
 
         public BossAttackState(FSM_Controller<UnitStateType> controller) : base(controller)
         {
 
-            var container = transform.Find("WeaponContainer");
-
+            _container = transform.Find("WeaponContainer");
 
         }
 
         protected override void EnterState()
         {
 
-            _meleeWeapon = transform.Find("Melee").GetComponent<UnitWeaponController>();
-            _hitscanWeapon = transform.Find("Range").GetComponent<UnitWeaponController>();
+            _meleeWeapon = _container.transform.Find("Melee").GetComponent<UnitWeaponController>();
+            _hitscanWeapon = _container.transform.Find("Range").GetComponent<UnitWeaponController>();
             var vec = transform.position.GetVectorInt();
             var player = CellObjectManager.Instance.GetCellObjectInstance<PlayerInstance>();
             var dist = Vector2.Distance(vec, player.transform.position);
@@ -43,19 +43,20 @@ public class DefaultBossFSM : DefaultUnitFSM
     {
 
         private UnitWeaponController _melee;
+        private Transform _container;
 
         public BossMoveState(FSM_Controller<UnitStateType> controller) : base(controller)
         {
 
-            var container = transform.Find("WeaponContainer");
+            _container = transform.Find("WeaponContainer");
             
         }
 
         protected override void HandleEnd()
         {
 
-            _melee = transform.Find("Melee").GetComponent<UnitWeaponController>();
-
+            _melee = _container.transform.Find("Melee").GetComponent<UnitWeaponController>();
+            
             StartCoroutine(WaitEnd());
 
             var vec = transform.position.GetVectorInt();

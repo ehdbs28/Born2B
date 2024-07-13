@@ -40,6 +40,7 @@ public class DefaultUnitMoveState : UnitFSMStateBase
 
         //transform.DOMove(targetPos, 0.3f)
         //    .OnComplete(HandleEnd);
+        Debug.Log(1);
         StartCoroutine(MovementTween(HandleEnd));
 
     }

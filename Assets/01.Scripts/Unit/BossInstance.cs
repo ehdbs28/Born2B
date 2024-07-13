@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossInstance : CellObjectInstance
+public class BossInstance : UnitInstance
 {
 
     public override void Init(CellObjectSO so)
@@ -16,8 +16,8 @@ public class BossInstance : CellObjectInstance
         {
 
             var obj = new GameObject(item.objectName);
-            var wp = obj.AddComponent<UnitWeaponController>();
             obj.transform.SetParent(parent);
+            var wp = obj.AddComponent<UnitWeaponController>();
 
             wp.Init(item.item, this);
 
