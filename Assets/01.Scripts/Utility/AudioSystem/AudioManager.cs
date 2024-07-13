@@ -8,7 +8,7 @@ public class AudioManager : MonoSingleton<AudioManager>
     [SerializeField] private AudioMixer audioMixer;
     private Dictionary<AudioType, AudioSourceController> _audioSources;
 
-    private void Awake()
+    public void Init()
     {
         _audioSources = new Dictionary<AudioType, AudioSourceController>();
 

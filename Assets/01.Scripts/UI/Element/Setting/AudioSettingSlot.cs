@@ -49,18 +49,19 @@ public class AudioSettingSlot : MonoBehaviour, IPointerMoveHandler, IPointerDown
         float width = rectTransform.sizeDelta.x;
         float localXPosition = positionX - (rectTransform.position.x - rectTransform.sizeDelta.x);
         float ratio = Mathf.Clamp(localXPosition / width, 0f, 1f);
+        Debug.Log(ratio);
 
         int unitsIndex = Mathf.CeilToInt(Mathf.Lerp(-1, 11, ratio));
         for(int i = 0; i < valueUnits.Count; ++i)
             valueUnits[i].color = i > unitsIndex ? inactiveColor : activeColor;
 
         float value = Mathf.CeilToInt(Mathf.Lerp(0, 10, ratio)) * 0.1f;
-        Debug.Log(value);
+        // Debug.Log(value);
         float volume;
-            if(value < 0.1f)
-                volume = MUTE_VOLUME;
-            else
-                volume = Mathf.Lerp(MIN_VOLUME, MAX_VOLUME, value);
+        if(value < 0.1f)
+            volume = MUTE_VOLUME;
+        else
+            volume = Mathf.Lerp(MIN_VOLUME, MAX_VOLUME, value);
         AudioManager.Instance.SetVolume(targetGroup, volume);
     }
 }

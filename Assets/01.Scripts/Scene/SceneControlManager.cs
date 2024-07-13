@@ -8,8 +8,7 @@ public class SceneControlManager : MonoSingleton<SceneControlManager>
     
     public Scene CurrentScene { get; private set; }
 
-    [ContextMenu("Test")]
-    private void adsfsadf()
+    public void Init()
     {
         ChangeScene(_startSceneType);
     }

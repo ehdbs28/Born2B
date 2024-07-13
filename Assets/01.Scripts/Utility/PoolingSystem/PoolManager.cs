@@ -10,7 +10,7 @@ public class PoolManager : MonoSingleton<PoolManager>
     [SerializeField] private List<PoolingList> _poolingLists;
     public List<PoolingList> PoolingLists => _poolingLists;
 
-    public void Awake()
+    public void Init()
     {
         foreach (var pair in _poolingLists.SelectMany(poolingList => poolingList.poolableItems))
         {
