@@ -7,7 +7,7 @@ public class WeaponItemInventorySO : ItemInventorySlotSO
 {
     public override Type ItemType => typeof(WeaponItemSO);
 
-    public override List<ItemSO> AllItems => throw new NotImplementedException();
+    public override List<ItemSO> AllItems => new List<ItemSO>() { weaponHandler.CurrentWeaponData };
 
     private IWeaponItemHandler weaponHandler = null;
 

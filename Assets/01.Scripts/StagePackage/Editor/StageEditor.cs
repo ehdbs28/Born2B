@@ -4,11 +4,8 @@ using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.UIElements;
-using StageDefine;
 using Random = UnityEngine.Random;
-using static UnityEngine.Rendering.DebugUI;
 using Button = UnityEngine.UIElements.Button;
-using static UnityEngine.Rendering.DebugUI.MessageBox;
 
 public class CellVisual : VisualElement
 {
@@ -187,7 +184,7 @@ public class StageEditor : EditorWindow
             typeList.Add(type.ToString());
         }
 
-        chapterDropdwon = new DropdownField("Ã©ÅÍ ¼±ÅÃ", typeList, 0);
+        chapterDropdwon = new DropdownField("Ã©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½", typeList, 0);
         chapterDropdwon.RegisterCallback<ChangeEvent<string>>((evt)=>
         {
             chapterData = Resources.Load<ChapterDataSO>($"ChapterData/{evt.newValue}");
@@ -202,15 +199,15 @@ public class StageEditor : EditorWindow
 
         chapterData = Resources.Load<ChapterDataSO>($"ChapterData/{ChapterType.Forest}");
 
-        widthField = new TextField("½ºÅ×ÀÌÁö °¡·Î ±æÀÌ");
-        heightField = new TextField("½ºÅ×ÀÌÁö ¼¼·Î ±æÀÌ");
-        mapNameField = new TextField("½ºÅ×ÀÌÁöSO ÆÄÀÏ ÀÌ¸§");
+        widthField = new TextField("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+        heightField = new TextField("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+        mapNameField = new TextField("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½SO ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½");
 
         btnSave = new Button(HandleSave);
-        btnSave.text = "½ºÅ×ÀÌÁö µ¥ÀÌÅÍ ÀúÀå";
+        btnSave.text = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½";
 
         btnCreate = new Button(HandleCreate);
-        btnCreate.text = "½ºÅ×ÀÌÁö µ¥ÀÌÅÍ »ý¼º";
+        btnCreate.text = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½";
 
         VisualElement ve = new VisualElement();
         ve.style.height = EditorGUIUtility.singleLineHeight;

@@ -55,21 +55,27 @@ public class DefaultUnitMoveState : UnitFSMStateBase
     private IEnumerator MovementTween(Action endCallback)
     {
 
-        var targetPos = controller.GetData<Vector2>("Move");
-        var originPos = controller.transform.position;
+        var targetPos = (Vector3)controller.GetData<Vector2>("Move");
+        var originPos = controller.transform.position; 
+        var curvature = 2.5f * Vector3.up;
 
         float per = 0;
 
         while(per < 1)
         {
 
-            per += Time.deltaTime * 3;
+            per += Time.deltaTime * 2f;
             per = Mathf.Clamp01(per);
-            transform.position = Vector3.Lerp(originPos, targetPos, Easing.Get(Ease.OutQuad, per));
+            var easingPer = Easing.Get(Ease.OutQuad, per);
+            var position = originPos + (targetPos - originPos) * easingPer + curvature * easingPer * (1 - easingPer);
+            transform.position = position;
             yield return null;
 
         }
 
+        var particle = PoolManager.Instance.Pop("LandingParticle") as PoolableParticle;
+        particle.SetPositionAndRotation(targetPos, Quaternion.identity);
+        particle.Play();
         endCallback?.Invoke();
 
     }
