@@ -23,7 +23,7 @@ public class SpikeObject : InteractionableCellObject
 
             _spikeAnime.SetAnimation(true);
             if(interactionInstance.TryGetComponent<IHealth>(out IHealth ih))
-                (interactionInstance as IHitable).Hit(null, ih.MaxHp * SPIKE_DAMAGE_RATIO, false);
+                (interactionInstance as IHitable).Hit(null, ih.MaxHp * SPIKE_DAMAGE_RATIO, false, null);
 
         }
 

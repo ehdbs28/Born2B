@@ -45,10 +45,9 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
 
     }
 
-    public bool Hit(CellObjectInstance attackObject, float damage, bool critical)
+    public void Hit(CellObjectInstance attackObject, float damage, bool critical, Action<CellObjectInstance> callBack)
     {
-
-        if (attackObject is UnitInstance) return false;
+        if (attackObject is UnitInstance) return;
 
         bool die = _health.CurrentHp <= 0;
         EventManager.Instance.PublishEvent(EventType.OnUnitDamaged, this, die);
@@ -62,7 +61,7 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
 
         }
 
-        return true;
+        callBack?.Invoke(this);
     }
 
     public void Attack()
@@ -110,7 +109,6 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
             _renderer.flipX = c.z > 0;
 
         }
-
     }
 
     public Vector2 Move(List<Vector2> targetPositions, Action endCallback)

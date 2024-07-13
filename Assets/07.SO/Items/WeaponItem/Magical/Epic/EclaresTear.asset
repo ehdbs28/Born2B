@@ -15,7 +15,9 @@ MonoBehaviour:
   Rarity: 3
   ItemIcon: {fileID: 21300000, guid: 74534ede0a281554bad146153d9d0d18, type: 3}
   ItemName: "\uC5D0\uD074\uB808\uC758 \uB208\uBB3C"
-  ItemDescription: 
+  ItemDescription: "\uC5EC\uC2E0 \uC5D0\uD074\uB808\uC758 \uB208\uBB3C\uB85C \uBE5A\uC5B4\uB0B8
+    \uC644\uB4DC. \uC801\uC744 \uD53C\uACA9\uD560\uB54C\uB9C8\uB2E4 \uB9C8\uB825\uC774
+    \uC99D\uAC00\uD55C\uB2E4."
   WeaponPrefab: {fileID: 0}
   Evolutions: {fileID: 11400000, guid: 03daaf2d4cf50a14e88f72095c5de0ff, type: 2}
   StatusEffects: []
