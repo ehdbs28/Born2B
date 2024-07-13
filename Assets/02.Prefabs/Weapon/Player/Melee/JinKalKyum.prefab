@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4444062771059217319}
-  - component: {fileID: 4279780327021604367}
+  - component: {fileID: 7045664027858881379}
   m_Layer: 0
   m_Name: JinKalKyum
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   - {fileID: 4427632340146204176}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4279780327021604367
+--- !u!114 &7045664027858881379
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,7 +42,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 457728349475153143}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e5044c5b93dbb2488d2f79f5423a688, type: 3}
+  m_Script: {fileID: 11500000, guid: ba3b76ad001c3b446852a7c818f8bdf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: e9bde94f971280a46b435f0c094c1a77, type: 2}
@@ -72,7 +72,7 @@ Transform:
   m_GameObject: {fileID: 7097033361648473406}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.467, y: 0, z: 0}
+  m_LocalPosition: {x: 0.53, y: 0.301, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

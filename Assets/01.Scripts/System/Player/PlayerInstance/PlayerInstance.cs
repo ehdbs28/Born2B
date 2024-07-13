@@ -1,12 +1,15 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public partial class PlayerInstance : CellObjectInstance, IHitable
 {
     private bool _areadyDestroyed;
 
     public Vector2Int Position => transform.position.GetVectorInt();
+
+    public UnityEvent OnHitEvent;
 
     protected override void Awake()
     {
@@ -48,6 +51,7 @@ public partial class PlayerInstance : CellObjectInstance, IHitable
         PlayerHealthComponent health = GetPlayerComponent<PlayerHealthComponent>();
 
         health.ReduceHp(1);
+        OnHitEvent?.Invoke();
         EventManager.Instance.PublishEvent(EventType.OnPlayerDamaged);
 
         if(health.CurrentHp <= 0)

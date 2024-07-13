@@ -2539,6 +2539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCanvas: {fileID: 90038087}
+  _unitInfoMiniParent: {fileID: 0}
   _topCanvas: {fileID: 65441748}
 --- !u!114 &587689092
 MonoBehaviour:
@@ -3053,7 +3054,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _targetImageTrm: {fileID: 0}
-  _unitData: {fileID: 11400000, guid: 1a89fad7e9db778479c7ecff5c322d34, type: 2}
+  unitData: {fileID: 0}
 --- !u!1 &697779974
 GameObject:
   m_ObjectHideFlags: 0
