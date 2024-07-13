@@ -1,15 +1,10 @@
-using StageDefine;
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "SO/Chapter/Data")]
 public class ChapterDataSO : ScriptableObject
 {
-    [field:SerializeField]  public CellInstance chapterCellPrefab_T1 { get; private set; }
+    [field: SerializeField] public CellInstance chapterCellPrefab_T1 { get; private set; }
     [field: SerializeField] public CellInstance chapterCellPrefab_T2 { get; private set; }
     public List<StageObjectSlot> stageObjectSlotList = new();
     public List<StageDataSO> stages;
@@ -20,7 +15,7 @@ public class ChapterDataSO : ScriptableObject
     {
         _nameToObjectDataDic.Clear();
 
-        foreach(var slot in stageObjectSlotList)
+        foreach (var slot in stageObjectSlotList)
         {
 
             _nameToObjectDataDic.Add(slot.objectName, (slot.objectType, slot.objectData));
