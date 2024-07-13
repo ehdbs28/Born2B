@@ -10,6 +10,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         PoolManager.Instance.Init();
         AudioManager.Instance.Init();
+        CameraManager.Instance.Init();
         
         StageManager.Instance.Init();
         CellObjectManager.Instance.Init();

@@ -61,7 +61,6 @@ public class CellObjectInstance : MonoBehaviour, ICloneable
 
     public virtual object Clone()
     {
-
         var obj = Instantiate(this);
         obj.key = Guid.NewGuid();
         obj.dataKey = dataKey;
