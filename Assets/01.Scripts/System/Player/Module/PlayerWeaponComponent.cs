@@ -20,12 +20,12 @@ public class PlayerWeaponComponent : PlayerComponent
     {
         foreach (WeaponRangeSlot range in currentWeapon.Ranges)
         {
-
             Vector2Int positionInt = range.Position + lastAttackPoint;
             Cell? cell = StageManager.Instance.Grid.FindCellByPosition(positionInt);
             if(cell == null)
                 return;
             
+            Debug.Log(positionInt);
             CellInstance cellInstance = StageManager.Instance.Grid.GetCellInstance(cell.Value.guid);
             WeaponRangeTile tile = cellInstance.GetComponent<WeaponRangeTile>();
             tile.SetTileColor(range.Theta * 0.25f * 0.01f);

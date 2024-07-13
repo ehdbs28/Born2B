@@ -19,7 +19,7 @@ MonoBehaviour:
     \uC804\uC7C1\uC758 \uC2E0\uC758 \uC190\uB3C4\uB07C. \uC804\uC7A5\uC758 \uC5F4\uAE30\uB97C
     \uD761\uC218\uD574 \uC801\uC744 \uD53C\uACA9\uD560 \uB54C \uB9C8\uB2E4 \uACF5\uACA9\uB825\uC774
     \uC99D\uAC00\uD55C\uB2E4."
-  WeaponPrefab: {fileID: 4279780327021604367, guid: 5868d3eff6ea3754fa2728c130c57eee, type: 3}
+  WeaponPrefab: {fileID: 7045664027858881379, guid: 5868d3eff6ea3754fa2728c130c57eee, type: 3}
   Evolutions: {fileID: 11400000, guid: abb0d1873c7dc31448e7ddfdd1c4188c, type: 2}
   StatusEffects: []
   KnockBackPower: 0
@@ -29,142 +29,158 @@ MonoBehaviour:
     rangesList:
     - Ranges:
       - Position: {x: -2, y: 2}
-        Theta: 2
+        Theta: 100
       - Position: {x: -1, y: 2}
-        Theta: 2
+        Theta: 100
       - Position: {x: 0, y: 2}
-        Theta: 2
+        Theta: 100
       - Position: {x: -2, y: 1}
-        Theta: 2
+        Theta: 100
       - Position: {x: -1, y: 1}
-        Theta: 2
+        Theta: 100
       - Position: {x: 0, y: 1}
-        Theta: 2
+        Theta: 100
       - Position: {x: -2, y: 0}
-        Theta: 2
+        Theta: 100
       - Position: {x: -1, y: 0}
-        Theta: 2
+        Theta: 100
     - Ranges:
       - Position: {x: -2, y: 2}
-        Theta: 2
+        Theta: 100
       - Position: {x: -1, y: 2}
-        Theta: 2
+        Theta: 100
       - Position: {x: 0, y: 2}
-        Theta: 2
+        Theta: 100
       - Position: {x: 1, y: 2}
-        Theta: 2
+        Theta: 100
       - Position: {x: 2, y: 2}
-        Theta: 2
+        Theta: 100
       - Position: {x: -2, y: 1}
-        Theta: 2
+        Theta: 100
       - Position: {x: -1, y: 1}
-        Theta: 2
+        Theta: 100
       - Position: {x: 0, y: 1}
-        Theta: 2
+        Theta: 100
       - Position: {x: 1, y: 1}
-        Theta: 2
+        Theta: 100
       - Position: {x: 2, y: 1}
-        Theta: 2
+        Theta: 100
     - Ranges:
       - Position: {x: 0, y: 2}
-        Theta: 2
+        Theta: 100
       - Position: {x: 1, y: 2}
-        Theta: 2
+        Theta: 100
       - Position: {x: 2, y: 2}
-        Theta: 2
+        Theta: 100
       - Position: {x: 0, y: 1}
-        Theta: 2
+        Theta: 100
       - Position: {x: 1, y: 1}
-        Theta: 2
+        Theta: 100
       - Position: {x: 2, y: 1}
-        Theta: 2
+        Theta: 100
       - Position: {x: 1, y: 0}
-        Theta: 2
+        Theta: 100
       - Position: {x: 2, y: 0}
-        Theta: 2
+        Theta: 100
     - Ranges:
+      - Position: {x: 1, y: 2}
+        Theta: 100
+      - Position: {x: 2, y: 2}
+        Theta: 100
+      - Position: {x: 1, y: 1}
+        Theta: 100
+      - Position: {x: 2, y: 1}
+        Theta: 100
       - Position: {x: 1, y: 0}
-        Theta: 2
+        Theta: 100
       - Position: {x: 2, y: 0}
-        Theta: 2
-      - Position: {x: 3, y: 0}
-        Theta: 2
-    - Ranges:
-      - Position: {x: 1, y: 0}
-        Theta: 2
-      - Position: {x: 2, y: 0}
-        Theta: 2
-      - Position: {x: 0, y: -1}
-        Theta: 2
-      - Position: {x: 1, y: -1}
-        Theta: 2
-      - Position: {x: 2, y: -1}
-        Theta: 2
-      - Position: {x: 0, y: -2}
-        Theta: 2
-      - Position: {x: 1, y: -2}
-        Theta: 2
-      - Position: {x: 2, y: -2}
-        Theta: 2
-    - Ranges:
+        Theta: 100
       - Position: {x: -2, y: -1}
         Theta: 2
-      - Position: {x: -1, y: -1}
-        Theta: 2
-      - Position: {x: 0, y: -1}
-        Theta: 2
       - Position: {x: 1, y: -1}
-        Theta: 2
+        Theta: 100
       - Position: {x: 2, y: -1}
-        Theta: 2
-      - Position: {x: -2, y: -2}
-        Theta: 2
-      - Position: {x: -1, y: -2}
-        Theta: 2
-      - Position: {x: 0, y: -2}
-        Theta: 2
+        Theta: 100
       - Position: {x: 1, y: -2}
-        Theta: 2
+        Theta: 100
       - Position: {x: 2, y: -2}
-        Theta: 2
+        Theta: 100
+    - Ranges:
+      - Position: {x: 1, y: 0}
+        Theta: 100
+      - Position: {x: 2, y: 0}
+        Theta: 100
+      - Position: {x: 0, y: -1}
+        Theta: 100
+      - Position: {x: 1, y: -1}
+        Theta: 100
+      - Position: {x: 2, y: -1}
+        Theta: 100
+      - Position: {x: 0, y: -2}
+        Theta: 100
+      - Position: {x: 1, y: -2}
+        Theta: 100
+      - Position: {x: 2, y: -2}
+        Theta: 100
+    - Ranges:
+      - Position: {x: -2, y: -1}
+        Theta: 100
+      - Position: {x: -1, y: -1}
+        Theta: 100
+      - Position: {x: 0, y: -1}
+        Theta: 100
+      - Position: {x: 1, y: -1}
+        Theta: 100
+      - Position: {x: 2, y: -1}
+        Theta: 100
+      - Position: {x: -2, y: -2}
+        Theta: 100
+      - Position: {x: -1, y: -2}
+        Theta: 100
+      - Position: {x: 0, y: -2}
+        Theta: 100
+      - Position: {x: 1, y: -2}
+        Theta: 100
+      - Position: {x: 2, y: -2}
+        Theta: 100
     - Ranges:
       - Position: {x: -2, y: 0}
-        Theta: 2
+        Theta: 100
       - Position: {x: -1, y: 0}
-        Theta: 2
+        Theta: 100
       - Position: {x: -2, y: -1}
-        Theta: 2
+        Theta: 100
       - Position: {x: -1, y: -1}
-        Theta: 2
+        Theta: 100
       - Position: {x: 0, y: -1}
-        Theta: 2
+        Theta: 100
       - Position: {x: -2, y: -2}
-        Theta: 2
+        Theta: 100
       - Position: {x: -1, y: -2}
-        Theta: 2
+        Theta: 100
       - Position: {x: 0, y: -2}
-        Theta: 2
+        Theta: 100
     - Ranges:
       - Position: {x: -2, y: 2}
-        Theta: 2
+        Theta: 100
       - Position: {x: -1, y: 2}
-        Theta: 2
+        Theta: 100
       - Position: {x: -2, y: 1}
-        Theta: 2
+        Theta: 100
       - Position: {x: -1, y: 1}
-        Theta: 2
+        Theta: 100
       - Position: {x: -2, y: 0}
-        Theta: 2
+        Theta: 100
       - Position: {x: -1, y: 0}
-        Theta: 2
+        Theta: 100
       - Position: {x: -2, y: -1}
-        Theta: 2
+        Theta: 100
       - Position: {x: -1, y: -1}
-        Theta: 2
+        Theta: 100
       - Position: {x: -2, y: -2}
-        Theta: 2
+        Theta: 100
       - Position: {x: -1, y: -2}
-        Theta: 2
-    index: 7
+        Theta: 100
+    index: 3
     size: 5
-    theta: 2
+    theta: 100
