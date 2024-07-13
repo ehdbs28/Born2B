@@ -15,5 +15,6 @@ public enum EventType
     OnBattleStart,
     OnBattleFinish,
 
-    OnUnitDamaged,
+    OnUnitDamaged, // [0] : UnitInstance, [1] : isDead
+    OnPlayerWeaponChanged,
 }
