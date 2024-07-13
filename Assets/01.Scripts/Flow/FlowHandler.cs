@@ -7,6 +7,7 @@ public class FlowHandler : MonoBehaviour
 {
 
     [SerializeField] private CellObjectSO _nextPortalIns;
+    private bool _isFirst;
 
     public void Init()
     {
@@ -22,6 +23,9 @@ public class FlowHandler : MonoBehaviour
     private void GameStartHandler(object[] args)
     {
 
+        StageManager.Instance.ResetManager();
+        CellObjectManager.Instance.TrueInit();
+        _isFirst = false;
         FlowManager.Instance.NextCycle();
 
     }
@@ -50,6 +54,13 @@ public class FlowHandler : MonoBehaviour
         TurnManager.Instance.StartTurn();
         StageManager.Instance.NextStage();
         //CellObjectManager.Instance.GetCellObjectInstance<PlayerInstance>().GetComponent<PlayerWeaponComponent>().Equip();
+        if (!_isFirst)
+        {
+
+            EventManager.Instance.PublishEvent(EventType.OnStageLoaded);
+            _isFirst = true;
+
+        }
         FlowManager.Instance.NextCycle();
 
     }

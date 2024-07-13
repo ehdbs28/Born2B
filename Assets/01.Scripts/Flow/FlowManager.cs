@@ -13,6 +13,7 @@ public class FlowManager : MonoSingleton<FlowManager>
 
     public void StartFlow()
     {
+        _currentCycle = 0;
         ExecuteCycle();
     }
 

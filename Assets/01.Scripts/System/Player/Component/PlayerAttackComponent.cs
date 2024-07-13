@@ -32,10 +32,17 @@ public class PlayerAttackComponent : PlayerComponent
         mainCamera = Camera.main;
 
         weapon.OnWeaponEquipEvent += HandleEquipWeapon;
-        currentAmmo = MaxAmmoCount;
         
         input.OnAttackEvent += HandleAttack;
         EventManager.Instance.RegisterEvent(EventType.OnTurnChanged, HandleTurnChanged);
+        EventManager.Instance.RegisterEvent(EventType.OnStageLoaded, HandleLoad);
+    }
+
+    private void HandleLoad(object[] args)
+    {
+
+        currentAmmo = MaxAmmoCount;
+
     }
 
     public override void Release()

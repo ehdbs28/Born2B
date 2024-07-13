@@ -22,6 +22,16 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
     private UnitDataSO _playerData;
     private GameObject _savedPlayer;
 
+    public void TrueInit()
+    {
+
+        InitContainer();
+        Destroy(_savedPlayer);
+        _playerData = null;
+        _savedPlayer = null;
+
+    }
+
     public void Init()
     {
         

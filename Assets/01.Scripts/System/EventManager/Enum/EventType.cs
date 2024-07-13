@@ -23,5 +23,6 @@ public enum EventType
     OnGridMoveFinish,
 
     OnPlayerAttackAndGetWeapon, //[0] Weapon
+    OnStageLoaded,
 
 }
