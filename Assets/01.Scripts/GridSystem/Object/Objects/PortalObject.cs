@@ -71,6 +71,7 @@ public class PortalObject : InteractionableCellObject
         else
         {
 
+            interactionInstance.transform.SetParent(null);
             TurnManager.Instance.SetTurnData(TurnDataType.IsPreview, true);
             FlowManager.Instance.InitCycle();
 

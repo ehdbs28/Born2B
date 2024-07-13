@@ -159,6 +159,13 @@ public partial class StageManager
 
                             ins.isClone = false;
 
+                            if(ins is PlayerInstance)
+                            {
+
+                                CellObjectManager.Instance.SetPlayerObj(ins.gameObject);
+
+                            }
+
                         }
                         else
                         {

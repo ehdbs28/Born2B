@@ -89,6 +89,7 @@ public class PlayerAttackComponent : PlayerComponent
 
         // TurnObjectSO prevTurn = args[0] as TurnObjectSO;
         TurnType nextTurn = (TurnType)args[1];
+        Debug.Log(nextTurn);
 
         if(nextTurn != TurnType.PlayerAttack)
             return;

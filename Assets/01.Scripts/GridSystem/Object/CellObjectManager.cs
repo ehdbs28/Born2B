@@ -20,6 +20,7 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
     private Dictionary<int2, CellObjectSO> _notMoveObjectContainer = new();
     private Collider2D _collider;
     private UnitDataSO _playerData;
+    private GameObject _savedPlayer;
 
     public void Init()
     {
@@ -48,6 +49,8 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
 
         foreach(var item in _instanceContainer.Values)
         {
+
+            if (item is PlayerInstance) continue;
 
             Destroy(item.gameObject);
 
@@ -133,9 +136,13 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
 
     public CellObjectInstance CreateCellObject(int2 pos, CellObjectSO data)
     {
-        
+
+        bool isPlayer = false;
+
         if(data is PlayerSelectSO)
         {
+
+            isPlayer = true;
 
             if(_playerData == null)
             {
@@ -173,12 +180,41 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
 
         }
 
-        var obj = Instantiate(_prefabContainer[data.ObjectType]);
+        GameObject obj = null;
+        bool isOldPlayer = false;
+
+
+        if(isPlayer && _savedPlayer != null)
+        {
+
+            obj = _savedPlayer;
+            isOldPlayer = true;
+
+        }
+        else if(isPlayer && _savedPlayer == null)
+        {
+
+            obj = Instantiate(_prefabContainer[data.ObjectType]);
+            _savedPlayer = obj;
+
+        }
+        else
+        {
+
+            obj = Instantiate(_prefabContainer[data.ObjectType]);
+
+        }
 
         if(obj.TryGetComponent<CellObjectInstance>(out var compo))
         {
 
-            compo.Init(data);
+            if (!isOldPlayer)
+            {
+
+                compo.Init(data);
+
+            }
+
             _instanceContainer.Add(compo.key, compo);
 
             return compo;
@@ -188,6 +224,14 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
         Destroy(obj);
 
         return null;
+
+    }
+
+    public void SetPlayerObj(GameObject obj)
+    {
+
+        _savedPlayer = obj;
+        Debug.Log(_savedPlayer.GetComponent<PlayerInstance>().enabled);
 
     }
 
