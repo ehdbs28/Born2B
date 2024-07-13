@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 6922553854082356591}
   - component: {fileID: 3102022252181927362}
   m_Layer: 5
-  m_Name: RariryText
+  m_Name: RarityText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC5D0\uD53D"
+  m_text: "\uCEE4\uBA3C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f5124495fe0ca4ebe825e32f345a52e3, type: 2}
   m_sharedMaterial: {fileID: 4058315823665567652, guid: f5124495fe0ca4ebe825e32f345a52e3, type: 2}
@@ -111,8 +111,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4290314375
-  m_fontColor: {r: 0.5292519, g: 0, b: 0.7264151, a: 1}
+    rgba: 4278230272
+  m_fontColor: {r: 0, g: 0.6156863, b: 0.0017098099, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
