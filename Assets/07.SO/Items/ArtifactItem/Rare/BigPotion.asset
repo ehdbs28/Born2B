@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df04236d9c964294bb943aa86fc48775, type: 3}
-  m_Name: SharpKnifeTip
+  m_Script: {fileID: 11500000, guid: edbe14956dce4ccfae8773c6e1b1497f, type: 3}
+  m_Name: BigPotion
   m_EditorClassIdentifier: 
-  Rarity: 1
+  Rarity: 2
   ItemIcon: {fileID: 0}
-  ItemName: "\uB0A0\uCE74\uB85C\uC6B4 \uCE7C \uB05D"
+  ItemName: "\uD070 \uBB3C\uC57D"
   ItemDescription: 
-  _remveCondition: 3
+  _healCnt: 2

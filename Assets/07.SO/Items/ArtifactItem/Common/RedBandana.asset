@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df04236d9c964294bb943aa86fc48775, type: 3}
-  m_Name: SharpKnifeTip
+  m_Script: {fileID: 11500000, guid: 51490c0fef9e4cb099ef1cef93d311ea, type: 3}
+  m_Name: RedBandana
   m_EditorClassIdentifier: 
   Rarity: 1
   ItemIcon: {fileID: 0}
-  ItemName: "\uB0A0\uCE74\uB85C\uC6B4 \uCE7C \uB05D"
+  ItemName: "\uBD89\uC740 \uB450\uAC74"
   ItemDescription: 
-  _remveCondition: 3
+  statusEffects:
+  - statusType: 1
+    effectedTurn: 1
