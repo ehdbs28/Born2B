@@ -40,6 +40,7 @@ public class PausePanel : UIComponent
 
     public void TitleHandler()
     {
-        // 인게임 지우기
+        ContinueHandle();
+        SceneControlManager.Instance.ChangeScene(SceneType.Title);
     }
 }
