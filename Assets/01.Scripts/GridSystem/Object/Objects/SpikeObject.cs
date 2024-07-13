@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpikeObject : InteractionableCellObject
 {
+    private List<CellObjectInstance> _areadyInteractionObjects = new();
     private const float SPIKE_DAMAGE_RATIO = 1f / 10f;
     private SpikeAnimator _spikeAnime;
 
@@ -18,7 +19,9 @@ public class SpikeObject : InteractionableCellObject
     protected override void Interaction(CellObjectInstance interactionInstance)
     {
 
-        if(interactionInstance is IHitable)
+        if (_areadyInteractionObjects.Contains(interactionInstance)) return;
+
+        if (interactionInstance is IHitable)
         {
 
             _spikeAnime.SetAnimation(true);
