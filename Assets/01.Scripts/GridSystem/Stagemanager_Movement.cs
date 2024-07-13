@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public partial class StageManager
 {
@@ -103,7 +104,7 @@ public partial class StageManager
 
             foreach (var item in _instances)
             {
-
+                
                 if (CheckBounce(item.transform.position))
                 {
 
@@ -129,6 +130,16 @@ public partial class StageManager
 
 
                 }
+
+            }
+
+            if (CheckBounce(pivot.transform.position))
+            {
+
+                var pos = pivot.transform.position;
+                pivot.transform.position = GetLineType() == LineType.Row
+                    ? new Vector3((_cellSize * (_data.width * 3)) * (GetSign(pos) * -1) / 2, pos.y)
+                    : new Vector3(pos.x, (_cellSize * (_data.height * 3)) * (GetSign(pos) * -1) / 2);
 
             }
 
@@ -158,8 +169,7 @@ public partial class StageManager
             if (_startMovement && !_endMovement)
             {
 
-                var dir = (GetPivotPositoin() - pivot.position).normalized;
-                pivot.Translate(dir * Time.deltaTime * 2);
+                pivot.position = GetPivotPositoin();
 
             }
 
