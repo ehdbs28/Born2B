@@ -6,13 +6,13 @@ using UnityEngine;
 public class StatSO : ScriptableObject
 {
     [Serializable]
-    private class StatSlot
+    public class StatSlot
     {
         public StatType StatType;
         public Stat Stat;
     }
     
-	[SerializeField] List<StatSlot> stats = new List<StatSlot>();
+	public List<StatSlot> stats = new List<StatSlot>();
     private Dictionary<StatType, Stat> statDictionary;
     public Stat this[StatType indexer] {
         get {

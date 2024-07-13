@@ -17,6 +17,11 @@ public abstract class Weapon : MonoBehaviour
 
     public event Action<bool> OnCaculateCriticalEvent = null;
 
+    protected event Action<CellObjectInstance> OnUnitHitEvent = null;
+    protected event Action OnAttackEndEvent = null;
+
+    protected float finalSlotDamage;
+
     public virtual void Init(CellObjectInstance owner)
     {
         this.owner = owner;
@@ -61,6 +66,7 @@ public abstract class Weapon : MonoBehaviour
             if(compare < 1)
                 continue;
             
+            // 마크
             if(cellObject.TryGetComponent<StatusController>(out StatusController sc))
             {
                 WeaponData.StatusEffects.ForEach(i => sc.AddStatus(i.statusType, i.effectedTurn));
@@ -73,10 +79,12 @@ public abstract class Weapon : MonoBehaviour
 
             if(cellObject.TryGetComponent<IHitable>(out IHitable ih))
             {
-                if (ih.Hit(owner, slotDamage, critical)) { }
-                    //KnockBackUnit(cellObject);
+                ih.Hit(owner, slotDamage, critical, OnUnitHitEvent);
+                finalDamage = slotDamage;
             }
         }
+
+        OnAttackEndEvent?.Invoke();
     }
 
     public void RotateAttackRange(float angle)
@@ -106,29 +114,8 @@ public abstract class Weapon : MonoBehaviour
         return index;
     }
 
-    private void KnockBackUnit(CellObjectInstance cellObject)
-    {
-        if (cellObject.TryGetComponent<IMovementable>(out var move))
-        {
-            var curPos = cellObject.transform.position;
-            var attackDir = (curPos - owner.transform.position).normalized;
-            var knockBackPosition = curPos + attackDir * weaponData.KnockBackPower;
-
-            var closestCell = StageManager.Instance.Grid.FindCellByPosition(knockBackPosition);
-            if (closestCell != null)
-            {
-                var closestCellObject = CellObjectManager.Instance.GetCellObjectInstance(closestCell.Value.unitKey);
-                if(closestCellObject != null)
-                    move.Move(new List<Vector2> { closestCellObject.transform.position }, null);
-                    CellObjectManager.Instance.ChangePosition(owner.key, closestCellObject.GetData().position);
-
-
-            }
-        }
-    }
-
     public void AddDisposableStatusEffect(StatusEffectSlot data) => disposableStatusEffects.Enqueue(data);
-
+    
     protected abstract List<WeaponRangeSlot> GetAttackRange(Vector2Int position, Vector2Int point);
     public abstract Vector2Int GetAttackPoint(Vector2Int position, Vector2Int point);
 }

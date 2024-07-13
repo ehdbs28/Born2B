@@ -13,11 +13,11 @@ public class FeedbackPlayer : MonoBehaviour
             feedbacks.Add(feedback.GetComponent<Feedback>());
     }
 
-    //private void Update()
-    //{
-    //    if(Input.GetKeyDown(KeyCode.Space))
-    //        Play(transform);
-    //}
+    private void Update()
+    {
+       if(Input.GetKeyDown(KeyCode.Space))
+           Play(transform);
+    }
 
     public void Play(Vector3 playPos)
     {

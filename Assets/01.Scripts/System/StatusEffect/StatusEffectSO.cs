@@ -75,7 +75,12 @@ public class StatusEffectSO : ScriptableObject
     {
         foreach (StatusType statusType in Enum.GetValues(typeof(StatusType)))
         {
-            if (!_remainTurnDictionary.ContainsKey(statusType) || _remainTurnDictionary[statusType] <= 0)
+            if (statusType is StatusType.None || !_remainTurnDictionary.ContainsKey(statusType))
+            {
+                continue;
+            }
+            
+            if (_remainTurnDictionary[statusType] <= 0)
             {
                 RemoveStatus(statusType);
                 continue;

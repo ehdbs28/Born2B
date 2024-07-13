@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,10 +25,15 @@ public class UnitInfoPopup : UIComponent
     {
         base.Awake();
 
+        _statusIcons = new List<UIComponent>();
+
         _statusParent = transform.Find("StatusInfo");
         _nameText = transform.Find("Data/InfoText/NameText").GetComponent<TextMeshProUGUI>();
         _descText = transform.Find("Data/InfoText/DescText").GetComponent<TextMeshProUGUI>();
-        _hpSliderMat = transform.Find("Data/HpSlider/Value").GetComponent<Image>().material;
+        
+        var image = transform.Find("Data/HpSlider/Value").GetComponent<Image>();
+        _hpSliderMat = Instantiate(image.material);
+        image.material = _hpSliderMat;
 
         _statValueTexts = new List<TextMeshProUGUI>();
         transform.Find("Data/StatValue").GetComponentsInChildren(_statValueTexts);
@@ -38,6 +44,7 @@ public class UnitInfoPopup : UIComponent
         _nameText.text = newData.unitName;
         _descText.text = newData.unitDesc;
 
+        _unitData = newData;
 
         newData.statusController.StatusEffect.OnStatusChanged += StatusHandle;
         newData.health.OnChangedHpEvent += DamagedHandle;
@@ -46,8 +53,6 @@ public class UnitInfoPopup : UIComponent
         StatusHandle();
         DamagedHandle(newData.health.CurrentHp, newData.health.MaxHp);
         StatChangedHandle();
-        
-        _unitData = newData;
     }
 
     public override void Disappear(bool poolIn = true)
@@ -71,9 +76,16 @@ public class UnitInfoPopup : UIComponent
 
     private void StatChangedHandle()
     {
-        for (var i = 1; i < (int)StatType.Cnt; i++)
+        for (var i = 0; i < _unitData.stat.stats.Count; i++)
         {
-            _statValueTexts[i].text = ((int)_unitData.stat[(StatType)i].CurrentValue).ToString();
+            var stat = _unitData.stat[(StatType)(i + 1)];
+
+            if (stat == null)
+            {
+                continue;
+            }
+
+            _statValueTexts[i].text = ((int)stat.CurrentValue).ToString();
         }
     }
 
@@ -88,7 +100,7 @@ public class UnitInfoPopup : UIComponent
         var effectedStatus = _unitData.statusController.StatusEffect.EffectedStatus;
         foreach (var effected in effectedStatus)
         {
-            var statusIcon = UIManager.Instance.AppearUI(Enum.Parse<PoolingItemType>($"StatusIconUnit-{effected}"));
+            var statusIcon = UIManager.Instance.AppearUI(Enum.Parse<PoolingItemType>($"StatusIconUnit-{effected}"), _statusParent);
             _statusIcons.Add(statusIcon);
         }
     }

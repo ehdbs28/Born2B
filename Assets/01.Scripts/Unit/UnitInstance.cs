@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHitable
 {
@@ -14,62 +15,99 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
     protected UnitStatContainer _unitStatContainer;
     protected UnitWeaponController _weaponController;
     protected UnitHealth _health;
+    protected StatusController _statusController;
 
     public Vector2Int Position => transform.position.GetVectorInt();
 
+    private UnitEventHandler _unitEventHandler;
+    private UnitInfoPopupMini _unitInfoPopupMini;
+
+    [SerializeField] UnityEvent onMoveEvent = new UnityEvent();
+    [SerializeField] UnityEvent onAttackEvent = new UnityEvent();
+    [SerializeField] UnityEvent onHitEvent = new UnityEvent();
+    [SerializeField] UnityEvent onDeadEvent = new UnityEvent();
 
     protected override void Awake()
     {
         base.Awake();
+
+        _unitEventHandler = transform.Find("UIRayHandler").GetComponent<UnitEventHandler>();
 
         _collider = GetComponent<Collider2D>();
         _unitStatContainer = GetComponent<UnitStatContainer>();
         _unitFSMBase = GetComponent<UnitFSMBase>();
         _weaponController = GetComponent<UnitWeaponController>();
         _health = GetComponent<UnitHealth>();
+        _statusController = GetComponent<StatusController>();
     }
 
+    private void OnDisable()
+    {
+        if (_unitInfoPopupMini)
+        {
+            _unitInfoPopupMini.Disappear();
+        }
 
+        if (_unitEventHandler)
+        {
+            _unitEventHandler.UnShowInfoUI(null);
+            _unitEventHandler.unitData = null;
+        }
+
+        if (_statusController)
+        {
+            _statusController.Release();
+        }
+    }
 
     public override void Init(CellObjectSO so)
     {
-        
         base.Init(so);
         var casted = so as UnitDataSO;
         casted.health = _health;
-        casted.statusController = GetComponent<StatusController>();
+        
+        _statusController.Init(this);
+        casted.statusController = _statusController;
+
+        _unitEventHandler.unitData = casted;
         _unitStatContainer.Init(casted.stat);
         _weaponController.Init(casted.weaponItem, this);
         _health.ResetHp();
+        
+        _unitInfoPopupMini = UIManager.Instance.AppearUI(
+            PoolingItemType.UnitInfoPopupMini, UIManager.Instance.UnitINfoMiniParent) as UnitInfoPopupMini;
+        _unitInfoPopupMini.Init(casted, transform);
 
         moveRole = casted.movementRole;
 
     }
 
-    public bool Hit(CellObjectInstance attackObject, float damage, bool critical)
+    public void Hit(CellObjectInstance attackObject, float damage, bool critical, Action<CellObjectInstance> callBack)
     {
-
-        if (attackObject is UnitInstance) return false;
+        if (attackObject is UnitInstance) return;
 
         bool die = _health.CurrentHp <= 0;
         EventManager.Instance.PublishEvent(EventType.OnUnitDamaged, this, die);
+        onHitEvent?.Invoke();
 
         _health.ReduceHp((int)damage);
 
         if(die)
         {
-
+            
+            onDeadEvent?.Invoke();
             Die();
 
         }
 
-        return true;
+        callBack?.Invoke(this);
     }
 
     public void Attack()
     {
 
         _unitFSMBase.DoAttack();
+        onAttackEvent?.Invoke();
 
     }
 
@@ -98,7 +136,6 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
 
     protected override void Update()
     {
-
         base.Update();
 
         var player = CellObjectManager.Instance.GetCellObjectInstance<PlayerInstance>();
@@ -111,15 +148,15 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
             _renderer.flipX = c.z > 0;
 
         }
-
     }
 
     public Vector2 Move(List<Vector2> targetPositions, Action endCallback)
     {
 
         AudioManager.Instance.PlayAudio(_data);
-        return _unitFSMBase.DoMove(targetPositions, endCallback);
-
+        return _unitFSMBase.DoMove(targetPositions, () => {
+            endCallback?.Invoke();
+            onMoveEvent?.Invoke();
+        });
     }
-
 }

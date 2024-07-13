@@ -5,6 +5,9 @@ using UnityEngine;
 public class UIManager : MonoSingleton<UIManager>
 {
     [SerializeField] private Canvas _mainCanvas;
+    [SerializeField] private Transform _unitInfoMiniParent;
+    public Transform UnitINfoMiniParent => _unitInfoMiniParent;
+
     [SerializeField] private Canvas _topCanvas;
 
     public Canvas MainCanvas => _mainCanvas;

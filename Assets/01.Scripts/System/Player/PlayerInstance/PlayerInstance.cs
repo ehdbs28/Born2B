@@ -4,7 +4,6 @@ using UnityEngine;
 
 public partial class PlayerInstance : CellObjectInstance, IHitable
 {
-
     private bool _areadyDestroyed;
 
     public Vector2Int Position => transform.position.GetVectorInt();
@@ -42,12 +41,9 @@ public partial class PlayerInstance : CellObjectInstance, IHitable
         return clone;
     }
 
-    public bool Hit(CellObjectInstance attackObject, float damage, bool critical)
+    public void Hit(CellObjectInstance attackObject, float damage, bool critical, Action<CellObjectInstance> callBack)
     {
-
         PlayerHealthComponent health = GetPlayerComponent<PlayerHealthComponent>();
-        if(health.CurrentHp <= 0)
-            return false;
 
         health.ReduceHp(1);
         EventManager.Instance.PublishEvent(EventType.OnPlayerDamaged);
@@ -55,7 +51,7 @@ public partial class PlayerInstance : CellObjectInstance, IHitable
         if(health.CurrentHp <= 0)
             Die();
 
-        return true;
+        callBack?.Invoke(this);
     }
 
     private void Die()

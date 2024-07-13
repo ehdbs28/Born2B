@@ -11,6 +11,12 @@ public class PlayerAttackComponent : PlayerComponent
 	private Stat criticalDamageStat = null;
     private Camera mainCamera = null;
 
+    public int MaxAmmoCount => weapon.CurrentWeapon.WeaponData.AmmoCount;
+    public int CurrentAmmoCount => curerntAmmo;
+    
+    private int curerntAmmo = 0;
+    public event Action OnAttackEvent = null;
+
     private bool active = false;
 
     public override void Init(PlayerInstance player)
@@ -55,6 +61,7 @@ public class PlayerAttackComponent : PlayerComponent
         Vector2Int inputPosition = mainCamera.ScreenToWorldPoint(input.ScreenPosition).GetVectorInt();
         AttackParams attackParams = new AttackParams(attackStat, criticalChanceStat, criticalDamageStat, targetLayer);
         weapon.Attack(inputPosition, attackParams);
+        OnAttackEvent?.Invoke();
         
         // 아티팩트 등으로 공격 회수가 늘어나게 되면 이 부분 수정해야됨
         // 혹은 여기는 놔두고 PlayerAttackTurn 자체를 여러번 하는 것도 괜찮음.
