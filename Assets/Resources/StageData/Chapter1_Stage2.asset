@@ -19,16 +19,16 @@ MonoBehaviour:
   - 4
   - 
   - 
-  - 
+  - 1
   - 
   - 
   - 6
   - 
+  - 1
   - 
   - 
   - 
-  - 
-  - 
+  - 1
   - 
   - 
   - 
@@ -45,6 +45,12 @@ MonoBehaviour:
   - 2
   - 2
   - 
+  - 1
+  - 
+  - 1
+  - 
+  - 
+  - 1
   - 
   - 
   - 
@@ -53,17 +59,11 @@ MonoBehaviour:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - 1
   - 
   - 9
   - 
   - 
-  - 
+  - 1
   column: 7
   portalData: {fileID: 0}
