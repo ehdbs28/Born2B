@@ -23,7 +23,10 @@ public class UnitInfoPopupMini : UIComponent
         base.Awake();
         _statusIcons = new List<UIComponent>();
         _statusParent = transform.Find("StatusEffect");
-        _hpSliderMat = transform.Find("HpSlider/Value").GetComponent<Image>().material;
+        
+        var image = transform.Find("HpSlider/Value").GetComponent<Image>();
+        _hpSliderMat = Instantiate(image.material);
+        image.material = _hpSliderMat;
     }
 
     public void Init(UnitDataSO newData, Transform owner)
@@ -34,6 +37,7 @@ public class UnitInfoPopupMini : UIComponent
         newData.statusController.StatusEffect.OnStatusChanged += StatusHandle;
         _unitData.health.OnChangedHpEvent += DamagedHandle;
         StatusHandle();
+        DamagedHandle(_unitData.health.CurrentHp, _unitData.health.MaxHp);
     }
 
     private void LateUpdate()

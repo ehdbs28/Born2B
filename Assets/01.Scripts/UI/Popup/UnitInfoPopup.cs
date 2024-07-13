@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,7 +30,10 @@ public class UnitInfoPopup : UIComponent
         _statusParent = transform.Find("StatusInfo");
         _nameText = transform.Find("Data/InfoText/NameText").GetComponent<TextMeshProUGUI>();
         _descText = transform.Find("Data/InfoText/DescText").GetComponent<TextMeshProUGUI>();
-        _hpSliderMat = transform.Find("Data/HpSlider/Value").GetComponent<Image>().material;
+        
+        var image = transform.Find("Data/HpSlider/Value").GetComponent<Image>();
+        _hpSliderMat = Instantiate(image.material);
+        image.material = _hpSliderMat;
 
         _statValueTexts = new List<TextMeshProUGUI>();
         transform.Find("Data/StatValue").GetComponentsInChildren(_statValueTexts);
@@ -74,13 +78,13 @@ public class UnitInfoPopup : UIComponent
     {
         for (var i = 0; i < _unitData.stat.stats.Count; i++)
         {
-            var stat = _unitData.stat[(StatType)i];
+            var stat = _unitData.stat[(StatType)(i + 1)];
 
             if (stat == null)
             {
                 continue;
             }
-            
+
             _statValueTexts[i].text = ((int)stat.CurrentValue).ToString();
         }
     }
