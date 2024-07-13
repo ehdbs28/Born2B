@@ -8,6 +8,10 @@ using UnityEngine;
 public class PlayerWeaponComponent : PlayerComponent
 {
     [SerializeField] Transform weaponContainer = null;
+    [SerializeField] float updownValue;
+    [SerializeField] float durationValue;
+    private float startValue;
+    
     private Weapon currentWeapon = null;
     public Weapon CurrentWeapon => currentWeapon;
 
@@ -15,7 +19,18 @@ public class PlayerWeaponComponent : PlayerComponent
     private Queue<WeaponRangeTile> tiles = new Queue<WeaponRangeTile>();
 
     public event Action<WeaponItemSO> OnWeaponEquipEvent = null;
-    
+
+    private void Start()
+    {
+        startValue = weaponContainer.position.y;
+    }
+
+    private void Update()
+    {
+        float value = Mathf.Sin(Time.time * durationValue) * updownValue;
+        weaponContainer.position = new Vector3(0, startValue + value);
+    }
+
     public void DrawRange()
     {
         foreach (WeaponRangeSlot range in currentWeapon.Ranges)
