@@ -17,10 +17,11 @@ MonoBehaviour:
   ItemName: "\uBC84\uB2DD \uC6E8\uC77C"
   ItemDescription: "\uD0C0\uC624\uB974\uB294 \uBD88\uBC14\uB2E4\uB97C \uB9CC\uB4E4\uC5B4\uB0B4\uB294
     \uD65C. \uC801\uB4E4\uC744 \uC0AC\uC9C0\uB85C \uBC00\uC5B4\uB193\uACE0 \uBD88\uD0DC\uC6B4\uB2E4. "
-  WeaponPrefab: {fileID: 0}
+  WeaponPrefab: {fileID: 425355719935054895, guid: be6747ca627508e40bbec37350ab1f90, type: 3}
   Evolutions: {fileID: 11400000, guid: 83c5d442ed7c3f04080e79b273371aa7, type: 2}
   StatusEffects: []
   KnockBackPower: 0
+  AmmoCount: 1
   Damage: 35
   Range:
     rangesList:

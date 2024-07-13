@@ -16,11 +16,13 @@ MonoBehaviour:
   ItemIcon: {fileID: 21300000, guid: d564a661deddb7a43839232b40e4fa6c, type: 3}
   ItemName: "\uB300\uB95C\uAD81"
   ItemDescription: "\uB2E8 \uD55C\uBC1C\uB85C \uB300\uB959\uC744 \uAC00\uB978\uB2E4\uB294
-    \uCD5C\uAC15\uC758 \uC11D\uAD81. \uC801\uC744 \uAD00\uD1B5\uD558\uBA70 \uD0C8\uC9C4\uC2DC\uD0A8\uB2E4."
-  WeaponPrefab: {fileID: 0}
+    \uCD5C\uAC15\uC758 \uC11D\uAD81. \uC7A5\uC560\uBB3C\uC5D0 \uB9C9\uD788\uC9C0
+    \uC54A\uC73C\uBA70 \uD53C\uACA9\uD55C \uC801\uC744 \uD0C8\uC9C4\uC2DC\uD0A8\uB2E4."
+  WeaponPrefab: {fileID: 8756206759213308385, guid: 5e39edeb828650e4580943949012acfe, type: 3}
   Evolutions: {fileID: 11400000, guid: 83c5d442ed7c3f04080e79b273371aa7, type: 2}
   StatusEffects: []
   KnockBackPower: 0
+  AmmoCount: 1
   Damage: 150
   Range:
     rangesList:

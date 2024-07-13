@@ -18,11 +18,12 @@ MonoBehaviour:
   ItemDescription: "\uCEE4\uB2E4\uB780 \uB9DD\uCE58. \uB2E8\uC21C\uD788 \uB0B4\uB824\uCE58\uB294
     \uAC83 \uB9CC\uC73C\uB85C \uAC15\uB825\uD55C \uC704\uB825\uC744 \uB0BC \uC218
     \uC788\uB2E4. "
-  WeaponPrefab: {fileID: -6942030965757976987, guid: 4b68be0ca0f89f4458248af78bedd218, type: 3}
+  WeaponPrefab: {fileID: 438139978613915793, guid: b04b513091e0a3148a406070ca2838c0, type: 3}
   Evolutions: {fileID: 11400000, guid: abb0d1873c7dc31448e7ddfdd1c4188c, type: 2}
   StatusEffects: []
   KnockBackPower: 0
-  Damage: 30
+  AmmoCount: 1
+  Damage: 40
   Range:
     rangesList:
     - Ranges:
@@ -37,9 +38,15 @@ MonoBehaviour:
       - Position: {x: -2, y: 0}
         Theta: 100
     - Ranges:
+      - Position: {x: -2, y: 2}
+        Theta: 100
+      - Position: {x: -1, y: 2}
+        Theta: 100
       - Position: {x: 0, y: 2}
         Theta: 100
-      - Position: {x: 0, y: 1}
+      - Position: {x: 1, y: 2}
+        Theta: 100
+      - Position: {x: 2, y: 2}
         Theta: 100
     - Ranges:
       - Position: {x: 0, y: 2}
