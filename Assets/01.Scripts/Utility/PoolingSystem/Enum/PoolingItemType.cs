@@ -19,4 +19,7 @@ public enum PoolingItemType
 	TitlePanel,
 	StageEnterPopup,
 	UnitInfoPopupMini,
+	GameOverPanel,
+	GameOverPanelItem,
+	
 }

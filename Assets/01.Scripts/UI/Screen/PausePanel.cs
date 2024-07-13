@@ -8,7 +8,7 @@ public class PausePanel : UIComponent
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(settingPanel.state == PoolingState.PoolOut)
+            if(settingPanel != null && settingPanel.state == PoolingState.PoolOut)
                 settingPanel.Disappear();
             else
                 Disappear();
