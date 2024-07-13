@@ -12,21 +12,17 @@ public class FeedbackPlayer : MonoBehaviour
         foreach (Transform feedback in transform)
             feedbacks.Add(feedback.GetComponent<Feedback>());
     }
-
-    private void Update()
-    {
-       if(Input.GetKeyDown(KeyCode.Space))
-           Play(transform);
-    }
-
+    
     public void Play(Vector3 playPos)
     {
+        Stop();
         for (int i = 0; i < feedbacks.Count; i++)
             feedbacks[i].Play(playPos);
     }
 
     public void Play(Transform playTrm)
     {
+        Stop();
         for (int i = 0; i < feedbacks.Count; i++)
             feedbacks[i].Play(playTrm.position);
     }
