@@ -32,6 +32,7 @@ public class CalculateCriticalStatModifierItemSO : AttributedCallByEventItemSO
     {
         Release();
         RemoveModifier(basicModifiers);
+        EventManager.Instance.UnRegisterEvent(EventType.OnPlayerWeaponChanged, HandlePlayerWeaponChanged);
         base.Unexecute(handler);
     }
 
@@ -70,7 +71,7 @@ public class CalculateCriticalStatModifierItemSO : AttributedCallByEventItemSO
         if (TryParseHandler<IWeaponArtifactItemHandler>(OwnerHandler, out IWeaponArtifactItemHandler weaponHandler) == false)
             return;
 
-        if (weapon == weaponHandler.CurrentWeapon)
+        if (weapon != null && weapon == weaponHandler.CurrentWeapon)
             weapon.OnCaculateCriticalEvent -= HandleCalculateCiritical;
     }
 
