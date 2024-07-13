@@ -182,8 +182,6 @@ public partial class StageManager
 
             }
 
-            //CellObjectManager.Instance.MovementCellObject();
-
         }
         private void HandleMoveCancel()
         {
