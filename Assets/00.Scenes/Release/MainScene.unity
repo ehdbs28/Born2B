@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07eb5aa3ec49c184691388250db84227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equipmentItemDatabase: {fileID: 11400000, guid: 2a415354f290a2a4c922fbd6dd095f1d, type: 2}
+  equipmentItemDatabase: {fileID: 11400000, guid: 0d5652f8f735db4458f42a5f52d44c98, type: 2}
   artifactItemDatabase: {fileID: 0}
 --- !u!114 &1118534800
 MonoBehaviour:
