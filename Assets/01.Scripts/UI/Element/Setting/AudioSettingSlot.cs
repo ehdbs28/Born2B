@@ -33,23 +33,28 @@ public class AudioSettingSlot : MonoBehaviour, IPointerMoveHandler, IPointerDown
         if(isDrag == false)
             return;
 
-        DisplayValuUnits(eventData.position.x);
+        DisplayValueUnits(eventData);
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         isDrag = true;
-        DisplayValuUnits(eventData.position.x);
+        DisplayValueUnits(eventData);
     }
 
     public void OnPointerUp(PointerEventData eventData) => isDrag = false;
 
-    private void DisplayValuUnits(float positionX)
+    private void DisplayValueUnits(PointerEventData eventData)
     {
-        float width = rectTransform.sizeDelta.x;
-        float localXPosition = positionX - (rectTransform.position.x - rectTransform.sizeDelta.x);
-        float ratio = Mathf.Clamp(localXPosition / width, 0f, 1f);
-        Debug.Log(ratio);
+        var size = rectTransform.sizeDelta;
+        
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, eventData.position,
+            eventData.pressEventCamera, out var localPos);
+
+        localPos.x += size.x;
+        localPos.y += size.y / 2f;
+
+        float ratio = Mathf.Clamp(localPos.x / size.x, 0f, 1f);
 
         int unitsIndex = Mathf.CeilToInt(Mathf.Lerp(-1, 11, ratio));
         for(int i = 0; i < valueUnits.Count; ++i)

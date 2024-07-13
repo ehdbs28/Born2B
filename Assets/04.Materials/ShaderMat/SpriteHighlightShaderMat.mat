@@ -56,7 +56,7 @@ Material:
     m_Floats:
     - _DelayTime: 7
     - _HighlightOpacity: 1
-    - _HighlightSpeed: 0.1
+    - _HighlightSpeed: 3
     - _HighlightWidth: 0.3
     m_Colors:
     - _HighlightColor: {r: 0.99850166, g: 1, b: 0.8726415, a: 1}
