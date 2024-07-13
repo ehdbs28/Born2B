@@ -35,8 +35,6 @@ MonoBehaviour:
       - Position: {x: -2, y: 0}
         Theta: 100
     - Ranges:
-      - Position: {x: 0, y: 3}
-        Theta: 100
       - Position: {x: 0, y: 2}
         Theta: 100
       - Position: {x: 0, y: 1}

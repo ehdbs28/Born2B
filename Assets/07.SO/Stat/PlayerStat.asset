@@ -25,3 +25,6 @@ MonoBehaviour:
   - StatType: 3
     Stat:
       baseValue: 10
+  - StatType: 5
+    Stat:
+      baseValue: 10

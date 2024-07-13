@@ -17,8 +17,8 @@ public class CellObjectInstance : MonoBehaviour, ICloneable
     {
         EventManager.Instance.RegisterEvent(EventType.OnTurnEnded, HandleTurnEnded);
         EventManager.Instance.RegisterEvent(EventType.OnTurnChanged, HandleTurnChanged);
-        _animator = GetComponent<Animator>();
-        _renderer = GetComponent<SpriteRenderer>();
+        _animator = GetComponentInChildren<Animator>();
+        _renderer = GetComponentInChildren<SpriteRenderer>();
         _collider = GetComponent<Collider2D>();
     }
 
