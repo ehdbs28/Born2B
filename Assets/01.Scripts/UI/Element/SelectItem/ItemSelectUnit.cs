@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -13,6 +14,8 @@ public class ItemSelectUnit : UIButton
     private ItemSO _holdingItemSo;
     private ItemInfoPopup _infoPopup;
     
+    public event Action OnSelectEvent;
+
     protected override void Awake()
     {
         base.Awake();
@@ -44,6 +47,9 @@ public class ItemSelectUnit : UIButton
         
         // 아이템이 모종의 이유로 들어가지 못하였을 때
         FlowManager.Instance.NextCycle();
+        
+        OnSelectEvent?.Invoke();
+        OnSelectEvent = null;
     }
     
     public void ShowInfoUI(PointerEventData eventData)
