@@ -48,12 +48,11 @@ public class TurnSkipUI : UIComponent
 
     private void SkipAttack()
     {
-        // TurnManager.Instance.EndCurrentTurn();
+        TurnManager.Instance.SkipTurn(TurnType.MovementEnemy);
     }
 
     private void SkipMove()
     {
-        // TurnManager.Instance.EndCurrentTurn();
-        // TurnManager.Instance.EndCurrentTurn();
+        TurnManager.Instance.SkipTurn(TurnType.PlayerAttack);
     }
 }
