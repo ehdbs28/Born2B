@@ -15,7 +15,8 @@ MonoBehaviour:
   Rarity: 1
   ItemIcon: {fileID: -1199489069, guid: c75e6b1fd155a52418fbc10bffd218e7, type: 3}
   ItemName: "\uBE5B\uB098\uB294 \uD39C\uB358\uD2B8"
-  ItemDescription: 
+  ItemDescription: "\uC2E0\uBE44\uB85C\uC6C0\uC774 \uAC10\uB3C4\uB294 \uD32C\uB358\uD2B8.\n\uCD5C\uB300
+    \uCCB4\uB825\uC774 \uC99D\uAC00\uD569\uB2C8\uB2E4."
   modifiers:
   - StatType: 1
     ModifierType: 1

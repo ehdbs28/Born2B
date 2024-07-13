@@ -10,12 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bbf648fae7d23243af8182db0acb2f3, type: 3}
-  m_Name: Wanted
+  m_Name: SwordOfHero
   m_EditorClassIdentifier: 
   Rarity: 1
-  ItemIcon: {fileID: -907159935, guid: c75e6b1fd155a52418fbc10bffd218e7, type: 3}
-  ItemName: "\uD604\uC0C1\uC218\uBC30"
-  ItemDescription: 
+  ItemIcon: {fileID: -949788567, guid: c75e6b1fd155a52418fbc10bffd218e7, type: 3}
+  ItemName: "\uC5EC\uC2E0\uC758 \uAC80"
+  ItemDescription: "\uC5EC\uC2E0\uC774 \uC804\uC124\uC758 \uC6A9\uC0AC\uC5D0\uAC8C
+    \uC120\uBB3C\uD588\uB2E4\uACE0 \uC54C\uB824\uC9C4 \uAC80.\n\uCDA9\uBD84\uD55C
+    \uC0DD\uBA85\uB825\uC744 \uBCF4\uC720\uD558\uACE0 \uC788\uB2E4\uBA74 \uCE58\uBA85\uD0C0
+    \uD53C\uD574 \uC99D\uAC00\uD569\uB2C8\uB2E4."
   condition: 1
   compareValue: 0.79
   modifiers:

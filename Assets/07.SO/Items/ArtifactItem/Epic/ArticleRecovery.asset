@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: ArticleRecovery
   m_EditorClassIdentifier: 
   Rarity: 3
-  ItemIcon: {fileID: -550201087, guid: 18eb8eac2bf48f346bf800ae92f9c0fd, type: 3}
-  ItemName: 
-  ItemDescription: 
-  _toRevivehealth: 0
+  ItemIcon: {fileID: -1560406213, guid: 18eb8eac2bf48f346bf800ae92f9c0fd, type: 3}
+  ItemName: "\uCDA9\uBB34\uACF5"
+  ItemDescription: "\"\uC8FD\uACE0\uC790 \uD558\uBA74 \uC0B4\uACE0, \uC0B4\uACE0\uC790
+    \uD558\uBA74 \uC8FD\uB294\uB2E4.\""
+  _toRevivehealth: 1

@@ -15,9 +15,12 @@ MonoBehaviour:
   Rarity: 2
   ItemIcon: {fileID: -1622453768, guid: c75e6b1fd155a52418fbc10bffd218e7, type: 3}
   ItemName: "\uBF08 \uBAA9\uAC78\uC774"
-  ItemDescription: 
+  ItemDescription: "\uC57C\uB9CC\uC778\uC774 \uCC28\uACE0\uB2E4\uB2D0 \uAC83\uB9CC
+    \uAC19\uC740 \uBAA9\uAC78\uC774.\n\uC801 \uCC98\uCE58\uC2DC 4\uD134\uAC04 \uACF5\uACA9\uB825\uACFC
+    \uCE58\uBA85\uD0C0 \uD53C\uD574\uAC00 \uC99D\uAC00\uD569\uB2C8\uB2E4."
   activeChance: 1
   turnCount: 4
+  deadOption: 1
   modifiers:
   - StatType: 3
     ModifierType: 2
