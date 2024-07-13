@@ -10,7 +10,7 @@ public class UIManager : MonoSingleton<UIManager>
     public Canvas MainCanvas => _mainCanvas;
     public Canvas TopCanvas => _topCanvas;
 
-    public UIComponent AppearUI(string key, Transform parent = null, Action callBack = null)
+    public UIComponent AppearUI(PoolingItemType key, Transform parent = null, Action callBack = null)
     {
         var component = PoolManager.Instance.Pop(key) as UIComponent;
 

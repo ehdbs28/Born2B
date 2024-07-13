@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7626060288853564981}
   - component: {fileID: 5864830520064823512}
   - component: {fileID: 2948572298303813692}
+  - component: {fileID: -3700927824360050148}
   m_Layer: 5
   m_Name: StatusIconUnit
   m_TagString: Untagged
@@ -91,3 +92,22 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.39215687}
   m_EffectDistance: {x: 15, y: -15}
   m_UseGraphicAlpha: 1
+--- !u!114 &-3700927824360050148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649658457360119540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 626c55da42694feabeddd14fefe3ee97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  tweenData: {fileID: 0}
+  rectTransform: {fileID: 0}
+  _appearAttribute: 0
+  _disappearAttribute: 0
+  _selfDisappear: 0
+  _selfDisappearTime: 0
