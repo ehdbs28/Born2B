@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51490c0fef9e4cb099ef1cef93d311ea, type: 3}
-  m_Name: Cesspit
+  m_Name: BrownMushroom
   m_EditorClassIdentifier: 
   Rarity: 1
-  ItemIcon: {fileID: 1300599740, guid: 18eb8eac2bf48f346bf800ae92f9c0fd, type: 3}
-  ItemName: "\uC624\uBB3C\uD1B5"
+  ItemIcon: {fileID: 685103204, guid: 18eb8eac2bf48f346bf800ae92f9c0fd, type: 3}
+  ItemName: "\uAC08\uC0C9 \uBC84\uC12F"
   ItemDescription: 
   statusEffects:
   - statusType: 8

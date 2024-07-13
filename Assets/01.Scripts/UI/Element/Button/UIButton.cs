@@ -86,7 +86,7 @@ public class UIButton : UIComponent, IPointerClickHandler, IPointerEnterHandler,
 
         while (current <= time)
         {
-            current += Time.deltaTime;
+            current += Time.unscaledDeltaTime;
             var percent = current / time;
             var scale = Vector3.Lerp(origin, targetScale, percent);
             _targetImageTrm.localScale = scale;
