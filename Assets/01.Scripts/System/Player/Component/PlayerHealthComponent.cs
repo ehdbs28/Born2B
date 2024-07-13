@@ -11,7 +11,17 @@ public class PlayerHealthComponent : PlayerComponent, IHealth
 
     public int MaxHp => stat.GetStat(StatType.MaxHP);
 
-    public bool CanChangedHP { get; set; } = true;
+    private bool canChangedHP = true;
+
+    private int _canChangedHPCount = 0;
+    int IHealth.CanChangedHPCount { get => _canChangedHPCount; 
+        set
+        {
+            _canChangedHPCount = Mathf.Clamp(value, 0, int.MaxValue);
+
+            canChangedHP = _canChangedHPCount == 0;
+        }
+    }
 
     public override void Init(PlayerInstance player)
     {
@@ -23,21 +33,21 @@ public class PlayerHealthComponent : PlayerComponent, IHealth
 
     public void ResetHp()
     {
-        if (!CanChangedHP) return;
+        if (!canChangedHP) return;
 
         currentHp = (int)stat.GetStat(StatType.MaxHP).CurrentValue;
     }
 
     public void AddHp(int healHp)
     {
-        if (!CanChangedHP) return;
+        if (!canChangedHP) return;
 
         currentHp = Mathf.Clamp(currentHp + healHp, 0, MaxHp);
     }
 
     public void ReduceHp(int reduceHp)
     {
-        if (!CanChangedHP) return;
+        if (!canChangedHP) return;
 
         currentHp = Mathf.Clamp(currentHp - reduceHp, 0, MaxHp);
     }
