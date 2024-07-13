@@ -18,6 +18,14 @@ public class ArtifactItemInventorySO : ItemInventorySlotSO
 
     [SerializeField] List<ArtifactItemInventorySlot> inventorySlots = new List<ArtifactItemInventorySlot>();
 
+    private void OnEnable()
+    {
+        foreach (var slot in inventorySlots)
+        {
+            slot.inventory.Clear();
+        }
+    }
+
     public override bool AddItem(ItemSO itemData)
     {
         ArtifactItemSO item = itemData as ArtifactItemSO;
