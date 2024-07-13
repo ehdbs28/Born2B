@@ -17,10 +17,13 @@ MonoBehaviour:
   ItemName: "\uD22C\uCC99 \uD3EC\uC158"
   ItemDescription: "\uC801\uC5D0\uAC8C \uB358\uC9C0\uB294 \uC6A9\uB3C4\uB85C \uC81C\uC791\uB41C
     \uD2B9\uC81C \uD3EC\uC158 "
-  WeaponPrefab: {fileID: 0}
+  WeaponPrefab: {fileID: 1411795824425647606, guid: 11025986d8077094b86b77deaadca927, type: 3}
   Evolutions: {fileID: 11400000, guid: 03daaf2d4cf50a14e88f72095c5de0ff, type: 2}
-  StatusEffects: []
+  StatusEffects:
+  - statusType: 8
+    effectedTurn: 0
   KnockBackPower: 0
+  AmmoCount: 0
   Damage: 30
   Range:
     rangesList:
