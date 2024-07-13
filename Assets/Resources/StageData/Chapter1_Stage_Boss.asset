@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f344d6b24980a24c9119977066a442a, type: 3}
-  m_Name: Chapter1_Stage4
+  m_Name: Chapter1_Stage_Boss
   m_EditorClassIdentifier: 
   stageType: 0
   stageName: 
@@ -18,52 +18,84 @@ MonoBehaviour:
   data:
   - 
   - 
-  - 2
-  - 1
-  - 2
   - 
   - 
+  - 8
   - 
-  - 7
-  - 2
-  - 1
-  - 2
-  - 7
-  - 
-  - 2
-  - 2
-  - 2
-  - 1
-  - 2
-  - 2
-  - 2
   - 
   - 
   - 
   - 
   - 1
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 1
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 1
+  - 
+  - 
   - 1
   - 
   - 
   - 
   - 
-  - 2
-  - 2
-  - 2
   - 
   - 
   - 
   - 
-  - 2
-  - 7
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 1
+  - 
+  - 
+  - 
+  - 
+  - 1
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 9
   - 
   - 
   - 
-  - 2
   - 
-  - 
-  column: 7
+  column: 9
   portalData: {fileID: 0}
