@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7193303026466545249}
   - component: {fileID: -3728225053805469251}
   m_Layer: 5
-  m_Name: StatusIconMiniUnit-Silence
+  m_Name: StatusIconMiniUnitSilence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
