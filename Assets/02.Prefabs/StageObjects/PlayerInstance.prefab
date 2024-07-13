@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 3525451366787352817}
   - component: {fileID: 9106779308442671473}
   - component: {fileID: 5657000114299019678}
+  - component: {fileID: 4900180477468616274}
   m_Layer: 3
   m_Name: PlayerInstance
   m_TagString: Untagged
@@ -300,7 +301,19 @@ MonoBehaviour:
   inventoryData: {fileID: 11400000, guid: dc205a038f569944db9ff54d12ac1dab, type: 2}
   OnItemAddedEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4900180477468616274}
+        m_TargetAssemblyTypeName: PlayerSoundPlayer, Assembly-CSharp
+        m_MethodName: GetItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnItemRemovedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -376,3 +389,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4900180477468616274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7262097254093175993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854e88ea2ae915a459ab739e46cb1871, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _melee:
+  - {fileID: 11400000, guid: 5271ef85e863ca040946c4a478c11472, type: 2}
+  - {fileID: 11400000, guid: 1442d2a23afc5044d90a8aa0b5bada81, type: 2}
+  _range:
+  - {fileID: 11400000, guid: 2ed59843892502d46917f5463b6bf383, type: 2}
+  - {fileID: 11400000, guid: 62603809dfb44cb408ab33351045f64b, type: 2}
+  _getItem: {fileID: 11400000, guid: c68d4829318b2084da7435dfed15a7a2, type: 2}

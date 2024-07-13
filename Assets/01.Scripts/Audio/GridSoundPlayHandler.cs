@@ -9,7 +9,7 @@ public class GridSoundPlayHandler : AudioPlayer
     [SerializeField] private AudioData _moveStartData;
     [SerializeField] private AudioData _movieFinish;
 
-    private void Awake()
+    private void OnEnable()
     {
 
         EventManager.Instance.RegisterEvent(EventType.OnGridMoveStart, HandleGridMoveStart);
@@ -28,6 +28,14 @@ public class GridSoundPlayHandler : AudioPlayer
     {
 
         PlayAudio(_moveStartData);
+
+    }
+
+    private void OnDisable()
+    {
+
+        EventManager.Instance.UnRegisterEvent(EventType.OnGridMoveStart, HandleGridMoveStart);
+        EventManager.Instance.UnRegisterEvent(EventType.OnGridMoveFinish, HandleGridMoveFinish);
 
     }
 
