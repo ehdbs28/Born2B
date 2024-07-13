@@ -243,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponContainer: {fileID: 7803638571080050817}
   weaponData: {fileID: 11400000, guid: 2e16118b352a076488464909bf796435, type: 2}
-  tilePrefab: {fileID: 4804773342564850490, guid: 67ff94cd7fbba0d4a9fc09a962c3852e, type: 3}
+  tilePrefab: {fileID: 4100468086583494097, guid: edd40b3f6fcf73e4b91c74b5c287147f, type: 3}
 --- !u!114 &6460470384840962881
 MonoBehaviour:
   m_ObjectHideFlags: 0
