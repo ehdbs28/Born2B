@@ -10,7 +10,7 @@ public class PlayerHealthComponent : PlayerComponent, IHealth
     
     public Action<int, int> OnChangedHpEvent { get; set;  }
 
-    private int currentHp = 0;
+    [SerializeField] private int currentHp = 0;
     public int CurrentHp => currentHp;
 
     public int MaxHp => stat.GetStat(StatType.MaxHP);
@@ -32,9 +32,18 @@ public class PlayerHealthComponent : PlayerComponent, IHealth
         base.Init(player);
 
         stat = player.GetPlayerComponent<PlayerStatComponent>();
-        ResetHp();
+        EventManager.Instance.RegisterEvent(EventType.OnStageLoaded, HandleStageLoad);
+
+        
     }
-    
+
+    private void HandleStageLoad(object[] args)
+    {
+
+        ResetHp();
+
+    }
+
     public void ResetHp()
     {
         if (!canChangedHP) return;

@@ -52,6 +52,7 @@ public class FlowHandler : MonoBehaviour
         TurnManager.Instance.StartTurn();
         StageManager.Instance.NextStage();
         //CellObjectManager.Instance.GetCellObjectInstance<PlayerInstance>().GetComponent<PlayerWeaponComponent>().Equip();
+        EventManager.Instance.PublishEvent(EventType.OnStageLoaded);
         FlowManager.Instance.NextCycle();
 
     }
