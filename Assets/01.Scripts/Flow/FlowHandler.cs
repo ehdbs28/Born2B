@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class DebugFlowHandler : MonoBehaviour
+public class FlowHandler : MonoBehaviour
 {
 
     [SerializeField] private CellObjectSO _nextPortalIns;
@@ -22,7 +22,6 @@ public class DebugFlowHandler : MonoBehaviour
     private void GameStartHandler(object[] args)
     {
 
-        Debug.Log("���� ����");
         FlowManager.Instance.NextCycle();
 
     }
@@ -30,7 +29,6 @@ public class DebugFlowHandler : MonoBehaviour
     private void SelectUnitHandler(object[] args)
     {
 
-        Debug.Log("���� ����");
         UnitSelectManager.Instance.StartSelect();
 
     }
@@ -38,7 +36,6 @@ public class DebugFlowHandler : MonoBehaviour
     private void StageJoinHandler(object[] args)
     {
 
-        Debug.Log("�������� ����");
         StartCoroutine(Co());
 
     }
@@ -60,14 +57,12 @@ public class DebugFlowHandler : MonoBehaviour
     private void BattleStartHandler(object[] args)
     {
 
-        Debug.Log("��Ʋ ����");
 
     }
 
     private void BattleFinishHandler(object[] args)
     {
 
-        Debug.Log("��Ʋ ��");
         var cells = StageManager.Instance.Grid.GetEmptyCells();
         var target = cells[Random.Range(0, cells.Count)];
         var ins = StageManager.Instance.Grid.GetCellInstance(target.guid);

@@ -17,4 +17,9 @@ public enum EventType
 
     OnUnitDamaged, // [0] : UnitInstance, [1] : isDead
     OnPlayerWeaponChanged,
+
+    //그리드 움직임
+    OnGridMoveStart,
+    OnGridMoveFinish,
+
 }

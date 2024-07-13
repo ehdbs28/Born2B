@@ -13,7 +13,7 @@ public class GameManager : MonoSingleton<GameManager>
         StageManager.Instance.Init();
         CellObjectManager.Instance.Init();
         TurnManager.Instance.Init();
-        GetComponent<DebugFlowHandler>().Init(); // 이건 수정할 거임     
+        GetComponent<FlowHandler>().Init(); // 이건 수정할 거임     
         
         SceneControlManager.Instance.Init();
     }

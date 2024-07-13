@@ -32,6 +32,7 @@ public partial class StageManager
             Action moveCancelCallback, GridInputSO input)
         {
 
+            EventManager.Instance.PublishEvent(EventType.OnGridMoveStart);
             this.pivot = pivot;
             this.moveEndCallback = moveEndCallback;
             _startCell = startCell;
@@ -48,6 +49,8 @@ public partial class StageManager
         {
 
             if (_endMovement) return;
+
+            EventManager.Instance.PublishEvent(EventType.OnGridMoveFinish);
 
             if (_moveDir == Vector2.zero || Vector3.Distance(pivot.transform.position, _originPoint) < 0.5f)
             {
