@@ -30,4 +30,4 @@ MonoBehaviour:
       baseValue: 10
   - StatType: 6
     Stat:
-      baseValue: 1
+      baseValue: 0
