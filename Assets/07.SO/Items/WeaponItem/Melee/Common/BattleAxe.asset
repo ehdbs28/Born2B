@@ -21,6 +21,7 @@ MonoBehaviour:
   Evolutions: {fileID: 11400000, guid: abb0d1873c7dc31448e7ddfdd1c4188c, type: 2}
   StatusEffects: []
   KnockBackPower: 0
+  AmmoCount: 0
   Damage: 20
   Range:
     rangesList:

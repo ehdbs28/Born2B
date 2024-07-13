@@ -19,6 +19,7 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
     private Dictionary<Guid, CellObjectInstance> _instanceContainer = new();
     private Dictionary<int2, CellObjectSO> _notMoveObjectContainer = new();
     private Collider2D _collider;
+    private UnitDataSO _playerData;
 
     public void Init()
     {
@@ -132,10 +133,27 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
 
     public CellObjectInstance CreateCellObject(int2 pos, CellObjectSO data)
     {
+        
+        if(data is PlayerSelectSO)
+        {
 
-        data = data is PlayerSelectSO ?
-            (data as PlayerSelectSO).playerDatas[UnitSelectManager.Instance.selectedIdx] 
-            : data.Clone() as CellObjectSO;
+            if(_playerData == null)
+            {
+
+                data = (data as PlayerSelectSO).playerDatas[UnitSelectManager.Instance.selectedIdx];
+                _playerData = data as UnitDataSO;
+
+            }
+            else
+            {
+
+                data = data.Clone() as CellObjectSO;
+
+            }
+
+        }
+
+
         data.position = pos;
 
         _objectContainer.Add(data.key, data);
