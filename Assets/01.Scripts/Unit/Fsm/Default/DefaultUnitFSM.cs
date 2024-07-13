@@ -73,6 +73,9 @@ public class DefaultUnitMoveState : UnitFSMStateBase
 
         }
 
+        var particle = PoolManager.Instance.Pop("LandingParticle") as PoolableParticle;
+        particle.SetPositionAndRotation(targetPos, Quaternion.identity);
+        particle.Play();
         endCallback?.Invoke();
 
     }
