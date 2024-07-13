@@ -11,17 +11,16 @@ public class ItemInventorySO : ScriptableObject
     [SerializeField] List<ItemInventorySlotSO> inventorySlots = new List<ItemInventorySlotSO>();
     private Dictionary<Type, ItemInventorySlotSO> inventory = new Dictionary<Type, ItemInventorySlotSO>();
 
-    // public List<ItemSO> AllItems
-    // {
-    //     get
-    //     {
-    //         var list = new List<ItemSO>();
-    //         foreach (var slotSo in inventorySlots)
-    //         {
-    //             slotSo.
-    //         }
-    //     }
-    // }
+    public List<ItemSO> AllItems
+    {
+        get
+        {
+            List<ItemSO> list = new List<ItemSO>();
+            foreach (ItemInventorySlotSO inven in inventory.Values)
+                list.AddRange(inven.AllItems);
+            return list;
+        }
+    }
 
     public void Init(IItemHandler owner)
     {

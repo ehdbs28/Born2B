@@ -83,7 +83,7 @@ public partial class PlayerInstance : CellObjectInstance, IHitable
 
             _areadyDestroyed = true;
             EventManager.Instance.PublishEvent(EventType.OnPlayerDead);
-
+            // UIManager.Instance.AppearUI(PoolingItemType.GameOverPanel);
         }
     }
 

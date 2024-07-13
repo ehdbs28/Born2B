@@ -1,10 +1,13 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class GameOverPanel : UIComponent
 {
     [SerializeField] private ItemInventorySO _inventory;
+    [SerializeField] private List<Image> itemSlots;
     
     private TextMeshProUGUI _stageInfoText;
     private Transform _itemParent;
@@ -28,6 +31,20 @@ public class GameOverPanel : UIComponent
     {
         base.Appear(parent);
         
-        // _inventory.
+        List<ItemSO> items = _inventory.AllItems;
+        for(int i = 0; i < itemSlots.Count; ++i)
+        {
+            if(items.Count >= i)
+                itemSlots[i].gameObject.SetActive(false);
+            else
+            {
+                itemSlots[i].sprite = itemSlots[i].sprite;
+                itemSlots[i].gameObject.SetActive(true);
+            }
+        }
+
+        StageDataSO stageData = null;
+        ChapterDataSO chapterData = null;
+        _stageInfoText.text = $"{chapterData.chapterName} - {stageData.stageName}";
     }
 }
