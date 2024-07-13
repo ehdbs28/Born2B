@@ -1,10 +1,11 @@
-using System;
 using System.Collections.Generic;
 using Singleton;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoSingleton<AudioManager>
 {
+    [SerializeField] private AudioMixer audioMixer;
     private Dictionary<AudioType, AudioSourceController> _audioSources;
 
     private void Awake()
@@ -31,7 +32,12 @@ public class AudioManager : MonoSingleton<AudioManager>
             PlaySfx(data.clip);
         }
     }
-    
+
+    public void SetVolume(AudioGroupType groupType, float volume)
+    {
+        audioMixer.SetFloat(groupType.ToString(), volume);
+    }
+
     private void SetBGM(AudioClip clip)
     {
         _audioSources[AudioType.BGM].Play(clip);

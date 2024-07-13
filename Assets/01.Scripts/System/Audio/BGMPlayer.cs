@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class BGMPlayer : AudioPlayer
 {
-    [SerializeField] private List<string> bgmList;
+    [SerializeField] private List<AudioData> bgmList;
     [SerializeField] private float replayDelay;
     [SerializeField] private bool playOnAwake;
     private AudioClip currentBgm;
@@ -26,8 +26,7 @@ public class BGMPlayer : AudioPlayer
     {
         while (true)
         {
-            string bgmName = bgmList.PickRandom();
-            currentBgm = audioLibrary[bgmName];
+            AudioData bgmName = bgmList.PickRandom();
             PlayAudio(bgmName);
 
             yield return new WaitForSeconds(currentBgm.length + replayDelay);

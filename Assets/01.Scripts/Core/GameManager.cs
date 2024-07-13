@@ -5,6 +5,12 @@ public class GameManager : MonoSingleton<GameManager>
 {
     public bool InPause { get; private set; }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+            UIManager.Instance.AppearUI(PoolingItemType.SettingPanel);
+    }
+
     public void Pause()
     {
         if (InPause)
