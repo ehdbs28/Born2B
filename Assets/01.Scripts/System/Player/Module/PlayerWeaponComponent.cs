@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,8 @@ public class PlayerWeaponComponent : PlayerComponent
 
     private Vector2Int lastAttackPoint = Vector2Int.zero;
     private Queue<WeaponRangeTile> tiles = new Queue<WeaponRangeTile>();
+
+    public event Action<WeaponItemSO> OnWeaponEquipEvent = null;
     
     public void DrawRange()
     {
@@ -87,6 +90,8 @@ public class PlayerWeaponComponent : PlayerComponent
         currentWeapon = Instantiate(weaponData.WeaponPrefab, weaponContainer);
         currentWeapon.transform.localPosition = Vector3.zero;
         currentWeapon.Init(player);
+
+        OnWeaponEquipEvent?.Invoke(weaponData);
 
         EventManager.Instance.PublishEvent(EventType.OnPlayerWeaponChanged);
 
