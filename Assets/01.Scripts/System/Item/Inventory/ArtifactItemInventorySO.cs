@@ -10,13 +10,19 @@ public class ArtifactItemInventorySO : ItemInventorySlotSO
     {
         public ArtifactType inventoryType = ArtifactType.None;
         public int inventorySize = 10;
-        public List<ArtifactItemSO> inventory = new List<ArtifactItemSO>();
+        public List<ItemSO> inventory = new List<ItemSO>();
     }
 
-    public event Action<ArtifactType, List<ArtifactItemSO>> OnInventoryChangedEvent = null;
+    public event Action<ArtifactType, List<ItemSO>> OnInventoryChangedEvent = null;
     public override Type ItemType => typeof(ArtifactItemSO);
 
-    public override List<ItemSO> AllItems => throw new NotImplementedException();
+    public override List<ItemSO> AllItems {
+        get {
+            List<ItemSO> list = new List<ItemSO>();
+            inventorySlots.ForEach(i => list.AddRange(i.inventory));
+            return list;
+        }
+    }
 
     [SerializeField] List<ArtifactItemInventorySlot> inventorySlots = new List<ArtifactItemInventorySlot>();
 

@@ -21,8 +21,6 @@ public class UnitDataSO : CellObjectSO
     public void Init()
     {
 
-        Debug.Log(statInstance);
-
         if(statInstance == null)
             statInstance = Instantiate(stat);
     }

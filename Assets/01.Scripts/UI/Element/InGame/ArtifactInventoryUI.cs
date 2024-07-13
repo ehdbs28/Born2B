@@ -17,13 +17,13 @@ public class ArtifactInventoryUI : UIComponent
         _artifactInventory.OnInventoryChangedEvent -= HandleInventoryChanged;
     }
 
-    private void HandleInventoryChanged(ArtifactType type, List<ArtifactItemSO> items)
+    private void HandleInventoryChanged(ArtifactType type, List<ItemSO> items)
     {
         if(type == ArtifactType.Attributed || type == ArtifactType.CallByEvent)
         {
             int i = 0;
             for(i = 0; i < items.Count; ++i)
-                _itemHolders[i].SetItem(items[i]);
+                _itemHolders[i].SetItem(items[i] as ArtifactItemSO);
             for(; i < _itemHolders.Count; ++i)
                 _itemHolders[i].SetItem(null);
         }

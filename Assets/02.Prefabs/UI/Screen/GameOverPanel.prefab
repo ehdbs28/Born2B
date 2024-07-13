@@ -293,6 +293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2313815788998391084}
+  - component: {fileID: 334383576334649042}
   m_Layer: 5
   m_Name: GameOverPanel
   m_TagString: Untagged
@@ -324,6 +325,47 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &334383576334649042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344251178113246861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db98ca2ad90542b49a297b199144adf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  tweenData: {fileID: 0}
+  rectTransform: {fileID: 0}
+  _appearAttribute: 0
+  _disappearAttribute: 0
+  _selfDisappear: 0
+  _selfDisappearTime: 0
+  _inventory: {fileID: 0}
+  itemSlots:
+  - {fileID: 4444444243816475687}
+  - {fileID: 3476759243820020618}
+  - {fileID: 902351821124380814}
+  - {fileID: 2407154675735691215}
+  - {fileID: 4830946793229652293}
+  - {fileID: 6680949784484193948}
+  - {fileID: 1985200220430895542}
+  - {fileID: 851094140917895241}
+  - {fileID: 2569909617277130636}
+  - {fileID: 4243871523693724046}
+  - {fileID: 3392767633470532980}
+  - {fileID: 1951707843665935937}
+  - {fileID: 2904653623928891726}
+  - {fileID: 7714756960341568741}
+  - {fileID: 4151061660143998594}
+  - {fileID: 8810996228320318482}
+  - {fileID: 6452228092233972166}
+  - {fileID: 8866078765515943561}
+  - {fileID: 4809041434768894352}
+  - {fileID: 3277136587150561560}
 --- !u!1 &1426076970698270659
 GameObject:
   m_ObjectHideFlags: 0
