@@ -13,5 +13,14 @@ public class UnitDataSO : CellObjectSO
 
     [field:SerializeField] public WeaponItemSO weaponItem { get; private set; }
     [field:SerializeField] public List<int2> movementRole { get; private set; }
-    [field:SerializeField] public StatSO stat { get; private set; }
+
+    [SerializeField] StatSO stat = null;
+    private StatSO statInstance = null;
+    public StatSO Stat => statInstance;
+
+    public void Init()
+    {
+        if(statInstance == null)
+            statInstance = Instantiate(stat);
+    }
 }

@@ -43,9 +43,11 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
         
         base.Init(so);
         var casted = so as UnitDataSO;
+        casted.Init();
+
         casted.health = _health;
         casted.statusController = GetComponent<StatusController>();
-        _unitStatContainer.Init(casted.stat);
+        _unitStatContainer.Init(casted.Stat);
         _weaponController.Init(casted.weaponItem, this);
         _health.ResetHp();
 
