@@ -60,6 +60,7 @@ public class PlayerAttackComponent : PlayerComponent
         // 혹은 여기는 놔두고 PlayerAttackTurn 자체를 여러번 하는 것도 괜찮음.
         active = false;
         weapon.ClearDraw();
+        EventManager.Instance.PublishEvent(EventType.OnPlayerAttackAndGetWeapon, weapon);
         TurnManager.Instance.EndCurrentTurn();
     }
 

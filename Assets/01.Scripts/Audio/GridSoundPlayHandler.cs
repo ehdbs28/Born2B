@@ -6,7 +6,10 @@ using UnityEngine;
 public class GridSoundPlayHandler : AudioPlayer
 {
 
-    private void Awake()
+    [SerializeField] private AudioData _moveStartData;
+    [SerializeField] private AudioData _movieFinish;
+
+    private void OnEnable()
     {
 
         EventManager.Instance.RegisterEvent(EventType.OnGridMoveStart, HandleGridMoveStart);
@@ -16,10 +19,25 @@ public class GridSoundPlayHandler : AudioPlayer
 
     private void HandleGridMoveFinish(object[] args)
     {
+
+        PlayAudio(_movieFinish);
+
     }
 
     private void HandleGridMoveStart(object[] args)
     {
+
+        PlayAudio(_moveStartData);
+
     }
+
+    private void OnDisable()
+    {
+
+        EventManager.Instance.UnRegisterEvent(EventType.OnGridMoveStart, HandleGridMoveStart);
+        EventManager.Instance.UnRegisterEvent(EventType.OnGridMoveFinish, HandleGridMoveFinish);
+
+    }
+
 
 }
