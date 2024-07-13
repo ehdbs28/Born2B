@@ -42,10 +42,8 @@ public class StatusEffectSO : ScriptableObject
         foreach (StatusType type in Enum.GetValues(typeof(StatusType)))
         {
             Type instanceType = assembly.GetType($"StatusEffects.{type}Handler");
-            Debug.Log($"In Type : {type}");
             if(instanceType == null)
                 continue;
-            Debug.Log($"Out Type : {type}");
             
             StatusEffectHandler handler = Activator.CreateInstance(instanceType) as StatusEffectHandler;
             handler.Init(this.owner);
