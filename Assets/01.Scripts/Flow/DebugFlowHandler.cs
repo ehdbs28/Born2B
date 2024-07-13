@@ -53,7 +53,7 @@ public class DebugFlowHandler : MonoBehaviour
         TurnManager.Instance.InitTurn();
         TurnManager.Instance.StartTurn();
         StageManager.Instance.NextStage();
-        CellObjectManager.Instance.GetCellObjectInstance<PlayerInstance>().GetComponent<PlayerWeaponComponent>().Equip();
+        //CellObjectManager.Instance.GetCellObjectInstance<PlayerInstance>().GetComponent<PlayerWeaponComponent>().Equip();
         FlowManager.Instance.NextCycle();
 
     }

@@ -44,6 +44,15 @@ public class PlayerWeaponComponent : PlayerComponent
 
 #endif
 
+    public override void Init(PlayerInstance player)
+    {
+
+        base.Init(player);
+        weaponData = (player.GetData() as UnitDataSO).weaponItem;
+        EquipWeapon(weaponData);
+
+    }
+
     public override void OnClone(PlayerInstance clone)
     {
         base.OnClone(clone);
