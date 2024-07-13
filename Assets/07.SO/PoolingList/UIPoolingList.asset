@@ -13,37 +13,5 @@ MonoBehaviour:
   m_Name: UIPoolingList
   m_EditorClassIdentifier: 
   poolableItems:
-  - prefab: {fileID: -1517387253238271709, guid: e57f42a6a59b3433dadf01a6dff19a40, type: 3}
-    cnt: 0
-  - prefab: {fileID: 3764095131420472295, guid: abd74eea51e8048ceaf534da5a8cd73f, type: 3}
-    cnt: 0
-  - prefab: {fileID: -4470318325058112008, guid: 140bfb5ec1fc2490fa03880d2dd7280b, type: 3}
-    cnt: 0
-  - prefab: {fileID: 6027079082310751681, guid: caf0f4376392947a1a7f3ad72326ee87, type: 3}
-    cnt: 0
-  - prefab: {fileID: -1386822804373807846, guid: 4bbe28387bc9e41098cc342e9945a0ce, type: 3}
-    cnt: 0
-  - prefab: {fileID: -3728225053805469251, guid: db6af0a86298243469b4f8232e42e4c7, type: 3}
-    cnt: 0
-  - prefab: {fileID: -3700927824360050148, guid: c881688fb64954447a14596bf426e5cf, type: 3}
-    cnt: 0
-  - prefab: {fileID: 1737457741986090814, guid: b84abda29b1d146c09306773d574aa0a, type: 3}
-    cnt: 5
-  - prefab: {fileID: -8303099024701510856, guid: a0c60e560634040058ea866393db4182, type: 3}
-    cnt: 0
-  - prefab: {fileID: 7429292845746269142, guid: 239eafaceccdc46779a72c5698c13173, type: 3}
-    cnt: 0
-  - prefab: {fileID: 5840916582195454091, guid: 4597db7fa8c774c83b249defdcb85c8a, type: 3}
-    cnt: 0
-  - prefab: {fileID: -8997352907854686161, guid: e0760e88c154a4e95b25c9b5acdb0597, type: 3}
-    cnt: 0
-  - prefab: {fileID: -8929718248248144044, guid: 6f96b7382792942bf9ad2ea58100185a, type: 3}
-    cnt: 0
-  - prefab: {fileID: 4610549267737319820, guid: 2b02ebed4a25448528121545c817015f, type: 3}
-    cnt: 0
-  - prefab: {fileID: 224370968416882158, guid: f6128211da8c34ea5834ec59aa8cbcbf, type: 3}
-    cnt: 0
-  - prefab: {fileID: -256724837803436359, guid: af48dbd2a31cc4d74a95cd940a7709ce, type: 3}
-    cnt: 0
-  - prefab: {fileID: -3449582676711883924, guid: f481bb0cab5134f41826a235ade76a91, type: 3}
-    cnt: 0
+  - prefab: {fileID: 2530140896608573758, guid: f6128211da8c34ea5834ec59aa8cbcbf, type: 3}
+    cnt: 1
