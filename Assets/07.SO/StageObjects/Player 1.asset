@@ -15,7 +15,7 @@ MonoBehaviour:
   ObjectType: 5
   <cellObjectType>k__BackingField: 0
   <animator>k__BackingField: {fileID: 9100000, guid: a775ebffee0f179429a46300fce64f32, type: 2}
-  <sprite>k__BackingField: {fileID: 21300000, guid: ae04141b9f06e474d9c882d682cc2d18, type: 3}
+  <sprite>k__BackingField: {fileID: -1427700681, guid: c724f2151cfe5e044a8836ecc89fa0bc, type: 3}
   unitName: 
   unitDesc: 
   <weaponItem>k__BackingField: {fileID: 11400000, guid: f553c7bf2c49b5841a1cbe40e66a1432, type: 2}

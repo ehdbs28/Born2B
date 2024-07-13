@@ -83,5 +83,5 @@ MonoBehaviour:
       - Position: {x: -1, y: -1}
         Theta: 100
     index: 2
-    size: 5
+    size: 3
     theta: 100
