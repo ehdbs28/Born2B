@@ -61,6 +61,7 @@ public class StatusEffectSO : ScriptableObject
     {
         if(_remainTurnDictionary[type] == 0)
             _effecteHandlers[type].HandleBegin();
+        Debug.Log("ASD");
 
         _remainTurnDictionary[type] = turn;
     }
