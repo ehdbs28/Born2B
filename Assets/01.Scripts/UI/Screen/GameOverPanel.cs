@@ -34,17 +34,17 @@ public class GameOverPanel : UIComponent
         List<ItemSO> items = _inventory.AllItems;
         for(int i = 0; i < itemSlots.Count; ++i)
         {
-            if(items.Count >= i)
+            if(items.Count <= i)
                 itemSlots[i].gameObject.SetActive(false);
             else
             {
-                itemSlots[i].sprite = itemSlots[i].sprite;
                 itemSlots[i].gameObject.SetActive(true);
+                itemSlots[i].sprite = items[i].ItemIcon;
             }
         }
 
         StageDataSO stageData = null;
         ChapterDataSO chapterData = null;
-        _stageInfoText.text = $"{chapterData.chapterName} - {stageData.stageName}";
+        // _stageInfoText.text = $"{chapterData.chapterName} - {stageData.stageName}";
     }
 }
