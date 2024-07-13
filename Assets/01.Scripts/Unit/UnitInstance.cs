@@ -77,7 +77,7 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
         _health.ResetHp();
         
         _unitInfoPopupMini = UIManager.Instance.AppearUI(
-            PoolingItemType.UnitInfoPopupMini, UIManager.Instance.UnitINfoMiniParent) as UnitInfoPopupMini;
+            PoolingItemType.UnitInfoPopupMini, UIManager.Instance.UnitInfoMiniParent) as UnitInfoPopupMini;
         _unitInfoPopupMini.Init(casted, transform);
 
         moveRole = casted.movementRole;

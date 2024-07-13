@@ -28,6 +28,6 @@ public class GameOverPanel : UIComponent
     {
         base.Appear(parent);
         
-        _inventory.
+        // _inventory.
     }
 }

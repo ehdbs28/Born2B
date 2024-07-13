@@ -1,10 +1,13 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "SO/Item/ItemIventory/Weapon", order = -1)]
 public class WeaponItemInventorySO : ItemInventorySlotSO
 {
     public override Type ItemType => typeof(WeaponItemSO);
+
+    public override List<ItemSO> AllItems => throw new NotImplementedException();
 
     private IWeaponItemHandler weaponHandler = null;
 
