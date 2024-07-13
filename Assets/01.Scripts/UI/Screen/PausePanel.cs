@@ -2,6 +2,18 @@ using UnityEngine;
 
 public class PausePanel : UIComponent
 {
+    private UIComponent settingPanel = null;
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(settingPanel != null)
+                return;
+            Disappear();
+        }
+    }
+
     public override void Appear(Transform parent)
     {
         base.Appear(parent);
@@ -21,7 +33,7 @@ public class PausePanel : UIComponent
 
     public void SettingHandle()
     {
-        UIManager.Instance.AppearUI(PoolingItemType.SettingPanel);
+        settingPanel = UIManager.Instance.AppearUI(PoolingItemType.SettingPanel);
     }
 
     public void TitleHandler()

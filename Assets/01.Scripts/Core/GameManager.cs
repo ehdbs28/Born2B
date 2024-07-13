@@ -8,7 +8,12 @@ public class GameManager : MonoSingleton<GameManager>
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
-            UIManager.Instance.AppearUI(PoolingItemType.SettingPanel);
+        {
+            if(InPause)
+                return;
+
+            Pause();
+        }
     }
 
     public void Pause()
