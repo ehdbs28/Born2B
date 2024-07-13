@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectType: 5
   <cellObjectType>k__BackingField: 0
-  <animator>k__BackingField: {fileID: 0}
+  <animator>k__BackingField: {fileID: 9100000, guid: 571b219a2ffcab246af05b9ae58b9cdd, type: 2}
   <sprite>k__BackingField: {fileID: 21300000, guid: ae04141b9f06e474d9c882d682cc2d18, type: 3}
   _instances:
   - {fileID: 7262097254093175993, guid: d39d910883b44654988258dd47d19f5a, type: 3}
