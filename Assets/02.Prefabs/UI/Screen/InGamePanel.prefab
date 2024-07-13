@@ -390,7 +390,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5437450722833126192}
-  - component: {fileID: 5840916582195454091}
+  - component: {fileID: -883868040288831830}
   m_Layer: 5
   m_Name: InGamePanel
   m_TagString: Untagged
@@ -422,7 +422,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5840916582195454091
+--- !u!114 &-883868040288831830
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -431,7 +431,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3691776459627119965}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 626c55da42694feabeddd14fefe3ee97, type: 3}
+  m_Script: {fileID: 11500000, guid: 01f7fb4bb3e847beb9da8dbe7ad62fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
