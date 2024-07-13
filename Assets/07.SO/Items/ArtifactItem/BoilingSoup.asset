@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ca464fca7fdc14d89aecb63d30673d, type: 3}
   m_Name: BoilingSoup
   m_EditorClassIdentifier: 
-  Rarity: 0
+  Rarity: 2
   ItemIcon: {fileID: 0}
   ItemName: "\uC218\uD504 \uB053\uC774\uAE30"
   ItemDescription: 

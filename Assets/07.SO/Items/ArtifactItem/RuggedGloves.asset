@@ -9,19 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43eee0ebceb2f0e43a545038c67e7a4b, type: 3}
-  m_Name: GoldenChalice
+  m_Script: {fileID: 11500000, guid: 37faf5528f75f9f4aa4859a7986b4e25, type: 3}
+  m_Name: RuggedGloves
   m_EditorClassIdentifier: 
-  Rarity: 3
+  Rarity: 0
   ItemIcon: {fileID: 0}
-  ItemName: "\uAE08\uBE5B \uC131\uBC30"
+  ItemName: 
   ItemDescription: 
-  activeChance: 1
-  stackLimit: 8
-  modifiers:
+  basicModifiers:
+  - StatType: 4
+    ModifierType: 1
+    Value: -0.2
+  criticalModifiers:
   - StatType: 2
     ModifierType: 2
-    Value: 0.15
+    Value: 0.5
   - StatType: 5
     ModifierType: 2
-    Value: 0.15
+    Value: 0.5
+  uncriticalModifiers: []

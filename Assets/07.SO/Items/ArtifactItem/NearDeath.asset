@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724b5c43574dada4490740b159e75925, type: 3}
   m_Name: NearDeath
   m_EditorClassIdentifier: 
-  Rarity: 0
+  Rarity: 2
   ItemIcon: {fileID: 0}
   ItemName: "\uAC00\uAE4C\uC6B4 \uC8FD\uC74C"
   ItemDescription: 
