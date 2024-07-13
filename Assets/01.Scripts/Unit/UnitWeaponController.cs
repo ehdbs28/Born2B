@@ -23,6 +23,7 @@ public class UnitWeaponController : MonoBehaviour
         var param = new AttackParams(0, 0, 0, mask);
         Vector2 cloestTarget = GetCloestTarget(position);
         Rotate(position, cloestTarget);
+        CheckWeaponRef();
         _controlWeapon.Attack(param, position, position);
 
     }
@@ -56,7 +57,20 @@ public class UnitWeaponController : MonoBehaviour
 
         var dir = target - origin;
         var ang = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        CheckWeaponRef();
         _controlWeapon.RotateAttackRange(ang);
+
+    }
+
+    private void CheckWeaponRef()
+    {
+
+        if(_controlWeapon == null)
+        {
+
+            _controlWeapon = GetComponentInChildren<Weapon>();
+
+        }
 
     }
 

@@ -24,7 +24,7 @@ MonoBehaviour:
   - 
   - 
   - 
-  - 3
+  - PT
   - 8
   - 
   - 2
@@ -32,7 +32,7 @@ MonoBehaviour:
   - 
   - 
   - 
-  - 3
+  - PT
   - 
   - 
   - 
@@ -42,4 +42,4 @@ MonoBehaviour:
   - 
   - 
   column: 5
-  portalData: {fileID: 0}
+  portalData: {fileID: 11400000, guid: f7d3690aed9a17a4a96cde3f25a7a41b, type: 2}

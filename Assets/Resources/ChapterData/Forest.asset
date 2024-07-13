@@ -35,7 +35,7 @@ MonoBehaviour:
     objectData: {fileID: 11400000, guid: 24b12dd6f0d33bc49bde59c611289172, type: 2}
     objectIcon: {fileID: 21300000, guid: f5474cdece5167342ab019e1af05123e, type: 3}
   - objectType: 2
-    objectName: 3
+    objectName: PT
     objectData: {fileID: 11400000, guid: 735b5bffe3a816e4fb2b1e6aa2a20002, type: 2}
     objectIcon: {fileID: 21300000, guid: ec8c973c5d250924a96ab7b9264de991, type: 3}
   - objectType: 5

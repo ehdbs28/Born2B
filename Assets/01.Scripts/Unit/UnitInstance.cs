@@ -38,6 +38,7 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
         var casted = so as UnitDataSO;
         _unitStatContainer.Init(casted.stat);
         _weaponController.Init(casted.weaponItem, this);
+        _health.ResetHp();
 
         moveRole = casted.movementRole;
 
