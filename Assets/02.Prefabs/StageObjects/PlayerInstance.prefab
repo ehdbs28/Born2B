@@ -412,6 +412,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponContainer: {fileID: 7803638571080050817}
+  updownValue: 0.02
+  durationValue: 4
 --- !u!114 &6460470384840962881
 MonoBehaviour:
   m_ObjectHideFlags: 0

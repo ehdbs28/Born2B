@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BoilingSoup
   m_EditorClassIdentifier: 
   Rarity: 2
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: 1300599740, guid: 18eb8eac2bf48f346bf800ae92f9c0fd, type: 3}
   ItemName: "\uC218\uD504 \uB053\uC774\uAE30"
   ItemDescription: "\uB530\uB4EF\uD55C \uC218\uD504 \uD55C \uADF8\uB987.\n\uD604\uC7AC
     \uD134\uC5D0\uC11C \uACF5\uACA9 \uD558\uC9C0 \uC54A\uC73C\uBA74 \uB2E4\uC74C
