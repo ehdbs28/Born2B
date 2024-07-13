@@ -2,6 +2,19 @@ using UnityEngine;
 
 public class PausePanel : UIComponent
 {
+    private UIComponent settingPanel = null;
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(settingPanel.state == PoolingState.PoolOut)
+                settingPanel.Disappear();
+            else
+                Disappear();
+        }
+    }
+
     public override void Appear(Transform parent)
     {
         base.Appear(parent);
@@ -9,6 +22,7 @@ public class PausePanel : UIComponent
 
     public override void Disappear(bool poolIn = true)
     {
+        GameManager.Instance.StopPause();
         base.Disappear(poolIn);
     }
     
@@ -21,7 +35,7 @@ public class PausePanel : UIComponent
 
     public void SettingHandle()
     {
-        UIManager.Instance.AppearUI(PoolingItemType.SettingPanel);
+        settingPanel = UIManager.Instance.AppearUI(PoolingItemType.SettingPanel);
     }
 
     public void TitleHandler()

@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -9,7 +8,7 @@ public class DebugFlowHandler : MonoBehaviour
 
     [SerializeField] private CellObjectSO _nextPortalIns;
 
-    private void Awake()
+    public void Init()
     {
 
         EventManager.Instance.RegisterEvent(EventType.OnGameStart, GameStartHandler);
@@ -23,7 +22,7 @@ public class DebugFlowHandler : MonoBehaviour
     private void GameStartHandler(object[] args)
     {
 
-        Debug.Log("°ÔÀÓ ½ÃÀÛ");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
         FlowManager.Instance.NextCycle();
 
     }
@@ -31,7 +30,7 @@ public class DebugFlowHandler : MonoBehaviour
     private void SelectUnitHandler(object[] args)
     {
 
-        Debug.Log("À¯´Ö ¼±ÅÃ");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
         UnitSelectManager.Instance.StartSelect();
 
     }
@@ -39,7 +38,7 @@ public class DebugFlowHandler : MonoBehaviour
     private void StageJoinHandler(object[] args)
     {
 
-        Debug.Log("½ºÅ×ÀÌÁö ÀÔÀå");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
         StartCoroutine(Co());
 
     }
@@ -53,7 +52,7 @@ public class DebugFlowHandler : MonoBehaviour
         TurnManager.Instance.InitTurn();
         TurnManager.Instance.StartTurn();
         StageManager.Instance.NextStage();
-        CellObjectManager.Instance.GetCellObjectInstance<PlayerInstance>().GetComponent<PlayerWeaponComponent>().Equip();
+        //CellObjectManager.Instance.GetCellObjectInstance<PlayerInstance>().GetComponent<PlayerWeaponComponent>().Equip();
         FlowManager.Instance.NextCycle();
 
     }
@@ -61,14 +60,14 @@ public class DebugFlowHandler : MonoBehaviour
     private void BattleStartHandler(object[] args)
     {
 
-        Debug.Log("¹èÆ² ½ÃÀÛ");
+        Debug.Log("ï¿½ï¿½Æ² ï¿½ï¿½ï¿½ï¿½");
 
     }
 
     private void BattleFinishHandler(object[] args)
     {
 
-        Debug.Log("¹èÆ² ³¡");
+        Debug.Log("ï¿½ï¿½Æ² ï¿½ï¿½");
         var cells = StageManager.Instance.Grid.GetEmptyCells();
         var target = cells[Random.Range(0, cells.Count)];
         var ins = StageManager.Instance.Grid.GetCellInstance(target.guid);

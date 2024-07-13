@@ -11,12 +11,8 @@ public class ItemInventorySO : ScriptableObject
     [SerializeField] List<ItemInventorySlotSO> inventorySlots = new List<ItemInventorySlotSO>();
     private Dictionary<Type, ItemInventorySlotSO> inventory = new Dictionary<Type, ItemInventorySlotSO>();
 
-    private IItemHandler owner = null;
-
     public void Init(IItemHandler owner)
     {
-        this.owner = owner;
-
         inventory = new Dictionary<Type, ItemInventorySlotSO>();
         inventorySlots.ForEach(i => {
             if(inventory.ContainsKey(i.ItemType))

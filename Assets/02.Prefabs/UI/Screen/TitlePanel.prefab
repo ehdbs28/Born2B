@@ -1321,7 +1321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5986936709274116887}
-  - component: {fileID: -3449582676711883924}
+  - component: {fileID: 1980457927202923545}
   m_Layer: 5
   m_Name: TitlePanel
   m_TagString: Untagged
@@ -1352,7 +1352,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &-3449582676711883924
+--- !u!114 &1980457927202923545
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1361,7 +1361,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 531101888873408840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 626c55da42694feabeddd14fefe3ee97, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a4e3c7622c67014782e1831f3e0a924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
@@ -3192,7 +3192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 1}
+  m_Color: {r: 0.32156864, g: 0.32156864, b: 0.32156864, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3368,13 +3368,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7850893498564387934}
+  - component: {fileID: 7354454636636977782}
+  - component: {fileID: 1793542379377413783}
   m_Layer: 5
   m_Name: MagicBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7850893498564387934
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3395,9 +3397,51 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -750, y: -407}
+  m_AnchoredPosition: {x: 1500, y: -407}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &7354454636636977782
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764910474276804036}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 089f5cf7cf77cdb4485a63d0954a2a24, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1793542379377413783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764910474276804036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946e703203af69042ab02c36f507d9c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  tweenData: {fileID: 0}
+  rectTransform: {fileID: 0}
+  _appearAttribute: 0
+  _disappearAttribute: 0
+  _selfDisappear: 0
+  _selfDisappearTime: 0
+  startDelay: 5.5
+  loopDelay: 8.25
 --- !u!1 &1834320641965819277
 GameObject:
   m_ObjectHideFlags: 0
@@ -5543,7 +5587,19 @@ MonoBehaviour:
   _selfDisappearTime: 0
   onClickEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1980457927202923545}
+        m_TargetAssemblyTypeName: TitlePanel, Assembly-CSharp
+        m_MethodName: QuitHandle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onPointerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -5551,6 +5607,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onPointerMoveEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onPointerUpEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onPointerDownEvent:
     m_PersistentCalls:
       m_Calls: []
   _targetImageTrm: {fileID: 547869328919281584}
@@ -6124,6 +6186,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5338585930880859494}
+  - component: {fileID: 5358490692922492120}
+  - component: {fileID: 399192447500194756}
   m_Layer: 5
   m_Name: SwordBoard
   m_TagString: Untagged
@@ -6151,9 +6215,51 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -750, y: -407}
+  m_AnchoredPosition: {x: 1500, y: -407}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &5358490692922492120
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3177246928516900418}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 089f5cf7cf77cdb4485a63d0954a2a24, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &399192447500194756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3177246928516900418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946e703203af69042ab02c36f507d9c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  tweenData: {fileID: 0}
+  rectTransform: {fileID: 0}
+  _appearAttribute: 0
+  _disappearAttribute: 0
+  _selfDisappear: 0
+  _selfDisappearTime: 0
+  startDelay: 0
+  loopDelay: 8.25
 --- !u!1 &3199208479243056439
 GameObject:
   m_ObjectHideFlags: 0
@@ -8894,7 +9000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 1}
+  m_Color: {r: 0.32156864, g: 0.32156864, b: 0.32156864, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9292,7 +9398,19 @@ MonoBehaviour:
   _selfDisappearTime: 0
   onClickEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1980457927202923545}
+        m_TargetAssemblyTypeName: TitlePanel, Assembly-CSharp
+        m_MethodName: PlayHandle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onPointerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -9300,6 +9418,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onPointerMoveEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onPointerUpEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onPointerDownEvent:
     m_PersistentCalls:
       m_Calls: []
   _targetImageTrm: {fileID: 4474353349540569520}
@@ -9612,13 +9736,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2232537707748378310}
+  - component: {fileID: 6723224360763488410}
+  - component: {fileID: 894568737047993724}
   m_Layer: 5
   m_Name: BowBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2232537707748378310
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9639,9 +9765,51 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -750, y: -407}
+  m_AnchoredPosition: {x: 1500, y: -407}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &6723224360763488410
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5453573424668771065}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 089f5cf7cf77cdb4485a63d0954a2a24, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &894568737047993724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5453573424668771065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946e703203af69042ab02c36f507d9c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  tweenData: {fileID: 0}
+  rectTransform: {fileID: 0}
+  _appearAttribute: 0
+  _disappearAttribute: 0
+  _selfDisappear: 0
+  _selfDisappearTime: 0
+  startDelay: 2.75
+  loopDelay: 8.25
 --- !u!1 &5461250754766083497
 GameObject:
   m_ObjectHideFlags: 0
@@ -11451,7 +11619,19 @@ MonoBehaviour:
   _selfDisappearTime: 0
   onClickEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1980457927202923545}
+        m_TargetAssemblyTypeName: TitlePanel, Assembly-CSharp
+        m_MethodName: SettingHandle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onPointerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -11459,6 +11639,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onPointerMoveEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onPointerUpEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onPointerDownEvent:
     m_PersistentCalls:
       m_Calls: []
   _targetImageTrm: {fileID: 3935636715026821252}
@@ -12720,7 +12906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 1}
+  m_Color: {r: 0.32156864, g: 0.32156864, b: 0.32156864, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -16077,7 +16263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 1}
+  m_Color: {r: 0.32156864, g: 0.32156864, b: 0.32156864, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

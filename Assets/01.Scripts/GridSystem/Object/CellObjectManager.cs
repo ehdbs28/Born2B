@@ -20,7 +20,7 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
     private Dictionary<int2, CellObjectSO> _notMoveObjectContainer = new();
     private Collider2D _collider;
 
-    private void Awake()
+    public void Init()
     {
         
         foreach(var item in _prefabs)

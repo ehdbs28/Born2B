@@ -5,6 +5,25 @@ public class GameManager : MonoSingleton<GameManager>
 {
     public bool InPause { get; private set; }
 
+    private void Awake()
+    {
+        StageManager.Instance.Init();
+        CellObjectManager.Instance.Init();
+        TurnManager.Instance.Init();
+        GetComponent<DebugFlowHandler>().Init(); // 이건 수정할 거임        
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(InPause)
+                return;
+
+            Pause();
+        }
+    }
+
     public void Pause()
     {
         if (InPause)
