@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dcd914bb17bc87448ce6df83487a722, type: 3}
   m_Name: Forest
   m_EditorClassIdentifier: 
-  <chapterCellPrefab>k__BackingField: {fileID: 7650415247363615662, guid: 9cd4f720b90a1304a91450bb0902ec5f, type: 3}
+  <chapterCellPrefab_T1>k__BackingField: {fileID: 7650415247363615662, guid: d308fc5dc26b1af4b97b9b35712c03fe, type: 3}
+  <chapterCellPrefab_T2>k__BackingField: {fileID: 7650415247363615662, guid: d89d1e21b0aec984d9e8d2b53bb6e8df, type: 3}
   stageObjectSlotList:
   - objectType: 0
     objectName: 1

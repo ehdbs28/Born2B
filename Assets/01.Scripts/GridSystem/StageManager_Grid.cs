@@ -266,9 +266,12 @@ public partial class StageManager
         private CellInstance CreateCellInstance(in Cell cell)
         {
 
+            var idx = cell.position.y * _data.width + cell.position.x;
+            var prefab = idx % 2 == 0 ? _currentChapterData.chapterCellPrefab_T1 : _currentChapterData.chapterCellPrefab_T2;
+
             var pos = ConvertGridPoint(new Vector2(cell.position.x, cell.position.y));
             var ins = Instantiate(
-                _currentChapterData.chapterCellPrefab, pos, Quaternion.identity);
+                prefab, pos, Quaternion.identity);
             ins.CellData = cell;
             _instanceContainer.Add(cell.guid, ins);
 
