@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +14,8 @@ public abstract class Weapon : MonoBehaviour
     private int directionIndex = 0;
 
     private Queue<StatusEffectSlot> disposableStatusEffects = new Queue<StatusEffectSlot>();
+
+    public event Action<bool> OnCaculateCriticalEvent = null;
 
     public virtual void Init(CellObjectInstance owner)
     {
@@ -42,6 +45,7 @@ public abstract class Weapon : MonoBehaviour
             bool critical = attackParams.ProcessCritical();
             if(critical)
                 slotDamage += slotDamage * attackParams.criticalDamage;
+            OnCaculateCriticalEvent?.Invoke(critical);
 
             Cell? cell = StageManager.Instance.Grid.FindCellByPosition(rangeSlot.Position);
             cell?.FindAndGrow();
