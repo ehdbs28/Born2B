@@ -19,10 +19,11 @@ MonoBehaviour:
     \uCC3D. 2\uBA85 \uC774\uC0C1\uC758 \uC801\uC744 \uD53C\uACA9\uD558\uBA74 \uAC15\uB825\uD55C
     \uC6D0\uD63C\uC744 \uB0B4\uBFDC\uC5B4 \uBAA8\uB4E0 \uC801\uC744 \uC774\uB3D9\uD560
     \uC218 \uC5C6\uAC8C \uB9CC\uB4E0\uB2E4. "
-  WeaponPrefab: {fileID: 0}
+  WeaponPrefab: {fileID: 3718939955745786688, guid: e2532c77ffbb7034dabe34fb6a34ccf4, type: 3}
   Evolutions: {fileID: 11400000, guid: abb0d1873c7dc31448e7ddfdd1c4188c, type: 2}
   StatusEffects: []
   KnockBackPower: 0
+  AmmoCount: 1
   Damage: 120
   Range:
     rangesList:
