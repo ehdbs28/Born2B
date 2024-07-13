@@ -15,7 +15,7 @@ public class StagingManager : MonoSingleton<StagingManager>
         if(_currentStage == _stages.Count)
         {
 
-            Debug.LogWarning("╟тюсюл Ё║");
+            Debug.LogWarning("О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫");
             return;
 
         }

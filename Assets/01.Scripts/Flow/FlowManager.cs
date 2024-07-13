@@ -11,11 +11,9 @@ public class FlowManager : MonoSingleton<FlowManager>
     private int _currentCycle;
     public EventType CurrentCycle => _flowCycle[_currentCycle].eventType;
 
-    private void Start()
+    public void StartFlow()
     {
-
         ExecuteCycle();
-
     }
 
     private void ExecuteCycle()
