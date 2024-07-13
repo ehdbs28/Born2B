@@ -80,7 +80,6 @@ public partial class StageManager : MonoSingleton<StageManager>
 
         }
 
-        Debug.Log(1);
         Grid = new(_gridSettingData, _chapters[_currentChapterIdx]);
 
         return false;

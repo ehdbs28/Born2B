@@ -38,18 +38,20 @@ public class ItemSelectUnit : UIButton
         {
             return;
         }
+        
+        UnShowInfoUI(null);
 
+        OnSelectEvent?.Invoke();
+        OnSelectEvent = null;
+        
         if (_inventory.AddItem(_holdingItemSo))
         {
-            FlowManager.Instance.NextCycle();
+            TurnManager.Instance.EndCurrentTurn();
             return;
         }
         
         // 아이템이 모종의 이유로 들어가지 못하였을 때
-        FlowManager.Instance.NextCycle();
-        
-        OnSelectEvent?.Invoke();
-        OnSelectEvent = null;
+        TurnManager.Instance.EndCurrentTurn();
     }
     
     public void ShowInfoUI(PointerEventData eventData)

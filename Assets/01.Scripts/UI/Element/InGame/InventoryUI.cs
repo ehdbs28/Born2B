@@ -6,15 +6,14 @@ public class InventoryUI : UIComponent
     [SerializeField] ArtifactItemInventorySO _artifactInventory = null;
     [SerializeField] List<InventoryUnitHolder> _unitHolders;
 
-    public override void Appear(Transform parent)
+    public void Init()
     {
-        base.Appear(parent);
         _artifactInventory.OnInventoryChangedEvent += HandleInventoryChanged;
     }
 
-    public override void Disappear(bool poolIn = true)
+    public void Release()
     {
-        base.Disappear(poolIn);
+        _artifactInventory.OnInventoryChangedEvent -= HandleInventoryChanged;
     }
 
     private void HandleInventoryChanged(ArtifactType type, List<ArtifactItemSO> items)
