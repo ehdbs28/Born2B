@@ -71,14 +71,19 @@ public partial class StageManager : MonoSingleton<StageManager>
 
         }
 
-        if (Grid != null)
+        if(Grid == null)
         {
 
-            Grid.Dispose();
+            Grid = new StageGrid(_gridSettingData, _chapters[_currentChapterIdx]);
 
         }
+        else
+        {
 
-        Grid.SetChapterData(_chapters[_currentChapterIdx]);
+            Grid.InitContainer();
+            Grid.SetChapterData(_chapters[_currentChapterIdx]);
+
+        }
 
         return false;
 
