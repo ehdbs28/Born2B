@@ -19,7 +19,14 @@ public partial class PlayerInstance : CellObjectInstance, IHitable
 
     protected virtual void OnDestroy()
     {
-        ReleasePlayerComponents();   
+        ReleasePlayerComponents();
+    }
+
+    public override object Clone()
+    {
+        ReleasePlayerComponents();
+        PlayerInstance clone = base.Clone() as PlayerInstance;
+        return clone;
     }
 
     public bool Hit(CellObjectInstance attackObject, float damage, bool critical)
