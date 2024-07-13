@@ -64,27 +64,29 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
     {
         base.Init(so);
         var casted = so as UnitDataSO;
+        casted.Init();
+
         casted.health = _health;
         
         _statusController.Init(this);
         casted.statusController = _statusController;
 
         _unitEventHandler.unitData = casted;
-        _unitStatContainer.Init(casted.stat);
+        _unitStatContainer.Init(casted.Stat);
         _weaponController.Init(casted.weaponItem, this);
         _health.ResetHp();
         
         _unitInfoPopupMini = UIManager.Instance.AppearUI(
-            PoolingItemType.UnitInfoPopupMini, UIManager.Instance.UnitINfoMiniParent) as UnitInfoPopupMini;
+            PoolingItemType.UnitInfoPopupMini, UIManager.Instance.UnitInfoMiniParent) as UnitInfoPopupMini;
         _unitInfoPopupMini.Init(casted, transform);
 
         moveRole = casted.movementRole;
 
     }
 
-    public bool Hit(CellObjectInstance attackObject, float damage, bool critical)
+    public void Hit(CellObjectInstance attackObject, float damage, bool critical, Action<CellObjectInstance> callBack)
     {
-        if (attackObject is UnitInstance) return false;
+        if (attackObject is UnitInstance) return;
 
         bool die = _health.CurrentHp <= 0;
         EventManager.Instance.PublishEvent(EventType.OnUnitDamaged, this, die);
@@ -100,7 +102,7 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
 
         }
 
-        return true;
+        callBack?.Invoke(this);
     }
 
     public void Attack()
@@ -148,7 +150,6 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
             _renderer.flipX = c.z > 0;
 
         }
-
     }
 
     public Vector2 Move(List<Vector2> targetPositions, Action endCallback)

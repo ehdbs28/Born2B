@@ -10,28 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d31e4e9c506c93d4981204f572c1c98e, type: 3}
-  m_Name: Coldbow
+  m_Name: Icebow
   m_EditorClassIdentifier: 
   Rarity: 2
   ItemIcon: {fileID: 21300000, guid: 36da1395171838d4ab0845053da227bd, type: 3}
-  ItemName: "\uCF5C\uB4DC\uBCF4\uC6B0"
-  ItemDescription: 
-  WeaponPrefab: {fileID: 0}
+  ItemName: "\uC544\uC774\uC2A4 \uBCF4\uC6B0"
+  ItemDescription: "\uC5BC\uC74C\uC7A5\uC73C\uB85C \uB9CC\uB4E4\uC5B4\uC9C4 \uD65C.
+    \uD53C\uACA9\uD55C \uC801\uC744 \uC5BC\uB824\uBC84\uB9B0\uB2E4. "
+  WeaponPrefab: {fileID: 7198935873787972833, guid: 24adb3aa9a834c34488025e3a86c53ef, type: 3}
   Evolutions: {fileID: 11400000, guid: 83c5d442ed7c3f04080e79b273371aa7, type: 2}
   StatusEffects: []
   KnockBackPower: 0
-  Damage: 0
+  AmmoCount: 2
+  Damage: 35
   Range:
     rangesList:
     - Ranges:
-      - Position: {x: -1, y: 1}
-        Theta: 100
       - Position: {x: 0, y: 1}
-        Theta: 100
-      - Position: {x: -1, y: 0}
-        Theta: 100
-      - Position: {x: 0, y: 0}
-        Theta: 100
+        Theta: 30
     - Ranges:
       - Position: {x: -1, y: 1}
         Theta: 100

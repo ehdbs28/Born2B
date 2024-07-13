@@ -186,6 +186,7 @@ public partial class StageManager
         private void HandleMoveCancel()
         {
 
+            SetSpriteMask(false);
             DestroyNotSelectCell();
             _movement.Dispose();
             _movement = null;
@@ -218,6 +219,7 @@ public partial class StageManager
         private void HandleMovementEnd(LineType moveLine)
         {
 
+            SetSpriteMask(false);
             _cellPositions = new NativeHashMap<Guid, float3>(_instanceContainer.Count, Allocator.TempJob);
 
             foreach (var item in _instanceContainer)
@@ -397,14 +399,33 @@ public partial class StageManager
 
             var data = _currentChapterData.GetStageByIndex(currentStageIdx);
             _data.width = _data.height = data.column;
+            _mask.transform.localScale = Vector3.one * data.column;
 
             InitContainer();
-
-            _mask.transform.localScale = new Vector3(_data.width, _data.height);
-
             SetUpCells();
             SetUpCellObjects(data);
             ConnectedPortal(data.portalData);
+
+            SetSpriteMask(false);
+
+        }
+
+        public void SetSpriteMask(bool v)
+        {
+
+            var visable = v ? SpriteMaskInteraction.VisibleInsideMask : SpriteMaskInteraction.None;
+            
+            foreach(var item in _instanceContainer.Values)
+            {
+
+                foreach(var ch in item.GetComponentsInChildren<SpriteRenderer>())
+                {
+
+                    ch.maskInteraction = visable;
+
+                }
+
+            }
 
         }
 
@@ -441,9 +462,8 @@ public partial class StageManager
         {
 
             if (_movement != null || _isJobStarted || !TurnManager.Instance.GetTurnData<bool>(TurnDataType.IsPreview)) return;
-
+            SetSpriteMask(true);
             _movement = new(cell, _movementPivot, _data, _cellSize, HandleMovementEnd, HandleMoveCancel, _gridInput);
-
         }
         public Cell[] CopyAndCollocateCellLine(Cell cell, LineType type, int moveCount)
         {

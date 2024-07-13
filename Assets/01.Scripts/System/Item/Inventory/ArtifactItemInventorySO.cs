@@ -16,6 +16,8 @@ public class ArtifactItemInventorySO : ItemInventorySlotSO
     public event Action<ArtifactType, List<ArtifactItemSO>> OnInventoryChangedEvent = null;
     public override Type ItemType => typeof(ArtifactItemSO);
 
+    public override List<ItemSO> AllItems => throw new NotImplementedException();
+
     [SerializeField] List<ArtifactItemInventorySlot> inventorySlots = new List<ArtifactItemInventorySlot>();
 
     private void OnEnable()

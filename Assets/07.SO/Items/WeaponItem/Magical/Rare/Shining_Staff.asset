@@ -15,11 +15,15 @@ MonoBehaviour:
   Rarity: 2
   ItemIcon: {fileID: 21300000, guid: 5444ef382cf7d3a4baa32296ba42c400, type: 3}
   ItemName: "\uBE5B\uB098\uB294 \uC2A4\uD0DC\uD504"
-  ItemDescription: 
-  WeaponPrefab: {fileID: 0}
+  ItemDescription: "\uC724\uAD11\uC774 \uD750\uB974\uB294 \uCD5C\uACE0\uAE09 \uC2A4\uD0DC\uD504.
+    \uD718\uAD11\uC744 \uB0B4\uBFDC\uC5B4 \uD53C\uACA9\uB2F9\uD55C \uC801\uC744 \uAE30\uC808\uC2DC\uD0A8\uB2E4."
+  WeaponPrefab: {fileID: 6477673192983996239, guid: bd1757c6ab8ca774c98996583481233d, type: 3}
   Evolutions: {fileID: 11400000, guid: 03daaf2d4cf50a14e88f72095c5de0ff, type: 2}
-  StatusEffects: []
+  StatusEffects:
+  - statusType: 4
+    effectedTurn: 1
   KnockBackPower: 0
+  AmmoCount: 0
   Damage: 60
   Range:
     rangesList:

@@ -15,17 +15,17 @@ MonoBehaviour:
   Rarity: 2
   ItemIcon: {fileID: 21300000, guid: 27894a0f98996be4a91dc053c29fd0db, type: 3}
   ItemName: "\uBE44\uC0AC\uB2EC"
-  ItemDescription: 
-  WeaponPrefab: {fileID: 0}
+  ItemDescription: "\uB2E8 \uD55C\uBC1C\uB85C \uCD08\uC6D0\uC744 \uAC00\uB978\uB2E4\uB294
+    \uC11D\uAD81. \uC7A5\uC570\uBB3C\uC5D0 \uB9C9\uD788\uC9C0 \uC54A\uB294\uB2E4. "
+  WeaponPrefab: {fileID: 6404817509282386270, guid: 4d88dca1840c0234495162983067b9e9, type: 3}
   Evolutions: {fileID: 11400000, guid: 83c5d442ed7c3f04080e79b273371aa7, type: 2}
   StatusEffects: []
   KnockBackPower: 0
+  AmmoCount: 1
   Damage: 90
   Range:
     rangesList:
-    - Ranges:
-      - Position: {x: 0, y: 0}
-        Theta: 100
+    - Ranges: []
     - Ranges:
       - Position: {x: 0, y: 0}
         Theta: 100

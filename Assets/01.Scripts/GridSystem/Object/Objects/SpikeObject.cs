@@ -24,9 +24,10 @@ public class SpikeObject : InteractionableCellObject
         if (interactionInstance is IHitable)
         {
 
-            _spikeAnime.SetAnimation(true);
+            _spikeAnime.SetAnimation(false);
+            _areadyInteractionObjects.Add(interactionInstance);
             if(interactionInstance.TryGetComponent<IHealth>(out IHealth ih))
-                (interactionInstance as IHitable).Hit(null, ih.MaxHp * SPIKE_DAMAGE_RATIO, false);
+                (interactionInstance as IHitable).Hit(null, ih.MaxHp * SPIKE_DAMAGE_RATIO, false, null);
 
         }
 
@@ -41,7 +42,8 @@ public class SpikeObject : InteractionableCellObject
             if(compo is IHitable)
             {
 
-                _spikeAnime.SetAnimation(false);
+                _areadyInteractionObjects.Remove(compo);
+                _spikeAnime.SetAnimation(true);
 
             }
 

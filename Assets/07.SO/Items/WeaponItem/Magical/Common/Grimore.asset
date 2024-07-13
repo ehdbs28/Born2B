@@ -15,11 +15,13 @@ MonoBehaviour:
   Rarity: 1
   ItemIcon: {fileID: 21300000, guid: abe3630053064f444bef9ac9ff4c1eed, type: 3}
   ItemName: "\uB0A1\uC740 \uB9C8\uB3C4\uC11C"
-  ItemDescription: 
-  WeaponPrefab: {fileID: 0}
+  ItemDescription: "\uAE30\uBCF8\uC801\uC778 \uB9C8\uBC95\uC801 \uC9C0\uC2DD\uB4E4\uC774
+    \uB4E4\uC5B4\uC788\uB294 \uB0A1\uC740 \uB9C8\uB3C4\uC11C"
+  WeaponPrefab: {fileID: 5898646807971319727, guid: bf9e65279086b4a4da5e35ca0d53ca84, type: 3}
   Evolutions: {fileID: 11400000, guid: 03daaf2d4cf50a14e88f72095c5de0ff, type: 2}
   StatusEffects: []
   KnockBackPower: 0
+  AmmoCount: 0
   Damage: 0
   Range:
     rangesList:
@@ -50,19 +52,15 @@ MonoBehaviour:
       - Position: {x: 0, y: 0}
         Theta: 100
     - Ranges:
-      - Position: {x: 0, y: 2}
-        Theta: 100
-      - Position: {x: 1, y: 2}
-        Theta: 100
-      - Position: {x: 2, y: 2}
+      - Position: {x: -1, y: 1}
         Theta: 100
       - Position: {x: 1, y: 1}
         Theta: 100
-      - Position: {x: 2, y: 1}
-        Theta: 100
       - Position: {x: 0, y: 0}
         Theta: 100
-      - Position: {x: 2, y: 0}
+      - Position: {x: -1, y: -1}
+        Theta: 100
+      - Position: {x: 1, y: -1}
         Theta: 100
     - Ranges:
       - Position: {x: 2, y: 1}

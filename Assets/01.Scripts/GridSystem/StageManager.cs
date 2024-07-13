@@ -67,11 +67,9 @@ public partial class StageManager : MonoSingleton<StageManager>
         if (_currentChapterIdx >= _chapters.Length)
         {
 
-            Debug.Log("������");
             return true;
 
         }
-
 
         if (Grid != null)
         {
@@ -80,7 +78,7 @@ public partial class StageManager : MonoSingleton<StageManager>
 
         }
 
-        Grid = new(_gridSettingData, _chapters[_currentChapterIdx]);
+        Grid.SetChapterData(_chapters[_currentChapterIdx]);
 
         return false;
 

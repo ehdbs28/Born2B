@@ -43,6 +43,8 @@ public partial class StageManager
             _input.OnGridEndEvent += HandleGridEnd;
             pivot.position = _originPoint = _mousePositon = startMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             this.moveCancelCallback = moveCancelCallback;
+
+
         }
 
         private void HandleGridEnd()
@@ -211,6 +213,7 @@ public partial class StageManager
 
                     _copyObject[i] = Instantiate(_instances[i]);
                     _copyObject[i].CellData = _instances[i].CellData;
+                    _instances[i].GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
 
                     foreach (var item in _copyObject[i].GetComponentsInChildren<SpriteRenderer>())
                     {
@@ -219,6 +222,14 @@ public partial class StageManager
                         var old = item.color;
                         old.a = 0.4f;
                         item.color = old;
+                        item.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+
+                    }
+
+                    foreach(var item in _instances[i].GetComponentsInChildren<SpriteRenderer>())
+                    {
+
+                        item.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
 
                     }
 

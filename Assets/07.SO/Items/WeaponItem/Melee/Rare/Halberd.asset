@@ -12,15 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31e4e9c506c93d4981204f572c1c98e, type: 3}
   m_Name: Halberd
   m_EditorClassIdentifier: 
-  Rarity: 1
+  Rarity: 2
   ItemIcon: {fileID: 21300000, guid: 767b6565ce574ff4e9d63922d0c2fbce, type: 3}
   ItemName: "\uD560\uBC84\uB4DC"
-  ItemDescription: 
-  WeaponPrefab: {fileID: 0}
+  ItemDescription: "\uB3C4\uB07C\uC640 \uCC3D\uC744 \uD569\uCE5C \uBCD1\uC7A5\uAE30.
+    \uC5C4\uCCAD\uB098\uAC8C \uBB34\uAC70\uC6B4 \uB300\uC2E0 \uD53C\uACA9\uB2F9\uD55C
+    \uC801\uB4E4\uC744 \uC6C0\uC9C1\uC774\uC9C0 \uBABB\uD558\uAC8C \uD560 \uC218
+    \uC788\uB2E4.  "
+  WeaponPrefab: {fileID: 1213082369002087025, guid: 8ff6bd4bf4ce5ac4eb7ae3a12511f600, type: 3}
   Evolutions: {fileID: 11400000, guid: abb0d1873c7dc31448e7ddfdd1c4188c, type: 2}
-  StatusEffects: []
+  StatusEffects:
+  - statusType: 128
+    effectedTurn: 0
   KnockBackPower: 0
-  Damage: 30
+  AmmoCount: 2
+  Damage: 25
   Range:
     rangesList:
     - Ranges:
@@ -46,20 +52,6 @@ MonoBehaviour:
       - Position: {x: -1, y: 2}
         Theta: 100
       - Position: {x: 0, y: 2}
-        Theta: 100
-      - Position: {x: 1, y: 2}
-        Theta: 100
-      - Position: {x: 2, y: 2}
-        Theta: 100
-      - Position: {x: -2, y: 1}
-        Theta: 100
-      - Position: {x: -1, y: 1}
-        Theta: 100
-      - Position: {x: 0, y: 1}
-        Theta: 100
-      - Position: {x: 1, y: 1}
-        Theta: 100
-      - Position: {x: 2, y: 1}
         Theta: 100
     - Ranges:
       - Position: {x: 0, y: 2}

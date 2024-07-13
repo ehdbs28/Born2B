@@ -16,7 +16,7 @@ MonoBehaviour:
   stageName: 
   stageInfoText: 
   data:
-  - 6
+  - 
   - 
   - 
   - 1
@@ -58,12 +58,12 @@ MonoBehaviour:
   - 
   - 1
   - 
-  - 6
+  - 
   - 
   - 
   - 1
   - 
   - 
-  - 6
+  - 
   column: 7
   portalData: {fileID: 0}
