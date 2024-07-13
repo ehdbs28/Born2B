@@ -28,7 +28,7 @@ public class Stat
 
     public void AddModifier(StatModifierType modifierType, float value)
     {
-        //modifiers[modifierType].Add(value);
+        modifiers[modifierType].Add(value);
         CalculateValue();
     }
 
