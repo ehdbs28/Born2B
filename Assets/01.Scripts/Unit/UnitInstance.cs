@@ -95,7 +95,23 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
         // 일단 다 true로 넘기기 후에 공격을 안받는 상황에서 false로 넘겨줘야 함
     }
 
+    protected override void Update()
+    {
 
+        base.Update();
+
+        var player = CellObjectManager.Instance.GetCellObjectInstance<PlayerInstance>();
+
+        if(player != null)
+        {
+
+            var c = Vector3.Cross(transform.position, player.transform.position);
+
+            _renderer.flipX = c.z > 0;
+
+        }
+
+    }
 
     public Vector2 Move(List<Vector2> targetPositions, Action endCallback)
     {
