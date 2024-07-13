@@ -17,4 +17,5 @@ public enum PoolingItemType
 	SettingPanel,
 	StartingPlayerSelectPanel,
 	TitlePanel,
+	StageEnterPopup,
 }

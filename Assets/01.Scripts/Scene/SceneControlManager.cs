@@ -23,10 +23,13 @@ public class SceneControlManager : MonoSingleton<SceneControlManager>
                 CurrentScene.ExitScene();
             }
             CurrentScene = PoolManager.Instance.Pop($"{nextScene}Scene") as Scene;
-            CurrentScene.EnterScene();
-            
+            CurrentScene.LoadedScene();
             transitionCompleteEvent?.Invoke();
         };
-        transitionPanel.OnLoadCompleteEvent += loadCompleteEvent;
+        transitionPanel.OnLoadCompleteEvent += () =>
+        {
+            CurrentScene.EnterScene();
+            loadCompleteEvent?.Invoke();
+        };
     }
 }

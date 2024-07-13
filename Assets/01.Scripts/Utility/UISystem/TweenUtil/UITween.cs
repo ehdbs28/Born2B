@@ -30,7 +30,7 @@ public class UITween : ScriptableObject, IUITween
     public Coroutine PlayTween()
     {
         SetTween();
-        return _ownerComponent.StartSafeCoroutine("TweenPlayRoutine", PlayRoutine());
+        return _ownerComponent.StartCoroutine(PlayRoutine());
     }
 
     public void StopTween()
