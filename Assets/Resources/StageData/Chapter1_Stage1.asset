@@ -17,29 +17,29 @@ MonoBehaviour:
   stageInfoText: 
   data:
   - 
-  - 1
   - 
   - 
   - 
   - 
   - 
   - 
-  - PT
-  - 8
+  - 4
   - 
-  - 2
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 9
   - 
   - 
-  - 
-  - PT
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   column: 5
-  portalData: {fileID: 11400000, guid: f7d3690aed9a17a4a96cde3f25a7a41b, type: 2}
+  portalData: {fileID: 0}
