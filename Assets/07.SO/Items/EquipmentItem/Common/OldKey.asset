@@ -15,11 +15,13 @@ MonoBehaviour:
   Rarity: 1
   ItemIcon: {fileID: 2090076298, guid: c75e6b1fd155a52418fbc10bffd218e7, type: 3}
   ItemName: "\uB0A1\uC740 \uC5F4\uC1E0"
-  ItemDescription: 
+  ItemDescription: "\uC5B4\uB5A4 \uBCF4\uBB3C \uC0C1\uC790\uC758 \uC5F4\uC1E0\uC77C\uAE4C\uC694?\n\uCE58\uBA85\uD0C0
+    \uD655\uB960\uC774 \uC99D\uAC00\uD558\uB294 \uB300\uC2E0, \uACF5\uACA9\uB825\uC774
+    \uAC10\uC18C\uD569\uB2C8\uB2E4."
   modifiers:
   - StatType: 4
     ModifierType: 2
     Value: 30
   - StatType: 2
     ModifierType: 2
-    Value: -7
+    Value: -0.07

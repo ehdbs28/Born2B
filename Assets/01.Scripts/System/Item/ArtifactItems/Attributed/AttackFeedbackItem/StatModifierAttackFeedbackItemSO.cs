@@ -5,6 +5,7 @@ using UnityEngine;
 public class StatModifierAttackFeedbackItemSO : AttackFeedbackItemSO
 {
     [SerializeField] int turnCount = 4;
+    [SerializeField] bool deadOption = true;
     [SerializeField] List<StatModifierSlot> modifiers = new List<StatModifierSlot>();
 
     private int remainTurnCount = 0;
@@ -29,7 +30,7 @@ public class StatModifierAttackFeedbackItemSO : AttackFeedbackItemSO
 
     public override void OnUnitDamaged(UnitInstance unit, bool isDead)
     {
-        if(isDead == false)
+        if(deadOption && isDead == false)
             return;
 
         if(remainTurnCount <= 0)

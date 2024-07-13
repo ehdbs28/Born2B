@@ -15,7 +15,9 @@ MonoBehaviour:
   Rarity: 1
   ItemIcon: {fileID: 1074999917, guid: 18eb8eac2bf48f346bf800ae92f9c0fd, type: 3}
   ItemName: "\uBD89\uC740 \uB450\uAC74"
-  ItemDescription: 
+  ItemDescription: "\uC138\uACC4 \uC81C\uC77C \uB300\uC7A5\uC7A5\uC774\uC758 \uBD88\uAE38\uC774
+    \uB2F4\uAE34 \uB450\uAC74.\n\uC0AC\uC6A9\uC2DC \uD53C\uACA9\uB2F9\uD55C \uC801\uC740
+    1\uD134\uAC04 \uD654\uC0C1 \uD53C\uD574\uB97C \uC785\uC2B5\uB2C8\uB2E4."
   statusEffects:
   - statusType: 1
     effectedTurn: 1

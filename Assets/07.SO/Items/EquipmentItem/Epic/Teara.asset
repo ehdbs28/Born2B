@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rarity: 2
   ItemIcon: {fileID: 788261664, guid: 18eb8eac2bf48f346bf800ae92f9c0fd, type: 3}
-  ItemName: "\uD2F0\uC544\uB77C"
-  ItemDescription: 
+  ItemName: "\uC5EC\uC655\uC758 \uD2F0\uC544\uB77C"
+  ItemDescription: "\uC5EC\uC655\uC758 \uACE0\uADC0\uD568\uC774 \uB290\uAEF4\uC9C0\uB294
+    \uD2F0\uC544\uB77C.\n\uB9C8\uB825\uACFC \uCE58\uBA85\uD0C0 \uD655\uB960\uC774
+    \uC99D\uAC00\uD569\uB2C8\uB2E4."
   modifiers:
   - StatType: 5
     ModifierType: 2

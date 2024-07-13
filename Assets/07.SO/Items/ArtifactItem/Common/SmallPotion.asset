@@ -15,5 +15,6 @@ MonoBehaviour:
   Rarity: 1
   ItemIcon: {fileID: -340955992, guid: c75e6b1fd155a52418fbc10bffd218e7, type: 3}
   ItemName: "\uC791\uC740 \uBB3C\uC57D"
-  ItemDescription: 
+  ItemDescription: "\uC791\uB514 \uC791\uC740 \uBB3C\uC57D.\n\uCCB4\uB825\uC744 1
+    \uD68C\uBCF5\uD569\uB2C8\uB2E4."
   _healCnt: 1
