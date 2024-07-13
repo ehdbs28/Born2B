@@ -3,14 +3,29 @@ using UnityEngine;
 
 public class InventoryUI : UIComponent
 {
-    private List<InventoryUnitHolder> _unitHolders;
+    [SerializeField] ArtifactItemInventorySO _artifactInventory = null;
+    [SerializeField] List<InventoryUnitHolder> _unitHolders;
 
-    protected override void Awake()
+    public override void Appear(Transform parent)
     {
-        base.Awake();
+        base.Appear(parent);
+        _artifactInventory.OnInventoryChangedEvent += HandleInventoryChanged;
+    }
 
-        var unitParent = transform.Find("UnitParent");
-        _unitHolders = new List<InventoryUnitHolder>();
-        unitParent.GetComponentsInChildren(_unitHolders);
+    public override void Disappear(bool poolIn = true)
+    {
+        base.Disappear(poolIn);
+    }
+
+    private void HandleInventoryChanged(ArtifactType type, List<ArtifactItemSO> items)
+    {
+        if(type == ArtifactType.Usable)
+        {
+            int i = 0;
+            for(i = 0; i < items.Count; ++i)
+                _unitHolders[i].SetItem(items[i]);
+            for(; i < _unitHolders.Count; ++i)
+                _unitHolders[i].SetItem(null);
+        }
     }
 }

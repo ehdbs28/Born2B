@@ -13,6 +13,7 @@ public class ArtifactItemInventorySO : ItemInventorySlotSO
         public List<ArtifactItemSO> inventory = new List<ArtifactItemSO>();
     }
 
+    public event Action<ArtifactType, List<ArtifactItemSO>> OnInventoryChangedEvent = null;
     public override Type ItemType => typeof(ArtifactItemSO);
 
     [SerializeField] List<ArtifactItemInventorySlot> inventorySlots = new List<ArtifactItemInventorySlot>();
@@ -27,6 +28,7 @@ public class ArtifactItemInventorySO : ItemInventorySlotSO
 
         item.Execute(owner);
         slot.inventory.Add(item);
+        OnInventoryChangedEvent?.Invoke(item.ArtifactType, slot.inventory);
 
         return true;
     }
@@ -39,6 +41,7 @@ public class ArtifactItemInventorySO : ItemInventorySlotSO
 
         slot.inventory.Remove(item);
         item.Unexecute(owner);
+        OnInventoryChangedEvent?.Invoke(item.ArtifactType, slot.inventory);
 
         return true;
     }
