@@ -407,8 +407,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRenderer: {fileID: 6097929014678302707}
-  blinkMaterial: {fileID: 0}
+  blinkMaterial: {fileID: 2100000, guid: f962faf301f2e634fbd106778bac4d3e, type: 2}
   delay: 0.15
+  blinkCount: 1
 --- !u!1 &933888608027767133
 GameObject:
   m_ObjectHideFlags: 0
