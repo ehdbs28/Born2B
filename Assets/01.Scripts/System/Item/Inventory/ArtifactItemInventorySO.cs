@@ -23,6 +23,12 @@ public class ArtifactItemInventorySO : ItemInventorySlotSO
         ArtifactItemSO item = itemData as ArtifactItemSO;
 
         ArtifactItemInventorySlot slot = inventorySlots.Find(i => i.inventoryType.HasFlag(item.ArtifactType));
+        if (slot == null)
+        {
+            item.Execute(owner);
+            return true;
+        }
+
         if(slot.inventory.Count == slot.inventorySize)
             return false;
 
@@ -39,9 +45,9 @@ public class ArtifactItemInventorySO : ItemInventorySlotSO
 
         ArtifactItemInventorySlot slot = inventorySlots.Find(i => i.inventoryType.HasFlag(item.ArtifactType));
 
-        slot.inventory.Remove(item);
+        slot?.inventory.Remove(item);
         item.Unexecute(owner);
-        OnInventoryChangedEvent?.Invoke(item.ArtifactType, slot.inventory);
+        OnInventoryChangedEvent?.Invoke(item.ArtifactType, slot?.inventory);
 
         return true;
     }

@@ -48,4 +48,21 @@ public class FlowManager : MonoSingleton<FlowManager>
 
     }
 
+#if UNITY_EDITOR
+
+    //Debug
+    private void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+
+            NextCycle();
+
+        }
+
+    }
+
+#endif
+
 }
