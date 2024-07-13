@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHitable
 {
@@ -16,6 +17,12 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
     protected UnitHealth _health;
 
     public Vector2Int Position => transform.position.GetVectorInt();
+
+    [SerializeField] UnityEvent onMoveEvent = new UnityEvent();
+    [SerializeField] UnityEvent onAttackEvent = new UnityEvent();
+    [SerializeField] UnityEvent onHitEvent = new UnityEvent();
+    [SerializeField] UnityEvent onDeadEvent = new UnityEvent();
+
 
 
     protected override void Awake()
@@ -53,12 +60,14 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
 
         bool die = _health.CurrentHp <= 0;
         EventManager.Instance.PublishEvent(EventType.OnUnitDamaged, this, die);
+        onHitEvent?.Invoke();
 
         _health.ReduceHp((int)damage);
 
         if(die)
         {
-
+            
+            onDeadEvent?.Invoke();
             Die();
 
         }
@@ -70,6 +79,7 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
     {
 
         _unitFSMBase.DoAttack();
+        onAttackEvent?.Invoke();
 
     }
 
@@ -118,8 +128,10 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
     {
 
         AudioManager.Instance.PlayAudio(_data);
-        return _unitFSMBase.DoMove(targetPositions, endCallback);
-
+        return _unitFSMBase.DoMove(targetPositions, () => {
+            endCallback?.Invoke();
+            onMoveEvent?.Invoke();
+        });
     }
 
 }
