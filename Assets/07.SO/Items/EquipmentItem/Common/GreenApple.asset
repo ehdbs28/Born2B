@@ -19,4 +19,4 @@ MonoBehaviour:
   modifiers:
   - StatType: 5
     ModifierType: 1
-    Value: 20
+    Value: 0.05
