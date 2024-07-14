@@ -20,7 +20,7 @@ MonoBehaviour:
     \uC801\uB4E4\uC744 \uC6C0\uC9C1\uC774\uC9C0 \uBABB\uD558\uAC8C \uD560 \uC218
     \uC788\uB2E4.  "
   WeaponPrefab: {fileID: 1213082369002087025, guid: 8ff6bd4bf4ce5ac4eb7ae3a12511f600, type: 3}
-  Evolutions: {fileID: 11400000, guid: abb0d1873c7dc31448e7ddfdd1c4188c, type: 2}
+  Evolutions: {fileID: 11400000, guid: b7f780e1dd4600e4e9f6a7f1a4d4a3ff, type: 2}
   StatusEffects:
   - statusType: 128
     effectedTurn: 0

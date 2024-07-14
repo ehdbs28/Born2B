@@ -19,7 +19,7 @@ MonoBehaviour:
     \uACE0\uC815\uB41C \uD65C\uC2DC\uC704\uB85C \uD654\uC0B4\uC744 \uBC1C\uC0AC\uD574
     \uACF5\uACA9\uD55C\uB2E4. "
   WeaponPrefab: {fileID: 2751908840409844319, guid: 0d191d80e932f754a846095b01044d77, type: 3}
-  Evolutions: {fileID: 11400000, guid: 83c5d442ed7c3f04080e79b273371aa7, type: 2}
+  Evolutions: {fileID: 11400000, guid: 6b6700f7e2f5e664f9aa92f8c073fbef, type: 2}
   StatusEffects: []
   KnockBackPower: 0
   AmmoCount: 2
@@ -58,8 +58,6 @@ MonoBehaviour:
         Theta: 100
     - Ranges:
       - Position: {x: 0, y: 0}
-        Theta: 100
-      - Position: {x: -1, y: -1}
         Theta: 100
     - Ranges:
       - Position: {x: 0, y: 0}

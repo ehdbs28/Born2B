@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e023de13763e294c91b7bc31c4e1efc, type: 3}
+  m_Name: _MagicalToRareDatabase
+  m_EditorClassIdentifier: 
+  items:
+  - itemData: {fileID: 11400000, guid: 43de1ea5fd64749479e8d9eb96da2e2d, type: 2}
+    weight: 5
+  - itemData: {fileID: 11400000, guid: d9707c64730635d46b1d875fae6922b3, type: 2}
+    weight: 5
+  - itemData: {fileID: 11400000, guid: 62903996c0aafb0438c4bdbe314af9c1, type: 2}
+    weight: 5
+  - itemData: {fileID: 11400000, guid: e01a66b30539cd3478d64b3acf9cc219, type: 2}
+    weight: 5
