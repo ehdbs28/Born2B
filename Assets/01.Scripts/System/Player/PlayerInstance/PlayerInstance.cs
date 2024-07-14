@@ -51,7 +51,12 @@ public partial class PlayerInstance : CellObjectInstance, IHitable
         PlayerHealthComponent health = GetPlayerComponent<PlayerHealthComponent>();
 
         health.ReduceHp(1);
+        
+        var damText = UIManager.Instance.AppearUI(PoolingItemType.DamageTextPop) as DamageTextPop;
+        damText.Init(transform.position, damage);
+        
         OnHitEvent?.Invoke();
+        
         EventManager.Instance.PublishEvent(EventType.OnPlayerDamaged);
 
         if(health.CurrentHp <= 0)
