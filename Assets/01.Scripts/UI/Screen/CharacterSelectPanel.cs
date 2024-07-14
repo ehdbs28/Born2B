@@ -8,7 +8,7 @@ public class CharacterSelectPanel : UIComponent
     {
         SceneControlManager.Instance.ChangeScene(SceneType.Stage, null, () =>
         {
-            ItemManager.Instance.Init(_playerSelects.weaponItemDatabase);
+            ItemManager.Instance.Init(_playerSelects.playerDatas[index].itemDatabase);
             UnitSelectManager.Instance.Select(index);
         });
     }

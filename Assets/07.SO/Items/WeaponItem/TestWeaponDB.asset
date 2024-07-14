@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: TestWeaponDB
   m_EditorClassIdentifier: 
   items:
-  - itemData: {fileID: 11400000, guid: e9bde94f971280a46b435f0c094c1a77, type: 2}
-    weight: 2.9
+  - itemData: {fileID: 11400000, guid: 03daaf2d4cf50a14e88f72095c5de0ff, type: 2}
+    weight: 0
+  - itemData: {fileID: 11400000, guid: abb0d1873c7dc31448e7ddfdd1c4188c, type: 2}
+    weight: 0
+  - itemData: {fileID: 11400000, guid: 83c5d442ed7c3f04080e79b273371aa7, type: 2}
+    weight: 0

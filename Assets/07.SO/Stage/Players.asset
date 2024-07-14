@@ -16,7 +16,7 @@ MonoBehaviour:
   <cellObjectType>k__BackingField: 0
   <animator>k__BackingField: {fileID: 0}
   <sprite>k__BackingField: {fileID: 0}
-  weaponItemDatabase: {fileID: 11400000, guid: d1a4072d63eb4114b8ff6a2f01855960, type: 2}
+  weaponItemDatabase: {fileID: 11400000, guid: aef3d7e7bfaae774abfcc08eb475c862, type: 2}
   playerDatas:
   - {fileID: 11400000, guid: 4cebd27681d28854b9b80e2120130b35, type: 2}
   - {fileID: 11400000, guid: 89719b362dde93444992e0c2c7b4677f, type: 2}

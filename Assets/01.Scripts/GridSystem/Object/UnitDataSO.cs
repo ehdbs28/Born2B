@@ -18,6 +18,8 @@ public class UnitDataSO : CellObjectSO
     private StatSO statInstance = null;
     public StatSO Stat => statInstance;
 
+    public ItemDatabaseSO itemDatabase;
+
     public void Init()
     {
 
