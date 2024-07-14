@@ -60,7 +60,7 @@ public class CellObjectManager : MonoSingleton<CellObjectManager>
         foreach(var item in _instanceContainer.Values)
         {
 
-            if (item is PlayerInstance) continue;
+            if (item is PlayerInstance && item.isClone == false) continue;
 
             Destroy(item.gameObject);
 

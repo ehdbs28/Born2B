@@ -25,4 +25,6 @@ public enum EventType
     OnPlayerAttackAndGetWeapon, //[0] Weapon
     OnStageLoaded,
 
+    StageClear
+
 }

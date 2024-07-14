@@ -59,7 +59,14 @@ public partial class StageManager : MonoSingleton<StageManager>
 
             _currentStageIdx = 0;
             if (NextChapter())
+            {
+
+                EventManager.Instance.PublishEvent(EventType.StageClear);
+                StageManager.Instance.ResetManager(); //?
+                CellObjectManager.Instance.TrueInit(); //?
                 return;
+
+            }
 
         }
 
