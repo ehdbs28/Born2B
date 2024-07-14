@@ -1,3 +1,4 @@
+using System;
 using Singleton;
 using UnityEngine;
 
@@ -18,6 +19,14 @@ public class GameManager : MonoSingleton<GameManager>
         GetComponent<FlowHandler>().Init(); // 이건 수정할 거임     
         
         SceneControlManager.Instance.Init();
+    }
+
+    private void Start()
+    {
+        EventManager.Instance.RegisterEvent(EventType.StageClear, args => 
+        {
+            UIManager.Instance.AppearUI(PoolingItemType.GameClearPanel);
+        });
     }
 
     private void Update()
