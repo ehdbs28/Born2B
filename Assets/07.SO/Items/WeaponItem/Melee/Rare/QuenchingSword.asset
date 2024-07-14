@@ -18,7 +18,7 @@ MonoBehaviour:
   ItemDescription: "\uBC29\uAE08 \uB2EC\uAE08\uC9C8\uC744 \uB05D\uB0B8 \uB728\uAC70\uC6B4
     \uAC80. \uD53C\uACA9\uB2F9\uD55C \uC801\uC5D0\uAC8C \uD654\uC0C1\uC744 \uC785\uD78C\uB2E4. "
   WeaponPrefab: {fileID: 7869607014008850491, guid: e40c9e7900600984e814f345190f45c1, type: 3}
-  Evolutions: {fileID: 11400000, guid: abb0d1873c7dc31448e7ddfdd1c4188c, type: 2}
+  Evolutions: {fileID: 11400000, guid: b7f780e1dd4600e4e9f6a7f1a4d4a3ff, type: 2}
   StatusEffects:
   - statusType: 1
     effectedTurn: 2
@@ -35,11 +35,11 @@ MonoBehaviour:
       - Position: {x: -1, y: 0}
         Theta: 100
     - Ranges:
-      - Position: {x: -1, y: 1}
+      - Position: {x: -2, y: 2}
         Theta: 100
-      - Position: {x: 0, y: 1}
+      - Position: {x: -1, y: 2}
         Theta: 100
-      - Position: {x: 1, y: 1}
+      - Position: {x: 0, y: 2}
         Theta: 100
     - Ranges:
       - Position: {x: 0, y: 1}

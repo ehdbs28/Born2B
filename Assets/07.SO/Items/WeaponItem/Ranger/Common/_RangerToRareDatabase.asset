@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e023de13763e294c91b7bc31c4e1efc, type: 3}
+  m_Name: _RangerToRareDatabase
+  m_EditorClassIdentifier: 
+  items:
+  - itemData: {fileID: 11400000, guid: c94fe092b756d484da6f105856ce4988, type: 2}
+    weight: 5
+  - itemData: {fileID: 11400000, guid: f7bcbdbf5bf1f7b459d007448bb6b61a, type: 2}
+    weight: 5
+  - itemData: {fileID: 11400000, guid: 1e62d4d0a82746644afa99967ed6755b, type: 2}
+    weight: 5
+  - itemData: {fileID: 11400000, guid: d9f39a71ed65f684b804a75f59ba2215, type: 2}
+    weight: 5

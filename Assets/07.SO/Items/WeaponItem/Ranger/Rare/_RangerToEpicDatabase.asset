@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e023de13763e294c91b7bc31c4e1efc, type: 3}
+  m_Name: _RangerToEpicDatabase
+  m_EditorClassIdentifier: 
+  items:
+  - itemData: {fileID: 11400000, guid: 9fc6b5ef1f1847042b06090393e41ae1, type: 2}
+    weight: 5
+  - itemData: {fileID: 11400000, guid: e9ef08cdedc2af643a390ab2cfa6ce42, type: 2}
+    weight: 5
+  - itemData: {fileID: 11400000, guid: 0f2dc67853ec9604c82d663071df9d0e, type: 2}
+    weight: 5
+  - itemData: {fileID: 11400000, guid: fa9a6cba83a98044f86b43cfa1dea002, type: 2}
+    weight: 5
