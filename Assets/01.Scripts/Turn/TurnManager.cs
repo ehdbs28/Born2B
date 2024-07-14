@@ -120,7 +120,8 @@ public class TurnManager : MonoSingleton<TurnManager>
     {
 
         yield return null;
-        int currentTurnCount = CellObjectManager.Instance.GetCellObjectInstance<PlayerInstance>().GetComponent<PlayerStatComponent>().GetStat(StatType.TurnCount);
+        var og = CellObjectManager.Instance.GetCellObjectInstance<PlayerInstance>();
+        int currentTurnCount = og != null ? og.GetComponent<PlayerStatComponent>().GetStat(StatType.TurnCount) : 0;
         while (true)
         {
 
@@ -135,7 +136,6 @@ public class TurnManager : MonoSingleton<TurnManager>
                 {
 
                     _targetSkipTurn = TurnType.None;
-                    Debug.Log("���� ��ŵ�Ͽ��ٶ������ű�");
 
                 }
 
