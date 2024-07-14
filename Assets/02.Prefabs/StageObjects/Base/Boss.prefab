@@ -512,7 +512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <moveRole>k__BackingField: []
-  _data: {fileID: 0}
+  _data: {fileID: 11400000, guid: ae207a9c6264a1a419a059f79516554d, type: 2}
   onMoveEvent:
     m_PersistentCalls:
       m_Calls: []

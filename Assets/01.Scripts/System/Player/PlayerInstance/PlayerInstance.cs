@@ -32,6 +32,24 @@ public partial class PlayerInstance : CellObjectInstance, IHitable
         unitData.statusController = GetComponent<StatusController>();   
     }
 
+    protected override void Update()
+    {
+
+        base.Update();
+
+        var mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if (mouse != null)
+        {
+
+            var c = Vector3.Cross(Vector3.up, mouse - transform.position);
+
+            _renderer.flipX = c.z > 0;
+
+        }
+
+    }
+
     protected virtual void OnDestroy()
     {
         ReleasePlayerComponents();
