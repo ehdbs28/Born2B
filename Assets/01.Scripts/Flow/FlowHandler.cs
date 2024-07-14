@@ -75,6 +75,8 @@ public class FlowHandler : MonoBehaviour
     {
 
         var cells = StageManager.Instance.Grid.GetEmptyCells();
+        if (cells.Count == 0) return;
+
         var target = cells[Random.Range(0, cells.Count)];
         var ins = StageManager.Instance.Grid.GetCellInstance(target.guid);
 
