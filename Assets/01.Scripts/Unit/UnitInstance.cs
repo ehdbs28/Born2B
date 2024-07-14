@@ -90,8 +90,12 @@ public class UnitInstance : CellObjectInstance, IMovementable, IAttackable, IHit
 
         bool die = _health.CurrentHp <= 0;
         EventManager.Instance.PublishEvent(EventType.OnUnitDamaged, this, die);
-        onHitEvent?.Invoke();
 
+        var damText = UIManager.Instance.AppearUI(PoolingItemType.DamageTextPop) as DamageTextPop;
+        damText.Init(transform.position, damage);
+        
+        onHitEvent?.Invoke();
+        
         _health.ReduceHp((int)damage);
 
         if(die)
