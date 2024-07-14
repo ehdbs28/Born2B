@@ -18,16 +18,14 @@ MonoBehaviour:
   ItemDescription: "\uC5BC\uC74C\uC7A5\uC73C\uB85C \uB9CC\uB4E4\uC5B4\uC9C4 \uD65C.
     \uD53C\uACA9\uD55C \uC801\uC744 \uC5BC\uB824\uBC84\uB9B0\uB2E4. "
   WeaponPrefab: {fileID: 7198935873787972833, guid: 24adb3aa9a834c34488025e3a86c53ef, type: 3}
-  Evolutions: {fileID: 11400000, guid: 83c5d442ed7c3f04080e79b273371aa7, type: 2}
+  Evolutions: {fileID: 11400000, guid: 2cd4782520a5d2543b0dd024cc49f4f3, type: 2}
   StatusEffects: []
   KnockBackPower: 0
   AmmoCount: 2
   Damage: 35
   Range:
     rangesList:
-    - Ranges:
-      - Position: {x: 0, y: 1}
-        Theta: 30
+    - Ranges: []
     - Ranges:
       - Position: {x: -1, y: 1}
         Theta: 100

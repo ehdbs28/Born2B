@@ -37,4 +37,5 @@ public enum PoolingItemType
 	LandingParticle,
 	GameOverPanel,
 	DamageTextPop,
+	GameClearPanel,
 }

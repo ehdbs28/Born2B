@@ -19,7 +19,7 @@ MonoBehaviour:
     \uCC3D. \uD55C\uAE30\uAC00 \uB2F4\uACA8\uC788\uC5B4 \uD53C\uACA9\uD55C \uC801\uC744
     \uAF41\uAF41 \uC5BC\uB824\uBC84\uB9B0\uB2E4."
   WeaponPrefab: {fileID: 6029938551659797623, guid: 5c56e49f2eef4d84cac8199b96d0b398, type: 3}
-  Evolutions: {fileID: 11400000, guid: abb0d1873c7dc31448e7ddfdd1c4188c, type: 2}
+  Evolutions: {fileID: 11400000, guid: b7f780e1dd4600e4e9f6a7f1a4d4a3ff, type: 2}
   StatusEffects:
   - statusType: 2
     effectedTurn: 1

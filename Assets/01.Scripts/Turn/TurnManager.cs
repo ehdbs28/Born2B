@@ -116,19 +116,6 @@ public class TurnManager : MonoSingleton<TurnManager>
 
     }
 
-    private void Update()
-    {
-
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-
-            _targetSkipTurn = TurnType.MovementEnemy;
-            Debug.Log(_targetSkipTurn);
-
-        }
-
-    }
-
     private IEnumerator TurnLogic()
     {
 
@@ -148,7 +135,7 @@ public class TurnManager : MonoSingleton<TurnManager>
                 {
 
                     _targetSkipTurn = TurnType.None;
-                    Debug.Log("ÅÏÀ» ½ºÅµÇÏ¿´´Ù¶÷Áã½ã´õ¸Å±â");
+                    Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Åµï¿½Ï¿ï¿½ï¿½Ù¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å±ï¿½");
 
                 }
 

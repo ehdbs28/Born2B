@@ -18,7 +18,7 @@ MonoBehaviour:
   ItemDescription: "\uAE38\uACE0 \uBFB0\uC871\uD55C \uCC3D. \uC900 \uC6D0\uAC70\uB9AC\uC5D0\uC11C
     \uC801\uC744 \uACF5\uACA9\uD560 \uC218 \uC788\uB2E4. "
   WeaponPrefab: {fileID: 1930300316324090971, guid: fe1eb82a3e975fc47b318365caa7d4ed, type: 3}
-  Evolutions: {fileID: 11400000, guid: abb0d1873c7dc31448e7ddfdd1c4188c, type: 2}
+  Evolutions: {fileID: 11400000, guid: 36825972c6f90844fb06e7a34b3eb0e0, type: 2}
   StatusEffects: []
   KnockBackPower: 0
   AmmoCount: 1
